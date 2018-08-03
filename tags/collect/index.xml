@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collect on EPGT-enjoy pleasure in good time.</title>
+    <link>http://localhost:1313/tags/collect/</link>
+    <description>Recent content in Collect on EPGT-enjoy pleasure in good time.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 03 Aug 2018 14:17:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/collect/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>播客Feed订阅</title>
+      <link>http://localhost:1313/post/podcast/</link>
+      <pubDate>Fri, 03 Aug 2018 14:17:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/podcast/</guid>
+      <description>🎧 使用 iPhone Safari / Android 系统浏览器，打开本网页，点击下方播客名字，即可添加订阅到播客应用 添加到： RSS、 iTunes、 苹果播客、 Overcast、 Ca</description>
+    </item>
+    
+    <item>
+      <title>Python 推送信息到wechat</title>
+      <link>http://localhost:1313/post/python2wx/</link>
+      <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python2wx/</guid>
+      <description>前言 最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。 不过网上都是python2.7的版本。</description>
+    </item>
+    
+    <item>
+      <title>及时行乐</title>
+      <link>http://localhost:1313/post/about/</link>
+      <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/about/</guid>
+      <description>及时行乐（Enjoy Pleasure in Good Time.） &amp;gt;人生苦短,何不及时行乐 释义：抓紧时机，不失时机，寻欢作乐。 出处:《新刊大宋宣和遗事》：“人生如</description>
+    </item>
+    
+  </channel>
+</rss>
