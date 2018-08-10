@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wechat on EPGT-enjoy pleasure in good time.</title>
-    <link>http://localhost:1313/tags/wechat/</link>
+    <link>https://cx4.github.io/tags/wechat/</link>
     <description>Recent content in Wechat on EPGT-enjoy pleasure in good time.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 03 Aug 2018 12:56:31 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cx4.github.io/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python 推送信息到wechat</title>
-      <link>http://localhost:1313/post/python2wx/</link>
+      <link>https://cx4.github.io/post/python2wx/</link>
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/python2wx/</guid>
+      <guid>https://cx4.github.io/post/python2wx/</guid>
       <description>前言 最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。 不过网上都是python2.7的版本。</description>
     </item>
     

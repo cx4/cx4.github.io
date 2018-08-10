@@ -2,39 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on EPGT-enjoy pleasure in good time.</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://cx4.github.io/post/</link>
     <description>Recent content in Posts on EPGT-enjoy pleasure in good time.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Aug 2018 14:17:52 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Aug 2018 15:07:43 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cx4.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Science and the Internet</title>
+      <link>https://cx4.github.io/post/universets/</link>
+      <pubDate>Tue, 07 Aug 2018 15:07:43 +0800</pubDate>
+      
+      <guid>https://cx4.github.io/post/universets/</guid>
+      <description>普及一下科学冲浪技巧 普及一下ssr 基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯</description>
+    </item>
+    
+    <item>
       <title>播客Feed订阅</title>
-      <link>http://localhost:1313/post/podcast/</link>
+      <link>https://cx4.github.io/post/podcast/</link>
       <pubDate>Fri, 03 Aug 2018 14:17:52 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/podcast/</guid>
+      <guid>https://cx4.github.io/post/podcast/</guid>
       <description>🎧 使用 iPhone Safari / Android 系统浏览器，打开本网页，点击下方播客名字，即可添加订阅到播客应用 添加到： RSS、 iTunes、 苹果播客、 Overcast、 Ca</description>
     </item>
     
     <item>
       <title>Python 推送信息到wechat</title>
-      <link>http://localhost:1313/post/python2wx/</link>
+      <link>https://cx4.github.io/post/python2wx/</link>
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/python2wx/</guid>
+      <guid>https://cx4.github.io/post/python2wx/</guid>
       <description>前言 最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。 不过网上都是python2.7的版本。</description>
     </item>
     
     <item>
       <title>及时行乐</title>
-      <link>http://localhost:1313/post/about/</link>
+      <link>https://cx4.github.io/post/about/</link>
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/about/</guid>
+      <guid>https://cx4.github.io/post/about/</guid>
       <description>及时行乐（Enjoy Pleasure in Good Time.） &amp;gt;人生苦短,何不及时行乐 释义：抓紧时机，不失时机，寻欢作乐。 出处:《新刊大宋宣和遗事》：“人生如</description>
     </item>
     

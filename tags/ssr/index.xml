@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssr on EPGT-enjoy pleasure in good time.</title>
+    <link>https://cx4.github.io/tags/ssr/</link>
+    <description>Recent content in Ssr on EPGT-enjoy pleasure in good time.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 07 Aug 2018 15:07:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://cx4.github.io/tags/ssr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Science and the Internet</title>
+      <link>https://cx4.github.io/post/universets/</link>
+      <pubDate>Tue, 07 Aug 2018 15:07:43 +0800</pubDate>
+      
+      <guid>https://cx4.github.io/post/universets/</guid>
+      <description>普及一下科学冲浪技巧 普及一下ssr 基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯</description>
+    </item>
+    
+  </channel>
+</rss>
