@@ -6,10 +6,148 @@
     <description>Recent content on EPGT-enjoy pleasure in good time.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 07 Aug 2018 15:07:43 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Aug 2018 12:59:10 +0800</lastBuildDate>
     
         <atom:link href="https://cx4.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Markdown Awesome</title>
+      <link>https://cx4.github.io/post/markdown-awesome/</link>
+      <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
+      
+      <guid>https://cx4.github.io/post/markdown-awesome/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;在markdown文章张使用图标装饰&#34;&gt;在markdown文章张使用图标装饰&lt;/h2&gt;
+
+&lt;p&gt;在之前的工作中制作原型，包括上一篇文章中用到的iconfont的图标，每次都要处理多次。
+看到bootstrap的教程中使用@face-font 可以使用图标，突然想到markdown能否直接调用iconfont、fontawesome的图标？网上一搜果然是有的，像我一样的懒人在我之前就存在。&lt;/p&gt;
+
+&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
+
+&lt;p&gt;Font Awesome是一个字体和图标工具包，包含人物、动物、建筑、商业、品牌、娱乐、动作等等各种主题丰富的图标符号，iconfont也类似起步晚一点是ali旗下的一个开源工具包。&lt;/p&gt;
+
+&lt;p&gt;要在markdown文档中输入Font Awesome，需要在文档任意位置输入一下代码调用JavaScript。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;head&amp;gt; 
+    &amp;lt;script defer src=&amp;#34;https://use.fontawesome.com/releases/v5.0.13/js/all.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 
+    &amp;lt;script defer src=&amp;#34;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 
+&amp;lt;/head&amp;gt; 
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://use.fontawesome.com/releases/v5.2.0/css/all.css&amp;#34; integrity=&amp;#34;sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;iconFont的使用方法类似，但是区别是，需要将使用的图标先用自己的账号登陆后，收藏然后下载生成的css文件。需要引用本地的css文件。
+当然灵活性要差一点，必须之前没有收藏某个图标，这下抓瞎了吧。😭
+生成的css文件格式格式类似如下：
+&amp;gt;//at.alicdn.com/t/font_8d5l8fzk5b87iudi.css&lt;/p&gt;
+
+&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
+
+&lt;p&gt;现在就可以直接插入Font Awesome和iconfont的符号了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fa fa-weixin&amp;#34;&amp;gt;&amp;lt;i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;iconfont使用方法类似&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;iconfont icon-xxx&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这是表示插入了一个微信图标的符号。&lt;i class=&#34;fa fa-weixin&#34;&gt;&lt;i&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;head&gt;
+    &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/all.js&#34;&gt;&lt;/script&gt;
+    &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://use.fontawesome.com/releases/v5.2.0/css/all.css&#34; integrity=&#34;sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;获取符号名称&#34;&gt;获取符号名称&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;fa-weixin&lt;/em&gt; 是微信的名称，如何调用其他的图标呢？
+在awesome 获取后可以保存到LaunchBar中一遍以后方便使用。
+iconfont 只需要点击收藏就好，在生成的css中可以查询。&lt;/p&gt;
+
+&lt;h3 id=&#34;调节尺寸&#34;&gt;调节尺寸&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fa fa-weixin&amp;#34;&amp;gt;&amp;lt;i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;扩展改写为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fa fa-weixin fa-2x&amp;#34;&amp;gt;&amp;lt;i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;i class=&#34;fa fa-weixin fa-2x&#34;&gt;&lt;i&gt;&lt;/p&gt;
+
+&lt;p&gt;可用参数列表：
+fa-xs
+fa-sm
+fa-lg
+fa-2x至fa-10x
+### 动画效果
+在class中加入 “fa-spin” 使符号变成连贯转动，加入“fa-pulse”变成8步旋转效果。&lt;/p&gt;
+
+&lt;h3 id=&#34;符号的特殊用法&#34;&gt;符号的特殊用法&lt;/h3&gt;
+
+&lt;p&gt;符号下沉&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fas fa-quote-left fa-3x fa-pull-left&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;fa-quote-left 是符号名称
+fa-3x         表示大小
+fa-pull-left  符号下沉&lt;/p&gt;
+
+&lt;p&gt;上篇文章中所应用到的图标 应该如下正确使用:&lt;/br&gt;
+&lt;i class=&#34;fa fa-rocket&#34;&gt;&lt;/i&gt; 小火箭&lt;/br&gt;
+&lt;i class=&#34;fa fa-meh-rolling-eyes&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-chess-rook&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-sync-alt fa-spin&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-crosshairs fa-pulse&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-apple&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-android&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-app-store-ios&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-windows&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-laugh-wink&#34;&gt;&lt;/i&gt;
+&lt;i class=&#34;fa fa-kiss-wink-heart&#34;&gt;&lt;/i&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;i class=&#34;fa fa-vuejs fa-3x fa-pull-left&#34;&gt;
+以上是icon的应用，接下来制定自己的学习计划，开始学习Vuejs。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Science and the Internet</title>

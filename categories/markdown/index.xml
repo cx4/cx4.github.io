@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on EPGT-enjoy pleasure in good time.</title>
+    <link>https://cx4.github.io/categories/markdown/</link>
+    <description>Recent content in Markdown on EPGT-enjoy pleasure in good time.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Aug 2018 12:59:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://cx4.github.io/categories/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown Awesome</title>
+      <link>https://cx4.github.io/post/markdown-awesome/</link>
+      <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
+      
+      <guid>https://cx4.github.io/post/markdown-awesome/</guid>
+      <description>在markdown文章张使用图标装饰 在之前的工作中制作原型，包括上一篇文章中用到的iconfont的图标，每次都要处理多次。 看到bootst</description>
+    </item>
+    
+  </channel>
+</rss>
