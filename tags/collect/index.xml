@@ -32,11 +32,12 @@
       <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
       
       <guid>https://cx4.github.io/post/markdown-awesome/</guid>
-      <description>&lt;p&gt;&lt;head&gt;
-    &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/all.js&#34;&gt;&lt;/script&gt;
-    &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&#34;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;code&gt;&amp;lt;head&amp;gt; 
+    &amp;lt;script defer src=&amp;quot;https://use.fontawesome.com/releases/v5.0.13/js/all.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 
+    &amp;lt;script defer src=&amp;quot;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 
+&amp;lt;/head&amp;gt; 
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/08/24/5b7f5c26bd8b9.png&#34; alt=&#34;fontawesome-markdown&#34; /&gt;&lt;/p&gt;
 
