@@ -44,7 +44,10 @@
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
       <guid>https://cx4.github.io/post/python2wx/</guid>
-      <description>前言 最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。 不过网上都是python2.7的版本。</description>
+      <description>&lt;p&gt;前言
+最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。
+不过网上都是python2.7的版本。对于使用python3的小白可能用起来比较困惑，手动改了一个&lt;code&gt;python3&lt;/code&gt;的版本。&lt;/br&gt;
+&lt;img src=&#34;https://i.loli.net/2018/08/03/5b63dbfd294f5.png&#34; alt=&#34;python2wechat&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
