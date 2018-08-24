@@ -12,24 +12,45 @@
     
     
     <item>
+      <title>Baidu wenku</title>
+      <link>https://cx4.github.io/post/wenku/</link>
+      <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
+      
+      <guid>https://cx4.github.io/post/wenku/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/08/24/5b7f60d96c413.jpg&#34; alt=&#34;wenku&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;日常无论是工作还是生活都可能需要用到百毒文库&#34;&gt;日常无论是工作还是生活都可能需要用到百毒文库&lt;/h2&gt;
+
+&lt;p&gt;好多都是需要花钱的， 或者你没有下载券，今天分享一个工具，也为自己做个Mark。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;工具网址：&lt;a href=&#34;http://www.1234866.com/&#34;&gt;http://www.1234866.com/&lt;/a&gt;
+&amp;gt;&lt;em&gt;只能下载 使用下载券下载的文档。&lt;/em&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Markdown Awesome</title>
       <link>https://cx4.github.io/post/markdown-awesome/</link>
       <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
       
       <guid>https://cx4.github.io/post/markdown-awesome/</guid>
       
-        <description>
-
-&lt;p&gt;&lt;head&gt;
+        <description>&lt;p&gt;&lt;head&gt;
     &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/all.js&#34;&gt;&lt;/script&gt;
     &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&#34;&gt;&lt;/script&gt;
 &lt;/head&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;https://use.fontawesome.com/releases/v5.2.0/css/all.css&#34; integrity=&#34;sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/08/24/5b7f5c26bd8b9.png&#34; alt=&#34;fontawesome-markdown&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;在markdown文章张使用图标装饰&#34;&gt;在markdown文章张使用图标装饰&lt;/h2&gt;
 
 &lt;p&gt;在之前的工作中制作原型，包括上一篇文章中用到的iconfont的图标，每次都要处理多次。
-看到bootstrap的教程中使用@face-font 可以使用图标，突然想到markdown能否直接调用iconfont、fontawesome的图标？网上一搜果然是有的，像我一样的懒人在我之前就存在。&lt;/p&gt;
+看到bootstrap的教程中使用@face-font 可以使用图标，突然想到markdown能否直接调用iconfont、fontawesome的图标？网上一搜果然是有的，像我一样的懒人在我之前就存在。
+&lt;/p&gt;
 
 &lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
 
@@ -103,33 +124,47 @@ iconfont 只需要点击收藏就好，在生成的css中可以查询。&lt;/p&g
 &lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fa fa-weixin fa-2x&amp;#34;&amp;gt;&amp;lt;i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;i class=&#34;fa fa-weixin fa-2x&#34;&gt;&lt;i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class=&#34;fa fa-weixin fa-2x&#34;&gt;&lt;i&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;p&gt;可用参数列表：
-fa-xs
+&lt;h4 id=&#34;可用参数列表&#34;&gt;可用参数列表：&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;fa-xs
 fa-sm
 fa-lg
 fa-2x至fa-10x
 ### 动画效果
-在class中加入 “fa-spin” 使符号变成连贯转动，加入“fa-pulse”变成8步旋转效果。&lt;/p&gt;
-
+在class中加入 “fa-spin” 使符号变成连贯转动，加入“fa-pulse”变成8步旋转效果。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id=&#34;符号的特殊用法&#34;&gt;符号的特殊用法&lt;/h3&gt;
 
-&lt;p&gt;符号下沉&lt;/p&gt;
+&lt;p&gt;####符号下沉&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fas fa-quote-left fa-3x fa-pull-left&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;fa-quote-left 是符号名称
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;i class=&amp;#34;fas fa-quote-left fa-3x fa-pull-left&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;
+fa-quote-left 是符号名称
 fa-3x         表示大小
-fa-pull-left  符号下沉&lt;/p&gt;
+fa-pull-left  符号下沉&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;上篇文章中所应用到的图标-应该如下正确使用-br&#34;&gt;上篇文章中所应用到的图标 应该如下正确使用:&lt;/br&gt;&lt;/h4&gt;
 
-&lt;p&gt;上篇文章中所应用到的图标 应该如下正确使用:&lt;/br&gt;
-&lt;i class=&#34;fa fa-rocket&#34;&gt;&lt;/i&gt; 小火箭&lt;/br&gt;
+&lt;p&gt;&lt;i class=&#34;fa fa-rocket&#34;&gt;&lt;/i&gt; 小火箭&lt;/br&gt;
 &lt;i class=&#34;fa fa-meh-rolling-eyes&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;fa fa-chess-rook&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;fa fa-sync-alt fa-spin&#34;&gt;&lt;/i&gt;
@@ -142,8 +177,7 @@ fa-pull-left  符号下沉&lt;/p&gt;
 &lt;i class=&#34;fa fa-kiss-wink-heart&#34;&gt;&lt;/i&gt;&lt;/br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;i class=&#34;fa fa-vuejs&#34;&gt;
-以上是icon的应用，接下来制定自己的学习计划，开始学习Vuejs。&lt;/p&gt;
-</description>
+以上是icon的应用，接下来制定自己的学习计划，开始学习Vue.js。&lt;/p&gt;</description>
       
     </item>
     

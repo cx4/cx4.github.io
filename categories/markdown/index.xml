@@ -17,7 +17,19 @@
       <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
       
       <guid>https://cx4.github.io/post/markdown-awesome/</guid>
-      <description>在markdown文章张使用图标装饰 在之前的工作中制作原型，包括上一篇文章中用到的iconfont的图标，每次都要处理多次。 看到bootst</description>
+      <description>&lt;p&gt;&lt;head&gt;
+    &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/all.js&#34;&gt;&lt;/script&gt;
+    &lt;script defer src=&#34;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/08/24/5b7f5c26bd8b9.png&#34; alt=&#34;fontawesome-markdown&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;在markdown文章张使用图标装饰&#34;&gt;在markdown文章张使用图标装饰&lt;/h2&gt;
+
+&lt;p&gt;在之前的工作中制作原型，包括上一篇文章中用到的iconfont的图标，每次都要处理多次。
+看到bootstrap的教程中使用@face-font 可以使用图标，突然想到markdown能否直接调用iconfont、fontawesome的图标？网上一搜果然是有的，像我一样的懒人在我之前就存在。
+&lt;/p&gt;</description>
     </item>
     
   </channel>

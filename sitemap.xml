@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cx4.github.io/post/wenku/</loc>
+    <lastmod>2018-08-17T12:59:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cx4.github.io/post/markdown-awesome/</loc>
     <lastmod>2018-08-17T12:59:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,13 +45,35 @@
   </url>
   
   <url>
+    <loc>https://cx4.github.io/tags/baidu/</loc>
+    <lastmod>2018-08-17T12:59:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cx4.github.io/categories/baidu/</loc>
+    <lastmod>2018-08-17T12:59:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cx4.github.io/categories/</loc>
+    <lastmod>2018-08-17T12:59:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cx4.github.io/tags/collect/</loc>
+    <lastmod>2018-08-17T12:59:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cx4.github.io/tags/data/</loc>
     <lastmod>2018-08-17T12:59:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
