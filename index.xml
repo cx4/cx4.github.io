@@ -23,7 +23,7 @@
 &lt;h3 id=&#34;前段项目日常经常会用到js框架-收集了目前国内主流的cdn服务商提供的静态js&#34;&gt;前段项目日常经常会用到js框架，收集了目前国内主流的cdn服务商提供的静态JS&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;StaticFile&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;StaticFile&lt;/strong&gt;&lt;/br&gt;
 staticfile是一个优秀的开源库并提供CDN服务除了静态的js文件外，staticfile还提供CSS 、图片、和swf等静态文件的CDN服务。&lt;/br&gt;
 &amp;gt;React vue Angular jquery都比较好用。支持http和https两种链接形式。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -31,22 +31,22 @@ staticfile是一个优秀的开源库并提供CDN服务除了静态的js文件�
 &lt;p&gt;&lt;a href=&#34;http://www.staticfile.org/&#34;&gt;StaticFile&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;SAE Public Resource&lt;/strong&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;SAE Public Resource&lt;/strong&gt;&lt;/br&gt;
 渣浪的云服务提供的CDN，界面也比较渣，支持的框架比较少，好在是大牌。&lt;/br&gt;
 &lt;a href=&#34;http://lib.sinaapp.com/&#34;&gt;SAE CDN&lt;/a&gt;&lt;/br&gt;
 &lt;/br&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;CDNJS&lt;/strong&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;CDNJS&lt;/strong&gt;&lt;/br&gt;
 看名字就知道这个网站是干嘛的。专业的静态js框架cdn服务提供商，提供的JS比较全。&lt;/br&gt;
 &lt;a href=&#34;https://cdn.cdnjs.net/&#34;&gt;CDNJS&lt;/a&gt;&lt;/br&gt;
 &lt;/br&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;jsDelivr&lt;/strong&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;jsDelivr&lt;/strong&gt;&lt;/br&gt;
 国外的一家提供前段公共库的网站，只有https服务，界面比较友好。&lt;/br&gt;
 &lt;a href=&#34;https://www.jsdelivr.com/&#34;&gt;jsDeliver&lt;/a&gt;&lt;/br&gt;
 &lt;/br&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Upyun和Segmentfault&lt;/strong&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Upyun和Segmentfault&lt;/strong&gt;&lt;/br&gt;
 又拍云和SegementFault提供的CDN服务。&lt;/br&gt;
 &lt;a href=&#34;http://jscdn.upai.com/&#34;&gt;upai&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
