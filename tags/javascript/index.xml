@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on EPGT-enjoy pleasure in good time.</title>
+    <link>https://cx4.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on EPGT-enjoy pleasure in good time.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 03 Sep 2018 16:18:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://cx4.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Static Js Cdn</title>
+      <link>https://cx4.github.io/post/static-js-cdn/</link>
+      <pubDate>Mon, 03 Sep 2018 16:18:44 +0800</pubDate>
+      
+      <guid>https://cx4.github.io/post/static-js-cdn/</guid>
+      <description>前段项目日常经常会用到js框架，收集了目前国内主流的cdn服务商提供的静态JS StaticFile staticfile是一个优秀的开源库并提供CDN服务除了静</description>
+    </item>
+    
+  </channel>
+</rss>
