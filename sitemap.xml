@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cx4.github.io/post/hero-novel/</loc>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cx4.github.io/post/static-js-cdn/</loc>
     <lastmod>2018-09-03T16:18:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,12 +59,6 @@
   </url>
   
   <url>
-    <loc>https://cx4.github.io/post/hero-cha/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://cx4.github.io/tags/baidu/</loc>
     <lastmod>2018-08-17T12:59:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,7 +81,7 @@
   
   <url>
     <loc>https://cx4.github.io/tags/collect/</loc>
-    <lastmod>2018-09-03T16:18:44+08:00</lastmod>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -101,7 +102,21 @@
   
   <url>
     <loc>https://cx4.github.io/</loc>
-    <lastmod>2018-09-03T16:18:44+08:00</lastmod>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cx4.github.io/tags/ebook/</loc>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cx4.github.io/categories/ebook/</loc>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -115,7 +130,7 @@
   
   <url>
     <loc>https://cx4.github.io/categories/index/</loc>
-    <lastmod>2018-09-03T16:18:44+08:00</lastmod>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -130,6 +145,13 @@
   <url>
     <loc>https://cx4.github.io/categories/javascript/</loc>
     <lastmod>2018-09-03T16:18:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cx4.github.io/tags/kindle/</loc>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -164,7 +186,7 @@
   
   <url>
     <loc>https://cx4.github.io/post/</loc>
-    <lastmod>2018-09-03T16:18:44+08:00</lastmod>
+    <lastmod>2018-11-05T16:43:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
