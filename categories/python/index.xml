@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on EPGT-enjoy pleasure in good time.</title>
-    <link>https://cx4.github.io/categories/python/</link>
+    <link>https://www.cx4.tw/categories/python/</link>
     <description>Recent content in Python on EPGT-enjoy pleasure in good time.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Aug 2018 15:07:43 +0800</lastBuildDate>
     
-	<atom:link href="https://cx4.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.cx4.tw/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Science and the Internet</title>
-      <link>https://cx4.github.io/post/universets/</link>
+      <link>https://www.cx4.tw/post/universets/</link>
       <pubDate>Tue, 07 Aug 2018 15:07:43 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/universets/</guid>
+      <guid>https://www.cx4.tw/post/universets/</guid>
       <description>普及一下科学冲浪技巧 普及一下ssr 基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯</description>
     </item>
     
     <item>
       <title>Python 推送信息到wechat</title>
-      <link>https://cx4.github.io/post/python2wx/</link>
+      <link>https://www.cx4.tw/post/python2wx/</link>
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/python2wx/</guid>
+      <guid>https://www.cx4.tw/post/python2wx/</guid>
       <description>&lt;p&gt;前言
 最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。
 不过网上都是python2.7的版本。对于使用python3的小白可能用起来比较困惑，手动改了一个&lt;code&gt;python3&lt;/code&gt;的版本。&lt;/br&gt;&lt;/p&gt;

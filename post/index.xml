@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on EPGT-enjoy pleasure in good time.</title>
-    <link>https://cx4.github.io/post/</link>
+    <link>https://www.cx4.tw/post/</link>
     <description>Recent content in Posts on EPGT-enjoy pleasure in good time.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 05 Nov 2018 16:43:37 +0800</lastBuildDate>
     
-	<atom:link href="https://cx4.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.cx4.tw/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>金庸武侠小说大全-电子版下载</title>
-      <link>https://cx4.github.io/post/hero-novel/</link>
+      <link>https://www.cx4.tw/post/hero-novel/</link>
       <pubDate>Mon, 05 Nov 2018 16:43:37 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/hero-novel/</guid>
+      <guid>https://www.cx4.tw/post/hero-novel/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/11/05/5bdfe866de992.png&#34; alt=&#34;cmd-markdown-logo&#34; /&gt;&lt;/br&gt;&lt;/p&gt;
 
 &lt;p&gt;飞雪连天射白鹿，笑书神侠倚碧鸳，感谢查老带来的经典武侠作品，虽然没有读过几本，在大家读金庸的时候相同的时间我给了韩寒、苏童、王小波、路遥还有一系列的《电脑报》、《萌芽》、《Hacker X档案》 《黑客防线》等书籍，以下为整理的金庸武侠大全电子版，供大家下载：&lt;/p&gt;
@@ -26,19 +26,19 @@
     
     <item>
       <title>Static Js Cdn</title>
-      <link>https://cx4.github.io/post/static-js-cdn/</link>
+      <link>https://www.cx4.tw/post/static-js-cdn/</link>
       <pubDate>Mon, 03 Sep 2018 16:18:44 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/static-js-cdn/</guid>
+      <guid>https://www.cx4.tw/post/static-js-cdn/</guid>
       <description>前段项目日常经常会用到js框架，收集了目前国内主流的cdn服务商提供的静态JS StaticFile staticfile是一个优秀的开源库并提供CDN服务除了静</description>
     </item>
     
     <item>
       <title>Baidu wenku</title>
-      <link>https://cx4.github.io/post/wenku/</link>
+      <link>https://www.cx4.tw/post/wenku/</link>
       <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/wenku/</guid>
+      <guid>https://www.cx4.tw/post/wenku/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/08/24/5b7f60d96c413.jpg&#34; alt=&#34;wenku&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;日常无论是工作还是生活都可能需要用到百毒文库&#34;&gt;日常无论是工作还是生活都可能需要用到百毒文库&lt;/h2&gt;
@@ -50,10 +50,10 @@
     
     <item>
       <title>Markdown Awesome</title>
-      <link>https://cx4.github.io/post/markdown-awesome/</link>
+      <link>https://www.cx4.tw/post/markdown-awesome/</link>
       <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/markdown-awesome/</guid>
+      <guid>https://www.cx4.tw/post/markdown-awesome/</guid>
       <description>&lt;p&gt;&lt;code&gt;&amp;lt;head&amp;gt; 
     &amp;lt;script defer src=&amp;quot;https://use.fontawesome.com/releases/v5.0.13/js/all.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 
     &amp;lt;script defer src=&amp;quot;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 
@@ -72,28 +72,28 @@
     
     <item>
       <title>Science and the Internet</title>
-      <link>https://cx4.github.io/post/universets/</link>
+      <link>https://www.cx4.tw/post/universets/</link>
       <pubDate>Tue, 07 Aug 2018 15:07:43 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/universets/</guid>
+      <guid>https://www.cx4.tw/post/universets/</guid>
       <description>普及一下科学冲浪技巧 普及一下ssr 基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯</description>
     </item>
     
     <item>
       <title>播客Feed订阅</title>
-      <link>https://cx4.github.io/post/podcast/</link>
+      <link>https://www.cx4.tw/post/podcast/</link>
       <pubDate>Fri, 03 Aug 2018 14:17:52 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/podcast/</guid>
+      <guid>https://www.cx4.tw/post/podcast/</guid>
       <description>🎧 使用 iPhone Safari / Android 系统浏览器，打开本网页，点击下方播客名字，即可添加订阅到播客应用 添加到： RSS、 iTunes、 苹果播客、 Overcast、 Ca</description>
     </item>
     
     <item>
       <title>Python 推送信息到wechat</title>
-      <link>https://cx4.github.io/post/python2wx/</link>
+      <link>https://www.cx4.tw/post/python2wx/</link>
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/python2wx/</guid>
+      <guid>https://www.cx4.tw/post/python2wx/</guid>
       <description>&lt;p&gt;前言
 最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。
 不过网上都是python2.7的版本。对于使用python3的小白可能用起来比较困惑，手动改了一个&lt;code&gt;python3&lt;/code&gt;的版本。&lt;/br&gt;&lt;/p&gt;
@@ -103,10 +103,10 @@
     
     <item>
       <title>及时行乐</title>
-      <link>https://cx4.github.io/post/about/</link>
+      <link>https://www.cx4.tw/post/about/</link>
       <pubDate>Fri, 03 Aug 2018 12:56:31 +0800</pubDate>
       
-      <guid>https://cx4.github.io/post/about/</guid>
+      <guid>https://www.cx4.tw/post/about/</guid>
       <description>及时行乐（Enjoy Pleasure in Good Time.） &amp;gt;人生苦短,何不及时行乐 释义：抓紧时机，不失时机，寻欢作乐。 出处:《新刊大宋宣和遗事》：“人生如</description>
     </item>
     

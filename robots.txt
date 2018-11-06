@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://cx4.github.io/sitemap.xml
+Sitemap: https://www.cx4.tw/sitemap.xml
