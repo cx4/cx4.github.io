@@ -23,7 +23,7 @@
     <item>
       <title>Docs</title>
       <link>https://www.cx4.tw/categories/docs/</link>
-      <pubDate>Mon, 03 Sep 2018 16:18:44 +0800</pubDate>
+      <pubDate>Thu, 22 Nov 2018 15:04:17 +0800</pubDate>
       
       <guid>https://www.cx4.tw/categories/docs/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>Index</title>
       <link>https://www.cx4.tw/categories/index/</link>
-      <pubDate>Mon, 05 Nov 2018 16:43:37 +0800</pubDate>
+      <pubDate>Tue, 26 Feb 2019 18:14:59 +0800</pubDate>
       
       <guid>https://www.cx4.tw/categories/index/</guid>
       <description></description>
@@ -57,11 +57,29 @@
     </item>
     
     <item>
+      <title>License</title>
+      <link>https://www.cx4.tw/categories/license/</link>
+      <pubDate>Thu, 22 Nov 2018 14:55:58 +0800</pubDate>
+      
+      <guid>https://www.cx4.tw/categories/license/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Markdown</title>
       <link>https://www.cx4.tw/categories/markdown/</link>
       <pubDate>Fri, 17 Aug 2018 12:59:10 +0800</pubDate>
       
       <guid>https://www.cx4.tw/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Micropython</title>
+      <link>https://www.cx4.tw/categories/micropython/</link>
+      <pubDate>Tue, 26 Feb 2019 18:14:59 +0800</pubDate>
+      
+      <guid>https://www.cx4.tw/categories/micropython/</guid>
       <description></description>
     </item>
     
@@ -84,11 +102,29 @@
     </item>
     
     <item>
+      <title>Raspberry</title>
+      <link>https://www.cx4.tw/categories/raspberry/</link>
+      <pubDate>Thu, 22 Nov 2018 15:04:17 +0800</pubDate>
+      
+      <guid>https://www.cx4.tw/categories/raspberry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ssr</title>
       <link>https://www.cx4.tw/categories/ssr/</link>
       <pubDate>Tue, 07 Aug 2018 15:07:43 +0800</pubDate>
       
       <guid>https://www.cx4.tw/categories/ssr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://www.cx4.tw/categories/windows/</link>
+      <pubDate>Thu, 22 Nov 2018 14:55:58 +0800</pubDate>
+      
+      <guid>https://www.cx4.tw/categories/windows/</guid>
       <description></description>
     </item>
     
