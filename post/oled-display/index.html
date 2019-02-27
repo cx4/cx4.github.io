@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>0.96 OLED Display - EPGT-enjoy pleasure in good time.</title>
+  <link rel="alternate" hreflang="zh-cn" href="https://www.cx4.tw/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Roy-Chang" />
+  <meta name="description" content="之前买过一个0.96英寸的OLED屏幕，一直没有用，最近想着做个小的玩具，比如放在桌面上的小摆件可以提醒生词，提醒todo-list等，或者结合esp8266做成一个情侣见互相留言的小玩具。 ##关于OLED
+" />
+
+  <meta name="keywords" content="EPGT, cx4, roy" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.45.1" />
+
+
+<link rel="canonical" href="https://www.cx4.tw/post/oled-display/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="0.96 OLED Display" />
+<meta property="og:description" content="
+之前买过一个0.96英寸的OLED屏幕，一直没有用，最近想着做个小的玩具，比如放在桌面上的小摆件可以提醒生词，提醒todo-list等，或者结合esp8266做成一个情侣见互相留言的小玩具。
+
+##关于OLED" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cx4.tw/post/oled-display/" />
+
+
+
+<meta property="article:published_time" content="2019-02-26T18:14:59&#43;08:00"/>
+
+<meta property="article:modified_time" content="2019-02-26T18:14:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="0.96 OLED Display">
+<meta itemprop="description" content="
+之前买过一个0.96英寸的OLED屏幕，一直没有用，最近想着做个小的玩具，比如放在桌面上的小摆件可以提醒生词，提醒todo-list等，或者结合esp8266做成一个情侣见互相留言的小玩具。
+
+##关于OLED">
+
+
+<meta itemprop="datePublished" content="2019-02-26T18:14:59&#43;08:00" />
+<meta itemprop="dateModified" content="2019-02-26T18:14:59&#43;08:00" />
+<meta itemprop="wordCount" content="973">
+
+
+
+<meta itemprop="keywords" content="micropython,esp8266,Oled,collect," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="0.96 OLED Display"/>
+<meta name="twitter:description" content="
+之前买过一个0.96英寸的OLED屏幕，一直没有用，最近想着做个小的玩具，比如放在桌面上的小摆件可以提醒生词，提醒todo-list等，或者结合esp8266做成一个情侣见互相留言的小玩具。
+
+##关于OLED"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">EPGT</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cx4.tw" rel="noopener" target="_blank">
+              external-link
+              <i class="iconfont icon-new-window"></i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://www.cx4.tw/">
+              docs
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://www.cx4.tw/post/markdown-awesome/">Markdown Awesome</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/python2wx/">Python 推送信息到wechat</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/raspberry-os/">Raspberry Os</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/universets/">Science and the Internet</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/about/">及时行乐</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/static-js-cdn/">Static Js Cdn</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/podcast/">播客Feed订阅</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/oled-display/">0.96 OLED Display</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/wenku/">Baidu wenku</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/windows-collections/">Windows Collections</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/hero-novel/">金庸武侠小说大全-电子版下载</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      EPGT
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.cx4.tw/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cx4.tw" rel="noopener" target="_blank">
+              external-link
+            <i class="iconfont icon-new-window"></i>
+            </a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://www.cx4.tw/">docs</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://www.cx4.tw/post/markdown-awesome/">Markdown Awesome</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/python2wx/">Python 推送信息到wechat</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/raspberry-os/">Raspberry Os</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/universets/">Science and the Internet</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/about/">及时行乐</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/static-js-cdn/">Static Js Cdn</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/podcast/">播客Feed订阅</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/oled-display/">0.96 OLED Display</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/wenku/">Baidu wenku</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/windows-collections/">Windows Collections</a>
+              </li>
+            
+              <li>
+                <a href="https://www.cx4.tw/post/hero-novel/">金庸武侠小说大全-电子版下载</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">0.96 OLED Display</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2019-02-26 </span>
+        <div class="post-category">
+            <a href="https://www.cx4.tw/categories/micropython/"> micropython </a>
+            <a href="https://www.cx4.tw/categories/index/"> index </a>
+            
+          </div>
+        <span class="more-meta"> 约 973 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="https://i.loli.net/2019/02/26/5c75137f2799d.png" alt="cmd-markdown-logo" />
+之前买过一个0.96英寸的OLED屏幕，一直没有用，最近想着做个小的玩具，比如放在桌面上的小摆件可以提醒生词，提醒todo-list等，或者结合esp8266做成一个情侣见互相留言的小玩具。
+
+##关于OLED</p>
+
+<blockquote>
+<p>OLED，即有机发光二极管( OrganicLightEmittingDiode)。 OLED 由于同时具备自发光，不需背 光源、对比度高、厚度薄、视角广、反应速度快、可用于挠曲性面板、使用温度范围广、构造及 制程较简单等优异之特性，被认为是下一代的平面显示器新兴应用技术。
+LCD 都需要背光，而 OLED 不需要，因为它是自发光的。这样同样的显示 OLED 效果要来得好一些。</p>
+</blockquote>
+
+<p>说说踩过的坑</br>
+1.因为使用Micropython，可以参考的资料非常少。</p>
+
+<p>2.这个OLED本身不带字库，除了英文和标准绘图（点、线、形状）之外都需要使用其他方式实现。</p>
+
+<p>3.依赖SSD1306驱动，不能像Arduino的u8g2库一样强大，许多功能需要自己实现。</p>
+
+<p>##中文文字转字模型</br>
+所有显示的中文都需要转换成字模，其实在购买屏幕的时候随机送了一个中文取字模的软件。PCtoLCD2002，但是我用的是Mac，总不能为了这个字模装个虚拟机吧，虽然我将另外一台win10开启了远程桌面，但是也不便于形成Demo后别人使用，在有网环境下可以用我写的一个小脚本<a href="https://github.com/cx4/ssd1306_tool">fontool</a>.可以方便的将想要显示的中文转换为字模。</p>
+
+<p>##图片显示</br>
+关于图片的显示，网上有两种方案（基于Arduino）一种是将图片转换为二进制bin文件，另一种和中文差不多，将图片的像素转换为01二进制，0为不现实1为亮。没有现成的库。</p>
+
+<p>###实现图片的显示
+以我的头像这个dogydog为例。
+<img src="https://i.loli.net/2019/02/26/5c7518ad4c076.png" alt="" />
+这里需要用的的python库
+&gt;PIL （Pillow）</p>
+
+<p>1.首先将图片处理为灰度模式，然后改变图像的大小，这里有个坑，其实你直接使用PIL的resize就好但是网上的多处例子谈到<code>img = img.resize((w,h),Image.ANTIALIAS)</code> 这个地方的<code>Image.ANTIALIAS</code>其实是用来处理大型图片缩放时候用到的一个滤镜，对比PS的文件处理速度会快一些而且质量会好一些，在应用与低质量的显示比如这块128 * 64的屏幕上完全用不到精细化处理，而且会适得其反，因为8266的内存有限，使用滤镜生成的bin文件会很大，而且在128*64这样的屏幕上会有毛刺。</p>
+
+<p>对比效果</br>
+<img src="https://i.loli.net/2019/02/26/5c751c33e2378.png" alt="未使用滤镜" /></br></p>
+
+<p><img src="https://i.loli.net/2019/02/26/5c751c77213ba.png" alt="使用滤镜效果" /></p>
+
+<p>2.然后逐行的读取每个像素点的数值，生成10矩阵。</br>
+代码在<a href="https://github.com/cx4/ssd1306_tool">这里</a></p>
+
+<p>显示效果</br>
+<img src="https://i.loli.net/2019/02/26/5c751d0a4ef6a.png" alt="" /></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Roy-Chang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-02-26</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a href="https://github.com/gohugoio/hugoBasicExample" rel="noopener" target="_blank">See origin</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://i.loli.net/2018/08/03/5b63f765bf8cb.jpeg">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.cx4.tw/tags/micropython/">micropython</a>
+          <a href="https://www.cx4.tw/tags/esp8266/">esp8266</a>
+          <a href="https://www.cx4.tw/tags/oled/">Oled</a>
+          <a href="https://www.cx4.tw/tags/collect/">collect</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/raspberry-os/">
+            <span class="next-text nav-default">Raspberry Os</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:reg4com#163.com" rel="me noopener" class="iconfont icon-email"
+        title="email" target="_blank">
+      </a>
+  <a href="https://www.cx4.tw/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io"><img src="https://i.loli.net/2018/08/03/5b63ef2e2b4da.png
+      "></a>
+  
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Design - <a class="theme-link" href="https://github.com/cx4/">Cx4</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2018 -
+    2019
+    <span class="heart">
+      <img src="https://i.loli.net/2018/08/03/5b63f1185f601.png" >
+      
+    </span><span class="author">Roy-Chang</span></span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+<script src="/js/custom.js"></script>
+
+
+</body>
+</html>
