@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.cx4.tw/sitemap.xml
