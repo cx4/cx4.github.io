@@ -29,8 +29,9 @@
 月亮与六便士&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1230961&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
-刻意练习
-&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1230961&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
+刻意练习&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1230961&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
 动物农场&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1230961&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
@@ -45,8 +46,9 @@
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1230961&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
 极简工作法&lt;/p&gt;
 
-&lt;p&gt;###技术类
-&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1227798&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
+&lt;h3 id=&#34;技术类&#34;&gt;技术类&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1227798&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
 精通Scrapy网络爬虫&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1227798&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
@@ -67,29 +69,32 @@ MicroPython for the Internet of Things&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1227798&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
 图解HTTP&lt;/p&gt;
 
-&lt;p&gt;###其他&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1146989&amp;amp;size=32&#34; alt=&#34;&#34; /&gt;
 极客物理学&lt;/p&gt;
 
-&lt;p&gt;###理财类&lt;/p&gt;
+&lt;h3 id=&#34;理财类&#34;&gt;理财类&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=1220091&amp;amp;size=24&#34; alt=&#34;&#34; /&gt;
 穷查理宝典&lt;/p&gt;
 
-&lt;p&gt;###语言类&lt;/p&gt;
+&lt;h3 id=&#34;语言类&#34;&gt;语言类&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.easyicon.net/api/resizeApi.php?id=554753&amp;amp;size=32&#34; alt=&#34;&#34; /&gt;
 1368个单词就够了&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;另外还有eslpod 和englipod的音频 反复练习读听写&lt;/strong&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;p&gt;##todo list
-- [ ] 精通Scrapy网络爬虫 &lt;img src=&#34;https://img.shields.io/badge/read-80-yellow.svg&#34; alt=&#34;&#34; /&gt;
-- [x] 圣斗士星矢 &lt;img src=&#34;http://progressed.io/bar/91&#34; alt=&#34;&#34; /&gt;
-- [x] 万历十五年 &lt;img src=&#34;http://progressed.io/bar/100&#34; alt=&#34;&#34; /&gt;
-- [x] 动物农场（中文） &lt;img src=&#34;http://progressed.io/bar/100&#34; alt=&#34;&#34; /&gt;
-- [x] 日语五十音图详解  &lt;img src=&#34;http://progressed.io/bar/100&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;todo-list&#34;&gt;todo list&lt;/h2&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 精通Scrapy网络爬虫 &lt;img src=&#34;https://img.shields.io/badge/read-80-yellow.svg&#34; alt=&#34;&#34; /&gt;&lt;/br&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 圣斗士星矢 &lt;img src=&#34;http://progressed.io/bar/91&#34; alt=&#34;&#34; /&gt;&lt;/br&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 万历十五年 &lt;img src=&#34;http://progressed.io/bar/100&#34; alt=&#34;&#34; /&gt;&lt;/br&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 动物农场（中文） &lt;img src=&#34;http://progressed.io/bar/100&#34; alt=&#34;&#34; /&gt;&lt;/br&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 日语五十音图详解  &lt;img src=&#34;http://progressed.io/bar/100&#34; alt=&#34;&#34; /&gt;&lt;/br&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       
     </item>
     
