@@ -1,7 +1,3 @@
-<!--Add the following script at the bottom of the web page (before </body></html>)-->
-<script type="text/javascript">function add_chatinline(){var hccid=29199833;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
-add_chatinline();</script>
-
 $(document).ready(function () {
     $('.douban_item').each(function () {
         var id = $(this).attr('date-dbid').toString();
@@ -60,3 +56,8 @@ $(document).ready(function () {
         }
     });
 });
+
+
+<!--Add the following script at the bottom of the web page (before </body></html>)-->
+<script type="text/javascript">function add_chatinline(){var hccid=29199833;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline();</script>

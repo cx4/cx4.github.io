@@ -52,7 +52,7 @@
   &lt;div id=&#34;db27095914&#34; date-dbid=&#34;27095914&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;技术类&lt;/p&gt;
+&lt;p&gt;###技术类&lt;/p&gt;
 
 &lt;div class=&#34;douban_show&#34;&gt;
   &lt;div id=&#34;db27190645&#34; date-dbid=&#34;27190645&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
@@ -82,29 +82,33 @@
   &lt;div id=&#34;db25863515&#34; date-dbid=&#34;25863515&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;其他
+&lt;p&gt;###其他&lt;/p&gt;
+
 &lt;div class=&#34;douban_show&#34;&gt;
   &lt;div id=&#34;db26848006&#34; date-dbid=&#34;26848006&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;理财类
+&lt;p&gt;###理财类&lt;/p&gt;
+
 &lt;div class=&#34;douban_show&#34;&gt;
   &lt;div id=&#34;db5346110&#34; date-dbid=&#34;5346110&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;语言类
+&lt;p&gt;###语言类&lt;/p&gt;
+
 &lt;div class=&#34;douban_show&#34;&gt;
   &lt;div id=&#34;db25981535&#34; date-dbid=&#34;25981535&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;另外还有eslpod 和englipod的音频 反复练习读听写&lt;/p&gt;
+&lt;p&gt;另外还有eslpod 和englipod的音频 反复练习读听写&lt;/br&gt;&lt;/p&gt;
 
-&lt;p&gt;#todo list
--[]精通Scrapy网络爬虫 &lt;img src=&#34;https://img.shields.io/badge/read-80-yellow.svg&#34; alt=&#34;&#34; /&gt;
--[x]圣斗士星矢
--[x]万历十五年
--[x]动物农场（中文）
--[x]日语五十音图详解&lt;/p&gt;</description>
+&lt;p&gt;#todo list&lt;/p&gt;
+
+&lt;p&gt;-[] 精通Scrapy网络爬虫 &lt;img src=&#34;https://img.shields.io/badge/read-80-yellow.svg&#34; alt=&#34;&#34; /&gt;
+-[x] 圣斗士星矢
+-[x] 万历十五年
+-[x] 动物农场（中文）
+-[x] 日语五十音图详解&lt;/p&gt;</description>
       
     </item>
     
