@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.1.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Python 推送信息到wechat - 及时行乐</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Python 推送信息到wechat" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicons.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/log.png" alt="Python 推送信息到wechat" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="My GitHub" href="https://cx4.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-08-02T20:56:31.000Z">2018-08-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1055 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Python 推送信息到wechat
+            
+        </h1>
+        <div class="content">
+            <p>前言<br>最近看到网上有定时推送文章到微信的文章，其实这个小功能我一直在做，包括定时爬取内容用邮件发送等等。<br>不过网上都是python2.7的版本。对于使用python3的小白可能用起来比较困惑，手动改了一个<code>python3</code>的版本。<br></p>
+<p><img src="https://i.loli.net/2018/08/03/5b63dbfd294f5.png" alt="python2wechat"></p>
+<a id="more"></a>
+<p>#实现环境<br></p>
+<ul>
+<li>python3.6(conda)</li>
+<li>数据源：爱词霸</li>
+<li>调用地址：<a href="http://open.iciba.com/dsapi/" target="_blank" rel="noopener">http://open.iciba.com/dsapi/</a></li>
+<li>请求方式：GET</li>
+</ul>
+<p>请求参数：<br></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="right">必选</th>
+<th align="center">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">date</td>
+<td align="right">否</td>
+<td align="center">string</td>
+<td>格式为：2018-08-01；默认取当天</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="right">否</td>
+<td align="center">string</td>
+<td>可选值为last和next；以date日期为准的last返回前一天，next返回后一天。</td>
+</tr>
+<tr>
+<td align="left">代码示例</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">```python</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">#coding=utf-8</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">import json</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">import requests</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">def get_iciba():</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">url = ‘<a href="http://open.iciba.com/dsapi/&#39;" target="_blank" rel="noopener">http://open.iciba.com/dsapi/&#39;</a></td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">request = requests.get(url)</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">data = json.loads(request) #将json转换为dict</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">return data</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">print(get_iciba())</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">```</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">返回类型：JSON (JSON字段解释：)</td>
+<td align="right"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="right">属性值类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sid</td>
+<td align="right">string</td>
+<td align="left">每日一句id</td>
+</tr>
+<tr>
+<td align="left">tts</td>
+<td align="right">string</td>
+<td align="left">音频地址</td>
+</tr>
+<tr>
+<td align="left">content</td>
+<td align="right">string</td>
+<td align="left">英文内容</td>
+</tr>
+<tr>
+<td align="left">note</td>
+<td align="right">string</td>
+<td align="left">中文内容</td>
+</tr>
+<tr>
+<td align="left">love</td>
+<td align="right">string</td>
+<td align="left">每日一句喜欢个数</td>
+</tr>
+<tr>
+<td align="left">translation</td>
+<td align="right">string</td>
+<td align="left">词霸小编</td>
+</tr>
+<tr>
+<td align="left">picture</td>
+<td align="right">string</td>
+<td align="left">图片地址</td>
+</tr>
+<tr>
+<td align="left">picture2</td>
+<td align="right">string</td>
+<td align="left">大图片地址</td>
+</tr>
+<tr>
+<td align="left">caption</td>
+<td align="right">string</td>
+<td align="left">标题</td>
+</tr>
+<tr>
+<td align="left">dateline</td>
+<td align="right">string</td>
+<td align="left">时间</td>
+</tr>
+<tr>
+<td align="left">s_pv</td>
+<td align="right">string</td>
+<td align="left">浏览数</td>
+</tr>
+<tr>
+<td align="left">sp_pv</td>
+<td align="right">string</td>
+<td align="left">语音评测浏览数</td>
+</tr>
+<tr>
+<td align="left">tags</td>
+<td align="right">string</td>
+<td align="left">相关标签</td>
+</tr>
+<tr>
+<td align="left">fenxiang_img</td>
+<td align="right">string</td>
+<td align="left">合成图片</td>
+</tr>
+</tbody></table>
+<h3 id="正常返回示例"><a href="#正常返回示例" class="headerlink" title="正常返回示例"></a>正常返回示例</h3><pre><code class="html">{&quot;sid&quot;:&quot;3081&quot;,&quot;tts&quot;:&quot;http:\/\/news.iciba.com\/admin\/tts\/2018-08-02-day.mp3&quot;,&quot;content&quot;:&quot;I am just a sunflower, waiting for my only sunshine.&quot;,&quot;note&quot;:&quot;我只是一株向日葵，期待着属于自己的那缕阳光。&quot;,&quot;love&quot;:&quot;2154&quot;,&quot;translation&quot;:&quot;投稿人的话：地球在转，人生再转，但我们对美好爱情的执着永远不会变。我们就像一株向日葵，期待着属于自己的那缕阳光。&quot;,&quot;picture&quot;:&quot;http:\/\/cdn.iciba.com\/news\/word\/20180802.jpg&quot;,&quot;picture2&quot;:&quot;http:\/\/cdn.iciba.com\/news\/word\/big_20180802b.jpg&quot;,&quot;caption&quot;:&quot;词霸每日一句&quot;,&quot;dateline&quot;:&quot;2018-08-02&quot;,&quot;s_pv&quot;:&quot;0&quot;,&quot;sp_pv&quot;:&quot;0&quot;,&quot;tags&quot;:[{&quot;id&quot;:null,&quot;name&quot;:null}],&quot;fenxiang_img&quot;:&quot;http:\/\/cdn.iciba.com\/web\/news\/longweibo\/imag\/2018-08-02.jpg&quot;}</code></pre>
+<h2 id="登陆微信公众平台借口测试账号"><a href="#登陆微信公众平台借口测试账号" class="headerlink" title="登陆微信公众平台借口测试账号"></a>登陆微信公众平台借口测试账号</h2><p>微信公众号测试申请<br><br><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login</a><br><img src="https://i.loli.net/2018/08/03/5b63dc94e4ff6.png" alt="avatar"></p>
+<h4 id="扫描后手机端确认登陆"><a href="#扫描后手机端确认登陆" class="headerlink" title="扫描后手机端确认登陆"></a>扫描后手机端确认登陆</h4><p><img src="https://i.loli.net/2018/08/03/5b63dcae3b87e.png" alt="avatar"></p>
+<h3 id="找到“新增测试模板”，添加模板消息"><a href="#找到“新增测试模板”，添加模板消息" class="headerlink" title="找到“新增测试模板”，添加模板消息"></a>找到“新增测试模板”，添加模板消息</h3><h3 id="填写模板标题“每日一句”（可根据需求自己随便填）"><a href="#填写模板标题“每日一句”（可根据需求自己随便填）" class="headerlink" title="填写模板标题“每日一句”（可根据需求自己随便填）"></a>填写模板标题“每日一句”（可根据需求自己随便填）</h3><blockquote>
+{{content.DATA}}
+</blockquote>
+{{note.DATA}}
+{{translation.DATA}}
+
+<p><img src="https://i.loli.net/2018/08/03/5b63dcc39a271.png" alt="avatar"></p>
+<h3 id="提交后，记住改模版的id，一会用到。"><a href="#提交后，记住改模版的id，一会用到。" class="headerlink" title="提交后，记住改模版的id，一会用到。"></a>提交后，记住改模版的id，一会用到。</h3><p><img src="https://i.loli.net/2018/08/03/5b63dcd0a8cf4.png" alt="avatar"></p>
+<h3 id="找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号"><a href="#找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号" class="headerlink" title="找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号"></a>找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号</h3><h2 id="python程序"><a href="#python程序" class="headerlink" title="python程序"></a>python程序</h2><pre><code class="PYTHON">#!/usr/bin/python
+#coding=utf-8
+import json
+import requests
+class iciba:
+    # 初始化
+    def __init__(self, wechat_config):
+        self.appid = wechat_config[&#39;appid&#39;]
+        self.appsecret = wechat_config[&#39;appsecret&#39;]
+        self.template_id = wechat_config[&#39;template_id&#39;]
+        self.access_token = &#39;&#39;
+    # 获取access_token
+    def get_access_token(self, appid, appsecret):
+        url = &#39;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=%s&amp;secret=%s&#39; % (appid, appsecret)
+        r = requests.get(url)
+        response = r.content.decode()
+        jdata = json.loads(response)
+        access_token = jdata[&#39;access_token&#39;]
+        self.access_token = access_token
+        return self.access_token
+    # 发送消息
+    def send_msg(self, openid, template_id, iciba_everyday):
+        msg = {
+            &#39;touser&#39;: openid,
+            &#39;template_id&#39;: template_id,
+            &#39;url&#39;: iciba_everyday[&#39;fenxiang_img&#39;],
+            &#39;data&#39;: {
+                &#39;content&#39;: {
+                    &#39;value&#39;: iciba_everyday[&#39;content&#39;],
+                    &#39;color&#39;: &#39;#0000CD&#39;
+                    },
+                &#39;note&#39;: {
+                    &#39;value&#39;: iciba_everyday[&#39;note&#39;],
+                },
+                &#39;translation&#39;: {
+                    &#39;value&#39;: iciba_everyday[&#39;translation&#39;],
+                }
+            }
+        }
+        jdata = json.dumps(msg)
+        if self.access_token == &#39;&#39;:
+            self.get_access_token(self.appid, self.appsecret)
+        access_token = self.access_token
+        url = &#39;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s&#39; % str(access_token)
+        request = requests.post(url, data=jdata)
+        #response = urllib.request.urlopen(request)
+        result = request.content.decode()
+        return json.loads(result)
+    # 获取爱词霸每日一句
+    def get_iciba_everyday(self):
+        url = &#39;http://open.iciba.com/dsapi/&#39;
+        request = requests.get(url)
+        jdata = request.content.decode()
+        data = json.loads(jdata)
+        return data
+    # 为设置的用户列表发送消息
+    def send_everyday_words(self, openids):
+        everyday_words = self.get_iciba_everyday()
+        for openid in openids:
+            result = self.send_msg(openid, self.template_id, everyday_words)
+            if result[&#39;errcode&#39;] == 0:
+                print(&#39; [INFO] send to %s is success&#39; % openid)
+            else:
+                print(&#39; [ERROR] send to %s is error&#39; % openid)
+    # 执行
+    def run(self, openids):
+        self.send_everyday_words(openids)
+if __name__ == &#39;__main__&#39;:
+    # 微信配置
+    wechat_config = {
+        &#39;appid&#39;: &#39;XXXXX&#39;, #此处填写你的appid
+        &#39;appsecret&#39;: &#39;XXXX&#39;, #此处填写你的appsecret
+        &#39;template_id&#39;: &#39;XXXXX&#39; #此处填写你的模板消息ID
+    }
+    # 用户列表
+    openids = [
+        &#39;XXXXXXX&#39;,
+        &#39;XXXXXXX&#39;,
+        #此处填写你的微信号
+        #&#39;xxxx&#39;, #如果有多个用户也可以
+    #&#39;xxxx&#39;,
+    ]
+    # 执行
+    icb = iciba(wechat_config)
+    icb.run(openids)</code></pre>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/python-wechat-collect/" rel="tag">python,wechat,collect</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.png" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="Wechat"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/08/03/about/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">及时行乐</span>
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/ava.png" alt="Roy-Chang">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Roy-Chang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Devloper
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>China,Jinan</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            12
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            24
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cx4" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/cx4">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/baidu/">
+            <span class="level-start">
+                <span class="level-item">baidu</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/baidu/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/docs/">
+            <span class="level-start">
+                <span class="level-item">docs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/docs/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/javascript/">
+            <span class="level-start">
+                <span class="level-item">javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/podcast/">
+            <span class="level-start">
+                <span class="level-item">podcast</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/raspberry/">
+            <span class="level-start">
+                <span class="level-item">raspberry</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ebook/">
+            <span class="level-start">
+                <span class="level-item">ebook</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ebook/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/license/">
+            <span class="level-start">
+                <span class="level-item">license</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/license/windows/">
+            <span class="level-start">
+                <span class="level-item">windows</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/markdown/">
+            <span class="level-start">
+                <span class="level-item">markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/markdown/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/micropython/">
+            <span class="level-start">
+                <span class="level-item">micropython</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/micropython/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ssr/">
+            <span class="level-start">
+                <span class="level-item">ssr</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ssr/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/booklist/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019书单计划">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-23T23:49:35.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/booklist/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019书单计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/ebook/">ebook</a> / <a class="has-link-grey -link" href="/categories/ebook/index/">index</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/26/oled-display/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="0.96 OLED Display">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-26T02:14:59.000Z">2019-02-26</time></div>
+                    <a href="/2019/02/26/oled-display/" class="title has-link-black-ter is-size-6 has-text-weight-normal">0.96 OLED Display</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/micropython/">micropython</a> / <a class="has-link-grey -link" href="/categories/micropython/index/">index</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/22/raspberry-os/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Raspberry Os">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T23:04:17.000Z">2018-11-22</time></div>
+                    <a href="/2018/11/22/raspberry-os/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Raspberry Os</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/raspberry/">raspberry</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/22/windows-collections/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Windows Collections">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T22:55:58.000Z">2018-11-22</time></div>
+                    <a href="/2018/11/22/windows-collections/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Windows Collections</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/license/">license</a> / <a class="has-link-grey -link" href="/categories/license/windows/">windows</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/hero-novel/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="金庸武侠小说大全-电子版下载">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T00:43:37.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/hero-novel/" class="title has-link-black-ter is-size-6 has-text-weight-normal">金庸武侠小说大全-电子版下载</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/ebook/">ebook</a> / <a class="has-link-grey -link" href="/categories/ebook/index/">index</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://google.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Google</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">google.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://baidu.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Baidu</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">baidu.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/baidu-data-collect/">
+                        <span class="tag">baidu,data,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/collect/">
+                        <span class="tag">collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ebook-kindle-collect/">
+                        <span class="tag">ebook,kindle,collect</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-study-collect/">
+                        <span class="tag">javascript,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/markdown-fontawesome-collect/">
+                        <span class="tag">markdown,fontawesome,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/micropython-esp8266-Oled-collect/">
+                        <span class="tag">micropython,esp8266,Oled,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/podcast-study-collect/">
+                        <span class="tag">podcast,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-raspberry-collect/">
+                        <span class="tag">python,raspberry,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-wechat-collect/">
+                        <span class="tag">python,wechat,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ssr-shadow-collect/">
+                        <span class="tag">ssr,shadow,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows-license-collect/">
+                        <span class="tag">windows,license,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/baidu-data-collect/">
+                        <span class="tag">baidu,data,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/collect/">
+                        <span class="tag">collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ebook-kindle-collect/">
+                        <span class="tag">ebook,kindle,collect</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-study-collect/">
+                        <span class="tag">javascript,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/markdown-fontawesome-collect/">
+                        <span class="tag">markdown,fontawesome,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/micropython-esp8266-Oled-collect/">
+                        <span class="tag">micropython,esp8266,Oled,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/podcast-study-collect/">
+                        <span class="tag">podcast,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-raspberry-collect/">
+                        <span class="tag">python,raspberry,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-wechat-collect/">
+                        <span class="tag">python,wechat,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ssr-shadow-collect/">
+                        <span class="tag">ssr,shadow,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows-license-collect/">
+                        <span class="tag">windows,license,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/log.png" alt="Python 推送信息到wechat" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Roy&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/cx4">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
+</html>
