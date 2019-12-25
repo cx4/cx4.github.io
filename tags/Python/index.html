@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>0.96 OLED Display - 及时行乐</title>
+<title>Etiqueta: Python - 及时行乐</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="0.96 OLED Display" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="及时行乐" type="application/atom+xml">
 
 
 
@@ -36,7 +36,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/log.png" alt="0.96 OLED Display" height="28">
+                <img src="/images/log.png" alt="及时行乐" height="28">
             
             </a>
         </div>
@@ -85,24 +85,35 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Etiquetas</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Python</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-26T02:14:59.000Z">2019-02-26</time>
+                <time class="level-item has-text-grey" datetime="2019-12-25T00:53:55.000Z">2019-12-25</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/micropython/">micropython</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/micropython/index/">index</a>
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes leer (Acerca de 851 palabras)
+                    a minute leer (Acerca de 160 palabras)
                 </span>
                 
                 
@@ -111,127 +122,49 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                0.96 OLED Display
+                <a class="has-link-black-ter" href="/2019/12/25/decomposing-elements-from-iteratable-objects-md/">decomposing-elements-from-iteratable-objects.md</a>
             
         </h1>
         <div class="content">
-            <p><img src="https://i.loli.net/2019/02/26/5c75137f2799d.png" alt="cmd-markdown-logo"><br>之前买过一个0.96英寸的OLED屏幕，一直没有用，最近想着做个小的玩具，比如放在桌面上的小摆件可以提醒生词，提醒todo-list等，或者结合esp8266做成一个情侣见互相留言的小玩具。</p>
-<a id="more"></a>
-<p>##关于OLED</p>
-<blockquote>
-<p>OLED，即有机发光二极管( OrganicLightEmittingDiode)。 OLED 由于同时具备自发光，不需背 光源、对比度高、厚度薄、视角广、反应速度快、可用于挠曲性面板、使用温度范围广、构造及 制程较简单等优异之特性，被认为是下一代的平面显示器新兴应用技术。<br>LCD 都需要背光，而 OLED 不需要，因为它是自发光的。这样同样的显示 OLED 效果要来得好一些。</p>
-</blockquote>
-<p>说说踩过的坑<br><br>1.因为使用Micropython，可以参考的资料非常少。</p>
-<p>2.这个OLED本身不带字库，除了英文和标准绘图（点、线、形状）之外都需要使用其他方式实现。</p>
-<p>3.依赖SSD1306驱动，不能像Arduino的u8g2库一样强大，许多功能需要自己实现。</p>
-<p>##中文文字转字模型<br><br>所有显示的中文都需要转换成字模，其实在购买屏幕的时候随机送了一个中文取字模的软件。PCtoLCD2002，但是我用的是Mac，总不能为了这个字模装个虚拟机吧，虽然我将另外一台win10开启了远程桌面，但是也不便于形成Demo后别人使用，在有网环境下可以用我写的一个小脚本<a href="https://github.com/cx4/ssd1306_tool" target="_blank" rel="noopener">fontool</a>.可以方便的将想要显示的中文转换为字模。</p>
-<p>##图片显示<br><br>关于图片的显示，网上有两种方案（基于Arduino）一种是将图片转换为二进制bin文件，另一种和中文差不多，将图片的像素转换为01二进制，0为不现实1为亮。没有现成的库。</p>
-<p>###实现图片的显示<br>以我的头像这个dogydog为例。<br><img src="https://i.loli.net/2019/02/26/5c7518ad4c076.png" alt><br>这里需要用的的python库</p>
-<blockquote>
-<p>PIL （Pillow）</p>
-</blockquote>
-<p>1.首先将图片处理为灰度模式，然后改变图像的大小，这里有个坑，其实你直接使用PIL的resize就好但是网上的多处例子谈到<code>img = img.resize((w,h),Image.ANTIALIAS)</code> 这个地方的<code>Image.ANTIALIAS</code>其实是用来处理大型图片缩放时候用到的一个滤镜，对比PS的文件处理速度会快一些而且质量会好一些，在应用与低质量的显示比如这块128 * 64的屏幕上完全用不到精细化处理，而且会适得其反，因为8266的内存有限，使用滤镜生成的bin文件会很大，而且在128*64这样的屏幕上会有毛刺。</p>
-<p>对比效果<br><br><img src="https://i.loli.net/2019/02/26/5c751c33e2378.png" alt="未使用滤镜"><br></p>
-<p><img src="https://i.loli.net/2019/02/26/5c751c77213ba.png" alt="使用滤镜效果"></p>
-<p>2.然后逐行的读取每个像素点的数值，生成10矩阵。<br><br>代码在<a href="https://github.com/cx4/ssd1306_tool" target="_blank" rel="noopener">这里</a></p>
-<p>显示效果<br><br><img src="https://i.loli.net/2019/02/26/5c751d0a4ef6a.png" alt></p>
+            <h1 id="Decomposing-elements-from-iteratable-objects-of-any-length"><a href="#Decomposing-elements-from-iteratable-objects-of-any-length" class="headerlink" title="Decomposing elements from iteratable objects of any length"></a>Decomposing elements from iteratable objects of any length</h1><p><strong>当需要从某个可迭代对象中分决出N个元素，但是这个可迭代对象的长度可能超过N，这会导致“分解的值过多（too many values to unpack）”的异常</strong></p>
+ <div>
+ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M15.273 19.469c-.662-.662-1.582-1.002-2.514-.931-1.767.137-3.58-.47-4.931-1.821-1.223-1.224-1.83-2.824-1.83-4.426 0-.604.086-1.208.258-1.792l3.771 3.771c1.912.417 4.652-2.353 4.242-4.242l-3.769-3.771c.583-.171 1.187-.257 1.79-.257 1.603 0 3.202.606 4.428 1.83 1.35 1.351 1.957 3.164 1.82 4.93-.072.933.268 1.853.93 2.514l2.843 2.843c1.066-1.793 1.689-3.88 1.689-6.117 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.236 0 4.323-.623 6.115-1.688l-2.842-2.843z"/></svg>
+ </div>解决方案
+
+<p>使用python的“*表达式”可以解决这个问题。</p>
+<pre><code class="python">def drop_first_last(grades):
+    first,*middle,last = grades
+    return avg(middle)</code></pre>
+<p><strong>在分解任意长度的可迭代对象时特别好用</strong></p>
+<pre><code class="python">records =[
+    (&#39;foo&#39;,1,3),
+    (&#39;bar&#39;,&#39;hello&#39;),
+    (&#39;foo&#39;,3,4),
+]
+def do_foo(x,y):
+    print(&#39;foo&#39;,x,y)
+def do_bar(s):
+    print(&#39;bar&#39;,s)
+for tag,*args in records:
+    if tag==&#39;foo&#39;:
+        do_foo(*args)
+    elif tag==&#39;bar&#39;:
+        do_bar(*args)</code></pre>
 
         </div>
         
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/micropython-esp8266-Oled-collect/" rel="tag">micropython,esp8266,Oled,collect</a>
-                </div>
-            </div>
-        </div>
         
-        
-        
-        <div class="social-share"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
-<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
         
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/alipay.png" alt="Alipay"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wechat.png" alt="Wechat"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/24/booklist/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">2019书单计划</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/22/raspberry-os/">
-                <span class="level-item">Raspberry Os</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comentarios</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: false,
-        verify: false,
-        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
-        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
-        placeholder: 'Say something...'
-    });
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -1025,7 +958,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/log.png" alt="0.96 OLED Display" height="28">
+                    <img src="/images/log.png" alt="及时行乐" height="28">
                 
                 </a>
                 <p class="is-size-7">
