@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night.css">
 
 
 
@@ -73,7 +73,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -102,7 +102,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1055 words)
+                    7 分钟 读完 (大约 1055 个字)
                 </span>
                 
                 
@@ -154,67 +154,7 @@
 <td></td>
 </tr>
 <tr>
-<td align="left">```python</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">#coding=utf-8</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">import json</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">import requests</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">def get_iciba():</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">url = ‘<a href="http://open.iciba.com/dsapi/&#39;" target="_blank" rel="noopener">http://open.iciba.com/dsapi/&#39;</a></td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">request = requests.get(url)</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">data = json.loads(request) #将json转换为dict</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">return data</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">print(get_iciba())</td>
-<td align="right"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-<tr>
-<td align="left">```</td>
+<td align="left"><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_iciba</span><span class="hljs-params">()</span>:</span><br>    url = <span class="hljs-string">'http://open.iciba.com/dsapi/'</span><br>    request = requests.get(url)<br>    data = json.loads(request) <span class="hljs-comment">#将json转换为dict</span><br>    <span class="hljs-keyword">return</span> data<br>print(get_iciba())<br></code></pre></td></tr></table></figure></td>
 <td align="right"></td>
 <td align="center"></td>
 <td></td>
@@ -305,102 +245,18 @@
 <td align="left">合成图片</td>
 </tr>
 </tbody></table>
-<h3 id="正常返回示例"><a href="#正常返回示例" class="headerlink" title="正常返回示例"></a>正常返回示例</h3><pre><code class="html">{&quot;sid&quot;:&quot;3081&quot;,&quot;tts&quot;:&quot;http:\/\/news.iciba.com\/admin\/tts\/2018-08-02-day.mp3&quot;,&quot;content&quot;:&quot;I am just a sunflower, waiting for my only sunshine.&quot;,&quot;note&quot;:&quot;我只是一株向日葵，期待着属于自己的那缕阳光。&quot;,&quot;love&quot;:&quot;2154&quot;,&quot;translation&quot;:&quot;投稿人的话：地球在转，人生再转，但我们对美好爱情的执着永远不会变。我们就像一株向日葵，期待着属于自己的那缕阳光。&quot;,&quot;picture&quot;:&quot;http:\/\/cdn.iciba.com\/news\/word\/20180802.jpg&quot;,&quot;picture2&quot;:&quot;http:\/\/cdn.iciba.com\/news\/word\/big_20180802b.jpg&quot;,&quot;caption&quot;:&quot;词霸每日一句&quot;,&quot;dateline&quot;:&quot;2018-08-02&quot;,&quot;s_pv&quot;:&quot;0&quot;,&quot;sp_pv&quot;:&quot;0&quot;,&quot;tags&quot;:[{&quot;id&quot;:null,&quot;name&quot;:null}],&quot;fenxiang_img&quot;:&quot;http:\/\/cdn.iciba.com\/web\/news\/longweibo\/imag\/2018-08-02.jpg&quot;}</code></pre>
+<h3 id="正常返回示例"><a href="#正常返回示例" class="headerlink" title="正常返回示例"></a>正常返回示例</h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">&#123;"sid":"3081","tts":"http:\/\/news.iciba.com\/admin\/tts\/2018-08-02-day.mp3","content":"I am just a sunflower, waiting for my only sunshine.","note":"我只是一株向日葵，期待着属于自己的那缕阳光。","love":"2154","translation":"投稿人的话：地球在转，人生再转，但我们对美好爱情的执着永远不会变。我们就像一株向日葵，期待着属于自己的那缕阳光。","picture":"http:\/\/cdn.iciba.com\/news\/word\/20180802.jpg","picture2":"http:\/\/cdn.iciba.com\/news\/word\/big_20180802b.jpg","caption":"词霸每日一句","dateline":"2018-08-02","s_pv":"0","sp_pv":"0","tags":[&#123;"id":null,"name":null&#125;],"fenxiang_img":"http:\/\/cdn.iciba.com\/web\/news\/longweibo\/imag\/2018-08-02.jpg"&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="登陆微信公众平台借口测试账号"><a href="#登陆微信公众平台借口测试账号" class="headerlink" title="登陆微信公众平台借口测试账号"></a>登陆微信公众平台借口测试账号</h2><p>微信公众号测试申请<br><br><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login</a><br><img src="https://i.loli.net/2018/08/03/5b63dc94e4ff6.png" alt="avatar"></p>
 <h4 id="扫描后手机端确认登陆"><a href="#扫描后手机端确认登陆" class="headerlink" title="扫描后手机端确认登陆"></a>扫描后手机端确认登陆</h4><p><img src="https://i.loli.net/2018/08/03/5b63dcae3b87e.png" alt="avatar"></p>
 <h3 id="找到“新增测试模板”，添加模板消息"><a href="#找到“新增测试模板”，添加模板消息" class="headerlink" title="找到“新增测试模板”，添加模板消息"></a>找到“新增测试模板”，添加模板消息</h3><h3 id="填写模板标题“每日一句”（可根据需求自己随便填）"><a href="#填写模板标题“每日一句”（可根据需求自己随便填）" class="headerlink" title="填写模板标题“每日一句”（可根据需求自己随便填）"></a>填写模板标题“每日一句”（可根据需求自己随便填）</h3><blockquote>
-{{content.DATA}}
+
 </blockquote>
-{{note.DATA}}
-{{translation.DATA}}
+
+
 
 <p><img src="https://i.loli.net/2018/08/03/5b63dcc39a271.png" alt="avatar"></p>
 <h3 id="提交后，记住改模版的id，一会用到。"><a href="#提交后，记住改模版的id，一会用到。" class="headerlink" title="提交后，记住改模版的id，一会用到。"></a>提交后，记住改模版的id，一会用到。</h3><p><img src="https://i.loli.net/2018/08/03/5b63dcd0a8cf4.png" alt="avatar"></p>
-<h3 id="找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号"><a href="#找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号" class="headerlink" title="找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号"></a>找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号</h3><h2 id="python程序"><a href="#python程序" class="headerlink" title="python程序"></a>python程序</h2><pre><code class="PYTHON">#!/usr/bin/python
-#coding=utf-8
-import json
-import requests
-class iciba:
-    # 初始化
-    def __init__(self, wechat_config):
-        self.appid = wechat_config[&#39;appid&#39;]
-        self.appsecret = wechat_config[&#39;appsecret&#39;]
-        self.template_id = wechat_config[&#39;template_id&#39;]
-        self.access_token = &#39;&#39;
-    # 获取access_token
-    def get_access_token(self, appid, appsecret):
-        url = &#39;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=%s&amp;secret=%s&#39; % (appid, appsecret)
-        r = requests.get(url)
-        response = r.content.decode()
-        jdata = json.loads(response)
-        access_token = jdata[&#39;access_token&#39;]
-        self.access_token = access_token
-        return self.access_token
-    # 发送消息
-    def send_msg(self, openid, template_id, iciba_everyday):
-        msg = {
-            &#39;touser&#39;: openid,
-            &#39;template_id&#39;: template_id,
-            &#39;url&#39;: iciba_everyday[&#39;fenxiang_img&#39;],
-            &#39;data&#39;: {
-                &#39;content&#39;: {
-                    &#39;value&#39;: iciba_everyday[&#39;content&#39;],
-                    &#39;color&#39;: &#39;#0000CD&#39;
-                    },
-                &#39;note&#39;: {
-                    &#39;value&#39;: iciba_everyday[&#39;note&#39;],
-                },
-                &#39;translation&#39;: {
-                    &#39;value&#39;: iciba_everyday[&#39;translation&#39;],
-                }
-            }
-        }
-        jdata = json.dumps(msg)
-        if self.access_token == &#39;&#39;:
-            self.get_access_token(self.appid, self.appsecret)
-        access_token = self.access_token
-        url = &#39;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s&#39; % str(access_token)
-        request = requests.post(url, data=jdata)
-        #response = urllib.request.urlopen(request)
-        result = request.content.decode()
-        return json.loads(result)
-    # 获取爱词霸每日一句
-    def get_iciba_everyday(self):
-        url = &#39;http://open.iciba.com/dsapi/&#39;
-        request = requests.get(url)
-        jdata = request.content.decode()
-        data = json.loads(jdata)
-        return data
-    # 为设置的用户列表发送消息
-    def send_everyday_words(self, openids):
-        everyday_words = self.get_iciba_everyday()
-        for openid in openids:
-            result = self.send_msg(openid, self.template_id, everyday_words)
-            if result[&#39;errcode&#39;] == 0:
-                print(&#39; [INFO] send to %s is success&#39; % openid)
-            else:
-                print(&#39; [ERROR] send to %s is error&#39; % openid)
-    # 执行
-    def run(self, openids):
-        self.send_everyday_words(openids)
-if __name__ == &#39;__main__&#39;:
-    # 微信配置
-    wechat_config = {
-        &#39;appid&#39;: &#39;XXXXX&#39;, #此处填写你的appid
-        &#39;appsecret&#39;: &#39;XXXX&#39;, #此处填写你的appsecret
-        &#39;template_id&#39;: &#39;XXXXX&#39; #此处填写你的模板消息ID
-    }
-    # 用户列表
-    openids = [
-        &#39;XXXXXXX&#39;,
-        &#39;XXXXXXX&#39;,
-        #此处填写你的微信号
-        #&#39;xxxx&#39;, #如果有多个用户也可以
-    #&#39;xxxx&#39;,
-    ]
-    # 执行
-    icb = iciba(wechat_config)
-    icb.run(openids)</code></pre>
+<h3 id="找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号"><a href="#找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号" class="headerlink" title="找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号"></a>找到测试二维码，扫描后，右侧出现你的昵称和微信号，记录下微信号</h3><h2 id="python程序"><a href="#python程序" class="headerlink" title="python程序"></a>python程序</h2><figure class="highlight PYTHON hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs PYTHON"><span class="hljs-comment">#!/usr/bin/python</span><br><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">iciba</span>:</span><br>    <span class="hljs-comment"># 初始化</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, wechat_config)</span>:</span><br>        self.appid = wechat_config[<span class="hljs-string">'appid'</span>]<br>        self.appsecret = wechat_config[<span class="hljs-string">'appsecret'</span>]<br>        self.template_id = wechat_config[<span class="hljs-string">'template_id'</span>]<br>        self.access_token = <span class="hljs-string">''</span><br>    <span class="hljs-comment"># 获取access_token</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_access_token</span><span class="hljs-params">(self, appid, appsecret)</span>:</span><br>        url = <span class="hljs-string">'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=%s&amp;secret=%s'</span> % (appid, appsecret)<br>        r = requests.get(url)<br>        response = r.content.decode()<br>        jdata = json.loads(response)<br>        access_token = jdata[<span class="hljs-string">'access_token'</span>]<br>        self.access_token = access_token<br>        <span class="hljs-keyword">return</span> self.access_token<br>    <span class="hljs-comment"># 发送消息</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">send_msg</span><span class="hljs-params">(self, openid, template_id, iciba_everyday)</span>:</span><br>        msg = &#123;<br>            <span class="hljs-string">'touser'</span>: openid,<br>            <span class="hljs-string">'template_id'</span>: template_id,<br>            <span class="hljs-string">'url'</span>: iciba_everyday[<span class="hljs-string">'fenxiang_img'</span>],<br>            <span class="hljs-string">'data'</span>: &#123;<br>                <span class="hljs-string">'content'</span>: &#123;<br>                    <span class="hljs-string">'value'</span>: iciba_everyday[<span class="hljs-string">'content'</span>],<br>                    <span class="hljs-string">'color'</span>: <span class="hljs-string">'#0000CD'</span><br>                    &#125;,<br>                <span class="hljs-string">'note'</span>: &#123;<br>                    <span class="hljs-string">'value'</span>: iciba_everyday[<span class="hljs-string">'note'</span>],<br>                &#125;,<br>                <span class="hljs-string">'translation'</span>: &#123;<br>                    <span class="hljs-string">'value'</span>: iciba_everyday[<span class="hljs-string">'translation'</span>],<br>                &#125;<br>            &#125;<br>        &#125;<br>        jdata = json.dumps(msg)<br>        <span class="hljs-keyword">if</span> self.access_token == <span class="hljs-string">''</span>:<br>            self.get_access_token(self.appid, self.appsecret)<br>        access_token = self.access_token<br>        url = <span class="hljs-string">'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s'</span> % str(access_token)<br>        request = requests.post(url, data=jdata)<br>        <span class="hljs-comment">#response = urllib.request.urlopen(request)</span><br>        result = request.content.decode()<br>        <span class="hljs-keyword">return</span> json.loads(result)<br>    <span class="hljs-comment"># 获取爱词霸每日一句</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_iciba_everyday</span><span class="hljs-params">(self)</span>:</span><br>        url = <span class="hljs-string">'http://open.iciba.com/dsapi/'</span><br>        request = requests.get(url)<br>        jdata = request.content.decode()<br>        data = json.loads(jdata)<br>        <span class="hljs-keyword">return</span> data<br>    <span class="hljs-comment"># 为设置的用户列表发送消息</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">send_everyday_words</span><span class="hljs-params">(self, openids)</span>:</span><br>        everyday_words = self.get_iciba_everyday()<br>        <span class="hljs-keyword">for</span> openid <span class="hljs-keyword">in</span> openids:<br>            result = self.send_msg(openid, self.template_id, everyday_words)<br>            <span class="hljs-keyword">if</span> result[<span class="hljs-string">'errcode'</span>] == <span class="hljs-number">0</span>:<br>                print(<span class="hljs-string">' [INFO] send to %s is success'</span> % openid)<br>            <span class="hljs-keyword">else</span>:<br>                print(<span class="hljs-string">' [ERROR] send to %s is error'</span> % openid)<br>    <span class="hljs-comment"># 执行</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self, openids)</span>:</span><br>        self.send_everyday_words(openids)<br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>    <span class="hljs-comment"># 微信配置</span><br>    wechat_config = &#123;<br>        <span class="hljs-string">'appid'</span>: <span class="hljs-string">'XXXXX'</span>, <span class="hljs-comment">#此处填写你的appid</span><br>        <span class="hljs-string">'appsecret'</span>: <span class="hljs-string">'XXXX'</span>, <span class="hljs-comment">#此处填写你的appsecret</span><br>        <span class="hljs-string">'template_id'</span>: <span class="hljs-string">'XXXXX'</span> <span class="hljs-comment">#此处填写你的模板消息ID</span><br>    &#125;<br>    <span class="hljs-comment"># 用户列表</span><br>    openids = [<br>        <span class="hljs-string">'XXXXXXX'</span>,<br>        <span class="hljs-string">'XXXXXXX'</span>,<br>        <span class="hljs-comment">#此处填写你的微信号</span><br>        <span class="hljs-comment">#'xxxx', #如果有多个用户也可以</span><br>    <span class="hljs-comment">#'xxxx',</span><br>    ]<br>    <span class="hljs-comment"># 执行</span><br>    icb = iciba(wechat_config)<br>    icb.run(openids)<br></code></pre></td></tr></table></figure>
 
         </div>
         
@@ -426,7 +282,7 @@ if __name__ == &#39;__main__&#39;:
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
         <div class="buttons is-centered">
             
                 
@@ -434,8 +290,8 @@ if __name__ == &#39;__main__&#39;:
     <span class="icon is-small">
         <i class="fab fa-alipay"></i>
     </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/alipay.png" alt="Alipay"></div>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.png" alt="支付宝"></div>
 </a>
 
                 
@@ -444,8 +300,8 @@ if __name__ == &#39;__main__&#39;:
     <span class="icon is-small">
         <i class="fab fa-weixin"></i>
     </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wechat.png" alt="Wechat"></div>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
 </a>
 
                 
@@ -473,7 +329,7 @@ if __name__ == &#39;__main__&#39;:
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Commentaires</h3>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <div id="valine-thread" class="content"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -532,7 +388,7 @@ if __name__ == &#39;__main__&#39;:
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Articles
+                        文章
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
@@ -544,7 +400,7 @@ if __name__ == &#39;__main__&#39;:
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Catégories
+                        分类
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
@@ -556,7 +412,7 @@ if __name__ == &#39;__main__&#39;:
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
@@ -569,7 +425,7 @@ if __name__ == &#39;__main__&#39;:
         
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/cx4" target="_blank">
-                SUIVRE</a>
+                关注我</a>
         </div>
         
         
@@ -595,7 +451,7 @@ if __name__ == &#39;__main__&#39;:
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Catégories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -751,7 +607,7 @@ if __name__ == &#39;__main__&#39;:
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            最新文章
         </h3>
         
         <article class="media">
@@ -856,7 +712,7 @@ if __name__ == &#39;__main__&#39;:
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Liens
+            链接
         </h3>
         <ul class="menu-list">
         
@@ -894,7 +750,7 @@ if __name__ == &#39;__main__&#39;:
             <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            标签云
         </h3>
         <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
     </div>
@@ -904,14 +760,14 @@ if __name__ == &#39;__main__&#39;:
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -922,7 +778,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -933,7 +789,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -944,7 +800,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">3</span>
@@ -955,7 +811,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -966,7 +822,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -983,7 +839,7 @@ if __name__ == &#39;__main__&#39;:
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1090,7 +946,7 @@ if __name__ == &#39;__main__&#39;:
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            标签云
         </h3>
         <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
     </div>
@@ -1100,14 +956,14 @@ if __name__ == &#39;__main__&#39;:
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1118,7 +974,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1129,7 +985,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1140,7 +996,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">3</span>
@@ -1151,7 +1007,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1162,7 +1018,7 @@ if __name__ == &#39;__main__&#39;:
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -1179,7 +1035,7 @@ if __name__ == &#39;__main__&#39;:
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1330,7 +1186,7 @@ if __name__ == &#39;__main__&#39;:
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh");</script>
+<script>moment.locale("zh-CN");</script>
 
 <script>
 var IcarusThemeSettings = {
@@ -1355,7 +1211,7 @@ var IcarusThemeSettings = {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -1367,11 +1223,11 @@ var IcarusThemeSettings = {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Articles',
-                PAGES: 'Pages',
-                CATEGORIES: 'Catégories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };

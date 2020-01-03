@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night.css">
 
 
 
@@ -73,7 +73,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -102,7 +102,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 607 words)
+                    4 分钟 读完 (大约 607 个字)
                 </span>
                 
                 
@@ -126,30 +126,28 @@
 <a id="more"></a>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>Font Awesome是一个字体和图标工具包，包含人物、动物、建筑、商业、品牌、娱乐、动作等等各种主题丰富的图标符号，iconfont也类似起步晚一点是ali旗下的一个开源工具包。</p>
 <p>要在markdown文档中输入Font Awesome，需要在文档任意位置输入一下代码调用JavaScript。</p>
-<pre><code>&lt;head&gt; 
-    &lt;script defer src=&quot;https://use.fontawesome.com/releases/v5.0.13/js/all.js&quot;&gt;&lt;/script&gt; 
-    &lt;script defer src=&quot;https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js&quot;&gt;&lt;/script&gt; 
-&lt;/head&gt; 
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.2.0/css/all.css&quot; integrity=&quot;sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ&quot; crossorigin=&quot;anonymous&quot;&gt;</code></pre><p>iconFont的使用方法类似，但是区别是，需要将使用的图标先用自己的账号登陆后，收藏然后下载生成的css文件。需要引用本地的css文件。<br>当然灵活性要差一点，必须之前没有收藏某个图标，这下抓瞎了吧。😭<br>生成的css文件格式格式类似如下：</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span> <br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://use.fontawesome.com/releases/v5.0.13/js/all.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span> <br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span> <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://use.fontawesome.com/releases/v5.2.0/css/all.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>iconFont的使用方法类似，但是区别是，需要将使用的图标先用自己的账号登陆后，收藏然后下载生成的css文件。需要引用本地的css文件。<br>当然灵活性要差一点，必须之前没有收藏某个图标，这下抓瞎了吧。😭<br>生成的css文件格式格式类似如下：</p>
 <blockquote>
 <p>//at.alicdn.com/t/font_8d5l8fzk5b87iudi.css</p>
 </blockquote>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>现在就可以直接插入Font Awesome和iconfont的符号了。</p>
-<pre><code>&lt;i class=&quot;fa fa-weixin&quot;&gt;&lt;i&gt;</code></pre><p>iconfont使用方法类似</p>
-<pre><code>&lt;i class=&quot;iconfont icon-xxx&quot;&gt;&lt;/i&gt;</code></pre><p>这是表示插入了一个微信图标的符号。<i class="fa fa-weixin"><i></i></i></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"fa fa-weixin"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>iconfont使用方法类似</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"iconfont icon-xxx"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>这是表示插入了一个微信图标的符号。<i class="fa fa-weixin"><i></i></i></p>
 <h2 id="获取符号名称"><a href="#获取符号名称" class="headerlink" title="获取符号名称"></a>获取符号名称</h2><p><em>fa-weixin</em> 是微信的名称，如何调用其他的图标呢？<br>在awesome 获取后可以保存到LaunchBar中一遍以后方便使用。<br>iconfont 只需要点击收藏就好，在生成的css中可以查询。</p>
-<h3 id="调节尺寸"><a href="#调节尺寸" class="headerlink" title="调节尺寸"></a>调节尺寸</h3><pre><code>&lt;i class=&quot;fa fa-weixin&quot;&gt;&lt;i&gt;</code></pre><p>扩展改写为：</p>
-<pre><code>&lt;i class=&quot;fa fa-weixin fa-2x&quot;&gt;&lt;i&gt;</code></pre><p><i class="fa fa-weixin fa-2x"><i><br></i></i></p>
-<h4 id="可用参数列表："><a href="#可用参数列表：" class="headerlink" title="可用参数列表："></a>可用参数列表：</h4><pre><code>fa-xs
-fa-sm
-fa-lg
-fa-2x至fa-10x
-### 动画效果
-在class中加入 “fa-spin” 使符号变成连贯转动，加入“fa-pulse”变成8步旋转效果。</code></pre><h3 id="符号的特殊用法"><a href="#符号的特殊用法" class="headerlink" title="符号的特殊用法"></a>符号的特殊用法</h3><p>####符号下沉</p>
-<pre><code>&lt;i class=&quot;fas fa-quote-left fa-3x fa-pull-left&quot;&gt;&lt;/i&gt;
-fa-quote-left 是符号名称
-fa-3x         表示大小
-fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图标-应该如下正确使用"><a href="#上篇文章中所应用到的图标-应该如下正确使用" class="headerlink" title="上篇文章中所应用到的图标 应该如下正确使用:"></a>上篇文章中所应用到的图标 应该如下正确使用:<br></h4><p><i class="fa fa-rocket"></i> 小火箭<br><br><i class="fa fa-meh-rolling-eyes"></i><br><i class="fa fa-chess-rook"></i><br><i class="fa fa-sync-alt fa-spin"></i><br><i class="fa fa-crosshairs fa-pulse"></i><br><i class="fa fa-apple"></i><br><i class="fa fa-android"></i><br><i class="fa fa-app-store-ios"></i><br><i class="fa fa-windows"></i><br><i class="fa fa-laugh-wink"></i><br><i class="fa fa-kiss-wink-heart"></i><br></p>
+<h3 id="调节尺寸"><a href="#调节尺寸" class="headerlink" title="调节尺寸"></a>调节尺寸</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"fa fa-weixin"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>扩展改写为：</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"fa fa-weixin fa-2x"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p><i class="fa fa-weixin fa-2x"><i><br></i></i></p>
+<h4 id="可用参数列表："><a href="#可用参数列表：" class="headerlink" title="可用参数列表："></a>可用参数列表：</h4><figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs clean">fa-xs<br>fa-sm<br>fa-lg<br>fa<span class="hljs-number">-2</span>x至fa<span class="hljs-number">-10</span>x<br>### 动画效果<br>在<span class="hljs-keyword">class</span>中加入 “fa-spin” 使符号变成连贯转动，加入“fa-pulse”变成<span class="hljs-number">8</span>步旋转效果。<br></code></pre></td></tr></table></figure>
+
+<h3 id="符号的特殊用法"><a href="#符号的特殊用法" class="headerlink" title="符号的特殊用法"></a>符号的特殊用法</h3><p>####符号下沉</p>
+<figure class="highlight coq hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs coq">&lt;i class=<span class="hljs-string">"fas fa-quote-left fa-3x fa-pull-left"</span>&gt;&lt;/i&gt;<br>fa-<span class="hljs-built_in">quote</span>-<span class="hljs-built_in">left</span> 是符号名称<br>fa<span class="hljs-number">-3</span>x         表示大小<br>fa-pull-<span class="hljs-built_in">left</span>  符号下沉<br></code></pre></td></tr></table></figure>
+
+<h4 id="上篇文章中所应用到的图标-应该如下正确使用"><a href="#上篇文章中所应用到的图标-应该如下正确使用" class="headerlink" title="上篇文章中所应用到的图标 应该如下正确使用:"></a>上篇文章中所应用到的图标 应该如下正确使用:<br></h4><p><i class="fa fa-rocket"></i> 小火箭<br><br><i class="fa fa-meh-rolling-eyes"></i><br><i class="fa fa-chess-rook"></i><br><i class="fa fa-sync-alt fa-spin"></i><br><i class="fa fa-crosshairs fa-pulse"></i><br><i class="fa fa-apple"></i><br><i class="fa fa-android"></i><br><i class="fa fa-app-store-ios"></i><br><i class="fa fa-windows"></i><br><i class="fa fa-laugh-wink"></i><br><i class="fa fa-kiss-wink-heart"></i><br></p>
 <i class="fa fa-vuejs">
 以上是icon的应用，接下来制定自己的学习计划，开始学习Vue.js。
 
@@ -178,7 +176,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
         <div class="buttons is-centered">
             
                 
@@ -186,8 +184,8 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <span class="icon is-small">
         <i class="fab fa-alipay"></i>
     </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/alipay.png" alt="Alipay"></div>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.png" alt="支付宝"></div>
 </a>
 
                 
@@ -196,8 +194,8 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <span class="icon is-small">
         <i class="fab fa-weixin"></i>
     </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wechat.png" alt="Wechat"></div>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
 </a>
 
                 
@@ -232,7 +230,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Commentaires</h3>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <div id="valine-thread" class="content"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -291,7 +289,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Articles
+                        文章
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
@@ -303,7 +301,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Catégories
+                        分类
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
@@ -315,7 +313,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
@@ -328,7 +326,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/cx4" target="_blank">
-                SUIVRE</a>
+                关注我</a>
         </div>
         
         
@@ -354,7 +352,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Catégories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -510,7 +508,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            最新文章
         </h3>
         
         <article class="media">
@@ -615,7 +613,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Liens
+            链接
         </h3>
         <ul class="menu-list">
         
@@ -653,7 +651,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
             <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            标签云
         </h3>
         <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
     </div>
@@ -663,14 +661,14 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -681,7 +679,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -692,7 +690,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -703,7 +701,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">3</span>
@@ -714,7 +712,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -725,7 +723,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -742,7 +740,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -849,7 +847,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            标签云
         </h3>
         <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
     </div>
@@ -859,14 +857,14 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -877,7 +875,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -888,7 +886,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -899,7 +897,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">3</span>
@@ -910,7 +908,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -921,7 +919,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -938,7 +936,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1089,7 +1087,7 @@ fa-pull-left  符号下沉</code></pre><h4 id="上篇文章中所应用到的图
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh");</script>
+<script>moment.locale("zh-CN");</script>
 
 <script>
 var IcarusThemeSettings = {
@@ -1114,7 +1112,7 @@ var IcarusThemeSettings = {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -1126,11 +1124,11 @@ var IcarusThemeSettings = {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Articles',
-                PAGES: 'Pages',
-                CATEGORIES: 'Catégories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };

@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night.css">
 
 
 
@@ -73,7 +73,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -102,7 +102,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1519 words)
+                    10 分钟 读完 (大约 1506 个字)
                 </span>
                 
                 
@@ -127,351 +127,151 @@
  </div>解决方案
 
 <p>使用python的“*表达式”可以解决这个问题。</p>
-<pre><code class="python">def drop_first_last(grades):
-    first,*middle,last = grades
-    return avg(middle)</code></pre>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drop_first_last</span><span class="hljs-params">(grades)</span>:</span><br>	first,*middle,last = grades<br>	<span class="hljs-keyword">return</span> avg(middle)<br></code></pre></td></tr></table></figure>
+
 <p><strong>在分解任意长度的可迭代对象时特别好用</strong></p>
-<pre><code class="python">records =[
-    (&#39;foo&#39;,1,3),
-    (&#39;bar&#39;,&#39;hello&#39;),
-    (&#39;foo&#39;,3,4),
-]
-def do_foo(x,y):
-    print(&#39;foo&#39;,x,y)
-def do_bar(s):
-    print(&#39;bar&#39;,s)
-for tag,*args in records:
-    if tag==&#39;foo&#39;:
-        do_foo(*args)
-    elif tag==&#39;bar&#39;:
-        do_bar(*args)</code></pre>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">records =[<br>	(<span class="hljs-string">'foo'</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),<br>	(<span class="hljs-string">'bar'</span>,<span class="hljs-string">'hello'</span>),<br>	(<span class="hljs-string">'foo'</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>),<br>]<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_foo</span><span class="hljs-params">(x,y)</span>:</span><br>	print(<span class="hljs-string">'foo'</span>,x,y)<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_bar</span><span class="hljs-params">(s)</span>:</span><br>	print(<span class="hljs-string">'bar'</span>,s)<br><span class="hljs-keyword">for</span> tag,*args <span class="hljs-keyword">in</span> records:<br>	<span class="hljs-keyword">if</span> tag==<span class="hljs-string">'foo'</span>:<br>		do_foo(*args)<br>	<span class="hljs-keyword">elif</span> tag==<span class="hljs-string">'bar'</span>:<br>		do_bar(*args)<br></code></pre></td></tr></table></figure>
+
 <ol start="2">
-<li><p><strong>步进切片</strong><br>从列表中创建一定间隔的新列表</p>
-<pre><code class="python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-&gt;&gt;&gt; a[::2]
-[0, 2, 4, 6, 8, 10]
-&gt;&gt;&gt; a[::3]
-[0, 3, 6, 9]
-&gt;&gt;&gt; a[2:8:2]
-[2, 4, 6]</code></pre>
+<li><strong>步进切片</strong><br>从列表中创建一定间隔的新列表</li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[::<span class="hljs-number">2</span>]<br>[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[::<span class="hljs-number">3</span>]<br>[<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>:<span class="hljs-number">8</span>:<span class="hljs-number">2</span>]<br>[<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>]<br></code></pre></td></tr></table></figure>
+
 <p>list slice with step (a[start:end:step])</p>
-</li>
-<li><p><strong>生成倒叙的list</strong></p>
-<pre><code class="python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-&gt;&gt;&gt; a[::-1]
-[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-&gt;&gt;&gt; a[::-2]
-[10, 8, 6, 4, 2, 0]</code></pre>
-</li>
+<ol start="3">
+<li><strong>生成倒叙的list</strong></li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[::<span class="hljs-number">-1</span>]<br>[<span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[::<span class="hljs-number">-2</span>]<br>[<span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>]<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
 <li><p><strong>命名切片的调用</strong><br>Naming slices (slice(start,end,step))</p>
-<pre><code class="python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5]
-&gt;&gt;&gt; LASTTHREE = slice(-3, None)
-&gt;&gt;&gt; LASTTHREE
-slice(-3, None, None)
-&gt;&gt;&gt; a[LASTTHREE]
-[3, 4, 5]</code></pre>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>LASTTHREE = slice(<span class="hljs-number">-3</span>, <span class="hljs-literal">None</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>LASTTHREE<br>slice(<span class="hljs-number">-3</span>, <span class="hljs-literal">None</span>, <span class="hljs-literal">None</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[LASTTHREE]<br>[<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>遍历列表的索引和值</strong><br>Iterating over list index and value pairs (enumerate)</p>
 </li>
 </ol>
-<pre><code class="python">&gt;&gt;&gt; a = [&#39;Hello&#39;, &#39;world&#39;, &#39;!&#39;]
-&gt;&gt;&gt; for i, x in enumerate(a):
-...     print &#39;{}: {}&#39;.format(i, x)
-...
-0: Hello
-1: world
-2: !</code></pre>
+<figure class="highlight ruby hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-meta">&gt;&gt;</span>&gt; a = [<span class="hljs-string">'Hello'</span>, <span class="hljs-string">'world'</span>, <span class="hljs-string">'!'</span>]<br><span class="hljs-meta">&gt;&gt;</span>&gt; for i, x in enumerate(a):<br>...     print <span class="hljs-string">'&#123;&#125;: &#123;&#125;'</span>.format(i, x)<br>...<br><span class="hljs-number">0</span>: Hello<br><span class="hljs-number">1</span>: world<br><span class="hljs-number">2</span>: !<br></code></pre></td></tr></table></figure>
+
 <ol start="6">
-<li><p><strong>遍历字典</strong><br>dict.iteritems</p>
-<pre><code class="python">&gt;&gt;&gt; m = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4}
-&gt;&gt;&gt; for k, v in m.iteritems():
-...     print &#39;{}: {}&#39;.format(k, v)
-...
-a: 1
-c: 3
-b: 2
-d: 4</code></pre>
-</li>
+<li><strong>遍历字典</strong><br>dict.iteritems</li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>m = &#123;<span class="hljs-string">'a'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">3</span>, <span class="hljs-string">'d'</span>: <span class="hljs-number">4</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> m.iteritems():<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> <span class="hljs-string">'&#123;&#125;: &#123;&#125;'</span>.format(k, v)<br>...<br>a: <span class="hljs-number">1</span><br>c: <span class="hljs-number">3</span><br>b: <span class="hljs-number">2</span><br>d: <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+
+<ol start="7">
 <li><p><strong>压缩和解压缩列表</strong><br>Zipping and unzipping lists</p>
-<pre><code class="python">&gt;&gt;&gt; a = [1, 2, 3]
-&gt;&gt;&gt; b = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-&gt;&gt;&gt; z = zip(a, b)
-&gt;&gt;&gt; z
-[(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]
-&gt;&gt;&gt; zip(*z)
-[(1, 2, 3), (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)]</code></pre>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>b = [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>z = zip(a, b)<br><span class="hljs-meta">&gt;&gt;&gt; </span>z<br>[(<span class="hljs-number">1</span>, <span class="hljs-string">'a'</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">'b'</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">'c'</span>)]<br><span class="hljs-meta">&gt;&gt;&gt; </span>zip(*z)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>)]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>使用zip分组相邻的列表项</strong><br>Grouping adjacent list items using zip</p>
 </li>
 </ol>
-<pre><code>
-&gt;&gt;&gt; # Using iterators
-&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*([iter(a)] * k))
-&gt;&gt;&gt; group_adjacent(a, 3)
-[(1, 2, 3), (4, 5, 6)]
-&gt;&gt;&gt; group_adjacent(a, 2)
-[(1, 2), (3, 4), (5, 6)]
-&gt;&gt;&gt; group_adjacent(a, 1)
-[(1,), (2,), (3,), (4,), (5,), (6,)]
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><br>&gt;&gt;&gt; # Using iterators<br>&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*([iter(a)] * k))<br>&gt;&gt;&gt; group_adjacent(a, <span class="hljs-number">3</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br>&gt;&gt;&gt; group_adjacent(a, <span class="hljs-number">2</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br>&gt;&gt;&gt; group_adjacent(a, <span class="hljs-number">1</span>)<br>[(<span class="hljs-number">1</span>,), (<span class="hljs-number">2</span>,), (<span class="hljs-number">3</span>,), (<span class="hljs-number">4</span>,), (<span class="hljs-number">5</span>,), (<span class="hljs-number">6</span>,)]<br><br><br>&gt;&gt;&gt; # Using slices<br>&gt;&gt;&gt; <span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> islice<br>&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*(islice(a, i, None, k) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(k)))<br>&gt;&gt;&gt; group_adjacent(a, <span class="hljs-number">3</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br>&gt;&gt;&gt; group_adjacent(a, <span class="hljs-number">2</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br>&gt;&gt;&gt; group_adjacent(a, <span class="hljs-number">1</span>)<br>[(<span class="hljs-number">1</span>,), (<span class="hljs-number">2</span>,), (<span class="hljs-number">3</span>,), (<span class="hljs-number">4</span>,), (<span class="hljs-number">5</span>,), (<span class="hljs-number">6</span>,)]<br></code></pre></td></tr></table></figure>
 
-
-&gt;&gt;&gt; # Using slices
-&gt;&gt;&gt; from itertools import islice
-&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*(islice(a, i, None, k) for i in range(k)))
-&gt;&gt;&gt; group_adjacent(a, 3)
-[(1, 2, 3), (4, 5, 6)]
-&gt;&gt;&gt; group_adjacent(a, 2)
-[(1, 2), (3, 4), (5, 6)]
-&gt;&gt;&gt; group_adjacent(a, 1)
-[(1,), (2,), (3,), (4,), (5,), (6,)]</code></pre><ol start="9">
+<ol start="9">
 <li><strong>使用滑动窗口迭代器</strong><br>Sliding windows (nn -grams) using zip and iterators</li>
 </ol>
-<pre><code>&gt;&gt;&gt; from itertools import islice
-&gt;&gt;&gt; def n_grams(a, n):
-...     z = (islice(a, i, None) for i in range(n))
-...     return zip(*z)
-...
-&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]
-&gt;&gt;&gt; n_grams(a, 3)
-[(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]
-&gt;&gt;&gt; n_grams(a, 2)
-[(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]
-&gt;&gt;&gt; n_grams(a, 4)
-[(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)]</code></pre><ol start="10">
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; <span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> islice<br>&gt;&gt;&gt; def n_grams(a, n):<br>...     z = (islice(a, i, None) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n))<br>...     <span class="hljs-keyword">return</span> zip(*z)<br>...<br>&gt;&gt;&gt; a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br>&gt;&gt;&gt; n_grams(a, <span class="hljs-number">3</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>), (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br>&gt;&gt;&gt; n_grams(a, <span class="hljs-number">2</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), (<span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br>&gt;&gt;&gt; n_grams(a, <span class="hljs-number">4</span>)<br>[(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)]<br></code></pre></td></tr></table></figure>
+
+<ol start="10">
 <li><p><strong>字典的键值反转</strong><br>Inverting a dictionary using zip</p>
-<pre><code>&gt;&gt;&gt; m = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4}
-&gt;&gt;&gt; m.items()
-[(&#39;a&#39;, 1), (&#39;c&#39;, 3), (&#39;b&#39;, 2), (&#39;d&#39;, 4)]
-&gt;&gt;&gt; zip(m.values(), m.keys())
-[(1, &#39;a&#39;), (3, &#39;c&#39;), (2, &#39;b&#39;), (4, &#39;d&#39;)]
-&gt;&gt;&gt; mi = dict(zip(m.values(), m.keys()))
-&gt;&gt;&gt; mi
-{1: &#39;a&#39;, 2: &#39;b&#39;, 3: &#39;c&#39;, 4: &#39;d&#39;}</code></pre></li>
+<figure class="highlight ruby hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-meta">&gt;&gt;</span>&gt; m = &#123;<span class="hljs-string">'a'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">3</span>, <span class="hljs-string">'d'</span>: <span class="hljs-number">4</span>&#125;<br><span class="hljs-meta">&gt;&gt;</span>&gt; m.items()<br>[(<span class="hljs-string">'a'</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">'c'</span>, <span class="hljs-number">3</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">2</span>), (<span class="hljs-string">'d'</span>, <span class="hljs-number">4</span>)]<br><span class="hljs-meta">&gt;&gt;</span>&gt; zip(m.values(), m.keys())<br>[(<span class="hljs-number">1</span>, <span class="hljs-string">'a'</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">'c'</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">'b'</span>), (<span class="hljs-number">4</span>, <span class="hljs-string">'d'</span>)]<br><span class="hljs-meta">&gt;&gt;</span>&gt; mi = dict(zip(m.values(), m.keys()))<br><span class="hljs-meta">&gt;&gt;</span>&gt; mi<br>&#123;<span class="hljs-number">1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-number">2</span>: <span class="hljs-string">'b'</span>, <span class="hljs-number">3</span>: <span class="hljs-string">'c'</span>, <span class="hljs-number">4</span>: <span class="hljs-string">'d'</span>&#125;<br></code></pre></td></tr></table></figure>
+</li>
 <li><p><strong>展开列表</strong><br>Flattening lists</p>
-<pre><code>&gt;&gt;&gt; a = [[1, 2], [3, 4], [5, 6]]
-&gt;&gt;&gt; list(itertools.chain.from_iterable(a))
-[1, 2, 3, 4, 5, 6]
-</code></pre></li>
+</li>
 </ol>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>sum(a, [])<br>[1, 2, 3, 4, 5, 6]<br>#sum 这个方法之前真的没想到<br>[x for l in a for x in l]<br>[1, 2, 3, 4, 5, 6]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]<br>[x for l1 in a for l2 in l1 for x in l2]<br>[1, 2, 3, 4, 5, 6, 7, 8]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a = [1, 2, [3, 4], [[5, 6], [7, 8]]]<br>flatten = lambda x: [y for l in x for y in flatten(l)] if type(x) is list else [x]<br>flatten(a)<br>[1, 2, 3, 4, 5, 6, 7, 8]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-12. **生成器表达式**
-Generator expressions</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>g = (x ** 2 for x in xrange(10))<br>next(g)<br>0<br>next(g)<br>1<br>next(g)<br>4<br>next(g)<br>9<br>sum(x ** 3 for x in xrange(10))<br>2025<br>sum(x ** 3 for x in xrange(10) if x % 3 == 1)<br>408</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-13. **字典推导式**
-Dicitonary comprehensions</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>m = {x: x ** 2 for x in range(5)}<br>m<br>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>m = {x: ‘A’ + str(x) for x in range(10)}<br>m<br>{0: ‘A0’, 1: ‘A1’, 2: ‘A2’, 3: ‘A3’, 4: ‘A4’, 5: ‘A5’, 6: ‘A6’, 7: ‘A7’, 8: ‘A8’, 9: ‘A9’}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-14. **使用字典推到式反转字典**
-Inverting a dictionary using a dictionary comprehension</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>m = {‘a’: 1, ‘b’: 2, ‘c’: 3, ‘d’: 4}<br>m<br>{‘d’: 4, ‘a’: 1, ‘b’: 2, ‘c’: 3}<br>{v: k for k, v in m.items()}<br>{1: ‘a’, 2: ‘b’, 3: ‘c’, 4: ‘d’}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-15. **命名元组的调用**
-Named tuples (collections.namedtuple)</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>Point = collections.namedtuple(‘Point’, [‘x’, ‘y’])<br>p = Point(x=1.0, y=2.0)<br>p<br>Point(x=1.0, y=2.0)<br>p.x<br>1.0<br>p.y<br>2.0</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; a = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]]<br>&gt;&gt;&gt; list(itertools.chain.from_iterable(a))<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br>&gt;&gt;&gt; sum(a, [])<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br>&gt;&gt;&gt; [x <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> a <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> l]<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br>&gt;&gt;&gt; a = [[[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]], [[<span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>]]]<br>&gt;&gt;&gt; [x <span class="hljs-keyword">for</span> l1 <span class="hljs-keyword">in</span> a <span class="hljs-keyword">for</span> l2 <span class="hljs-keyword">in</span> l1 <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> l2]<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]<br>&gt;&gt;&gt; a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [[<span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>]]]<br>&gt;&gt;&gt; flatten = lambda x: [y <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> x <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> flatten(l)] <span class="hljs-keyword">if</span> type(x) <span class="hljs-keyword">is</span> list <span class="hljs-keyword">else</span> [x]<br>&gt;&gt;&gt; flatten(a)<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]<br></code></pre></td></tr></table></figure>
 
-16. **从命名元组继承**
-inheriting from named tuples
-</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>class Point(collections.namedtuple(‘PointBase’, [‘x’, ‘y’])):<br>…     <strong>slots</strong> = ()<br>…     def <strong>add</strong>(self, other):<br>…             return Point(x=self.x + other.x, y=self.y + other.y)<br>…<br>p = Point(x=1.0, y=2.0)<br>q = Point(x=2.0, y=3.0)<br>p + q<br>Point(x=3.0, y=5.0)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-17. **集合的使用**
+<ol start="12">
+<li><strong>生成器表达式</strong><br>Generator expressions</li>
+</ol>
+<figure class="highlight lisp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs lisp">&gt;&gt;&gt; g = (<span class="hljs-name">x</span> ** <span class="hljs-number">2</span> for x in xrange(<span class="hljs-number">10</span>))<br>&gt;&gt;&gt; next(<span class="hljs-name">g</span>)<br><span class="hljs-number">0</span><br>&gt;&gt;&gt; next(<span class="hljs-name">g</span>)<br><span class="hljs-number">1</span><br>&gt;&gt;&gt; next(<span class="hljs-name">g</span>)<br><span class="hljs-number">4</span><br>&gt;&gt;&gt; next(<span class="hljs-name">g</span>)<br><span class="hljs-number">9</span><br>&gt;&gt;&gt; sum(<span class="hljs-name">x</span> ** <span class="hljs-number">3</span> for x in xrange(<span class="hljs-number">10</span>))<br><span class="hljs-number">2025</span><br>&gt;&gt;&gt; sum(<span class="hljs-name">x</span> ** <span class="hljs-number">3</span> for x in xrange(<span class="hljs-number">10</span>) if x % <span class="hljs-number">3</span> == <span class="hljs-number">1</span>)<br><span class="hljs-number">408</span><br></code></pre></td></tr></table></figure>
 
-sets and set operations</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>A = {1, 2, 3, 3}<br>A<br>set([1, 2, 3])<br>B = {3, 4, 5, 6, 7}<br>B<br>set([3, 4, 5, 6, 7])<br>A | B<br>set([1, 2, 3, 4, 5, 6, 7])<br>A &amp; B<br>set([3])<br>A - B<br>set([1, 2])<br>B - A<br>set([4, 5, 6, 7])<br>A ^ B<br>set([1, 2, 4, 5, 6, 7])<br>(A ^ B) == ((A - B) | (B - A))<br>True</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-18. **集合的操作**
-</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>A = collections.Counter([1, 2, 2])<br>B = collections.Counter([2, 2, 3])<br>A<br>Counter({2: 2, 1: 1})<br>B<br>Counter({2: 2, 3: 1})<br>A | B<br>Counter({2: 2, 1: 1, 3: 1})<br>A &amp; B<br>Counter({2: 2})<br>A + B<br>Counter({2: 4, 1: 1, 3: 1})<br>A - B<br>Counter({1: 1})<br>B - A<br>Counter({3: 1})</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-19. **可迭代对象的计数**</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>A = collections.Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7])<br>A<br>Counter({3: 4, 1: 2, 2: 2, 4: 1, 5: 1, 6: 1, 7: 1})<br>A.most_common(1)<br>[(3, 4)]<br>A.most_common(3)<br>[(3, 4), (1, 2), (2, 2)]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-20. **双端队列**
-double-ended queue </code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>Q = collections.deque()<br>Q.append(1)<br>Q.appendleft(2)<br>Q.extend([3, 4])<br>Q.extendleft([5, 6])<br>Q<br>deque([6, 5, 2, 1, 3, 4])<br>Q.pop()<br>4<br>Q.popleft()<br>6<br>Q<br>deque([5, 2, 1, 3])<br>Q.rotate(3)<br>Q<br>deque([2, 1, 3, 5])<br>Q.rotate(-3)<br>Q<br>deque([5, 2, 1, 3])</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>21. **最大长度双端队列**
-double-ended queue with maximum length
-</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>last_three = collections.deque(maxlen=3)<br>for i in xrange(10):<br>…     last_three.append(i)<br>…     print ‘, ‘.join(str(x) for x in last_three)<br>…<br>0<br>0, 1<br>0, 1, 2<br>1, 2, 3<br>2, 3, 4<br>3, 4, 5<br>4, 5, 6<br>5, 6, 7<br>6, 7, 8<br>7, 8, 9</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code> 22. **有序字典**
- ordered dictionaries </code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>m = dict((str(x), x) for x in range(10))<br>print ‘, ‘.join(m.keys())<br>1, 0, 3, 2, 5, 4, 7, 6, 9, 8<br>m = collections.OrderedDict((str(x), x) for x in range(10))<br>print ‘, ‘.join(m.keys())<br>0, 1, 2, 3, 4, 5, 6, 7, 8, 9<br>m = collections.OrderedDict((str(x), x) for x in range(10, 0, -1))<br>print ‘, ‘.join(m.keys())<br>10, 9, 8, 7, 6, 5, 4, 3, 2, 1</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-23. **将对象映射到唯一的计数数字**
-mapping objects to unique counting numbers</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>import itertools, collections<br>value_to_numeric_map = collections.defaultdict(itertools.count().next)<br>value_to_numeric_map[‘a’]<br>0<br>value_to_numeric_map[‘b’]<br>1<br>value_to_numeric_map[‘c’]<br>2<br>value_to_numeric_map[‘a’]<br>0<br>value_to_numeric_map[‘b’]<br>1</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-23. **最大和最小元素**
-largest and smallest elements(heapq.nlargest and heapq.nsmallest)</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>a = [random.randint(0, 100) for __ in xrange(100)]<br>heapq.nsmallest(5, a)<br>[3, 3, 5, 6, 8]<br>heapq.nlargest(5, a)<br>[100, 100, 99, 98, 98]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-24. **笛卡尔积**
-cartesian products</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>for p in itertools.product([1, 2, 3], [4, 5]):<br>(1, 4)<br>(1, 5)<br>(2, 4)<br>(2, 5)<br>(3, 4)<br>(3, 5)<br>for p in itertools.product([0, 1], repeat=4):<br>…     print ‘’.join(str(x) for x in p)<br>…<br>0000<br>0001<br>0010<br>0011<br>0100<br>0101<br>0110<br>0111<br>1000<br>1001<br>1010<br>1011<br>1100<br>1101<br>1110<br>1111</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-25. **组合和替换组合**
-combinations and combinations with replacemnet
-</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>for c in itertools.combinations([1, 2, 3, 4, 5], 3):<br>…     print ‘’.join(str(x) for x in c)<br>…<br>123<br>124<br>125<br>134<br>135<br>145<br>234<br>235<br>245<br>345<br>for c in itertools.combinations_with_replacement([1, 2, 3], 2):<br>…     print ‘’.join(str(x) for x in c)<br>…<br>11<br>12<br>13<br>22<br>23<br>33</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-26. **排列交换**
-Permurtations
-</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>for p in itertools.permutations([1, 2, 3, 4]):<br>…     print ‘’.join(str(x) for x in p)<br>…<br>1234<br>1243<br>1324<br>1342<br>1423<br>1432<br>2134<br>2143<br>2314<br>2341<br>2413<br>2431<br>3124<br>3142<br>3214<br>3241<br>3412<br>3421<br>4123<br>4132<br>4213<br>4231<br>4312<br>4321</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-27. **链式迭代**
-chaining iterables </code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>a = [1, 2, 3, 4]<br>for p in itertools.chain(itertools.combinations(a, 2), itertools.combinations(a, 3)):<br>…     print p<br>…<br>(1, 2)<br>(1, 3)<br>(1, 4)<br>(2, 3)<br>(2, 4)<br>(3, 4)<br>(1, 2, 3)<br>(1, 2, 4)<br>(1, 3, 4)<br>(2, 3, 4)<br>for subset in itertools.chain.from_iterable(itertools.combinations(a, n) for n in range(len(a) + 1))<br>…     print subset<br>…<br>()<br>(1,)<br>(2,)<br>(3,)<br>(4,)<br>(1, 2)<br>(1, 3)<br>(1, 4)<br>(2, 3)<br>(2, 4)<br>(3, 4)<br>(1, 2, 3)<br>(1, 2, 4)<br>(1, 3, 4)<br>(2, 3, 4)<br>(1, 2, 3, 4)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
+<ol start="13">
+<li><strong>字典推导式</strong><br>Dicitonary comprehensions</li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; m = &#123;x: x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>)&#125;<br>&gt;&gt;&gt; m<br>&#123;<span class="hljs-number">0</span>: <span class="hljs-number">0</span>, <span class="hljs-number">1</span>: <span class="hljs-number">1</span>, <span class="hljs-number">2</span>: <span class="hljs-number">4</span>, <span class="hljs-number">3</span>: <span class="hljs-number">9</span>, <span class="hljs-number">4</span>: <span class="hljs-number">16</span>&#125;<br>&gt;&gt;&gt; m = &#123;x: <span class="hljs-string">'A'</span> + str(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>)&#125;<br>&gt;&gt;&gt; m<br>&#123;<span class="hljs-number">0</span>: <span class="hljs-string">'A0'</span>, <span class="hljs-number">1</span>: <span class="hljs-string">'A1'</span>, <span class="hljs-number">2</span>: <span class="hljs-string">'A2'</span>, <span class="hljs-number">3</span>: <span class="hljs-string">'A3'</span>, <span class="hljs-number">4</span>: <span class="hljs-string">'A4'</span>, <span class="hljs-number">5</span>: <span class="hljs-string">'A5'</span>, <span class="hljs-number">6</span>: <span class="hljs-string">'A6'</span>, <span class="hljs-number">7</span>: <span class="hljs-string">'A7'</span>, <span class="hljs-number">8</span>: <span class="hljs-string">'A8'</span>, <span class="hljs-number">9</span>: <span class="hljs-string">'A9'</span>&#125;<br></code></pre></td></tr></table></figure>
 
-28. **按给定键进行分组**
-grouping rows by a given key
-</code></pre><blockquote>
-<blockquote>
-<blockquote>
-<p>from operator import itemgetter<br>import itertools<br>with open(‘contactlenses.csv’, ‘r’) as infile:<br>…     data = [line.strip().split(‘,’) for line in infile]<br>…<br>data = data[1:]<br>def print_data(rows):<br>…     print ‘\n’.join(‘\t’.join(‘{: &lt;16}’.format(s) for s in row) for row in rows)<br>…</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>print_data(data)<br>young               myope                   no                      reduced                 none<br>young               myope                   no                      normal                  soft<br>young               myope                   yes                     reduced                 none<br>young               myope                   yes                     normal                  hard<br>young               hypermetrope            no                      reduced                 none<br>young               hypermetrope            no                      normal                  soft<br>young               hypermetrope            yes                     reduced                 none<br>young               hypermetrope            yes                     normal                  hard<br>pre-presbyopic      myope                   no                      reduced                 none<br>pre-presbyopic      myope                   no                      normal                  soft<br>pre-presbyopic      myope                   yes                     reduced                 none<br>pre-presbyopic      myope                   yes                     normal                  hard<br>pre-presbyopic      hypermetrope            no                      reduced                 none<br>pre-presbyopic      hypermetrope            no                      normal                  soft<br>pre-presbyopic      hypermetrope            yes                     reduced                 none<br>pre-presbyopic      hypermetrope            yes                     normal                  none<br>presbyopic          myope                   no                      reduced                 none<br>presbyopic          myope                   no                      normal                  none<br>presbyopic          myope                   yes                     reduced                 none<br>presbyopic          myope                   yes                     normal                  hard<br>presbyopic          hypermetrope            no                      reduced                 none<br>presbyopic          hypermetrope            no                      normal                  soft<br>presbyopic          hypermetrope            yes                     reduced                 none<br>presbyopic          hypermetrope            yes                     normal                  none</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>data.sort(key=itemgetter(-1))<br>for value, group in itertools.groupby(data, lambda r: r[-1]):<br>…     print ‘———–’<br>…     print ‘Group: ‘ + value<br>…     print_data(group)<br>…</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<p>Group: hard<br>young               myope                   yes                     normal                  hard<br>young               hypermetrope            yes                     normal                  hard<br>pre-presbyopic      myope                   yes                     normal                  hard<br>presbyopic          myope                   yes                     normal                  hard</p>
-<hr>
-<p>Group: none<br>young               myope                   no                      reduced                 none<br>young               myope                   yes                     reduced                 none<br>young               hypermetrope            no                      reduced                 none<br>young               hypermetrope            yes                     reduced                 none<br>pre-presbyopic      myope                   no                      reduced                 none<br>pre-presbyopic      myope                   yes                     reduced                 none<br>pre-presbyopic      hypermetrope            no                      reduced                 none<br>pre-presbyopic      hypermetrope            yes                     reduced                 none<br>pre-presbyopic      hypermetrope            yes                     normal                  none<br>presbyopic          myope                   no                      reduced                 none<br>presbyopic          myope                   no                      normal                  none<br>presbyopic          myope                   yes                     reduced                 none<br>presbyopic          hypermetrope            no                      reduced                 none<br>presbyopic          hypermetrope            yes                     reduced                 none<br>presbyopic          hypermetrope            yes                     normal                  none</p>
-<hr>
-<p>Group: soft<br>young               myope                   no                      normal                  soft<br>young               hypermetrope            no                      normal                  soft<br>pre-presbyopic      myope                   no                      normal                  soft<br>pre-presbyopic      hypermetrope            no                      normal                  soft<br>presbyopic          hypermetrope            no                      normal                  soft</p>
-<pre><code>
-29. **在任意目录中启动http服务器**
-start a static http server in any directory</code></pre><p>python -m SimpleHTTPServer 5000</p>
-<pre><code></code></pre>
+<ol start="14">
+<li><strong>使用字典推到式反转字典</strong><br>Inverting a dictionary using a dictionary comprehension</li>
+</ol>
+<figure class="highlight ruby hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-meta">&gt;&gt;</span>&gt; m = &#123;<span class="hljs-string">'a'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">3</span>, <span class="hljs-string">'d'</span>: <span class="hljs-number">4</span>&#125;<br><span class="hljs-meta">&gt;&gt;</span>&gt; m<br>&#123;<span class="hljs-string">'d'</span>: <span class="hljs-number">4</span>, <span class="hljs-string">'a'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">3</span>&#125;<br><span class="hljs-meta">&gt;&gt;</span>&gt; &#123;<span class="hljs-symbol">v:</span> k for k, v in m.items()&#125;<br>&#123;<span class="hljs-number">1</span>: <span class="hljs-string">'a'</span>, <span class="hljs-number">2</span>: <span class="hljs-string">'b'</span>, <span class="hljs-number">3</span>: <span class="hljs-string">'c'</span>, <span class="hljs-number">4</span>: <span class="hljs-string">'d'</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><strong>命名元组的调用</strong><br>Named tuples (collections.namedtuple)</li>
+</ol>
+<figure class="highlight ruby hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-meta">&gt;&gt;</span>&gt; Point = collections.namedtuple(<span class="hljs-string">'Point'</span>, [<span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>])<br><span class="hljs-meta">&gt;&gt;</span>&gt; p = Point(x=<span class="hljs-number">1.0</span>, y=<span class="hljs-number">2.0</span>)<br><span class="hljs-meta">&gt;&gt;</span>&gt; p<br>Point(x=<span class="hljs-number">1.0</span>, y=<span class="hljs-number">2.0</span>)<br><span class="hljs-meta">&gt;&gt;</span>&gt; p.x<br><span class="hljs-number">1.0</span><br><span class="hljs-meta">&gt;&gt;</span>&gt; p.y<br><span class="hljs-number">2.0</span><br></code></pre></td></tr></table></figure>
+
+
+<ol start="16">
+<li><strong>从命名元组继承</strong><br>inheriting from named tuples</li>
+</ol>
+<figure class="highlight reasonml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">&gt;&gt;&gt; <span class="hljs-keyword">class</span> <span class="hljs-constructor">Point(<span class="hljs-params">collections</span>.<span class="hljs-params">namedtuple</span>('PointBase', ['<span class="hljs-params">x</span>', '<span class="hljs-params">y</span>'])</span>):<span class="hljs-operator"><br>...     </span>__slots__ = <span class="hljs-literal">()</span><span class="hljs-operator"><br>...     </span>def <span class="hljs-constructor">__add__(<span class="hljs-params">self</span>, <span class="hljs-params">other</span>)</span>:<span class="hljs-operator"><br>...             </span>return <span class="hljs-constructor">Point(<span class="hljs-params">x</span>=<span class="hljs-params">self</span>.<span class="hljs-params">x</span> + <span class="hljs-params">other</span>.<span class="hljs-params">x</span>, <span class="hljs-params">y</span>=<span class="hljs-params">self</span>.<span class="hljs-params">y</span> + <span class="hljs-params">other</span>.<span class="hljs-params">y</span>)</span><br>&gt;&gt;&gt; p = <span class="hljs-constructor">Point(<span class="hljs-params">x</span>=1.0, <span class="hljs-params">y</span>=2.0)</span><br>&gt;&gt;&gt; q = <span class="hljs-constructor">Point(<span class="hljs-params">x</span>=2.0, <span class="hljs-params">y</span>=3.0)</span><br>&gt;&gt;&gt; p + q<br><span class="hljs-constructor">Point(<span class="hljs-params">x</span>=3.0, <span class="hljs-params">y</span>=5.0)</span><br></code></pre></td></tr></table></figure>
+
+<ol start="17">
+<li><strong>集合的使用</strong><br>sets and set operations</li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; A = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>&#125;<br>&gt;&gt;&gt; A<br><span class="hljs-keyword">set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br>&gt;&gt;&gt; B = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>&#125;<br>&gt;&gt;&gt; B<br><span class="hljs-keyword">set</span>([<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>])<br>&gt;&gt;&gt; A | B<br><span class="hljs-keyword">set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>])<br>&gt;&gt;&gt; A &amp; B<br><span class="hljs-keyword">set</span>([<span class="hljs-number">3</span>])<br>&gt;&gt;&gt; A - B<br><span class="hljs-keyword">set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])<br>&gt;&gt;&gt; B - A<br><span class="hljs-keyword">set</span>([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>])<br>&gt;&gt;&gt; A ^ B<br><span class="hljs-keyword">set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>])<br>&gt;&gt;&gt; (A ^ B) == ((A - B) | (B - A))<br>True<br></code></pre></td></tr></table></figure>
+
+<ol start="18">
+<li><strong>集合的操作</strong></li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; A = collections.Counter([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>])<br>&gt;&gt;&gt; B = collections.Counter([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br>&gt;&gt;&gt; A<br>Counter(&#123;<span class="hljs-number">2</span>: <span class="hljs-number">2</span>, <span class="hljs-number">1</span>: <span class="hljs-number">1</span>&#125;)<br>&gt;&gt;&gt; B<br>Counter(&#123;<span class="hljs-number">2</span>: <span class="hljs-number">2</span>, <span class="hljs-number">3</span>: <span class="hljs-number">1</span>&#125;)<br>&gt;&gt;&gt; A | B<br>Counter(&#123;<span class="hljs-number">2</span>: <span class="hljs-number">2</span>, <span class="hljs-number">1</span>: <span class="hljs-number">1</span>, <span class="hljs-number">3</span>: <span class="hljs-number">1</span>&#125;)<br>&gt;&gt;&gt; A &amp; B<br>Counter(&#123;<span class="hljs-number">2</span>: <span class="hljs-number">2</span>&#125;)<br>&gt;&gt;&gt; A + B<br>Counter(&#123;<span class="hljs-number">2</span>: <span class="hljs-number">4</span>, <span class="hljs-number">1</span>: <span class="hljs-number">1</span>, <span class="hljs-number">3</span>: <span class="hljs-number">1</span>&#125;)<br>&gt;&gt;&gt; A - B<br>Counter(&#123;<span class="hljs-number">1</span>: <span class="hljs-number">1</span>&#125;)<br>&gt;&gt;&gt; B - A<br>Counter(&#123;<span class="hljs-number">3</span>: <span class="hljs-number">1</span>&#125;)<br></code></pre></td></tr></table></figure>
+
+<ol start="19">
+<li><strong>可迭代对象的计数</strong></li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; A = collections.Counter([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>])<br>&gt;&gt;&gt; A<br>Counter(&#123;<span class="hljs-number">3</span>: <span class="hljs-number">4</span>, <span class="hljs-number">1</span>: <span class="hljs-number">2</span>, <span class="hljs-number">2</span>: <span class="hljs-number">2</span>, <span class="hljs-number">4</span>: <span class="hljs-number">1</span>, <span class="hljs-number">5</span>: <span class="hljs-number">1</span>, <span class="hljs-number">6</span>: <span class="hljs-number">1</span>, <span class="hljs-number">7</span>: <span class="hljs-number">1</span>&#125;)<br>&gt;&gt;&gt; A.most_common(<span class="hljs-number">1</span>)<br>[(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)]<br>&gt;&gt;&gt; A.most_common(<span class="hljs-number">3</span>)<br>[(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)]<br></code></pre></td></tr></table></figure>
+
+<ol start="20">
+<li><strong>双端队列</strong><br>double-ended queue </li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; Q = collections.deque()<br>&gt;&gt;&gt; Q.append(<span class="hljs-number">1</span>)<br>&gt;&gt;&gt; Q.appendleft(<span class="hljs-number">2</span>)<br>&gt;&gt;&gt; Q.extend([<span class="hljs-number">3</span>, <span class="hljs-number">4</span>])<br>&gt;&gt;&gt; Q.extendleft([<span class="hljs-number">5</span>, <span class="hljs-number">6</span>])<br>&gt;&gt;&gt; Q<br>deque([<span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])<br>&gt;&gt;&gt; Q.pop()<br><span class="hljs-number">4</span><br>&gt;&gt;&gt; Q.popleft()<br><span class="hljs-number">6</span><br>&gt;&gt;&gt; Q<br>deque([<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>])<br>&gt;&gt;&gt; Q.rotate(<span class="hljs-number">3</span>)<br>&gt;&gt;&gt; Q<br>deque([<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>])<br>&gt;&gt;&gt; Q.rotate(<span class="hljs-number">-3</span>)<br>&gt;&gt;&gt; Q<br>deque([<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>])<br></code></pre></td></tr></table></figure>
+<ol start="21">
+<li><strong>最大长度双端队列</strong><br>double-ended queue with maximum length</li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; last_three = collections.deque(maxlen=<span class="hljs-number">3</span>)<br>&gt;&gt;&gt; <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">10</span>):<br>...     last_three.append(i)<br>...     print <span class="hljs-string">', '</span>.join(str(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> last_three)<br>...<br><span class="hljs-number">0</span><br><span class="hljs-number">0</span>, <span class="hljs-number">1</span><br><span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span><br><span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span><br><span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span><br><span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span><br><span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span><br><span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span><br><span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span><br><span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
+
+<ol start="22">
+<li><strong>有序字典</strong><br>ordered dictionaries </li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; m = dict((str(x), x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>))<br>&gt;&gt;&gt; print <span class="hljs-string">', '</span>.join(m.keys())<br><span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span><br>&gt;&gt;&gt; m = collections.OrderedDict((str(x), x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>))<br>&gt;&gt;&gt; print <span class="hljs-string">', '</span>.join(m.keys())<br><span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span><br>&gt;&gt;&gt; m = collections.OrderedDict((str(x), x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>))<br>&gt;&gt;&gt; print <span class="hljs-string">', '</span>.join(m.keys())<br><span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<ol start="23">
+<li><p><strong>将对象映射到唯一的计数数字</strong><br>mapping objects to unique counting numbers</p>
+<figure class="highlight ruby hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-meta">&gt;&gt;</span>&gt; import itertools, collections<br><span class="hljs-meta">&gt;&gt;</span>&gt; value_to_numeric_map = collections.defaultdict(itertools.count().next)<br><span class="hljs-meta">&gt;&gt;</span>&gt; value_to_numeric_map[<span class="hljs-string">'a'</span>]<br><span class="hljs-number">0</span><br><span class="hljs-meta">&gt;&gt;</span>&gt; value_to_numeric_map[<span class="hljs-string">'b'</span>]<br><span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;</span>&gt; value_to_numeric_map[<span class="hljs-string">'c'</span>]<br><span class="hljs-number">2</span><br><span class="hljs-meta">&gt;&gt;</span>&gt; value_to_numeric_map[<span class="hljs-string">'a'</span>]<br><span class="hljs-number">0</span><br><span class="hljs-meta">&gt;&gt;</span>&gt; value_to_numeric_map[<span class="hljs-string">'b'</span>]<br><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>最大和最小元素</strong><br>largest and smallest elements(heapq.nlargest and heapq.nsmallest)</p>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; a = [random.randint(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>) <span class="hljs-keyword">for</span> __ <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">100</span>)]<br>&gt;&gt;&gt; heapq.nsmallest(<span class="hljs-number">5</span>, a)<br>[<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>]<br>&gt;&gt;&gt; heapq.nlargest(<span class="hljs-number">5</span>, a)<br>[<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">99</span>, <span class="hljs-number">98</span>, <span class="hljs-number">98</span>]<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>笛卡尔积</strong><br>cartesian products</p>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> itertools.product([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]):<br>(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>)<br>(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)<br>&gt;&gt;&gt; <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> itertools.product([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], repeat=<span class="hljs-number">4</span>):<br>...     print <span class="hljs-string">''</span>.join(str(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> p)<br>...<br><span class="hljs-number">0000</span><br><span class="hljs-number">0001</span><br><span class="hljs-number">0010</span><br><span class="hljs-number">0011</span><br><span class="hljs-number">0100</span><br><span class="hljs-number">0101</span><br><span class="hljs-number">0110</span><br><span class="hljs-number">0111</span><br><span class="hljs-number">1000</span><br><span class="hljs-number">1001</span><br><span class="hljs-number">1010</span><br><span class="hljs-number">1011</span><br><span class="hljs-number">1100</span><br><span class="hljs-number">1101</span><br><span class="hljs-number">1110</span><br><span class="hljs-number">1111</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>组合和替换组合</strong><br>combinations and combinations with replacemnet</p>
+</li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> itertools.combinations([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>], <span class="hljs-number">3</span>):<br>...     print <span class="hljs-string">''</span>.join(str(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> c)<br>...<br><span class="hljs-number">123</span><br><span class="hljs-number">124</span><br><span class="hljs-number">125</span><br><span class="hljs-number">134</span><br><span class="hljs-number">135</span><br><span class="hljs-number">145</span><br><span class="hljs-number">234</span><br><span class="hljs-number">235</span><br><span class="hljs-number">245</span><br><span class="hljs-number">345</span><br>&gt;&gt;&gt; <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> itertools.combinations_with_replacement([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>):<br>...     print <span class="hljs-string">''</span>.join(str(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> c)<br>...<br><span class="hljs-number">11</span><br><span class="hljs-number">12</span><br><span class="hljs-number">13</span><br><span class="hljs-number">22</span><br><span class="hljs-number">23</span><br><span class="hljs-number">33</span><br></code></pre></td></tr></table></figure>
+
+<ol start="26">
+<li><strong>排列交换</strong><br>Permurtations</li>
+</ol>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> itertools.permutations([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]):<br>...     print <span class="hljs-string">''</span>.join(str(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> p)<br>...<br><span class="hljs-number">1234</span><br><span class="hljs-number">1243</span><br><span class="hljs-number">1324</span><br><span class="hljs-number">1342</span><br><span class="hljs-number">1423</span><br><span class="hljs-number">1432</span><br><span class="hljs-number">2134</span><br><span class="hljs-number">2143</span><br><span class="hljs-number">2314</span><br><span class="hljs-number">2341</span><br><span class="hljs-number">2413</span><br><span class="hljs-number">2431</span><br><span class="hljs-number">3124</span><br><span class="hljs-number">3142</span><br><span class="hljs-number">3214</span><br><span class="hljs-number">3241</span><br><span class="hljs-number">3412</span><br><span class="hljs-number">3421</span><br><span class="hljs-number">4123</span><br><span class="hljs-number">4132</span><br><span class="hljs-number">4213</span><br><span class="hljs-number">4231</span><br><span class="hljs-number">4312</span><br><span class="hljs-number">4321</span><br></code></pre></td></tr></table></figure>
+
+<ol start="27">
+<li><strong>链式迭代</strong><br>chaining iterables <figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">&gt;&gt;&gt; a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]<br>&gt;&gt;&gt; <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> itertools.chain(itertools.combinations(a, <span class="hljs-number">2</span>), itertools.combinations(a, <span class="hljs-number">3</span>)):<br>...     print p<br>...<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>&gt;&gt;&gt; <span class="hljs-keyword">for</span> subset <span class="hljs-keyword">in</span> itertools.chain.from_iterable(itertools.combinations(a, n) <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> range(len(a) + <span class="hljs-number">1</span>))<br>...     print subset<br>...<br>()<br>(<span class="hljs-number">1</span>,)<br>(<span class="hljs-number">2</span>,)<br>(<span class="hljs-number">3</span>,)<br>(<span class="hljs-number">4</span>,)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br></code></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="28">
+<li><strong>按给定键进行分组</strong><br>grouping rows by a given key</li>
+</ol>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">from</span> <span class="hljs-string">operator</span> <span class="hljs-string">import</span> <span class="hljs-string">itemgetter</span><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">import</span> <span class="hljs-string">itertools</span><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">with</span> <span class="hljs-string">open('contactlenses.csv',</span> <span class="hljs-string">'r'</span><span class="hljs-string">)</span> <span class="hljs-attr">as infile:</span><br><span class="hljs-string">...</span>     <span class="hljs-string">data</span> <span class="hljs-string">=</span> <span class="hljs-string">[line.strip().split(',')</span> <span class="hljs-string">for</span> <span class="hljs-string">line</span> <span class="hljs-string">in</span> <span class="hljs-string">infile]</span><br><span class="hljs-string">...</span><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">data</span> <span class="hljs-string">=</span> <span class="hljs-string">data[1:]</span><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">def</span> <span class="hljs-string">print_data(rows):</span><br><span class="hljs-string">...</span>     <span class="hljs-string">print</span> <span class="hljs-string">'\n'</span><span class="hljs-string">.join('\t'.join('&#123;:</span> <span class="hljs-string">&lt;16&#125;'.format(s)</span> <span class="hljs-string">for</span> <span class="hljs-string">s</span> <span class="hljs-string">in</span> <span class="hljs-string">row)</span> <span class="hljs-string">for</span> <span class="hljs-string">row</span> <span class="hljs-string">in</span> <span class="hljs-string">rows)</span><br><span class="hljs-string">...</span><br><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">print_data(data)</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">none</span><br><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">data.sort(key=itemgetter(-1))</span><br><span class="hljs-string">&gt;&gt;&gt;</span> <span class="hljs-string">for</span> <span class="hljs-string">value,</span> <span class="hljs-string">group</span> <span class="hljs-string">in</span> <span class="hljs-string">itertools.groupby(data,</span> <span class="hljs-attr">lambda r:</span> <span class="hljs-string">r[-1]):</span><br><span class="hljs-string">...</span>     <span class="hljs-string">print</span> <span class="hljs-string">'-----------'</span><br><span class="hljs-string">...</span>     <span class="hljs-string">print</span> <span class="hljs-string">'Group: '</span> <span class="hljs-string">+</span> <span class="hljs-string">value</span><br><span class="hljs-string">...</span>     <span class="hljs-string">print_data(group)</span><br><span class="hljs-string">...</span><br><span class="hljs-string">-----------</span><br><span class="hljs-attr">Group:</span> <span class="hljs-string">hard</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">hard</span><br><span class="hljs-string">-----------</span><br><span class="hljs-attr">Group:</span> <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">myope</span>                   <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">reduced</span>                 <span class="hljs-string">none</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">yes</span>                     <span class="hljs-string">normal</span>                  <span class="hljs-string">none</span><br><span class="hljs-string">-----------</span><br><span class="hljs-attr">Group:</span> <span class="hljs-string">soft</span><br><span class="hljs-string">young</span>               <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">young</span>               <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">myope</span>                   <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">pre-presbyopic</span>      <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br><span class="hljs-string">presbyopic</span>          <span class="hljs-string">hypermetrope</span>            <span class="hljs-literal">no</span>                      <span class="hljs-string">normal</span>                  <span class="hljs-string">soft</span><br></code></pre></td></tr></table></figure>
+
+<ol start="29">
+<li><strong>在任意目录中启动http服务器</strong></li>
+</ol>
+<p>start a static http server in any directory</p>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">python -m SimpleHTTPServer <span class="hljs-number">5000</span><br></code></pre></td></tr></table></figure>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -496,7 +296,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
         <div class="buttons is-centered">
             
                 
@@ -504,8 +304,8 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <span class="icon is-small">
         <i class="fab fa-alipay"></i>
     </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/alipay.png" alt="Alipay"></div>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.png" alt="支付宝"></div>
 </a>
 
                 
@@ -514,8 +314,8 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <span class="icon is-small">
         <i class="fab fa-weixin"></i>
     </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wechat.png" alt="Wechat"></div>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
 </a>
 
                 
@@ -543,7 +343,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Commentaires</h3>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <div id="valine-thread" class="content"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -602,7 +402,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Articles
+                        文章
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
@@ -614,7 +414,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Catégories
+                        分类
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
@@ -626,7 +426,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
@@ -639,7 +439,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/cx4" target="_blank">
-                SUIVRE</a>
+                关注我</a>
         </div>
         
         
@@ -665,7 +465,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Catégories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -821,7 +621,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            最新文章
         </h3>
         
         <article class="media">
@@ -926,7 +726,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Liens
+            链接
         </h3>
         <ul class="menu-list">
         
@@ -964,7 +764,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
             <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            标签云
         </h3>
         <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
     </div>
@@ -974,14 +774,14 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -992,7 +792,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1003,7 +803,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1014,7 +814,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">3</span>
@@ -1025,7 +825,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1036,7 +836,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -1053,7 +853,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1160,7 +960,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            标签云
         </h3>
         <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 20px;">ebook,kindle,collect</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
     </div>
@@ -1170,14 +970,14 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1188,7 +988,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1199,7 +999,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1210,7 +1010,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">3</span>
@@ -1221,7 +1021,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1232,7 +1032,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -1249,7 +1049,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1400,7 +1200,7 @@ start a static http server in any directory</code></pre><p>python -m SimpleHTTPS
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh");</script>
+<script>moment.locale("zh-CN");</script>
 
 <script>
 var IcarusThemeSettings = {
@@ -1425,7 +1225,7 @@ var IcarusThemeSettings = {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -1437,11 +1237,11 @@ var IcarusThemeSettings = {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Articles',
-                PAGES: 'Pages',
-                CATEGORIES: 'Catégories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };
