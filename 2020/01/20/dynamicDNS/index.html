@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类 - 及时行乐</title>
+<title>Use Cloudflare as Dynamic DNS with Raspberry Pi - 及时行乐</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="及时行乐" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="Use Cloudflare as Dynamic DNS with Raspberry Pi" type="application/atom+xml">
 
 
 
@@ -36,7 +36,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/log.png" alt="及时行乐" height="28">
+                <img src="/images/log.png" alt="Use Cloudflare as Dynamic DNS with Raspberry Pi" height="28">
             
             </a>
         </div>
@@ -50,7 +50,7 @@
                 <a class="navbar-item"
                 href="/archives">归档</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/categories">分类</a>
                 
                 <a class="navbar-item"
@@ -86,162 +86,142 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card widget">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-20T05:13:13.000Z">2020-01-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/Raspberry/">Raspberry</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/Raspberry/Cloudflare/">Cloudflare</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 400 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Use Cloudflare as Dynamic DNS with Raspberry Pi
+            
+        </h1>
+        <div class="content">
+            <p><img src="http://imgs.yrzdm.com/imgs/20200120/ftOc2kD3gjA9.png?imageslim" alt="mark"><br>pi-hole、Domoticz、Homebridge都已经安装好了，是时候设置个域名了，考虑到Cloudflare的强大，此次的DDNS将使用Cloudflare来实现。</p>
+<a id="more"></a>
+<h3 id="Cloudflare-控制台配置"><a href="#Cloudflare-控制台配置" class="headerlink" title="Cloudflare 控制台配置"></a>Cloudflare 控制台配置</h3><p>1️⃣ 登录<a href="https://dash.cloudflare.com/" target="_blank" rel="noopener">cloudflare</a>控制台。<br><br>2️⃣ 添加你要进行解析的域名<br><br>3️⃣ 添加一条默认的A记录，指向一个ipv4的地址。<br></p>
+<h4 id="Global-API-Key"><a href="#Global-API-Key" class="headerlink" title="Global API Key"></a>Global API Key</h4><p>如果使用动态域名，需要使用全局apikey来登录更新A记录的值</p>
+<ol>
+<li>在CloudFlare管理后台登录个人面板</li>
+<li>向下滑动找到全局api</li>
+<li>记录下api后边使用</li>
+</ol>
+<h3 id="在树莓派上面配置"><a href="#在树莓派上面配置" class="headerlink" title="在树莓派上面配置"></a>在树莓派上面配置</h3><ol>
+<li>DDclient<br>⚠️ 安装完成后需要跳过设置界面，因为后面需要覆盖此配置。<figure class="highlight pgsql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">update</span><br>sudo apt-<span class="hljs-keyword">get</span> install ddclient libjson-<span class="hljs-keyword">any</span>-perl<br></code></pre></td></tr></table></figure></li>
+<li>更新ddclient<br>最新版的ddclient能够更好的支持cloudflare<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">wget https:<span class="hljs-comment">//files.pimylifeup.com/portforwarding/ddclient-3.9.0.tar.gz</span><br>tar -zxvf ddclient<span class="hljs-number">-3.9</span><span class="hljs-number">.0</span>.tar.gz<br></code></pre></td></tr></table></figure></li>
+<li>替换已经安装的路径<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">sudo cp -f ddclient<span class="hljs-number">-3.9</span><span class="hljs-number">.0</span>/ddclient /usr/sbin/ddclient<br></code></pre></td></tr></table></figure></li>
+<li>因为新版的ddclient 做了更改，所以我们需要在原版基础上修改一下文件位置<figure class="highlight awk hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo mkdir <span class="hljs-regexp">/etc/</span>ddclient<br>sudo mv <span class="hljs-regexp">/etc/</span>ddclient.conf <span class="hljs-regexp">/etc/</span>ddclient<br></code></pre></td></tr></table></figure></li>
+<li>修改配置文件<figure class="highlight vim hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">sudo <span class="hljs-keyword">vi</span> /etc/ddclient/ddclient.<span class="hljs-keyword">conf</span><br></code></pre></td></tr></table></figure>
+将下列配置添加到文件当中<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">protocol</span>=cloudflare<br><span class="hljs-attribute">server</span>=www.cloudflare.com<br><span class="hljs-attribute">login</span>=CLONDFLARE_LOGIN_MAIL #此处填写你的cf登录邮箱<br><span class="hljs-attribute">password</span>=GLOBAL_API_KEY #此处填写上面拿到的cf密钥<br><span class="hljs-attribute">zone</span>=YOUR_DOMAIN.COM  #填写你的域名地址<br>anything.YOUR_DOMAIN.COM #配置的域名地址<br></code></pre></td></tr></table></figure></li>
+<li>重启服务<figure class="highlight awk hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo <span class="hljs-regexp">/etc/i</span>nit.d<span class="hljs-regexp">/ddclient restart</span><br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/" rel="tag">Python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/baidu/">
-            <span class="level-start">
-                <span class="level-item">baidu</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/baidu/index/">
-            <span class="level-start">
-                <span class="level-item">index</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/docs/">
-            <span class="level-start">
-                <span class="level-item">docs</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">12</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/docs/index/">
-            <span class="level-start">
-                <span class="level-item">index</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/docs/javascript/">
-            <span class="level-start">
-                <span class="level-item">javascript</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/docs/podcast/">
-            <span class="level-start">
-                <span class="level-item">podcast</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/docs/python/">
-            <span class="level-start">
-                <span class="level-item">python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">8</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/docs/raspberry/">
-            <span class="level-start">
-                <span class="level-item">raspberry</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/ebook/">
-            <span class="level-start">
-                <span class="level-item">ebook</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/ebook/index/">
-            <span class="level-start">
-                <span class="level-item">index</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/license/">
-            <span class="level-start">
-                <span class="level-item">license</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/license/windows/">
-            <span class="level-start">
-                <span class="level-item">windows</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/markdown/">
-            <span class="level-start">
-                <span class="level-item">markdown</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/markdown/index/">
-            <span class="level-start">
-                <span class="level-item">index</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/micropython/">
-            <span class="level-start">
-                <span class="level-item">micropython</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/micropython/index/">
-            <span class="level-start">
-                <span class="level-item">index</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/ssr/">
-            <span class="level-start">
-                <span class="level-item">ssr</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/ssr/python/">
-            <span class="level-start">
-                <span class="level-item">python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://s2.ax1x.com/2020/01/10/lhCPZd.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://s2.ax1x.com/2020/01/10/lhC9qH.jpg" alt="微信"></div>
+</a>
+
+                
         </div>
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/20/FastApi/">
+                <span class="level-item">FastApi</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
+</div>
                 
 
 
@@ -1070,7 +1050,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/log.png" alt="及时行乐" height="28">
+                    <img src="/images/log.png" alt="Use Cloudflare as Dynamic DNS with Raspberry Pi" height="28">
                 
                 </a>
                 <p class="is-size-7">
