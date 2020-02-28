@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>友善之臂移植香蕉派的树莓派系统，并进行精简 - 及时行乐</title>
+<title>编程代码字体 - 及时行乐</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="友善之臂移植香蕉派的树莓派系统，并进行精简" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="编程代码字体" type="application/atom+xml">
 
 
 
@@ -36,7 +36,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/log.png" alt="友善之臂移植香蕉派的树莓派系统，并进行精简" height="28">
+                <img src="/images/log.png" alt="编程代码字体" height="28">
             
             </a>
         </div>
@@ -92,7 +92,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-19T01:10:35.000Z">2020-01-19</time>
+                <time class="level-item has-text-grey" datetime="2020-02-28T04:59:54.000Z">2020-02-28</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
@@ -102,7 +102,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 506 个字)
+                    4 分钟 读完 (大约 617 个字)
                 </span>
                 
                 
@@ -111,43 +111,51 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                友善之臂移植香蕉派的树莓派系统，并进行精简
+                编程代码字体
             
         </h1>
         <div class="content">
-            <p><img src="http://imgs.yrzdm.com/imgs/20200119/16GMl6BH1Pbs.jpg?imageslim" alt="mark"></p>
+            <p><img src="http://imgs.yrzdm.com/imgs/20200228/l6USNNVGsDE8.gif" alt="mark"></p>
+<p>说到字体，之前看过西蒙·加菲尔德的《字体故事》非常不错的一本书，没有看过可以看看👉<a href="https://yadi.sk/d/8osZAIkuBnQyZQ" target="_blank" rel="noopener">字体故事</a>。字体真的是非常重要的基础设施。但凡是能够接触到信息除了口口相传，就一定能接触到字体。</p>
 <a id="more"></a>
-<p>使用BPI-M2P-H3 的Raspbian ROM，用etcher烧录到tf卡中，安装xrdp进行远程桌面的登录。</p>
-<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> install xrdp<br></code></pre></td></tr></table></figure>
-<p>安装完成后，使用ifconfig获得本地ip地址，然后使用windows进行远程登陆。<br>在未进行配置之前，使用默认的密码进行初次登录pi bananapi</p>
-<p>考虑到此开发板的后期应用场景，需要对此进行精简rom，作为一个单纯的服务端来使用，去除没有必要的组件。</p>
-<h3 id="精简操作"><a href="#精简操作" class="headerlink" title="精简操作"></a>精简操作</h3><ol>
-<li>删除Games<figure class="highlight ebnf hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">rm -rf python-games</span><br></code></pre></td></tr></table></figure>
-<img src="http://imgs.yrzdm.com/imgs/20200119/qdpdtvtCYCNo.jpg?imageslim" alt="mark"></li>
-<li>删除opt目录下的示范代码<figure class="highlight armasm hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">sudo</span> rm -rf <span class="hljs-meta">opt</span><br></code></pre></td></tr></table></figure></li>
-<li>移除IBM的Node-RED、Mathematica、Scratch、Sonic Pi、Minecraft Pi<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> <span class="hljs-builtin-name">remove</span> --purge --auto-<span class="hljs-builtin-name">remove</span> nodered wolfram-engine scratch sonic-pi minecraft-pi<br></code></pre></td></tr></table></figure>
-<img src="http://imgs.yrzdm.com/imgs/20200119/Ug9wx0zLsSIL.png?imageslim" alt="mark"></li>
-<li>移除掉Sense HAT Emulator<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> <span class="hljs-builtin-name">remove</span> --purge --auto-<span class="hljs-builtin-name">remove</span> python-sense-emu python3-sense-emu python-sense-emu-doc sense-emu-tools<br></code></pre></td></tr></table></figure>
-<img src="http://imgs.yrzdm.com/imgs/20200119/Ibw1gKs7Jss1.png?imageslim" alt="mark"></li>
-<li>移除Libre Office(后边的*意思是全部移除)<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> <span class="hljs-builtin-name">remove</span> --purge --auto-<span class="hljs-builtin-name">remove</span> libreoffice*<br></code></pre></td></tr></table></figure></li>
-<li>移除掉浏览器(保留谷歌浏览器,因为项目中用到了谷歌浏览器)<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> <span class="hljs-builtin-name">remove</span> --purge --auto-<span class="hljs-builtin-name">remove</span> claws-mail rpi-chromium-mods epiphany-browser dillo<br></code></pre></td></tr></table></figure></li>
-<li>移除两套Java IDE：BlueJ与Greenfoot，一套轻量型IDE：Geany<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> <span class="hljs-builtin-name">remove</span> --purge --auto-<span class="hljs-builtin-name">remove</span> bluej greenfoot geany<br></code></pre></td></tr></table></figure></li>
-<li>执行清洁<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> autoremove<br>sudo apt-<span class="hljs-builtin-name">get</span> clean<br></code></pre></td></tr></table></figure>
-<h3 id="升级固件，让固件支持emmc-5-1"><a href="#升级固件，让固件支持emmc-5-1" class="headerlink" title="升级固件，让固件支持emmc 5.1"></a>升级固件，让固件支持emmc 5.1</h3></li>
-<li>升级bpi-tools<figure class="highlight ebnf hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo su<br>bpi-tools</span><br></code></pre></td></tr></table></figure></li>
-<li>下载升级固件驱动<figure class="highlight stata hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata">bpi-<span class="hljs-keyword">update</span> -c bpi-m2p.<span class="hljs-keyword">conf</span><br></code></pre></td></tr></table></figure></li>
-<li>检查下载的文件格式<figure class="highlight nginx hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">file</span> <span class="hljs-regexp">*.tgz</span><br></code></pre></td></tr></table></figure></li>
-<li>生成bootloader<figure class="highlight ebnf hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">bpi-bootsel</span><br></code></pre></td></tr></table></figure>
-bootloader 生成后将会出现地址</li>
-<li>升级bootloader<figure class="highlight crystal hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crystal">bpi-bootsel /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">u</span>-<span class="hljs-title">boot</span>/<span class="hljs-title">bananapi</span>/<span class="hljs-title">bpi</span>-<span class="hljs-title">m2p</span>/<span class="hljs-title">BPI_M2P_720P</span>.<span class="hljs-title">img</span>.<span class="hljs-title">gz</span></span><br></code></pre></td></tr></table></figure>
-使用生成的bootloader</li>
-<li>重启<figure class="highlight ebnf hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure>
 
+<p>最近不少大公司开始放出免费的为编程人员使用的字体，感谢。</p>
+<ol>
+<li>MS家专为新的终端程序设计的Cascadia Code.</li>
+<li>美国政府在U.S. Web Design System设计的Public Sans</li>
+<li>IBM为灵感设计的 IBM Plex</li>
+<li>Highway Gothic 为灵感设计的Overpass Font</li>
+<li>Jet Brains设计的Monospaced Font</li>
+</ol>
+<p>以上字体都可以免费使用，不用担心版权问题。</p>
+<ol>
+<li><p>MS Cascadia Code</p>
+<p>This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.</p>
+<p><img src="https://github.com/microsoft/cascadia-code/raw/master/images/cascadia-code-characters.png" alt="MS Cascadia Code"></p>
+<p>Download👉<a href="https://github.com/microsoft/cascadia-code/releases" target="_blank" rel="noopener">link</a></p>
+</li>
+<li><p>美国政府公布的原始码字形，修改自经典英文字体LibreFranklin Font的开源版本，比原有字体更清晰，对屏幕阅读有更好的易读性。</p>
+<p>Public Sans 提供各种字型厚度，font-weight 从100-900，包含italic，无论是标题还是内文都有非常好的表现。</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/F4PRCcXh26Vu.jpg?imageslim" alt="mark"></p>
+<p>download👉<a href="https://github.com/uswds/public-sans/releases" target="_blank" rel="noopener">link</a></p>
+</li>
+<li><p>IBM Plex</p>
+<p>IBM Plex Family 由三大字体类型组成，Sans-serif，Serif和Mono，除了提供8中字重外，IBM Plex也提供了网页使用的eot woff, woff2格式</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/LfazgCU1Ni17.jpg?imageslim" alt="mark"></p>
+<p>官网👉<a href="https://www.ibm.com/plex/" target="_blank" rel="noopener">link</a></p>
+<p>Download 👉<a href="https://github.com/IBM/plex/releases" target="_blank" rel="noopener">link</a></p>
+</li>
+<li><p>Overpass Font</p>
+<p>Overpass设计灵感来自联邦高速公路字体，美国、加拿大、土耳其、澳大利亚、荷兰、中国都是使用联邦高速公路字体，不过现在部分地区已经使用Clearview替代。</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/z2prJYYF9xwP.gif" alt="mark"></p>
+<p><a href="http://overpassfont.org/" target="_blank" rel="noopener">官网地址</a></p>
+</li>
+<li><p>Monospaced Font</p>
+<p>JetBrains Mono 比一般的等宽字体来说<strong>增加了字体高度以提升阅读体验，更適合做变成代码使用</strong>，除了节省空间，也减少眼睛处理的时间。</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/GuEXUSUOG6Y9.jpg?imageslim" alt="mark"></p>
+<p>官网地址 👉<a href="https://www.jetbrains.com/lp/mono/" target="_blank" rel="noopener">link</a></p>
 </li>
 </ol>
-<h3 id="生成自己的ROM"><a href="#生成自己的ROM" class="headerlink" title="生成自己的ROM"></a>生成自己的ROM</h3><p><a href="http://forum.banana-pi.org/t/how-to-use-bpi-tools-migrate-command-to-build-yourself-image/2019" target="_blank" rel="noopener">http://forum.banana-pi.org/t/how-to-use-bpi-tools-migrate-command-to-build-yourself-image/2019</a></p>
-<p><a href="http://wiki.banana-pi.org/Getting_Started_with_M2P#Load_your_image_on_M2P_EMMC" target="_blank" rel="noopener">http://wiki.banana-pi.org/Getting_Started_with_M2P#Load_your_image_on_M2P_EMMC</a></p>
-<p>参考了这两个链接。</p>
 
         </div>
         
@@ -201,17 +209,10 @@ bootloader 生成后将会出现地址</li>
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/20/FastApi/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">FastApi</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/14/Friendly-Arm/">
-                <span class="level-item">热水器改造项目</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/28/30-years-old/">
+                <span class="level-item">30-years-old</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1106,7 +1107,7 @@ bootloader 生成后将会出现地址</li>
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/log.png" alt="友善之臂移植香蕉派的树莓派系统，并进行精简" height="28">
+                    <img src="/images/log.png" alt="编程代码字体" height="28">
                 
                 </a>
                 <p class="is-size-7">
