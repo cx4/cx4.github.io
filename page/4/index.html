@@ -93,6 +93,68 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-09-08T08:18:26.000Z">2016-09-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 542 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/09/08/python-analytics/">python-analytics</a>
+            
+        </h1>
+        <div class="content">
+            <p>最近小红说要买个二手房，让我帮忙看一下二手房的信息，嗯毕竟买房是个麻烦事，而近一个月济南房价真是<strong>涨疯</strong>了。</p>
+<p>刚好现在学python，正好可以拿来作为练手，想要实现二手房的价格数据分析。</p>
+<p>首先想了一下基本的逻辑，先从58同城爬取一下以区域划分的房源信息。</p>
+<p>1.首先使用Chrome调试工具分析出页面中的信息所在tag的位置，通过BeautifulSoup或正则re或lxml这三个Modules分析出信息。</p>
+<p>由于三个Modules掌握都不熟练所以这混合了这三种模块。</p>
+<p><img src="http://ww3.sinaimg.cn/large/89de77d7jw1f7lceb33g6j20h00extcz.jpg" alt="python"></p>
+<p>通过输入可以选择不同的行政区进行数据的选择。</p>
+<p>只有数据还不够直观，通过地理位置的抓取和高德地图的逆解析得到房源信息的坐标，然后展示到地图上。嗯 就这么干…</p>
+<p><img src="http://ww2.sinaimg.cn/large/89de77d7jw1f7lco2xme7j20gt0gsgog.jpg" alt="python-amp"></p>
+<p>在匹配数据的过程中，发现会被高德(阿里)的服务器拒绝，所以加了延时500ms。</p>
+<p><img src="http://ww3.sinaimg.cn/large/89de77d7jw1f7lcu3g5qxj211y0kgwse.jpg" alt="python-data"></p>
+<p>爬取得到的房源数据</p>
+<p><img src="http://ww2.sinaimg.cn/large/89de77d7jw1f7lcx3fbmlj20wx0g0wmj.jpg" alt="lat-python"></p>
+<p>你解析得到的坐标数据</p>
+<p>放到页面上，<a href="http://warm.pe.hu/xiaohong-house/alpha.html" target="_blank" rel="noopener">alpha_version</a> 可解析出房源所在位置附近的商圈。</p>
+<p>觉得有点丑，然后又有了第二个版本<a href="http://warm.pe.hu/xiaohong-house/2nd.html" target="_blank" rel="noopener">2nd</a> 在此版本中发现，如果坐标一样或者坐标太近等原因导致大量的数据没有被展现出来。然后又有了第三个版本。热点<a href="http://warm.pe.hu/xiaohong-house/3.html" target="_blank" rel="noopener">Heatmap</a></p>
+<p>好吧，轮子造到这里。鉴于近期济南房价的<strong>疯狂涨势</strong>,留着数据，一个月后再爬取一下，再做个涨幅数据的分析。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2015-09-25T08:18:26.000Z">2015-09-25</time>
                 
                 <div class="level-item">
@@ -208,7 +270,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            31
+                            32
                         </p>
                     </a>
                 </div>
@@ -292,7 +354,7 @@
                 <span class="level-item">docs</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">24</span>
+                <span class="level-item tag">25</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/docs/Android/">
@@ -340,7 +402,7 @@
                 <span class="level-item">python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">16</span>
+                <span class="level-item tag">17</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/docs/raspberry/">
@@ -452,6 +514,25 @@
         
         <article class="media">
             
+            <a href="/2020/04/17/generator-expression/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用生成器表达式来改写数据量比较大列表推导">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-17T05:33:27.000Z">2020-04-17</time></div>
+                    <a href="/2020/04/17/generator-expression/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用生成器表达式来改写数据量比较大列表推导</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/28/fonts-for-developers/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="编程代码字体">
@@ -526,25 +607,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/01/20/FastApi/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FastApi">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-20T04:01:12.000Z">2020-01-20</time></div>
-                    <a href="/2020/01/20/FastApi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FastApi</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -603,6 +665,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/02/">
@@ -809,7 +882,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">16</span>
+                        <span class="tag is-grey">17</span>
                     </a>
                 </div>
                 
@@ -952,6 +1025,17 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2020/02/">
                 <span class="level-start">
                     <span class="level-item">二月 2020</span>
@@ -1156,7 +1240,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">16</span>
+                        <span class="tag is-grey">17</span>
                     </a>
                 </div>
                 
