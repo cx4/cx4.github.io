@@ -6,13 +6,14 @@ html {
 }
 body {
   background-color: #f7f7f7;
+  font-family: 'Merriweather', serif;
 }
 body,
 button,
 input,
 select,
 textarea {
-  font-family: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
+  font-family: "Merriweather", "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
 }
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
@@ -372,6 +373,7 @@ img.thumbnail {
 .content h4,
 .content h5,
 .content h6 {
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 .content h1 {
@@ -392,7 +394,7 @@ img.thumbnail {
 .content code,
 .content pre {
   font-size: 0.85em;
-  font-family: "Source Code Pro", monospace, "Microsoft YaHei";
+  font-family: "Merriweather", "Source Code Pro", monospace, "Microsoft YaHei";
 }
 .content code {
   color: #ff3860;
@@ -455,7 +457,7 @@ figure.highlight figcaption:after {
 }
 figure.highlight figcaption span {
   font-weight: 500;
-  font-family: "Source Code Pro", monospace, "Microsoft YaHei";
+  font-family: "Merriweather", "Source Code Pro", monospace, "Microsoft YaHei";
 }
 figure.highlight figcaption .fold,
 figure.highlight figcaption a {
