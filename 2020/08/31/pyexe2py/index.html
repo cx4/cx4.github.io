@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>热水器改造项目 - 及时行乐</title>
+<title>反编译pyinstaller生成的exe程序 - 及时行乐</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="热水器改造项目" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="反编译pyinstaller生成的exe程序" type="application/atom+xml">
 
 
 
@@ -36,7 +36,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/log.png" alt="热水器改造项目" height="28">
+                <img src="/images/log.png" alt="反编译pyinstaller生成的exe程序" height="28">
             
             </a>
         </div>
@@ -92,7 +92,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-14T05:51:55.000Z">2020-01-14</time>
+                <time class="level-item has-text-grey" datetime="2020-08-31T07:31:05.000Z">2020-08-31</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
@@ -102,7 +102,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 710 个字)
+                    3 分钟 读完 (大约 431 个字)
                 </span>
                 
                 
@@ -111,43 +111,34 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                热水器改造项目
+                反编译pyinstaller生成的exe程序
             
         </h1>
         <div class="content">
-            <p>生活上有一个不便之处是关于热水器的使用，说到这里，务必劝解各位，🤐买房一定不要买☠️万科☠️。</p>
+            <p>帮别人做了一个项目，需要exe执行，使用pyinstaller进行了打包操作，发给用户后，然后源文件没有放网盘，客户还需要修改一个东西。现在手头只有一个exe，总不能把时间浪费在路上毕竟这不是人干的事。</p>
 <a id="more"></a>
 
-<p>因为热水器🚿是配套赠送的，暂时没有更换的需求，热水器是力诺瑞特电热和太阳能混合的，保证了天气不好的时候可以使用电加热，但是电加热非常不方便，尤其在这个被物联网时代惯坏了时代。在外没法看到热水器的温度显示。<br>想着实现如下功能：</p>
-<ul>
-<li><input disabled type="checkbox"> 远程观看热水器水温</li>
-<li><input disabled type="checkbox"> 远程（手机）可点击热水器的加热按钮</li>
-<li><input disabled type="checkbox"> 在家时候使用天猫精灵进行开启和关闭加热</li>
-</ul>
-<ol>
-<li><p><strong>硬件准备</strong></p>
-<p>手里有树莓派、esp32、esp8266和好多开发板，综合考虑使用一块友善之臂的开发板，但是友善之臂开发板的固件非常的不友善，看了一下采用了H3的soc，对比了一下国内有好几家有类似的方案，orangePi,BananaPi,发现香蕉派的M2和友善之臂M1 Plus有着惊人的相似之处，连引脚定义都是相同的，但是香蕉派的固件明显的要友善一些，单从固件大小上就能看出，友善之臂没有打包很多的驱动在内。</p>
-<blockquote>
-<p>尝试将BananaPi的固件刷入友善之臂，竟然完美兼容。😂</p>
-</blockquote>
-<p>要实现温度的读取，如果从热水器内部下手，担心丢失保修，只能从外部下手，使用大的摄像头担心浪费，买了一个esp32-cam模块来拍摄温度显示，然后写个图像的ocr识别来曲线救国。</p>
-</li>
-</ol>
-<ul>
-<li>加热按钮考虑使用舵机来实现模拟人工的按键</li>
-</ul>
-<ol start="2">
-<li><p>数据中心使用Domoticz</p>
-<p>树莓派安装Domoticz非常方便</p>
-<figure class="highlight vim hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim">sudo curl -L install.domoticz.<span class="hljs-keyword">cn</span> | sudo bash<br>sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span><br></code></pre></td></tr></table></figure>
-<p>运行以上命令后就会进入domoticz的配置界面。</p>
-</li>
-<li><p>流程图</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sequence">participant 客户端 as A<br>participant esp32CAM as B<br>participant 数据中心 as C<br>Note over A:用户账号、密码<br>A-&gt;C: 访问数据中心<br>Note over C:验证账号、密码<br>C--&gt;&gt;A:热水器温度状态<br>A-&gt;C:发送指令<br>C--&gt;&gt;B:发送指令<br>B-&gt;B:自交互<br></code></pre></td></tr></table></figure>
-<p>未完待续…</p>
-</li>
-</ol>
-<p>尤其是济南华艺黄运林这个老板经营的地产项目，绝对是坑，项目要配套没有配套在济南开发的这些项目都是合作开发，狗血的是作为万科济南负责人竟然自己注册了个华艺地产，万科和华艺合作。</p>
+<h2 id="1-将exe反编译为pyc"><a href="#1-将exe反编译为pyc" class="headerlink" title="1. 将exe反编译为pyc"></a>1. 将exe反编译为pyc</h2><p>使用<code>pyinstxtractor</code> 将exe进行反编译，提取由<code>pyinstaller</code> 生成的可执行文件内容。</p>
+<p>pyinstaller Extractor项目地址<a href="https://github.com/extremecoders-re/pyinstxtractor" target="_blank" rel="noopener">extractor</a></p>
+<p>Useage:</p>
+<p><code>python pyinstxtractor.py Main.exe</code></p>
+<p>运行后可以得到一个提取的文件夹</p>
+<p><img src="https://images.yrzdm.com/imgs/20200831/4oJRC13xJOxt.png?imageslim" alt="提取目录">))</p>
+<h2 id="使用Uncompyle6反编译-pyc-文件"><a href="#使用Uncompyle6反编译-pyc-文件" class="headerlink" title="使用Uncompyle6反编译 *.pyc 文件"></a>使用Uncompyle6反编译 *.pyc 文件</h2><p>使用了在线版本pyc转py，尝试了几个网站都不能正常的反编译。看到<code>uncompyle2</code>的后续版本<code>uncompyle6</code></p>
+<p>项目地址：<a href="https://github.com/rocky/python-uncompyle6/" target="_blank" rel="noopener">uncompyle6</a></p>
+<p>如果直接使用<code>uncompyle6</code> 进行反编译可能会遇到以下两种报错情况，别问我怎么知道的。</p>
+<p>1.<code>ImportError: Unknown magic number 227 in bit.pyc</code></p>
+<p>2.<code>bad marshal data (unknown type code)</code></p>
+<p>在使用<code>uncompyle6</code>之前我们需要二进制编辑软件，我用的是<code>Ultraedit</code></p>
+<h4 id="UltraEdit-27-0-0-94-官方简体中文版安装包-2020-07-31"><a href="#UltraEdit-27-0-0-94-官方简体中文版安装包-2020-07-31" class="headerlink" title="UltraEdit 27.0.0.94 官方简体中文版安装包 [2020/07/31]"></a>UltraEdit 27.0.0.94 官方简体中文版安装包 [2020/07/31]</h4><p>x86 <a href="https://downloads.ultraedit.com/main/ue/win/ue_chinese.exe" target="_blank" rel="noopener">https://downloads.ultraedit.com/main/ue/win/ue_chinese.exe</a><br>x64 <a href="https://downloads.ultraedit.com/main/ue/win/ue_chinese_64.exe" target="_blank" rel="noopener">https://downloads.ultraedit.com/main/ue/win/ue_chinese_64.exe</a></p>
+<p>解决ultraedit 试用期的问题，只需要在<code>hosts</code>文件中添加以下两行：</p>
+<figure class="highlight accesslog hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span> licensing.ultraedit.com<br><span class="hljs-number">127.0.0.1</span> swupdate.ultraedit.com<br></code></pre></td></tr></table></figure>
+
+<p>使用UltraEdit打开提取目录中的struct.pyc文件，复制0-F 二进制数据粘贴到源码pyc中。</p>
+<p><img src="https://images.yrzdm.com/imgs/20200831/EpNLrvBGANRl.png?imageslim" alt="struct.pyc"></p>
+<p>接下来使用：</p>
+<p><code>uncompyle6 bit.pyc &gt; bit.py</code></p>
+<p>即可得到我们反编译后的源码文件了。</p>
 
         </div>
         
@@ -155,7 +146,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Python/" rel="tag">Python</a>
+                    <a class="has-link-grey -link" href="/tags/Python-Pyinstaller/" rel="tag">Python,Pyinstaller</a>
                 </div>
             </div>
         </div>
@@ -201,17 +192,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/19/Friendly-BananaPi-Raspberry/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">友善之臂移植香蕉派的树莓派系统，并进行精简</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/13/google-fire-md/">
-                <span class="level-item">google-fire.md</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/08/27/youdao-dict/">
+                <span class="level-item">有道生词本的批量处理</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1608,7 +1592,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/log.png" alt="热水器改造项目" height="28">
+                    <img src="/images/log.png" alt="反编译pyinstaller生成的exe程序" height="28">
                 
                 </a>
                 <p class="is-size-7">
