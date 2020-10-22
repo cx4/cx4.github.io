@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.1.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>XSS终结者Content-Security-Policy - 及时行乐</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="XSS终结者Content-Security-Policy" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicons.ico">
+
+
+<link rel="stylesheet" href="https://code.bdstatic.com/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://code.bdstatic.com/npm/highlight.js@9.12.0/styles/tomorrow-night.css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/log.png" alt="XSS终结者Content-Security-Policy" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="My GitHub" href="https://cx4.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-22T01:31:57.000Z">2020-10-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 分钟 读完 (大约 1874 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                XSS终结者Content-Security-Policy
+            
+        </h1>
+        <div class="content">
+            <p>CSP全称为Content Security Policy,即内容安全策略。主要以白名单的形式配置可信任的内容来源，在网页中，能够使白名单中的内容正常执行（JS，CSS，image等），而非白名单的内容无法正常执行，从而<code>减少跨站脚本攻击（XSS）</code>，当然也能够<code>减少运营商劫持的内容注入攻击</code>。</p>
+<a id="more"></a>
+
+<p>example：</p>
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+
+<p>不支持CSP的浏览器将会自动忽略CSP的信息，不会有什么影响。</p>
+<p>浏览器兼容性查询<a href="http://caniuse.com/#feat=contentsecuritypolicy" target="_blank" rel="noopener">caniuse</a></p>
+<h3 id="CSP-语法组成"><a href="#CSP-语法组成" class="headerlink" title="CSP 语法组成"></a>CSP 语法组成</h3><h4 id="策略类型"><a href="#策略类型" class="headerlink" title="策略类型"></a>策略类型</h4><p>csp有两种策略类型：</p>
+<ul>
+<li><p>Conten-Security-Policy</p>
+</li>
+<li><p>Content-Security-Policy-Report-Only</p>
+<p>这两种策略类型的主要区别也i可以从命名上看出，第一种对不安全的资源会进行阻止，第二种只会进行数据上报，不会有实际的阻止。</p>
+<p>当定义多个策略的时候，浏览器会优先采用最先定义的。</p>
+</li>
+</ul>
+<h3 id="指令集合"><a href="#指令集合" class="headerlink" title="指令集合"></a>指令集合</h3><p>CSP的指令是指组成内容来源白名单的关键，上面两种策略类型含有以下</p>
+<h4 id="指令示例及说明"><a href="#指令示例及说明" class="headerlink" title="指令示例及说明"></a>指令示例及说明</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>取值示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default-src</td>
+<td>‘self’ cdn.example.com</td>
+<td>定义针对所有类型（js/image/css/web font/ajax/iframe/多媒体等）资源的默认加载策略，某类型资源如果没有单独定义策略，就使用默认。</td>
+</tr>
+<tr>
+<td>script-src</td>
+<td>‘self’ js.example.com</td>
+<td>定义针对JavaScript的加载策略</td>
+</tr>
+<tr>
+<td>object-src</td>
+<td>‘self’</td>
+<td>针对,, 等标签的加载策略</td>
+</tr>
+<tr>
+<td>style-src</td>
+<td>‘self’ css.example.com</td>
+<td>定义针对样式的加载策略</td>
+</tr>
+<tr>
+<td>img-src</td>
+<td>‘self’ image.example.com</td>
+<td>定义针对图片的加载策略</td>
+</tr>
+<tr>
+<td>media-src</td>
+<td>‘media.example.com’</td>
+<td>针对或者引入的html多媒体等标签的加载策略</td>
+</tr>
+<tr>
+<td>frame-src</td>
+<td>‘self’</td>
+<td>针对iframe的加载策略</td>
+</tr>
+<tr>
+<td>connect-src</td>
+<td>‘self’</td>
+<td>针对Ajax、WebSocket等请求的加载策略。不允许的情况下，浏览器会模拟一个状态为400的响应</td>
+</tr>
+<tr>
+<td>font-src</td>
+<td>font.qq.com</td>
+<td>针对Web Font的加载策略</td>
+</tr>
+<tr>
+<td>sandbox</td>
+<td>allow-forms allow-scripts</td>
+<td>对请求的资源启用sandbox</td>
+</tr>
+<tr>
+<td>report-uri</td>
+<td>/some-report-uri</td>
+<td>告诉浏览器如果请求的资源不被策略允许时，往哪个地址提交日志信息。不阻止任何内容，可以改用Content-Security-Policy-Report-Only头</td>
+</tr>
+<tr>
+<td>base-uri</td>
+<td>‘self’</td>
+<td>限制当前页面的url（CSP2）</td>
+</tr>
+<tr>
+<td>child-src</td>
+<td>‘self’</td>
+<td>限制子窗口的源(iframe、弹窗等),取代frame-src（CSP2）</td>
+</tr>
+<tr>
+<td>form-action</td>
+<td>‘self’</td>
+<td>限制表单能够提交到的源（CSP2）</td>
+</tr>
+<tr>
+<td>frame-ancestors</td>
+<td>‘none’</td>
+<td>限制了当前页面可以被哪些页面以iframe,frame,object等方式加载（CSP2）</td>
+</tr>
+<tr>
+<td>plugin-types</td>
+<td>application/pdf</td>
+<td>限制插件的类型（CSP2）</td>
+</tr>
+</tbody></table>
+<h4 id="指令值示例及说明"><a href="#指令值示例及说明" class="headerlink" title="指令值示例及说明"></a>指令值示例及说明</h4><table>
+<thead>
+<tr>
+<th>指令值</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>img-src *</td>
+<td>允许任何内容</td>
+</tr>
+<tr>
+<td>‘none’</td>
+<td>img-src ‘none’</td>
+<td>不允许任何内容</td>
+</tr>
+<tr>
+<td>‘self’</td>
+<td>img-src ‘self’</td>
+<td>允许同源内容</td>
+</tr>
+<tr>
+<td>data:</td>
+<td>img-src data:</td>
+<td>允许data:协议（如base64编码的图片）</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com" target="_blank" rel="noopener">www.a.com</a></td>
+<td>img-src <a href="http://www.a.com" target="_blank" rel="noopener">www.a.com</a></td>
+<td>允许加载指定域名的资源</td>
+</tr>
+<tr>
+<td>*.a.com</td>
+<td>img-src *.a.com</td>
+<td>允许加载a.com任何子域的资源</td>
+</tr>
+<tr>
+<td><a href="https://img.com" target="_blank" rel="noopener">https://img.com</a></td>
+<td>img-src <a href="https://img.com" target="_blank" rel="noopener">https://img.com</a></td>
+<td>允许加载img.com的https资源</td>
+</tr>
+<tr>
+<td>https:</td>
+<td>img-src https:</td>
+<td>允许加载https资源</td>
+</tr>
+<tr>
+<td>‘unsafe-inline’</td>
+<td>script-src ‘unsafe-inline’</td>
+<td>允许加载inline资源（style属性，onclick，inline js和inline css等等）</td>
+</tr>
+<tr>
+<td>‘unsafe-eval’</td>
+<td>script-src ‘unsafe-eval’</td>
+<td>允许加载动态js代码，例如eval()</td>
+</tr>
+</tbody></table>
+<h2 id="CSP的使用方式"><a href="#CSP的使用方式" class="headerlink" title="CSP的使用方式"></a>CSP的使用方式</h2><h3 id="HTML-Meta标签"><a href="#HTML-Meta标签" class="headerlink" title="HTML Meta标签"></a>HTML Meta标签</h3><p>在这种形式中，Meta标签主要含有两部分的key-value:</p>
+<ul>
+<li>http-equiv</li>
+<li>content</li>
+</ul>
+<p>http-equiv的value为CSP的策略类型，而content则是声明指令集合，即白名单。如</p>
+<meta http-equiv-"content-security-policy" content="script-src 'self'">
+
+<p>在HTML的head标签中添加上面的Meta标签，当浏览器支持CSP标准时，<code>Content-Security-Policy</code>实际阻止策略将会使得非同源的script(根据指令集合来定)不会被加载及执行。</p>
+<p>Meta标签的Content-Security-policy-Report-Only方式在当前（2020/10）多数移动端浏览器上表现正常，但是<strong>不推荐</strong>这样做，在Chrome 50 会产生如下的提示</p>
+<blockquote>
+<p>The report-only Content Security Policy xxxxxxx was delivered via a element,which is disallowed. The policy has been ignored.</p>
+</blockquote>
+<h4 id="HTTP-Header"><a href="#HTTP-Header" class="headerlink" title="HTTP Header"></a>HTTP Header</h4><p>通过Meta的方式很是简单，但当涉及到页面较多时，使用Meta标签的方式需要在每个页面都鸽子加上。如果通过服务端配置HTML返回的响应头HTTP Header带上CSP的指令的话，那将能够一劳永逸，同事支持多个页面。下面为响应头</p>
+<blockquote>
+<p>Response Header</p>
+<p>Connection: keep-alive</p>
+<p>Content-Security-Policy: script-src ‘self’ *.qq.com *.url.cn</p>
+</blockquote>
+<p>不仅如此，这种形式的Content-Security-Policy-Report-Only方式能够得到更好的兼容支持，也是推荐方式。</p>
+<h3 id="实践经验"><a href="#实践经验" class="headerlink" title="实践经验"></a>实践经验</h3><p>CSP的阻止加载及执行的方式相当强大，也因为它如此强大，所以在使用时更是要小心谨慎，毕竟，如果一个不小心制定了错误的指令集合方案，那将可能导致阻止了正常文件的加载，影响业务功能，这是相当危险的。</p>
+<h4 id="一步步制定你的CSP方案"><a href="#一步步制定你的CSP方案" class="headerlink" title="一步步制定你的CSP方案"></a>一步步制定你的CSP方案</h4><h5 id="1-通过HTML-Meta标签进行初步方案的制定（meta标签已不支持report-uri-2019-7）"><a href="#1-通过HTML-Meta标签进行初步方案的制定（meta标签已不支持report-uri-2019-7）" class="headerlink" title="1. 通过HTML Meta标签进行初步方案的制定（meta标签已不支持report-uri 2019.7）"></a>1. 通过HTML Meta标签进行初步方案的制定（meta标签已不支持report-uri 2019.7）</h5><p>这种方式实现成本低，只对当前的HTML有效，从而能够进行逐步灰度。当然存在上面提及的兼容性问题，但如果现在时移动端上，或者在可逾期的浏览器内核上跑的话，在兼容性满足的情况下，那还是可以用过这个方式进行Report-Only。结合自己业务的资源情况以及在Chrome上调试制定初步方案。</p>
+<h5 id="2-使用HTTP-Header的Content-Security-Policy-Report-Only方式进一步确定方案"><a href="#2-使用HTTP-Header的Content-Security-Policy-Report-Only方式进一步确定方案" class="headerlink" title="2. 使用HTTP Header的Content-Security-Policy-Report-Only方式进一步确定方案"></a>2. 使用HTTP Header的Content-Security-Policy-Report-Only方式进一步确定方案</h5><p>由于上面的Meta标签存在一定的兼容问题，所以当我们制定了初步方案后，就可以开始使用HTTP Header的形式，小心使得万年船，这里还是建议先使用Report-Only的方式，并制定上报的url来收集阻止的内容，通过上报的数据进行方案的优化，从而进一步确定具体方案。</p>
+<h5 id="3-HTTP-Header改用Content-Security-Policy策略进行实际拦截阻止"><a href="#3-HTTP-Header改用Content-Security-Policy策略进行实际拦截阻止" class="headerlink" title="3.HTTP Header改用Content-Security-Policy策略进行实际拦截阻止"></a>3.HTTP Header改用Content-Security-Policy策略进行实际拦截阻止</h5><p>具体的CSP方案经过上面两轮洗礼，在<strong>分析完上报的数据，确定白雾疏漏</strong>后，可将HTTP Header改用Content-Security-Policy策略，从而进行实际拦截阻止。</p>
+<h4 id="项目实践数据"><a href="#项目实践数据" class="headerlink" title="项目实践数据"></a>项目实践数据</h4><p>从过腾讯使用CSP后的上报拦截数据</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>CSP阻止量</th>
+<th>在线PV</th>
+<th>占比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2016.03.31</td>
+<td>23431</td>
+<td>545872</td>
+<td>4.31%</td>
+</tr>
+<tr>
+<td>2016.04.01</td>
+<td>24459</td>
+<td>619979</td>
+<td>3.95%</td>
+</tr>
+<tr>
+<td>2016.04.02</td>
+<td>20398</td>
+<td>525055</td>
+<td>3.88%</td>
+</tr>
+<tr>
+<td>2016.04.02</td>
+<td>19938</td>
+<td>475985</td>
+<td>4.19%</td>
+</tr>
+<tr>
+<td>2016.04.03</td>
+<td>23140</td>
+<td>507329</td>
+<td>4.56%</td>
+</tr>
+</tbody></table>
+<p>从上面的数据可以看出，每天被攻击的情况呈现出一种稳定持续的倾向，而且这类攻击一版不是针对某个业务的，具备了普遍性，这样的影响范围可想而知。</p>
+<h6 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h6><blockquote>
+<p><a href="https://www.w3.org/TR/CSP/#changes-from-level-1" target="_blank" rel="noopener">https://www.w3.org/TR/CSP/#changes-from-level-1</a><br><a href="http://w3c.github.io/webappsec-csp/" target="_blank" rel="noopener">http://w3c.github.io/webappsec-csp/</a><br><a href="http://content-security-policy.com/" target="_blank" rel="noopener">Content-Security-Policy Header ⟶ CSP Reference &amp; Examples</a><br><a href="https://www.w3.org/TR/2012/CR-CSP-20121115/" target="_blank" rel="noopener">Content Security Policy 1.0</a><a href="https://www.w3.org/TR/CSP/#changes-from-level-1" target="_blank" rel="noopener">Content Security Policy Level 3</a><br><a href="http://w3c.github.io/webappsec-csp/" target="_blank" rel="noopener">Content Security Policy Level 3</a><br><a href="http://content-security-policy.com/" target="_blank" rel="noopener">Content-Security-Policy Header ⟶ CSP Reference &amp; Examples</a><br><a href="https://www.w3.org/TR/2012/CR-CSP-20121115/" target="_blank" rel="noopener">Content Security Policy 1.0</a></p>
+</blockquote>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/" rel="tag">Python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/NdMY5zlYyAhF.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/JdKmzhUYwsDv.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/08/31/pyexe2py/">
+                <span class="level-item">反编译pyinstaller生成的exe程序</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/ava.png" alt="Roy-Chang">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Roy-Chang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Devloper
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>China,Jinan</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            45
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            48
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            29
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cx4" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/cx4">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/baidu/">
+            <span class="level-start">
+                <span class="level-item">baidu</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/baidu/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/docs/">
+            <span class="level-start">
+                <span class="level-item">docs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">38</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/docs/Android/">
+            <span class="level-start">
+                <span class="level-item">Android</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/Raspberry/">
+            <span class="level-start">
+                <span class="level-item">Raspberry</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/basic/">
+            <span class="level-start">
+                <span class="level-item">basic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/collections/">
+            <span class="level-start">
+                <span class="level-item">collections</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/javascript/">
+            <span class="level-start">
+                <span class="level-item">javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/live/">
+            <span class="level-start">
+                <span class="level-item">live</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/micropython/">
+            <span class="level-start">
+                <span class="level-item">micropython</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/podcast/">
+            <span class="level-start">
+                <span class="level-item">podcast</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/raspberry/">
+            <span class="level-start">
+                <span class="level-item">raspberry</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/security/">
+            <span class="level-start">
+                <span class="level-item">security</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/test/">
+            <span class="level-start">
+                <span class="level-item">test</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ebook/">
+            <span class="level-start">
+                <span class="level-item">ebook</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ebook/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/license/">
+            <span class="level-start">
+                <span class="level-item">license</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/license/windows/">
+            <span class="level-start">
+                <span class="level-item">windows</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/markdown/">
+            <span class="level-start">
+                <span class="level-item">markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/markdown/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/micropython/">
+            <span class="level-start">
+                <span class="level-item">micropython</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/micropython/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ssr/">
+            <span class="level-start">
+                <span class="level-item">ssr</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ssr/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/10/22/csp-xss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="XSS终结者Content-Security-Policy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-22T01:31:57.000Z">2020-10-22</time></div>
+                    <a href="/2020/10/22/csp-xss/" class="title has-link-black-ter is-size-6 has-text-weight-normal">XSS终结者Content-Security-Policy</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/31/pyexe2py/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="反编译pyinstaller生成的exe程序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-31T07:31:05.000Z">2020-08-31</time></div>
+                    <a href="/2020/08/31/pyexe2py/" class="title has-link-black-ter is-size-6 has-text-weight-normal">反编译pyinstaller生成的exe程序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/27/youdao-dict/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="有道生词本的批量处理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-27T01:58:21.000Z">2020-08-27</time></div>
+                    <a href="/2020/08/27/youdao-dict/" class="title has-link-black-ter is-size-6 has-text-weight-normal">有道生词本的批量处理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/24/sofar/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sofar">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-24T08:41:44.000Z">2020-08-24</time></div>
+                    <a href="/2020/08/24/sofar/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sofar</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/live/">live</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/20/tcp-handshake/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="为什么TCP连接要进行三次握爪">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-20T08:45:39.000Z">2020-08-20</time></div>
+                    <a href="/2020/08/20/tcp-handshake/" class="title has-link-black-ter is-size-6 has-text-weight-normal">为什么TCP连接要进行三次握爪</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/basic/">basic</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://google.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Google</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">google.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://iconmonstr.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">iconmonstr</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">iconmonstr.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/BeautifulSoup/" style="font-size: 10px;">BeautifulSoup</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Jieba/" style="font-size: 10px;">Jieba</a> <a href="/tags/MatPlotlib/" style="font-size: 10px;">MatPlotlib</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Python-Pyinstaller/" style="font-size: 10px;">Python,Pyinstaller</a> <a href="/tags/Python-word/" style="font-size: 10px;">Python,word</a> <a href="/tags/Raspberry/" style="font-size: 10px;">Raspberry</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 15px;">ebook,kindle,collect</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/md5-bcrypt-hash-sha256-sha512-%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95-security/" style="font-size: 10px;">md5,bcrypt,hash,sha256,sha512,密码学,哈希算法,security</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/network-tcp-handshake/" style="font-size: 10px;">network,tcp,handshake</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BeautifulSoup/">
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DNS/">
+                        <span class="tag">DNS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Jieba/">
+                        <span class="tag">Jieba</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MatPlotlib/">
+                        <span class="tag">MatPlotlib</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python-Pyinstaller/">
+                        <span class="tag">Python,Pyinstaller</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python-word/">
+                        <span class="tag">Python,word</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Raspberry/">
+                        <span class="tag">Raspberry</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Shell/">
+                        <span class="tag">Shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Test/">
+                        <span class="tag">Test</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tools/">
+                        <span class="tag">Tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/baidu-data-collect/">
+                        <span class="tag">baidu,data,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/collect/">
+                        <span class="tag">collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ebook-kindle-collect/">
+                        <span class="tag">ebook,kindle,collect</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/install/">
+                        <span class="tag">install</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-study-collect/">
+                        <span class="tag">javascript,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/live/">
+                        <span class="tag">live</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/markdown-fontawesome-collect/">
+                        <span class="tag">markdown,fontawesome,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/md5-bcrypt-hash-sha256-sha512-%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95-security/">
+                        <span class="tag">md5,bcrypt,hash,sha256,sha512,密码学,哈希算法,security</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/micropython-esp8266-Oled-collect/">
+                        <span class="tag">micropython,esp8266,Oled,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/network-tcp-handshake/">
+                        <span class="tag">network,tcp,handshake</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/podcast-study-collect/">
+                        <span class="tag">podcast,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-raspberry-collect/">
+                        <span class="tag">python,raspberry,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-wechat-collect/">
+                        <span class="tag">python,wechat,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/security/">
+                        <span class="tag">security</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ssr-shadow-collect/">
+                        <span class="tag">ssr,shadow,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows-license-collect/">
+                        <span class="tag">windows,license,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/BeautifulSoup/" style="font-size: 10px;">BeautifulSoup</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Jieba/" style="font-size: 10px;">Jieba</a> <a href="/tags/MatPlotlib/" style="font-size: 10px;">MatPlotlib</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Python-Pyinstaller/" style="font-size: 10px;">Python,Pyinstaller</a> <a href="/tags/Python-word/" style="font-size: 10px;">Python,word</a> <a href="/tags/Raspberry/" style="font-size: 10px;">Raspberry</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 15px;">ebook,kindle,collect</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/md5-bcrypt-hash-sha256-sha512-%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95-security/" style="font-size: 10px;">md5,bcrypt,hash,sha256,sha512,密码学,哈希算法,security</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/network-tcp-handshake/" style="font-size: 10px;">network,tcp,handshake</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BeautifulSoup/">
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DNS/">
+                        <span class="tag">DNS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Jieba/">
+                        <span class="tag">Jieba</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MatPlotlib/">
+                        <span class="tag">MatPlotlib</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python-Pyinstaller/">
+                        <span class="tag">Python,Pyinstaller</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python-word/">
+                        <span class="tag">Python,word</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Raspberry/">
+                        <span class="tag">Raspberry</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Shell/">
+                        <span class="tag">Shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Test/">
+                        <span class="tag">Test</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tools/">
+                        <span class="tag">Tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/baidu-data-collect/">
+                        <span class="tag">baidu,data,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/collect/">
+                        <span class="tag">collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ebook-kindle-collect/">
+                        <span class="tag">ebook,kindle,collect</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/install/">
+                        <span class="tag">install</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-study-collect/">
+                        <span class="tag">javascript,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/live/">
+                        <span class="tag">live</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/markdown-fontawesome-collect/">
+                        <span class="tag">markdown,fontawesome,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/md5-bcrypt-hash-sha256-sha512-%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95-security/">
+                        <span class="tag">md5,bcrypt,hash,sha256,sha512,密码学,哈希算法,security</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/micropython-esp8266-Oled-collect/">
+                        <span class="tag">micropython,esp8266,Oled,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/network-tcp-handshake/">
+                        <span class="tag">network,tcp,handshake</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/podcast-study-collect/">
+                        <span class="tag">podcast,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-raspberry-collect/">
+                        <span class="tag">python,raspberry,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-wechat-collect/">
+                        <span class="tag">python,wechat,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/security/">
+                        <span class="tag">security</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ssr-shadow-collect/">
+                        <span class="tag">ssr,shadow,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows-license-collect/">
+                        <span class="tag">windows,license,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/log.png" alt="XSS终结者Content-Security-Policy" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Roy&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/cx4">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://code.bdstatic.com/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://code.bdstatic.com/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://code.bdstatic.com/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
+</html>
