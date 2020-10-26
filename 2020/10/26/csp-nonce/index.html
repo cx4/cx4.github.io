@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: raspberry - 及时行乐</title>
+<title>csp-nonce 守护inline Script - 及时行乐</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="及时行乐" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="csp-nonce 守护inline Script" type="application/atom+xml">
 
 
 
@@ -36,7 +36,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/log.png" alt="及时行乐" height="28">
+                <img src="/images/log.png" alt="csp-nonce 守护inline Script" height="28">
             
             </a>
         </div>
@@ -85,38 +85,24 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li><a href="/categories/docs/">docs</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">raspberry</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-21T23:04:17.000Z">2018-11-22</time>
+                <time class="level-item has-text-grey" datetime="2020-10-26T03:12:57.000Z">2020-10-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/raspberry/">raspberry</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/raspberry/index/">index</a>
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 13 个字)
+                    6 分钟 读完 (大约 950 个字)
                 </span>
                 
                 
@@ -125,12 +111,46 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/11/22/raspberry-os/">Raspberry Os</a>
+                csp-nonce 守护inline Script
             
         </h1>
         <div class="content">
-            <p><a href="http://www.amatfan.com/pages/imgdown/" target="_blank" rel="noopener">常用树莓派系统</a></p>
+            <p>在<a href="https://cx4.github.io/2020/10/22/csp-xss/">XSS终结者</a>一文中，讲述了CSP基础语法组成与使用方式。最终我们利用CSP提供的域名白名单机制，有效地将异常的外联脚本拦在门外。然而在线上环境千千万万，虽然我们限制了外联脚本，但是内联脚本却钻了空。</p>
+<a id="more"></a>
+<h3 id="CSP-unsafe-inline"><a href="#CSP-unsafe-inline" class="headerlink" title="CSP unsafe-inline"></a>CSP unsafe-inline</h3><p>CSP的默认策略是不允许inline脚本执行，所以当我们没有必要进行脚本inline时，CSP域名白名单的机制足以防范注入脚本的问题。然而在实际项目中，我们还是会因为一些场景需要将部分脚本进行inline。于是需要在CSP的规则中增加<code>script-src‘unsafe-inline’</code>配置允许inline资源执行。但也带来了新的隐患。</p>
+<p>允许inline资源执行，也意味着当恶意代码通过inline的方式注入到页面中执行时，页面将变得不再安全。如富文本中被插入一段script代码（没被转义），或者是通过浏览器插件的方式进行代码注入等方式。</p>
+<p><code>Content-Security-Policy： script-src &#39;unsafe-inline&#39;</code></p>
+<h3 id="CSP-nonce"><a href="#CSP-nonce" class="headerlink" title="CSP nonce"></a>CSP nonce</h3><p>为了避免上述问题，我们可以使用<code>nonce</code>方式加强的CSP策略，nonce方式是至每次页面访问都产生一个唯一id，通过给内联脚本增加一个nonce属性，并且使其属性值（id）与返回的CSP nonce-{id}对应。只有当两者一致时，对应的内敛脚本才被允许执行。于是，即使网页被注入异常的脚本，因为攻击者不知道当时的nonce的随机id值，所以注入的脚本不会被执行。从而让网页变得更加安全。</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">Content-Security-Policy:script-src 'nonce-5fAiFfSghuhdf'<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nonce</span>=<span class="hljs-string">"5fAiFfSghuhdf"</span>&gt;</span><span class="actionscript"><br>    <span class="hljs-comment">//.....</span><br></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
+<p>那么，当我们通过动态生成脚本并进行插入时，nonce也会将我们正常的代码拦截在外。所以在这种场景下，我们需要配套使用CSP提供的<code>strict-dynamic</code>,<code>strict-dynamic</code>模式允许让被信任的脚本插入并放行正常的脚本执行。</p>
+<p><code>Content-Security-Policy:script-src &#39;nonce-5fAiFfSghuhdf&#39; &#39;strict-dynamic&#39;</code></p>
+<h3 id="Nonce的部署方式"><a href="#Nonce的部署方式" class="headerlink" title="Nonce的部署方式"></a>Nonce的部署方式</h3><h5 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h5><h5 id="script标签增加nonce属性"><a href="#script标签增加nonce属性" class="headerlink" title="script标签增加nonce属性"></a>script标签增加nonce属性</h5><p>我们可以通过构建的方式为页面中script标签添加nonce属性，并增加一个占位符，如</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nonce</span>=<span class="hljs-string">"NONCE_TOKEN"</span>&gt;</span><span class="actionscript"><br>    <span class="hljs-comment">//....</span><br></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h5><h5 id="生产唯一id，在CSP返回头中添加nonce-id-并将id替换html上的nonce占位符"><a href="#生产唯一id，在CSP返回头中添加nonce-id-并将id替换html上的nonce占位符" class="headerlink" title="生产唯一id，在CSP返回头中添加nonce-{id}并将id替换html上的nonce占位符"></a>生产唯一id，在CSP返回头中添加nonce-{id}并将id替换html上的nonce占位符</h5><p>方式一： 服务端处理</p>
+<ul>
+<li>当也买你在服务端渲染时，html作为模板在服务端进行处理后输出，我们可以在后端胜场威一id</li>
+<li>通过模板变量将id注入到html中实现替换NONCE_TOKEN占位符</li>
+<li>于此同时，将CSP返回头进行对应设置</li>
+</ul>
+<p>方式二： Nginx处理</p>
+<ul>
+<li>Nginx中可以使用内置变量的<code>$request_id</code> 作为唯一id，而当nginx版本不支持时，则可以借助lua去生产一个uuid</li>
+<li>接着通过Nginx的sub_filter NONCE_TOKEN ‘id’ 将页面中的NONCE_TOKEN占位符替换为id，或者使用lua进行替换</li>
+<li>最后使用<code>add_header Content-Security-Policy &quot;script-src &#39;nonce-{id}&#39;&quot;...</code> 添加对应的CSP返回头</li>
+</ul>
+<p>当然，为了避免攻击者提前注入一段脚本，并在script标签上同样添加了<code>nonce=&quot;NONCE_TOKEN&quot;</code>后端的“误”替换，导致这段提前注入的脚本进行执行。我们需要保密好项目的占位符，取一个特殊的占位符，并行动起来吧。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/" rel="tag">Python</a>
+                </div>
+            </div>
         </div>
         
         
@@ -140,11 +160,73 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/NdMY5zlYyAhF.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/JdKmzhUYwsDv.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/10/22/csp-xss/">
+                <span class="level-item">XSS终结者Content-Security-Policy</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -1534,7 +1616,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/log.png" alt="及时行乐" height="28">
+                    <img src="/images/log.png" alt="csp-nonce 守护inline Script" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -1620,20 +1702,6 @@ var IcarusThemeSettings = {
                 POSTS: '文章',
                 PAGES: '页面',
                 CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
-</html>              CATEGORIES: '分类',
                 TAGS: '标签',
                 UNTITLED: '(无标题)',
             },
