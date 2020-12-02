@@ -103,6 +103,60 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-28T04:59:54.000Z">2020-02-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 617 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/02/28/fonts-for-developers/">编程代码字体</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="http://imgs.yrzdm.com/imgs/20200228/l6USNNVGsDE8.gif" alt="mark"></p>
+<p>说到字体，之前看过西蒙·加菲尔德的《字体故事》非常不错的一本书，没有看过可以看看👉<a href="https://yadi.sk/d/8osZAIkuBnQyZQ" target="_blank" rel="noopener">字体故事</a>。字体真的是非常重要的基础设施。但凡是能够接触到信息除了口口相传，就一定能接触到字体。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/02/28/fonts-for-developers/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-02-28T03:25:03.000Z">2020-02-28</time>
                 
                 <div class="level-item">
@@ -575,83 +629,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-03-01T06:07:22.000Z">2018-03-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 579 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/03/01/old-string-formatting/">old-string-formatting</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="旧式字符串格式化"><a href="#旧式字符串格式化" class="headerlink" title="旧式字符串格式化"></a>旧式字符串格式化</h2><p>%操作符可以实现字符串格式化。它将左侧的参数作为类似sprintf()式的格式化字符串，而将右侧的代入，然后返回格式化后的字符串。</p>
-<p>for example:</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">math<br>&gt;&gt;&gt;print(<span class="hljs-string">'The value of PI is approximately %5.3f.'</span> %math.pi)<br>The value of PI <span class="hljs-keyword">is</span> approximately <span class="hljs-number">3.142</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>For example.<br><span class="hljs-string">'The sum of 1 + 2 is 3'</span>str.format_map(mapping)<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight xquery hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xquery"><br><span class="hljs-keyword">default</span>(dict):<br>      def __missing_<span class="hljs-number">_</span>(self<span class="hljs-built_in">,key</span>):<br>          <span class="hljs-keyword">return</span><span class="hljs-built_in"> key</span><br>          <br>  <span class="hljs-string">'&#123;name&#125; was born in &#123;country&#125;'</span>.format_map(<span class="hljs-keyword">default</span><span class="hljs-built_in">(name</span>=<span class="hljs-string">'Guido'</span>))<br><span class="hljs-string">'Guido war borin in country'</span><br></code></pre></td></tr></table></figure>
-
-<p>str.index(sub[,start[,end]])</p>
-<p>Like find(),but raise ValueError when the substring is not found.</p>
-<p>区别与find(),find的结果为False时返回-1，index()的查询值如果不在str中，则会报错。</p>
-<figure class="highlight less hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">changxufeng</span><span class="hljs-selector-class">.find</span>(<span class="hljs-string">'y'</span>)<span class="hljs-comment">//return -1</span><br><span class="hljs-selector-tag">changxufeng</span><span class="hljs-selector-class">.index</span>(<span class="hljs-string">'y'</span>)<span class="hljs-comment">// ValueError:substring not found</span><br></code></pre></td></tr></table></figure>
-
-<p>str.isalnum()</p>
-<p> Return true if all characters in the string are alphanumeric and there is at least one character,false otherwise. A character c is alphanumeric if one of the following returns True: c.isalpha(), c.isdecimal(), c.isdigit(), or c.isnumeric().</p>
-<p>如果都是字母和数字时候，return True, else return False.</p>
-<p>str.isalpha()</p>
-<p> Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.Alphabetic characters are those characters defined in the Unicode character database as “Letter”,ie.e., those with general category property being one of “Lm”,”Lt”, “Lu”,”Ll” or “Lo” .Note that this is different from the “Alphabetic” propertty defined in the Unicode Standard.</p>
-<p>判断str是否都是数字</p>
-<p>str.isdecimal()</p>
-<p> Return true if all characters in the string are <strong>decimal</strong> characters and there is at least one character,false otherwise.Decimal characters are those from general catefory “Nd”. This category includes digit characters,and all characters that that can be used to form decimal-radix numbers,e.g. U+0660,ARABIC-INDIC DIGIT ZERO.</p>
-<p>判断str是否是十进制数。</p>
-<p>str.lstrip([<em>chars</em>])</p>
-<p>Return a copy of the string with leading characters removed. The <em>chars</em> argument is a string specifying the set of characters to be removed. If omitted or<code>None</code>, the <em>chars</em> argument defaults to removing whitespace. The <em>chars</em> argument is not a prefix; rather, all combinations of its values are stripped:</p>
-<p><code>&#39; changxufeng&#39;.lstrip()</code>\当argu为空是，返回结果为去掉str前面的空格。不影响原来str的值，只是一份copy</p>
-<p><code>&#39;changxufeng&#39;.lstrip(chang)</code>\return ‘xufeng’</p>
-<p>如果去掉首位的空格可以使用str.strip()</p>
-<p><code>&#39;changxufeng&#39;.rstrip(&#39;xufeng&#39;)</code>\return ‘cha’</p>
-<p>str.title()</p>
-<p> Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.</p>
-<p> The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:</p>
-<p>string中首字母大写。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -718,7 +695,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            49
+                            50
                         </p>
                     </a>
                 </div>
@@ -802,7 +779,7 @@
                 <span class="level-item">docs</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">42</span>
+                <span class="level-item tag">43</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/docs/Android/">
@@ -882,7 +859,7 @@
                 <span class="level-item">python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/docs/raspberry/">
@@ -1010,6 +987,25 @@
         
         <article class="media">
             
+            <a href="/2020/12/02/requests-usage/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="requests的扩展用法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-02T07:16:32.000Z">2020-12-02</time></div>
+                    <a href="/2020/12/02/requests-usage/" class="title has-link-black-ter is-size-6 has-text-weight-normal">requests的扩展用法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/12/01/rederiction/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="获取url重定向后的链接的技巧">
@@ -1084,25 +1080,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/10/22/csp-xss/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="XSS终结者Content-Security-Policy">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-22T01:31:57.000Z">2020-10-22</time></div>
-                    <a href="/2020/10/22/csp-xss/" class="title has-link-black-ter is-size-6 has-text-weight-normal">XSS终结者Content-Security-Policy</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1168,7 +1145,7 @@
                     <span class="level-item">十二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1444,7 +1421,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">25</span>
+                        <span class="tag is-grey">26</span>
                     </a>
                 </div>
                 
@@ -1655,7 +1632,7 @@
                     <span class="level-item">十二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1931,7 +1908,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">25</span>
+                        <span class="tag is-grey">26</span>
                     </a>
                 </div>
                 

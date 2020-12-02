@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: Python,Pyinstaller - 及时行乐</title>
+<title>requests的扩展用法 - 及时行乐</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="及时行乐" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="requests的扩展用法" type="application/atom+xml">
 
 
 
@@ -36,7 +36,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/log.png" alt="及时行乐" height="28">
+                <img src="/images/log.png" alt="requests的扩展用法" height="28">
             
             </a>
         </div>
@@ -85,25 +85,14 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Python,Pyinstaller</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-08-31T07:31:05.000Z">2020-08-31</time>
+                <time class="level-item has-text-grey" datetime="2020-12-02T07:16:32.000Z">2020-12-02</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
@@ -113,7 +102,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 431 个字)
+                    8 分钟 读完 (大约 1257 个字)
                 </span>
                 
                 
@@ -122,21 +111,56 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/08/31/pyexe2py/">反编译pyinstaller生成的exe程序</a>
+                requests的扩展用法
             
         </h1>
         <div class="content">
-            <p>帮别人做了一个项目，需要exe执行，使用pyinstaller进行了打包操作，发给用户后，然后源文件没有放网盘，客户还需要修改一个东西。现在手头只有一个exe，总不能把时间浪费在路上毕竟这不是人干的事。</p>
+            <p>Python自带的网络请求库urllib的使用，能满足基本使用，但用起来有些繁琐，如Cookies处理、代理设置等，还有一点默认不支持gzip/deflate。</p>
+<p>现在的网页普遍支持gzip压缩，以节约传输时间，在urlib中要返回压缩格式，需在请求头中写明accept-encoding，然后检查响应头里是否有accept-encoding判断是否需要解码</p>
+<a id="more"></a>
+
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests <span class="hljs-keyword">as</span> req<br><span class="hljs-keyword">import</span> json<br>headers = &#123;<br>    <span class="hljs-string">'User-Agent'</span>:<span class="hljs-string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'</span><br>&#125;<br>url = <span class="hljs-string">"https://www.baidu.com"</span><br>resp = req.get(url=url,headers=headers)<br><span class="hljs-comment">#获得ReaquestsCookieJar</span><br>cookies = resp.cookies<br>print(type(cookies))<br>print(cookies)<br><span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">in</span> cookies.items():<br>    print(<span class="hljs-string">"Cookie键值对："</span>, name, value)<br>    <br><span class="hljs-comment">#将CookieJar转换为字典</span><br>cookies_dict = req.utils.dict_from_cookiejar(cookies)<br>print(cookies_dict)<br><span class="hljs-comment">#保存cookies</span><br><span class="hljs-keyword">with</span> open(<span class="hljs-string">"cookie.txt"</span>,<span class="hljs-string">"w+"</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(json.dumps(cookies_dict))<br><span class="hljs-comment">#读取cookies</span><br><span class="hljs-keyword">with</span> open(<span class="hljs-string">"cookies.txt"</span>,<span class="hljs-string">"r+"</span>) <span class="hljs-keyword">as</span> f:<br>    load_cookies = json.loads(f.read())<br><span class="hljs-comment">#将字典转换为CookieJar</span><br>exchange_cookies = req.utils.cookiejar_from_dict(load_cookies)<br>print(exchange_cookies)<br><span class="hljs-comment">#使用cookies</span><br>n_resp = req.get(url=url, headers=headers, cookies=cookies)<br></code></pre></td></tr></table></figure>
+
+<h4 id="Session维持"><a href="#Session维持" class="headerlink" title="Session维持"></a>Session维持</h4><p>如果多次传递Cookies麻烦，可以试试Session(会话)维持，它会自动处理Cookies。类似于在一个浏览器页面登录后，后续请求都在这个页面进行，处于登录状态。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Session会话</span><br>session = req.Session<br>login_resp = session.get(<span class="hljs-string">"登录页地址"</span>)<br>user_info_resp = session.get(<span class="hljs-string">"用户信息页地址"</span>)<br><br><span class="hljs-comment"># 注：通过单词传参的方式添加参数是不会对下次访问起作用的，需调用session.args.update()</span><br><span class="hljs-comment"># 除可设置cookies外，还可设置headers、params、proxies</span><br>url = <span class="hljs-string">'https://www.httpbin.org/cookies'</span><br>session = requests.session()<br>cook = &#123;<span class="hljs-string">'eare'</span>: <span class="hljs-string">'https://www.httpbin.org'</span>&#125;<br>session.cookies.update(cook)<br><br><span class="hljs-comment"># 还可调用 session.verify = False 来关闭证书验证</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h4><p>在访问需要验证登录的站点时，偶尔会遇到下面这样的身份页面：</p>
+<p><img src="https://images.yrzdm.com/imgs/20201202/pxDErwR2cwnK.png?imageslim" alt="身份验证"></p>
+<p>此时可以使用reqeusts自带的身份认证功能来登录。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 身份认证</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> requests.auth <span class="hljs-keyword">import</span> HTTPBasicAuth<br><span class="hljs-keyword">from</span> requests.auth <span class="hljs-keyword">import</span> HTTPDigestAuth<br><span class="hljs-keyword">from</span> requests_oauthlib <span class="hljs-keyword">import</span> OAuth1<br><br><span class="hljs-comment"># 基本身份认证</span><br>requests.get(<span class="hljs-string">'网站'</span>, auth=HTTPBasicAuth(<span class="hljs-string">'用户名'</span>, <span class="hljs-string">'密码'</span>))<br><span class="hljs-comment"># 此认证比较常用，还提供了更方便的写法</span><br>requests.get(<span class="hljs-string">'网站'</span>, auth=(<span class="hljs-string">'用户名'</span>, <span class="hljs-string">'密码'</span>))<br><br><span class="hljs-comment"># 摘要式身份认证</span><br>url = <span class="hljs-string">'http://httpbin.org/digest-auth/auth/user/pass'</span><br>resp = requests.get(url, auth=HTTPDigestAuth(<span class="hljs-string">'user'</span>, <span class="hljs-string">'pass'</span>))<br>print(resp.status_code)<br><br><span class="hljs-comment"># OAuth1</span><br>url = <span class="hljs-string">'https://api.twitter.com/1.1/account/verify_credentials.json'</span><br>auth = OAuth1(<span class="hljs-string">'YOUR_APP_KEY'</span>, <span class="hljs-string">'YOUR_APP_SECRET'</span>,<br>              <span class="hljs-string">'USER_OAUTH_TOKEN'</span>, <span class="hljs-string">'USER_OAUTH_TOKEN_SECRET'</span>)<br>requests.get(url, auth=auth)<br></code></pre></td></tr></table></figure>
+
+<h4 id="SSL证书验证"><a href="#SSL证书验证" class="headerlink" title="SSL证书验证"></a>SSL证书验证</h4><p>越来越多的网站采用HTTPS协议，如果站点未能正确设置https证书或所用的证书不被ca机构认可，会出现SSL证书错误的提示，在浏览器上表现为，您的连接不是私密连接，在requests中报错</p>
+<p><code>requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;xxx.xxx.xxx&#39;, port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(&quot;bad handshake: Error([(&#39;SSL routines&#39;, &#39;tls_process_server_certificate&#39;, &#39;certificate verify failed&#39;)])&quot;)))</code></p>
+<p>可以设置<code>verify=False</code>来跳过证书验证，跳过后可能还会报错：<br><code>/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings InsecureRequestWarning)</code></p>
+<p>如果觉得厌烦可以通过设置忽略警告的方式来屏蔽</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> requests.packages <span class="hljs-keyword">import</span> urllib3<br>urllib3.disable_warnings()<br>resp = requests.get(test_url, verify=<span class="hljs-literal">False</span>)<br></code></pre></td></tr></table></figure>
+
+<p>也可以指定一个本地证书作为客户端证书</p>
+<p><code>response = resquests.get(url,cert=(&#39;/path/server.crt&#39;,&#39;/path/server.key&#39;))</code></p>
+<p>本地私有证书的key需为解密状态，不支持加密状态的key！！！</p>
+<h4 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h4><p>网络状况复杂，当本地网络较差、远程服务器网络延时甚至无响应时，客户端可能要等待很久才能收到响应，甚至收不到响应而报错。为了防止服务器不能及时响应，应当设置一个超时时间，当超过这个时间没得到响应，就抛出异常。需要用到<strong>timeout</strong>参数，代表发出请求到服务器器响应的时间，默认None，永久等待，永不超时。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">requests.get(<span class="hljs-string">'https://httpbin.org/get'</span>, timeout=<span class="hljs-number">30</span>)<br><br><span class="hljs-comment"># 请求分为两个阶段：connect和read，单个参数时指的两者的和</span><br><span class="hljs-comment"># 也可以分别指定，传入一个元素即可，如</span><br>requests.get(<span class="hljs-string">'https://httpbin.org/get'</span>, timeout=(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>)<br></code></pre></td></tr></table></figure>
+
+<h4 id="socks"><a href="#socks" class="headerlink" title="socks"></a>socks</h4><p>除了基本的HTTP代理，Requests还支持Socks协议的带来，可选，如果想使用，需安装第三方库</p>
+<p><code>pip install requests[socks]</code></p>
+<p>安装好后和使用方式与HTTP代理类似：</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">proxies = &#123;<br>    <span class="hljs-string">'http'</span>: <span class="hljs-string">'socks5://user:pass@host:port'</span>,<br>    <span class="hljs-string">'https'</span>: <span class="hljs-string">'socks5://user:pass@host:port'</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Prepared-Requests"><a href="#Prepared-Requests" class="headerlink" title="Prepared Requests"></a>Prepared Requests</h4><p>除了直接通过request.get()/post()来发起一个请求外，你还可以自行构造一个Request对象来发起请求。代码示例如下：</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> requests <span class="hljs-keyword">import</span> Request, Session<br><br>url = <span class="hljs-string">'http://httpbin.org/post'</span><br>data = &#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'CoderPig'</span>&#125;<br>headers = &#123;<br>    <span class="hljs-string">'User-Agent'</span>: <span class="hljs-string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '</span><br>                  <span class="hljs-string">'Chrome/83.0.4103.97 Safari/537.36 '</span>,<br>&#125;<br>session = Session()<br>req = Request(<span class="hljs-string">'POST'</span>, url, data=data, headers=headers)<br>prepped = session.prepare_request(req)<br>resp = session.send(prepped)<br>print(resp.json())<br></code></pre></td></tr></table></figure>
+
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/08/31/pyexe2py/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/" rel="tag">Python</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -144,11 +168,73 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/NdMY5zlYyAhF.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/JdKmzhUYwsDv.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/12/01/rederiction/">
+                <span class="level-item">获取url重定向后的链接的技巧</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -1596,7 +1682,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/log.png" alt="及时行乐" height="28">
+                    <img src="/images/log.png" alt="requests的扩展用法" height="28">
                 
                 </a>
                 <p class="is-size-7">
