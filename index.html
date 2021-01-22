@@ -177,6 +177,146 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021/01/15/raspberry-docker-ce/">
+                        树莓派安装docker坑点记录
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+首先查看cpu的架构
+lscpu
+arm64和armhf的区别：
+armv7代表的是32bit，armv8是第一个arm64架构
+
+查看系统版本
+cat /etc/debian_vesion
+
+添加docker-ce源头
+sudo nano /et...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Fri Jan 15 2021 09:20:29 GMT+0800">2021-01-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/docs/">docs</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/docs/python/">python</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/docs/python/index/">index</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Python/">Python</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/15/raspberry-docker-ce/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/14/raspbian-aliyun-resources/">
+                        raspbian-aliyun-resources
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        树莓派更换阿里云源
+sudo nano /etc/apt/sources.list
+#将原有内容用#注释掉 deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib no...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Thu Jan 14 2021 13:31:45 GMT+0800">2021-01-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/config/">config</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/config/raspberry/">raspberry</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/config/raspberry/index/">index</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Raspberry/">Raspberry</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/14/raspbian-aliyun-resources/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2020/12/02/requests-usage/">
                         requests的扩展用法
                     </a>
@@ -686,134 +826,6 @@
 
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/08/24/sofar/">
-                        sofar
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p><img src="https://images.yrzdm.com/imgs/20200824/Bj4scjqFnsJc.png?imageslim" alt="近远"></p>
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Aug 24 2020 16:41:44 GMT+0800">2020-08-24</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/docs/">docs</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/live/">live</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/live/memory/">memory</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/live/">live</a>
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2020/08/24/sofar/">阅读全文 <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/08/20/tcp-handshake/">
-                        为什么TCP连接要进行三次握爪
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p><img src="http://imgs.yrzdm.com/imgs/20200820/aUCbhW6g3RiG.png?imageslim" alt="tcp connection"><br>TCP 协议是我们几乎每天都会接触到的网络协议，绝大多数网络连接的建立都是基于 TCP 协议的，学过计算机网络或者对 TCP 协议稍有了解的人都知道 —— 使用 TCP 协议建立连接需要经过三次握手（three-way handshake）。</p>
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Thu Aug 20 2020 16:45:39 GMT+0800">2020-08-20</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/docs/">docs</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/basic/">basic</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/basic/index/">index</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/network-tcp-handshake/">network,tcp,handshake</a>
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2020/08/20/tcp-handshake/">阅读全文 <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
     </ul>
 
     <div class="home-paginator">
@@ -844,7 +856,7 @@
             
               <span>2016</span> -
             
-            2020 <i class="fas fa-heart icon-animate"></i> <a href="/">Roy</a>
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Roy</a>
         </div>
         
         <div class="theme-info info-item">
