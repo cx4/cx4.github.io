@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <title>
-        分类: docs |
+        pipenv的使用整理 |
         
         及时行乐
     </title>
@@ -63,7 +63,7 @@
                 </li>
             
                 <li class="menu-item">
-                    <a class="active"
+                    <a class=""
                        href="/categories"
                     >
                         分类
@@ -107,7 +107,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/categories">分类</a>
                 </li>
             
@@ -137,113 +137,230 @@
 
                     
                         <div class="fade-in-down-animation">
-    <div class="category-container">
-        <div class="category-name">
-            <i class="fas fa-folder"></i> docs (10)
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">pipenv的使用整理</span>
         </div>
-        <div class="category-post-list">
-            
-<div class="archive-list-container">
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Roy</span>
+                        <span class="level">Lv6</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2021-02-10 13:02:45
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2020</span>
-                <span class="archive-year-post-count">(10)</span>
-            </div>
-            <ul class="article-list">
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/05/05/regular-expression/"
-                        >regular-expression</a>
-                        <span class="article-date">05-05</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/04/22/performance-pressure-test/"
-                        >性能压力测试的学习</a>
-                        <span class="article-date">04-22</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/04/21/relay-switch/"
-                        >人体感应灯DIM</a>
-                        <span class="article-date">04-21</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/04/17/android-for-raspberry/"
-                        >LineageOS 16.0 (Android 9) for Raspberry Pi 3</a>
-                        <span class="article-date">04-17</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/04/17/generator-expression/"
-                        >使用生成器表达式来改写数据量比较大列表推导</a>
-                        <span class="article-date">04-17</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/02/28/fonts-for-developers/"
-                        >编程代码字体</a>
-                        <span class="article-date">02-28</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/02/28/30-years-old/"
-                        >30-years-old</a>
-                        <span class="article-date">02-28</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/02/11/tool-colloections/"
-                        >利器收集</a>
-                        <span class="article-date">02-11</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/01/20/dynamicDNS/"
-                        >Use Cloudflare as Dynamic DNS with Raspberry Pi</a>
-                        <span class="article-date">01-20</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/01/20/FastApi/"
-                        >FastApi</a>
-                        <span class="article-date">01-20</span>
+                    <li>
+                        <a href="/tags/python/">python</a>
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>338 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>1 分钟</span>
+        </span>
+    
     
 </div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>pipenv 相当于virtualenv和pip的合体，使用起来更加方便。通过整合pip + virtualenv + Pipfile 能够自动处理好包的依赖问题和虚拟环境的问题。</p>
+<h3 id="安全，升级，卸载pipenv"><a href="#安全，升级，卸载pipenv" class="headerlink" title="安全，升级，卸载pipenv"></a>安全，升级，卸载pipenv</h3><ol>
+<li><p>安装</p>
+<p><code>pip install pipenv</code></p>
+</li>
+<li><p>升级</p>
+<p><code>pip install --upgrade pipenv</code></p>
+</li>
+<li><p>卸载</p>
+<p><code>pip uninstall pipenv</code></p>
+<p>这个没什么好讲，和普通的pip安装卸载方式一致。</p>
+</li>
+</ol>
+<h3 id="使用pipenv"><a href="#使用pipenv" class="headerlink" title="使用pipenv"></a>使用pipenv</h3><ol>
+<li><p>创建虚拟环境</p>
+<p><code>pipenv install</code></p>
+<p><code>pipenv install --three</code> 使用当前系统中Python3创建环境</p>
+<p><code>pipenv install --two</code> 使用当前系统中Python2创建环境</p>
+<p><code>pipenv --python 3.6</code> 指定使用某个版本的Python创建环境</p>
+<p><code>pipenv --python path</code> 使用指定路径的Python创建环境</p>
+</li>
+<li><p>激活并进入虚拟环境</p>
+<p><code>pipenv shell</code></p>
+</li>
+<li><p>运行python项目</p>
+<p><code>python xx.py</code></p>
+<p><code>pipenv run python xxx.py</code></p>
+</li>
+<li><p>在虚拟环境中安装模块，并加入到Pipfile。可以不进入虚拟环境，直接在项目目录下面使用pipenv安装。</p>
+<p><code>pipenv install requests</code></p>
+<p><code>pipenv install django==1.11</code></p>
+<p><code>pipenv uninstall requests</code></p>
+</li>
+<li><p>退出虚拟环境。</p>
+<p><code>exit</code></p>
+</li>
+<li><p>查看项目所在路径。</p>
+<p><code>pipenv --where</code></p>
+</li>
+<li><p>查看虚拟环境文件所在路径</p>
+<p><code>pipenv --venv</code></p>
+</li>
+<li><p>查看虚拟环境内安装的modules以及modules之间的依赖关系</p>
+<p><code>pipenv grapg</code></p>
+</li>
+<li><p>查找虚拟环境所有安装包</p>
+<p><code>pip list</code></p>
+</li>
+<li><p>导出虚拟环境内所有依赖的modules</p>
+<p><code>pip freeze &gt; requirements.txt</code></p>
+</li>
+<li><p>检查包的安全性</p>
+<p><code>pipenv check</code></p>
+</li>
+<li><p>删除当前虚拟环境。</p>
+<p><code>pipenv --rm</code></p>
+</li>
+</ol>
 
         </div>
-    </div>
-    <div class="category-paginator">
-        <div class="paginator">
-    
-        <a class="prev btn"
-           href="/categories/docs/page/2/"
-        >上一页</a>
-    
 
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：pipenv的使用整理</li>
+        <li>本文作者：Roy</li>
+        <li>创建时间：2021-02-10 13:02:45</li>
+        <li>
+            本文链接：https://www.yrzdm.com/2021/02/10/pipenv/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/02/25/navigate-sites/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">导航页面</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/02/04/flags-2021/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">2020总结及2021年展望</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
     
-        <a class="next btn"
-           href="/categories/docs/page/4/"
-        >下一页</a>
+        
+    <div class="valine-container">
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+                appKey: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+                meta: ''.split(','),
+                avatar: 'wavatar',
+                enableQQ: true,
+                placeholder: '',
+                lang: 'zh-CN'.toLowerCase()
+            });
+
+
+            // Valine 评论列表增加"博主"标识
+            const getValineDomTimer = setInterval(() => {
+                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                if (vcards.length > 0) {
+
+                    let author = 'Roy';
+                    if (author) {
+                        author = author.toLocaleLowerCase();
+                    }
+
+                    for (let vcard of vcards) {
+                        const vnick = vcard.querySelector('.vhead .vnick');
+                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                            vcard.classList.add('author');
+                        }
+                    }
+                    clearInterval(getValineDomTimer);
+                } else {
+                    clearInterval(getValineDomTimer);
+                }
+            }, 2000);
+        </script>
+    </div>
+
+
     
 </div>
 
+            </div>
+        
     </div>
 </div>
 
@@ -284,8 +401,16 @@
         
 
         
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
         <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
         
 
     </ul>
@@ -338,6 +463,12 @@
     <!-- page aside -->
     <aside class="page-aside">
         
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全，升级，卸载pipenv"><span class="nav-number">1.</span> <span class="nav-text">安全，升级，卸载pipenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用pipenv"><span class="nav-number">2.</span> <span class="nav-text">使用pipenv</span></a></li></ol>
+    </div>
+</div>
+        
     </aside>
 
     <!-- image viewer -->
@@ -388,6 +519,17 @@
     <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/local-search.js"></script>
 
 
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/left-side-toggle.js"></script>
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/code-copy.js"></script>
+    
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/toc.js"></script>
+    
 
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
