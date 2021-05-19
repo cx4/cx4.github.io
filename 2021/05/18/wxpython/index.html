@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <title>
-        腾讯云函数踩坑记录 |
+        WxPython多线程使用 |
         
         及时行乐
     </title>
@@ -140,7 +140,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">腾讯云函数踩坑记录</span>
+            <span class="title-hover-animation">WxPython多线程使用</span>
         </div>
 
         
@@ -156,7 +156,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2021-03-10 13:45:30
+        <i class="fas fa-calendar"></i> 2021-05-18 09:33:29
     </span>
     
         <span class="article-categories article-meta-item">
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>1.3k 字</span>
+            <i class="fas fa-file-word"></i> <span>459 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>5 分钟</span>
+            <i class="fas fa-clock"></i> <span>2 分钟</span>
         </span>
     
     
@@ -211,90 +211,10 @@
         
 
         <div class="article-content markdown-body">
-            <p>之前使用腾讯云函数作为喝水提醒以及自动化打卡提醒/执行，微信刷步等操作，但是云函数最赞的其实是作为一个独立的api来使用。</p>
-<p>因为一开始搞不明白，想要在云函数上部署一个fastapi 作为接口来接受请求参数，处理请求并返回json数据。因为文档看的不够仔细，导致走了很多的弯路。</p>
-<p>其实单函数，使用api网关触发器即可实现一个web api的服务，并不需要使用http server来作为服务支撑。</p>
-<h4 id="函数入参"><a href="#函数入参" class="headerlink" title="函数入参"></a>函数入参</h4><p>如果作为api来使用，定义的函数肯定是要接受外部参数的，函数入参就是函数在被触发调用时所传递给函数的内容。</p>
-<p><strong>event入参</strong></p>
-<p>参数类型为<code>dict</code>。将<code>event</code>入参传递给执行方法，实现代码与触发函数(event)交互。</p>
-<blockquote>
-<ul>
-<li>云函数被其他应用程序调用时，您可以在调用方和函数代码之间自定义一个 <code>dict</code> 类型的参数。调用方按照定义好的格式传入数据，函数代码按格式获取数据。<br>例如，定义一个 <code>dict</code> 类型的数据结构 <code>{&quot;key&quot;:&quot;XXX&quot;}</code>，当调用方传入数据 <code>{&quot;key&quot;:&quot;abctest&quot;}</code> 时，函数代码可以通过 <code>event[key]</code> 来获得值 <code>abctest</code>。</li>
-</ul>
-</blockquote>
-<p><strong>context入参</strong></p>
-<p>将context入参传递给执行方法，代码将通过<code>context</code>入参对象。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    getRemainingTimeInMillis: [Function: getRemainingTimeInMillis],<br>    memory_limit_in_mb: 128,<br>    time_limit_in_ms: 3000,<br>    request_id: '4ca7089c-3bb0-48cf-bcdb-26d130fed2ae',<br>    environment: '&#123;"SCF_NAMESPACE":"default"&#125;',<br>    environ: 'SCF_NAMESPACE=default;SCF_NAMESPACE=default',<br>    function_version: '$LATEST',<br>    function_name: 'test',<br>    namespace: 'default',<br>    tencentcloud_region: 'ap-chengdu',<br>    tencentcloud_appid: '1253970226',<br>    tencentcloud_uin: '3473058547' <br>&#125;<br></code></pre></td></tr></table></figure>
+            <p>最近接触wxpython，有个后台程序绑定按钮事件，发现如果后台程序是循环或者多线程，在触发按钮事件后，会导致GUI界面卡死。</p>
+<p>了解到<code>wx.CallAfter</code>和<code>PubSub</code> 的使用，<code>CallAfter</code>负责将线程执行结果推送给主程序，<code>PubSub</code>实现应用程序与其他线程的通信,使用一个简单地进度条的实现来记录一下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">import</span> wx<br><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread<br><span class="hljs-keyword">from</span> wx.lib.pubsub <span class="hljs-keyword">import</span> pub<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestThread</span><span class="hljs-params">(Thread)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,diefu,old_data,pinlv)</span>:</span><br>        <span class="hljs-comment">#线程实例化时立即启动</span><br>        self.diefu = diefu<br>        self.old_data = old_data<br>        self.pinlv = pinlv<br>        Thread.__init__(self)<br>        self.start()<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span><br>      <span class="hljs-comment">#线程执行的代码</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            sleep = int(self.pinlv)*<span class="hljs-number">60</span><br>            time.sleep(sleep)<br>            now_time = datetime.datetime.now()<br>            utc_t = now_time.astimezone(tz=utc)<br>            utc_time = utc_t.replace(tzinfo=<span class="hljs-literal">None</span>)<br>            print(utc_time)<br>            <span class="hljs-keyword">if</span> utc_time &gt; self.time_end():<br>                <span class="hljs-keyword">break</span><br>            <span class="hljs-keyword">else</span>:<br>                tmp = self.do_check_update(diefu,old_data)<br>                old_data = tmp<br>                self.update_json(old_data)<br>            wx.CallAfter(pub.sendMessage, <span class="hljs-string">"update"</span>, msg=i)<br>            time.sleep(<span class="hljs-number">0.5</span>)<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span> <span class="hljs-params">( wx.Frame )</span>:</span><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">( self, parent )</span>:</span><br>    wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = <span class="hljs-string">"www.OmegaXYZ.com"</span>, pos = wx.DefaultPosition, size = wx.Size( <span class="hljs-number">-1</span>,<span class="hljs-number">-1</span> ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )<br>    self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )<br>    gSizer2 = wx.GridSizer( <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> )<br>    self.m_button2 = wx.Button( self, wx.ID_ANY, <span class="hljs-string">"执行线程"</span>, wx.DefaultPosition, wx.DefaultSize, <span class="hljs-number">0</span> )<br>    gSizer2.Add( self.m_button2, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, <span class="hljs-string">"MyLabel"</span>, wx.DefaultPosition, wx.DefaultSize, <span class="hljs-number">0</span> )<br>    self.m_staticText2.Wrap( <span class="hljs-number">-1</span> )<br>    gSizer2.Add( self.m_staticText2, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.m_gauge1 = wx.Gauge( self, wx.ID_ANY, <span class="hljs-number">100</span>, wx.DefaultPosition, wx.DefaultSize, wx.GA_HORIZONTAL )<br>    self.m_gauge1.SetValue( <span class="hljs-number">0</span> )<br>    gSizer2.Add( self.m_gauge1, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.SetSizer( gSizer2 )<br>    self.Layout()<br>    gSizer2.Fit( self )<br>    self.Centre( wx.BOTH )<br>    self.m_button2.Bind( wx.EVT_BUTTON, self.onButton )<br><br>    pub.subscribe(self.updateDisplay, <span class="hljs-string">"update"</span>)<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">updateDisplay</span><span class="hljs-params">(self, msg)</span>:</span><br>    t = msg<br>    <span class="hljs-keyword">if</span> isinstance(t, int):<span class="hljs-comment">#如果是数字，说明线程正在执行，显示数字</span><br>      self.m_staticText2.SetLabel(<span class="hljs-string">"%s%%"</span> % t)<br>      self.m_gauge1.SetValue( t )<br>    <span class="hljs-keyword">else</span>:<span class="hljs-comment">#否则线程未执行，将按钮重新开启</span><br>      self.m_staticText2.SetLabel(<span class="hljs-string">"%s"</span> % t)<br>      self.m_button2.Enable()<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">onButton</span><span class="hljs-params">( self, event )</span>:</span><br>    TestThread(<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>)<br>    self.m_staticText2.SetLabel(<span class="hljs-string">"线程开始"</span>)<br>    event.GetEventObject().Disable()<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>  app = wx.App()<br>  MyForm(<span class="hljs-literal">None</span>).Show()<br>  app.MainLoop()<br></code></pre></td></tr></table></figure>
 
-<p>Python 环境下的入参包括 event 和 context，两者均为 Python dict 类型。</p>
-<ul>
-<li>event：使用此参数传递触发事件数据。</li>
-<li>context：使用此参数向您的处理程序传递运行时信息。</li>
-</ul>
-<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><p>在安装依赖这个地方碰见的坑比较多，当时只需要安装<code>requests-html</code>这个module，但是这个module本身在安装以及调用中也需要依赖多个modules。在lib site-package中单纯的将这个module上传到云函数，会抛出多个modules 异常。</p>
-<p>解决方案，将当前环境下所有的依赖包的包文件夹上传到函数的同级目录下。</p>
-<h4 id="Api-网关触发器"><a href="#Api-网关触发器" class="headerlink" title="Api 网关触发器"></a>Api 网关触发器</h4><p>api网关触发器，可以将单函数作为web的后端接口服务，对外网提供服务。</p>
-<p><strong>集成请求与透传请求</strong></p>
-<p>在配置api 网关触发器的时候，默认是开启集成请求的。</p>
-<blockquote>
-<p>集成请求，是指 API 网关会将 HTTP 请求内容，转换为请求数据结构；请求数据结构作为函数的 event 输入参数，传递给函数并进行处理。</p>
-</blockquote>
-<p>透传请求，是指 API 网关会将 HTTP 请求的 body 内容作为函数的 event 输入参数传递给函数，透传请求目前还处于规划过程中。对于透传请求，要求 HTTP 请求的 body 内容为 JSON 数据结构内容。</p>
-<p>当您需要将图片或文件通过 API 网关传入云函数时，需要将图片或文件进行 Base64 编码。</p>
-<p><strong>API 网关触发器的集成请求事件消息结构</strong></p>
-<p>在 API 网关触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的云函数。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br> <span class="hljs-attr">"requestContext"</span>: &#123;<br>   <span class="hljs-attr">"serviceId"</span>: <span class="hljs-string">"service-f94sy04v"</span>,<br>   <span class="hljs-attr">"path"</span>: <span class="hljs-string">"/test/&#123;path&#125;"</span>,<br>   <span class="hljs-attr">"httpMethod"</span>: <span class="hljs-string">"POST"</span>,<br>   <span class="hljs-attr">"requestId"</span>: <span class="hljs-string">"c6af9ac6-7b61-11e6-9a41-93e8deadbeef"</span>,<br>   <span class="hljs-attr">"identity"</span>: &#123;<br>     <span class="hljs-attr">"secretId"</span>: <span class="hljs-string">"abdcdxxxxxxxsdfs"</span><br>   &#125;,<br>   <span class="hljs-attr">"sourceIp"</span>: <span class="hljs-string">"10.0.2.14"</span>,<br>   <span class="hljs-attr">"stage"</span>: <span class="hljs-string">"release"</span><br> &#125;,<br> <span class="hljs-attr">"headers"</span>: &#123;<br>   <span class="hljs-attr">"Accept-Language"</span>: <span class="hljs-string">"en-US,en,cn"</span>,<br>   <span class="hljs-attr">"Accept"</span>: <span class="hljs-string">"text/html,application/xml,application/json"</span>,<br>   <span class="hljs-attr">"Host"</span>: <span class="hljs-string">"service-3ei3tii4-251000691.ap-guangzhou.apigateway.myqloud.com"</span>,<br>   <span class="hljs-attr">"User-Agent"</span>: <span class="hljs-string">"User Agent String"</span><br> &#125;,<br> <span class="hljs-attr">"body"</span>: <span class="hljs-string">"&#123;\"test\":\"body\"&#125;"</span>,<br> <span class="hljs-attr">"pathParameters"</span>: &#123;<br>   <span class="hljs-attr">"path"</span>: <span class="hljs-string">"value"</span><br> &#125;,<br> <span class="hljs-attr">"queryStringParameters"</span>: &#123;<br>   <span class="hljs-attr">"foo"</span>: <span class="hljs-string">"bar"</span><br> &#125;,<br> <span class="hljs-attr">"headerParameters"</span>:&#123;<br>   <span class="hljs-attr">"Refer"</span>: <span class="hljs-string">"10.0.2.14"</span><br> &#125;,<br> <span class="hljs-attr">"stageVariables"</span>: &#123;<br>   <span class="hljs-attr">"stage"</span>: <span class="hljs-string">"release"</span><br> &#125;,<br> <span class="hljs-attr">"path"</span>: <span class="hljs-string">"/test/value"</span>,<br> <span class="hljs-attr">"queryString"</span>: &#123;<br>   <span class="hljs-attr">"foo"</span> : <span class="hljs-string">"bar"</span>,<br>   <span class="hljs-attr">"bob"</span> : <span class="hljs-string">"alice"</span><br> &#125;,<br> <span class="hljs-attr">"httpMethod"</span>: <span class="hljs-string">"POST"</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>数据结构内容详细说明如下：</p>
-<table>
-<thead>
-<tr>
-<th align="left">结构名</th>
-<th align="left">内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">requestContext</td>
-<td align="left">请求来源的 API 网关的配置信息、请求标识、认证信息、来源信息。其中：serviceId，path，httpMethod 指向 API 网关的服务 ID、API 的路径和方法。stage 指向请求来源 API 所在的环境。requestId 标识当前这次请求的唯一 ID。identity 标识用户的认证方法和认证的信息。sourceIp 标识请求来源 IP。</td>
-</tr>
-<tr>
-<td align="left">path</td>
-<td align="left">记录实际请求的完整 Path 信息。</td>
-</tr>
-<tr>
-<td align="left">httpMethod</td>
-<td align="left">记录实际请求的 HTTP 方法。</td>
-</tr>
-<tr>
-<td align="left">queryString</td>
-<td align="left">记录实际请求的完整 Query 内容。</td>
-</tr>
-<tr>
-<td align="left">body</td>
-<td align="left">记录实际请求转换为 String 字符串后的内容。</td>
-</tr>
-<tr>
-<td align="left">headers</td>
-<td align="left">记录实际请求的完整 Header 内容。</td>
-</tr>
-<tr>
-<td align="left">pathParameters</td>
-<td align="left">记录在 API 网关中配置过的 Path 参数以及实际取值。</td>
-</tr>
-<tr>
-<td align="left">queryStringParameters</td>
-<td align="left">记录在 API 网关中配置过的 Query 参数以及实际取值。</td>
-</tr>
-<tr>
-<td align="left">headerParameters</td>
-<td align="left">记录在 API 网关中配置过的 Header 参数以及实际取值。</td>
-</tr>
-</tbody></table>
-<p>这个如果仅仅看json的话可能不太好了解，比如我构建了一个GET请求的api网关触发器，在url中传递参数给函数，url?param=2021  ,如果需要在函数中拿到2021这个参数。需要解析event。</p>
-<p><img src="https://images.yrzdm.com/imgs/20210310/l4jlcw13qUjC.png?imageslim" alt="云函数示例"></p>
-<p>当请求网关接口时候，这样就会将 ‘2021’ 返回。</p>
-<h4 id="跨域请求"><a href="#跨域请求" class="headerlink" title="跨域请求"></a>跨域请求</h4><p>如果发现请求时候，在network面板中看到 Missing allow cros header，说明网关的跨域请求是关闭的。</p>
-<p>需要到触发器中找到api网关，开启跨域请求。</p>
 
         </div>
 
@@ -302,11 +222,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：腾讯云函数踩坑记录</li>
+        <li>本文标题：WxPython多线程使用</li>
         <li>本文作者：Roy</li>
-        <li>创建时间：2021-03-10 13:45:30</li>
+        <li>创建时间：2021-05-18 09:33:29</li>
         <li>
-            本文链接：https://www.yrzdm.com/2021/03/10/tencent-scf/
+            本文链接：https://www.yrzdm.com/2021/05/18/wxpython/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -320,29 +240,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/05/12/matplotlib-remove-edge/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">matplotlib去除生成图片的白边</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/02/25/decryption-javascript/"
+                           href="/2021/05/12/matplotlib-remove-edge/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">decryption-javascript</span>
+                                <span class="post-nav-title-item">matplotlib去除生成图片的白边</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -510,7 +415,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数入参"><span class="nav-number">1.</span> <span class="nav-text">函数入参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Api-网关触发器"><span class="nav-number">3.</span> <span class="nav-text">Api 网关触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域请求"><span class="nav-number">4.</span> <span class="nav-text">跨域请求</span></a></li></ol>
+        
     </div>
 </div>
         

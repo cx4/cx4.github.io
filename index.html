@@ -177,6 +177,143 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021/05/18/wxpython/">
+                        WxPython多线程使用
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        最近接触wxpython，有个后台程序绑定按钮事件，发现如果后台程序是循环或者多线程，在触发按钮事件后，会导致GUI界面卡死。
+了解到wx.CallAfter和PubSub 的使用，CallAfter负责将线程执行结果推送给主程序，PubSub实现应...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Tue May 18 2021 09:33:29 GMT+0800">2021-05-18</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/docs/">docs</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/docs/python/">python</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/docs/python/index/">index</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Python/">Python</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/05/18/wxpython/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/05/12/matplotlib-remove-edge/">
+                        matplotlib去除生成图片的白边
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        使用matplotlib中 plt.savefig()保存图片，图片四周有一圈空白，考虑到这是个重复使用比较高的功能，记录下来：
+
+首先需要关闭坐标轴显示
+plt.axis(&#39;off&#39;) 这样透明的坐标轴仍然会占据左下角，导致图片偏右...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Wed May 12 2021 13:39:55 GMT+0800">2021-05-12</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/docs/">docs</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/docs/python/">python</a>
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/docs/python/index/">index</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Python/">Python</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/matplotlib/">matplotlib</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/05/12/matplotlib-remove-edge/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021/03/10/tencent-scf/">
                         腾讯云函数踩坑记录
                     </a>
@@ -681,135 +818,6 @@ sudo nano /etc/apt/sources.list
     </div>
 
     <a href="/2021/01/14/raspbian-aliyun-resources/">阅读全文 <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/12/02/requests-usage/">
-                        requests的扩展用法
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>Python自带的网络请求库urllib的使用，能满足基本使用，但用起来有些繁琐，如Cookies处理、代理设置等，还有一点默认不支持gzip/deflate。</p>
-<p>现在的网页普遍支持gzip压缩，以节约传输时间，在urlib中要返回压缩格式，需在请求头中写明accept-encoding，然后检查响应头里是否有accept-encoding判断是否需要解码</p>
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Wed Dec 02 2020 15:16:32 GMT+0800">2020-12-02</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/docs/">docs</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/python/">python</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/python/index/">index</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Python/">Python</a>
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2020/12/02/requests-usage/">阅读全文 <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/12/01/rederiction/">
-                        获取url重定向后的链接的技巧
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>需要访问一个连接，这个连接访问后会重定向到一个url上，需要拿到重定向后的连接。</p>
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Tue Dec 01 2020 08:56:22 GMT+0800">2020-12-01</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/docs/">docs</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/python/">python</a>
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/docs/python/index/">index</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Python/">Python</a>
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2020/12/01/rederiction/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
