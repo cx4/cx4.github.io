@@ -1,219 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html  lang="zh">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <title>
-        50-python-interview-questions-and-answers |
-        
-        及时行乐
-    </title>
-    <link rel="shortcut icon" href="/images/favicons.ico">
-    
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.1.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>50-python-interview-questions-and-answers - 及时行乐</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="50-python-interview-questions-and-answers" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicons.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night.css">
+
+
+
 <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/css/font-awesome.min.css">
-    <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"cx4.github.io","root":"/","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#CC6600","avatar":"/images/avatar.png","favicon":"/images/favicons.ico","img_position":"center","left_side_width":"260px","content_max_width":"900px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view."}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"version":"3.0.4"};
-    KEEP.language = {"search":"搜索...","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}};
-  </script>
-<meta name="generator" content="Hexo 4.1.1"></head>
-
-
-<body>
-<div class="page-container">
-
-    
-
-    <header class="page-header">
-        <div class="header-progress"></div>
-    </header>
-
-    <main class="page-main">
-
-        <div class="page-main-content">
-
-            <div class="page-main-content-top">
-                <header class="header-wrapper">
-
-    <div class="header-content">
-        <a class="logo-title" href="/">
-            及时行乐
-        </a>
-
-        <ul class="menu-list">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
             
-                <li class="menu-item">
-                    <a class=""
-                       href="/"
-                    >
-                        首页
-                    </a>
-                </li>
+                <img src="/images/log.png" alt="50-python-interview-questions-and-answers" height="28">
             
-                <li class="menu-item">
-                    <a class=""
-                       href="/archives"
-                    >
-                        归档
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/categories"
-                    >
-                        分类
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/tags"
-                    >
-                        标签
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/about"
-                    >
-                        关于
-                    </a>
-                </li>
-            
-        </ul>
-
-        <div class="menu-bar">
-            <div class="menu-bar-middle"></div>
+            </a>
         </div>
-    </div>
-
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
+        <div class="navbar-menu">
             
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/">首页</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/archives">归档</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/categories">分类</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/tags">标签</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about">关于</a>
-                </li>
-            
-        </ul>
-    </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
             </div>
-
-            <div class="page-main-content-middle">
-
-                <main class="main-content normal-code-theme">
-
+            
+            <div class="navbar-end">
+                
                     
-                        <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">50-python-interview-questions-and-answers</span>
-        </div>
-
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span>Roy</span>
-                        <span class="level">Lv7</span>
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-06-16 13:31:34
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
-            <ul>
+                    <a class="navbar-item" target="_blank" title="My GitHub" href="https://cx4.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
                 
-                    <li>
-                        <a href="/categories/docs/">docs</a>
-                    </li>
                 
-                    <li>
-                        &gt; <a href="/categories/docs/python/">python</a>
-                    </li>
                 
-                    <li>
-                        &gt; <a href="/categories/docs/python/index/">index</a>
-                    </li>
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
                 
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/tags/Python/">Python</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>10k 字</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>40 分钟</span>
-        </span>
-    
-    
-</div>
-
-                    </div>
-                </div>
             </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
         
-
-        <div class="article-content markdown-body">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-06-16T05:31:34.000Z">2020-06-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/docs/">docs</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/docs/python/index/">index</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 小时 读完 (大约 10557 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                50-python-interview-questions-and-answers
+            
+        </h1>
+        <div class="content">
             <p>50 Python Interviwe Questions and Answers<br><img src="http://imgs.yrzdm.com/imgs/20200618/LE9hjRVnfL6W.png?imageslim" alt="mark"></p>
 <blockquote>
-<p>This post was written by Cameron Wilson, and was originally published at <a href='https://www.educative.io/blog' target="_blank" rel="noopener">Educative.io</a> 中文翻译由Roy在<a href='https://cx4.github.io'>cx4</a>首发，如需转载请注明出处。</p>
+<p>This post was written by Cameron Wilson, and was originally published at <a href="https://www.educative.io/blog" target="_blank" rel="noopener">Educative.io</a> 中文翻译由Roy在<a href="https://cx4.github.io">cx4</a>首发，如需转载请注明出处。</p>
 </blockquote>
 <a id="more"></a>
 <p>这篇文章涵盖有关Python编程语言的50个面试问题。  </p>
@@ -304,7 +208,7 @@
 <blockquote>
 <p>只要用户知道在元组中插入了什么，就应该使用元组。假设一所大学将其学生的信息存储在一个数据结构中；为了使此信息保持不变，应将其存储在元组中。由于列表为用户提供了更方便的可访问性，因此在需要存储类似类型的对象时应使用它们。例如，如果杂货店需要将所有乳制品存储在一个字段中，则应使用一个列表。</p>
 </blockquote>
-<h3 id="2-您如何将列表转换为元组？"><a href="#2-您如何将列表转换为元组？" class="headerlink" title="2. 您如何将列表转换为元组？"></a>2. <a name="2">您如何将列表转换为元组？</a></h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">a</span> = [<span class="hljs-number">50</span>,<span class="hljs-string">"hello"</span>,<span class="hljs-string">"Ok"</span>]<br><span class="hljs-selector-tag">b</span> = (<span class="hljs-selector-tag">a</span>[<span class="hljs-number">0</span>],<span class="hljs-selector-tag">a</span>[<span class="hljs-number">1</span>],<span class="hljs-selector-tag">a</span>[<span class="hljs-number">2</span>])<br></code></pre></td></tr></table></figure>
+<h3 id="2-您如何将列表转换为元组？"><a href="#2-您如何将列表转换为元组？" class="headerlink" title="2. 您如何将列表转换为元组？"></a>2. <a name="2">您如何将列表转换为元组？</a></h3><figure class="highlight stylus hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">a</span> = [<span class="hljs-number">50</span>,<span class="hljs-string">"hello"</span>,<span class="hljs-string">"Ok"</span>]<br><span class="hljs-selector-tag">b</span> = (<span class="hljs-selector-tag">a</span>[<span class="hljs-number">0</span>],<span class="hljs-selector-tag">a</span>[<span class="hljs-number">1</span>],<span class="hljs-selector-tag">a</span>[<span class="hljs-number">2</span>])<br></code></pre></td></tr></table></figure>
 <h3 id="3-数组和列表的区别是什么？"><a href="#3-数组和列表的区别是什么？" class="headerlink" title="3. 数组和列表的区别是什么？"></a>3. <a name="3">数组和列表的区别是什么？</a></h3><table>
 <thead>
 <tr>
@@ -363,9 +267,9 @@
 <li>多重继承：派生类继承自多个超类。<h3 id="11-Python中的多态是什么？"><a href="#11-Python中的多态是什么？" class="headerlink" title="11. Python中的多态是什么？"></a>11. <a name="11">Python中的多态是什么？</a></h3>多态是指采取多种形式的能力。<br>因此，例如，如果父类具有一个名为ABC的方法，那么子类也可以具有一个具有相同名称和参数的ABC方法。<br>Python允许多态。</li>
 </ol>
 <h3 id="12-解释range（）和xrange（）之间的区别"><a href="#12-解释range（）和xrange（）之间的区别" class="headerlink" title="12. 解释range（）和xrange（）之间的区别"></a>12. <a name="12">解释range（）和xrange（）之间的区别</a></h3><p>在大多数情况下，xrange和range在功能方面完全相同。<br>它们都提供了一种生成整数列表供您使用的方法。<br>唯一的区别是range返回一个Python列表对象，而xrange返回一个xrange对象。<br>这意味着xrange实际上不会像range那样在运行时生成静态列表。<br>它通过一种称为yield的特殊技术根据需要创建值。<br>该技术与一种称为生成器的对象一起使用。</p>
-<h3 id="13-解释Flask和Django之间的区别"><a href="#13-解释Flask和Django之间的区别" class="headerlink" title="13. 解释Flask和Django之间的区别"></a>13. <a name="13">解释Flask和Django之间的区别</a></h3><p><strong>Django</strong>是一个Python网络框架，提供了一个开放源代码的高级框架，“鼓励快速开发和简洁实用的设计”。<br>快速，安全且可扩展。Django提供了强大的社区支持和详细的文档。</br><br>该框架是一个包容性软件包，在您创建应用程序时，您将在其中获得管理面板，数据库界面和目录结构。<br>此外，它包括许多功能，因此您不必添加单独的库和依赖项。<br>它提供的一些功能包括用户身份验证，模板引擎，路由，数据库模式迁移等等。</br><br>Django框架非常灵活，您可以在其中与大型公司的MVP一起使用。<br>从某些角度来看，使用Django的一些最大的公司是Instagram，Dropbox，Pinterest和Spotify。</br></p>
+<h3 id="13-解释Flask和Django之间的区别"><a href="#13-解释Flask和Django之间的区别" class="headerlink" title="13. 解释Flask和Django之间的区别"></a>13. <a name="13">解释Flask和Django之间的区别</a></h3><p><strong>Django</strong>是一个Python网络框架，提供了一个开放源代码的高级框架，“鼓励快速开发和简洁实用的设计”。<br>快速，安全且可扩展。Django提供了强大的社区支持和详细的文档。<br><br>该框架是一个包容性软件包，在您创建应用程序时，您将在其中获得管理面板，数据库界面和目录结构。<br>此外，它包括许多功能，因此您不必添加单独的库和依赖项。<br>它提供的一些功能包括用户身份验证，模板引擎，路由，数据库模式迁移等等。<br><br>Django框架非常灵活，您可以在其中与大型公司的MVP一起使用。<br>从某些角度来看，使用Django的一些最大的公司是Instagram，Dropbox，Pinterest和Spotify。<br></p>
 <hr>
-<p><strong>Flask</strong>被认为是一个微框架，是一个简约的Web框架。<br>它电量较低，这意味着它缺少Django等全栈框架提供的许多功能，例如网络模板引擎，帐户授权和身份验证。</br><br>Flask极简且轻巧，这意味着您可以在编写代码时添加所需的扩展和库，而不会被框架自动提供。<br>Flask背后的理念是，它仅提供构建应用程序所需的组件，因此您具有灵活性和控制力。<br>换句话说，它是不受限制的。<br>它提供的一些功能包括：一个内置int开发服务器，Restful请求分派，Http请求处理等等。</p>
+<p><strong>Flask</strong>被认为是一个微框架，是一个简约的Web框架。<br>它电量较低，这意味着它缺少Django等全栈框架提供的许多功能，例如网络模板引擎，帐户授权和身份验证。<br><br>Flask极简且轻巧，这意味着您可以在编写代码时添加所需的扩展和库，而不会被框架自动提供。<br>Flask背后的理念是，它仅提供构建应用程序所需的组件，因此您具有灵活性和控制力。<br>换句话说，它是不受限制的。<br>它提供的一些功能包括：一个内置int开发服务器，Restful请求分派，Http请求处理等等。</p>
 <h3 id="14-什么是PYTHONPATH？"><a href="#14-什么是PYTHONPATH？" class="headerlink" title="14. 什么是PYTHONPATH？"></a>14. <a name="14">什么是PYTHONPATH？</a></h3><p>它是环境变量，在导入模块时使用。<br>每当导入模块时，都会查找PYTHONPATH以检查各个目录中是否存在导入的模块。<br>解释器使用它来确定要加载哪个模块。</p>
 <h3 id="15-什么是PEP8？"><a href="#15-什么是PEP8？" class="headerlink" title="15. 什么是PEP8？"></a>15. <a name="15">什么是PEP8？</a></h3><p>PEP代表Python增强提案。<br>这是一组规则，用于指定如何格式化Python代码以实现最大的可读性。</p>
 <h3 id="16-什么是Python装饰器？"><a href="#16-什么是Python装饰器？" class="headerlink" title="16. 什么是Python装饰器？"></a>16. <a name="16">什么是Python装饰器？</a></h3><p>装饰器是Python中的一种设计模式，允许用户在不修改其结构的情况下向现有对象添加新功能。<br>装饰器通常在要装饰的函数定义之前调用。</p>
@@ -378,14 +282,14 @@
 <ol>
 <li>条件语句：一个布尔表达式，其值为true或false</li>
 <li><strong>true_val</strong>:如果表达式的计算结果为true，则将分配一个值。</li>
-<li><strong>false_val</strong>: 如果表达式的结果为false，则分配一个值。<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">var</span> = <span class="hljs-literal">true</span>_val if condition else <span class="hljs-literal">false</span>_val<br></code></pre></td></tr></table></figure>
+<li><strong>false_val</strong>: 如果表达式的结果为false，则分配一个值。<figure class="highlight ini hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">var</span> = <span class="hljs-literal">true</span>_val if condition else <span class="hljs-literal">false</span>_val<br></code></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <h3 id="19-Python中的全局变量和局部变量是什么？"><a href="#19-Python中的全局变量和局部变量是什么？" class="headerlink" title="19. Python中的全局变量和局部变量是什么？"></a>19. <a name="19">Python中的全局变量和局部变量是什么？</a></h3><h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><p>在函数外部或全局空间中声明的变量称为全局变量。<br>程序中的任何函数都可以访问这些变量。</p>
 <h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p>在函数内部声明的任何变量都称为局部变量。<br>此变量存在于局部空间而不是全局空间中。</p>
 <h3 id="20-Python中的-property是什么？"><a href="#20-Python中的-property是什么？" class="headerlink" title="20. Python中的@property是什么？"></a>20. <a name="20">Python中的@property是什么？</a></h3><p>@property是一个装饰器。<br>在Python中，装饰器使用户能够以相同的方式使用该类（而不管对其属性或方法所做的更改）。<br>@property装饰器允许像属性一样访问函数。</p>
-<h3 id="21-在Python中如何使用try-except？"><a href="#21-在Python中如何使用try-except？" class="headerlink" title="21. 在Python中如何使用try/except？"></a>21. <a name="21">在Python中如何使用try/except？</a></h3><p>异常是程序执行时发生的错误。<br>发生错误时，程序将停止并生成异常，捕捉异常然后对其进行处理，以防止程序崩溃。</br><br>程序生成的异常在try块中捕获，并在except块中处理。</p>
+<h3 id="21-在Python中如何使用try-except？"><a href="#21-在Python中如何使用try-except？" class="headerlink" title="21. 在Python中如何使用try/except？"></a>21. <a name="21">在Python中如何使用try/except？</a></h3><p>异常是程序执行时发生的错误。<br>发生错误时，程序将停止并生成异常，捕捉异常然后对其进行处理，以防止程序崩溃。<br><br>程序生成的异常在try块中捕获，并在except块中处理。</p>
 <h3 id="22-解释Python-2和Python-3之间的区别"><a href="#22-解释Python-2和Python-3之间的区别" class="headerlink" title="22. 解释Python 2和Python 3之间的区别"></a>22. <a name="22">解释Python 2和Python 3之间的区别</a></h3><table>
 <thead>
 <tr>
@@ -394,11 +298,11 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>字符串编码</br>Python 2将它们存储为ASCII。</br>Unicode是ASCII的超集，因此可以编码更多字符，包括外来字符。</td>
-<td>字符串编码</br>Python 3默认将字符串存储为Unicode。</td>
+<td>字符串编码<br>Python 2将它们存储为ASCII。<br>Unicode是ASCII的超集，因此可以编码更多字符，包括外来字符。</td>
+<td>字符串编码<br>Python 3默认将字符串存储为Unicode。</td>
 </tr>
 <tr>
-<td>Python 2除法将floor函数应用于十进制输出并返回整数。</br>因此，将5除以2将返回floor（2.5）= 2。</td>
+<td>Python 2除法将floor函数应用于十进制输出并返回整数。<br>因此，将5除以2将返回floor（2.5）= 2。</td>
 <td>Python 3中的除法返回期望的输出，即使它是十进制的。</td>
 </tr>
 <tr>
@@ -413,20 +317,20 @@
 <h3 id="23-python中的join方法是什么？"><a href="#23-python中的join方法是什么？" class="headerlink" title="23. python中的join方法是什么？"></a>23. <a name="23">python中的join方法是什么？</a></h3><p>Python中的<strong>join</strong>方法采用可迭代数据结构的元素，并使用特定的字符串连接器值将它们连接在一起。  </p>
 <h4 id="join是如何工作的？"><a href="#join是如何工作的？" class="headerlink" title="join是如何工作的？"></a>join是如何工作的？</h4><p>Python中的join方法是一个字符串方法，它通过使用特定的字符串作为连接器来连接字符串可迭代结构的元素，该结构还包含字符串或字符（数组，列表等）。<br><img src="http://imgs.yrzdm.com/imgs/20200618/r9WYoIj9YMNi.png?imageslim" alt="mark"></p>
 <h3 id="24-什么是字典？"><a href="#24-什么是字典？" class="headerlink" title="24. 什么是字典？"></a>24. <a name="24">什么是字典？</a></h3><p>字典表达式是在Python中创建字典的一种方法。<br>它通过合并以列表或数组形式的两组数据来创建字典。<br>两个列表/数组之一的数据将作为字典的键，而第二个列表/数组的数据将作为值。<br>每个键充当每个值的唯一标识符，因此两个列表/数组的大小应相同。</p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs q">NewDictionary = &#123;<span class="hljs-built_in">key</span>:<span class="hljs-built_in">value</span> for (<span class="hljs-built_in">key</span>,<span class="hljs-built_in">value</span>) in iterable&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="25-您将如何在Python中进行深层复制？"><a href="#25-您将如何在Python中进行深层复制？" class="headerlink" title="25. 您将如何在Python中进行深层复制？"></a>25. <a name="25">您将如何在Python中进行深层复制？</a></h3><p>深拷贝是指克隆对象。<br>当使用=运算符时，我们不克隆对象；<br>相反，我们将变量引用到相同的对象（也称为浅表副本）。</br><br>这意味着更改一个变量的值会影响另一个变量的值，因为它们引用（或指向）同一对象。<br>浅表副本与深表副本之间的区别仅适用于包含其他对象的对象，例如列表和类的实例。</p>
+<figure class="highlight q hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs q">NewDictionary = &#123;<span class="hljs-built_in">key</span>:<span class="hljs-built_in">value</span> for (<span class="hljs-built_in">key</span>,<span class="hljs-built_in">value</span>) in iterable&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="25-您将如何在Python中进行深层复制？"><a href="#25-您将如何在Python中进行深层复制？" class="headerlink" title="25. 您将如何在Python中进行深层复制？"></a>25. <a name="25">您将如何在Python中进行深层复制？</a></h3><p>深拷贝是指克隆对象。<br>当使用=运算符时，我们不克隆对象；<br>相反，我们将变量引用到相同的对象（也称为浅表副本）。<br><br>这意味着更改一个变量的值会影响另一个变量的值，因为它们引用（或指向）同一对象。<br>浅表副本与深表副本之间的区别仅适用于包含其他对象的对象，例如列表和类的实例。</p>
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>此函数将要克隆的对象作为唯一参数，并返回克隆。</p>
 <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>此函数将要克隆的对象作为唯一参数，并返回克隆。</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">a = <span class="hljs-keyword">copy</span>.<span class="bash">deepcopy(b)</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight dockerfile hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">a = <span class="hljs-keyword">copy</span>.<span class="bash">deepcopy(b)</span><br></code></pre></td></tr></table></figure>
 <p><img src="http://imgs.yrzdm.com/imgs/20200618/Uu3AGRXfl04X.png?imageslim" alt="mark"></p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">import</span> copy<br>x = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br>y = x<br>x[<span class="hljs-number">0</span>] = <span class="hljs-number">5</span><br>x[<span class="hljs-number">1</span>] = <span class="hljs-number">15</span><br>print(<span class="hljs-string">"shallow copy:"</span>,y)<br>a = [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>]<br>b = copy.deepcopy(a)<br>a[<span class="hljs-number">1</span>] = <span class="hljs-number">70</span><br>print(<span class="hljs-string">"deep copy:"</span>,b)<br>Output:<br>shallow copy:[<span class="hljs-number">5</span>,<span class="hljs-number">15</span>,<span class="hljs-number">3</span>]<br>deep copy:[<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>]<br></code></pre></td></tr></table></figure>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">import</span> copy<br>x = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br>y = x<br>x[<span class="hljs-number">0</span>] = <span class="hljs-number">5</span><br>x[<span class="hljs-number">1</span>] = <span class="hljs-number">15</span><br>print(<span class="hljs-string">"shallow copy:"</span>,y)<br>a = [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>]<br>b = copy.deepcopy(a)<br>a[<span class="hljs-number">1</span>] = <span class="hljs-number">70</span><br>print(<span class="hljs-string">"deep copy:"</span>,b)<br>Output:<br>shallow copy:[<span class="hljs-number">5</span>,<span class="hljs-number">15</span>,<span class="hljs-number">3</span>]<br>deep copy:[<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>]<br></code></pre></td></tr></table></figure>
 
 <h3 id="26-如何检查Python字典中是否存在键？"><a href="#26-如何检查Python字典中是否存在键？" class="headerlink" title="26. 如何检查Python字典中是否存在键？"></a>26. <a name="26">如何检查Python字典中是否存在键？</a></h3><p>一种安全的做法是在提取该键的值之前检查该键是否在字典中存在。<br>为此，Python提供了两个内置函数：<br><code>has_key()</code><br>如果字典中有给定的键，则<code>has_key</code>方法返回<code>true</code>；否则，返回<code>true</code>。<br>否则，它返回<code>false</code>。<br><code>if-in</code>表达式<br>此方法使用<code>if-in</code>语句检查字典中是否存在给定键。</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Fruits = [<span class="hljs-string">'a'</span>:<span class="hljs-string">"apple"</span>,<span class="hljs-string">'b'</span>:<span class="hljs-string">"banana"</span>,<span class="hljs-string">'c'</span>:<span class="hljs-string">"carrot"</span>]<br>key_to_lookup = <span class="hljs-string">'a'</span><br><span class="hljs-keyword">if</span> key_to_lookup <span class="hljs-keyword">in</span> Fruits:<br>  <span class="hljs-builtin-name">print</span>(<span class="hljs-string">"exists"</span>)<br><span class="hljs-keyword">else</span>:<br>  <span class="hljs-builtin-name">print</span>(<span class="hljs-string">"does not exists"</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Fruits = [<span class="hljs-string">'a'</span>:<span class="hljs-string">"apple"</span>,<span class="hljs-string">'b'</span>:<span class="hljs-string">"banana"</span>,<span class="hljs-string">'c'</span>:<span class="hljs-string">"carrot"</span>]<br>key_to_lookup = <span class="hljs-string">'a'</span><br><span class="hljs-keyword">if</span> key_to_lookup <span class="hljs-keyword">in</span> Fruits:<br>  <span class="hljs-builtin-name">print</span>(<span class="hljs-string">"exists"</span>)<br><span class="hljs-keyword">else</span>:<br>  <span class="hljs-builtin-name">print</span>(<span class="hljs-string">"does not exists"</span>)<br></code></pre></td></tr></table></figure>
 
-<h3 id="27-您将如何在Python中实现记忆化？"><a href="#27-您将如何在Python中实现记忆化？" class="headerlink" title="27. 您将如何在Python中实现记忆化？"></a>27. <a name="27">您将如何在Python中实现记忆化？</a></h3><h4 id="对于计算量比较大的代码："><a href="#对于计算量比较大的代码：" class="headerlink" title="对于计算量比较大的代码："></a>对于计算量比较大的代码：</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs maxima">#Fibonacci Numbers<br>def <span class="hljs-built_in">fib</span>(<span class="hljs-built_in">num</span>):<br>  <span class="hljs-keyword">if</span> <span class="hljs-built_in">num</span> == <span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">return</span> <span class="hljs-number">0</span><br>  elif <span class="hljs-built_in">num</span> == <span class="hljs-number">1</span>:<br>    <span class="hljs-built_in">return</span> <span class="hljs-number">1</span><br>  <span class="hljs-built_in">return</span> <span class="hljs-built_in">fib</span>(<span class="hljs-built_in">num</span> - <span class="hljs-number">1</span>) + <span class="hljs-built_in">fib</span>(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<h3 id="27-您将如何在Python中实现记忆化？"><a href="#27-您将如何在Python中实现记忆化？" class="headerlink" title="27. 您将如何在Python中实现记忆化？"></a>27. <a name="27">您将如何在Python中实现记忆化？</a></h3><h4 id="对于计算量比较大的代码："><a href="#对于计算量比较大的代码：" class="headerlink" title="对于计算量比较大的代码："></a>对于计算量比较大的代码：</h4><figure class="highlight maxima hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs maxima">#Fibonacci Numbers<br>def <span class="hljs-built_in">fib</span>(<span class="hljs-built_in">num</span>):<br>  <span class="hljs-keyword">if</span> <span class="hljs-built_in">num</span> == <span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">return</span> <span class="hljs-number">0</span><br>  elif <span class="hljs-built_in">num</span> == <span class="hljs-number">1</span>:<br>    <span class="hljs-built_in">return</span> <span class="hljs-number">1</span><br>  <span class="hljs-built_in">return</span> <span class="hljs-built_in">fib</span>(<span class="hljs-built_in">num</span> - <span class="hljs-number">1</span>) + <span class="hljs-built_in">fib</span>(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 <p>记忆化可以通过Python装饰器实现<br>这是完整的实现。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs sql">import timeit<br><br>def memoize_fib(func):<br>    <span class="hljs-keyword">cache</span> = &#123;&#125;<br>    <span class="hljs-keyword">def</span> <span class="hljs-keyword">inner</span>(arg):<br>        <span class="hljs-keyword">if</span> arg <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">cache</span>:            <br>            <span class="hljs-keyword">cache</span>[arg] = func(arg)<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">cache</span>[arg]<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">inner</span><br><br><br><span class="hljs-keyword">def</span> fib(<span class="hljs-keyword">num</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">num</span> == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    elif <span class="hljs-keyword">num</span> == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> fib(<span class="hljs-keyword">num</span><span class="hljs-number">-1</span>) + fib(<span class="hljs-keyword">num</span><span class="hljs-number">-2</span>)<br><br>fib = memoize_fib(fib)<br><br><br>print(timeit.timeit(<span class="hljs-string">'fib(30)'</span>, globals=globals(), <span class="hljs-built_in">number</span>=<span class="hljs-number">1</span>))<br>print(timeit.timeit(<span class="hljs-string">'fib(30)'</span>, globals=globals(), <span class="hljs-built_in">number</span>=<span class="hljs-number">1</span>))<br>print(timeit.timeit(<span class="hljs-string">'fib(30)'</span>, globals=globals(), <span class="hljs-built_in">number</span>=<span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs sql">import timeit<br><br>def memoize_fib(func):<br>    <span class="hljs-keyword">cache</span> = &#123;&#125;<br>    <span class="hljs-keyword">def</span> <span class="hljs-keyword">inner</span>(arg):<br>        <span class="hljs-keyword">if</span> arg <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">cache</span>:            <br>            <span class="hljs-keyword">cache</span>[arg] = func(arg)<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">cache</span>[arg]<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">inner</span><br><br><br><span class="hljs-keyword">def</span> fib(<span class="hljs-keyword">num</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">num</span> == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    elif <span class="hljs-keyword">num</span> == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> fib(<span class="hljs-keyword">num</span><span class="hljs-number">-1</span>) + fib(<span class="hljs-keyword">num</span><span class="hljs-number">-2</span>)<br><br>fib = memoize_fib(fib)<br><br><br>print(timeit.timeit(<span class="hljs-string">'fib(30)'</span>, globals=globals(), <span class="hljs-built_in">number</span>=<span class="hljs-number">1</span>))<br>print(timeit.timeit(<span class="hljs-string">'fib(30)'</span>, globals=globals(), <span class="hljs-built_in">number</span>=<span class="hljs-number">1</span>))<br>print(timeit.timeit(<span class="hljs-string">'fib(30)'</span>, globals=globals(), <span class="hljs-built_in">number</span>=<span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
 <h3 id="28-您将如何在Python中对字典进行排序？"><a href="#28-您将如何在Python中对字典进行排序？" class="headerlink" title="28. 您将如何在Python中对字典进行排序？"></a>28. <a name="28">您将如何在Python中对字典进行排序？</a></h3><p>我们可以通过键或值对这种类型的数据进行排序，这可以通过使用sorted（）函数来完成。<br>首先，我们需要知道如何从字典中检索数据以传递给该函数。  </p>
 <p>有两种从字典中获取数据的基本方法：  </p>
 <ul>
@@ -435,36 +339,36 @@
 <li>Dictionary.items（）：返回所有数据作为键值对列表。<h4 id="Sorted（）语法"><a href="#Sorted（）语法" class="headerlink" title="Sorted（）语法"></a>Sorted（）语法</h4>此方法采用一个强制性参数和两个可选参数：  </li>
 </ul>
 <p><strong>数据（必填）</strong>：要排序的数据。<br>我们将使用上述方法之一传递我们检索到的数据。<br><strong>键（可选）</strong>：我们要根据其对列表进行排序的功能（或条件）。<br>例如，条件可以是根据字符串的长度或任何其他任意函数对字符串进行排序。<br>此功能应用于列表的每个元素，并对结果数据进行排序。<br>将其保留为空将根据其原始值对列表进行排序。<br><strong>反向（可选）</strong>：将第三个参数设置为true将按降序对列表进行排序。<br>保留此空的升序排列。<br><code>keys()</code>  </p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs perl">dict = &#123;&#125;<br>dict[<span class="hljs-string">'1'</span>] = <span class="hljs-string">'apple'</span><br>dict[<span class="hljs-string">'3'</span>] = <span class="hljs-string">'orange'</span><br>dict[<span class="hljs-string">'2'</span>] = <span class="hljs-string">'pango'</span><br><br>lst = dict.keys()<br><br><span class="hljs-comment"># Sorted by key</span><br><span class="hljs-keyword">print</span>(<span class="hljs-string">"Sorted by key: "</span>, sorted(lst))<br><span class="hljs-string">``</span><span class="hljs-string">`  <br>`</span><span class="hljs-keyword">values</span>()<span class="hljs-string">`</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight perl hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs perl">dict = &#123;&#125;<br>dict[<span class="hljs-string">'1'</span>] = <span class="hljs-string">'apple'</span><br>dict[<span class="hljs-string">'3'</span>] = <span class="hljs-string">'orange'</span><br>dict[<span class="hljs-string">'2'</span>] = <span class="hljs-string">'pango'</span><br><br>lst = dict.keys()<br><br><span class="hljs-comment"># Sorted by key</span><br><span class="hljs-keyword">print</span>(<span class="hljs-string">"Sorted by key: "</span>, sorted(lst))<br><span class="hljs-string">``</span><span class="hljs-string">`  <br>`</span><span class="hljs-keyword">values</span>()<span class="hljs-string">`</span><br></code></pre></td></tr></table></figure>
 <p>dict = {}<br>dict[‘1’] = ‘apple’<br>dict[‘3’] = ‘orange’<br>dict[‘2’] = ‘pango’</p>
 <p>lst = dict.values()</p>
 <p>#Sorted by value<br>print(“Sorted by value: “, sorted(lst))</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-string">`items()`</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight arcade hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-string">`items()`</span><br></code></pre></td></tr></table></figure>
 <p>dict = {}<br>dict[‘1’] = ‘apple’<br>dict[‘3’] = ‘orange’<br>dict[‘2’] = ‘strawberry’</p>
 <p>lst = dict.items()</p>
 <h1 id="Sorted-by-key"><a href="#Sorted-by-key" class="headerlink" title="Sorted by key"></a>Sorted by key</h1><p>print(“Sorted by key: “, sorted(lst, key = lambda x : x[0]))</p>
 <p>#Sorted by value<br>print(“Sorted by value: “, sorted(lst, key = lambda x : x[1]))</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>### <span class="hljs-number">29</span>. &lt;a name=<span class="hljs-string">"29"</span>&gt;您将如何以及何时使用any（）和all（）？&lt;/a&gt;<br>#### 什么是`any()`?<br>`any（）`是一个函数，它接受一个可迭代的函数（例如列表，元组，集合等），并且如果任何元素的值为真，则返回`True`，但如果所有元素的值为`False`，则返回`False`。  <br>可以通过以下方式将`iterable`传递给`any（）``，以检查是否有任何元素为`True`：<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>### <span class="hljs-number">29</span>. &lt;a name=<span class="hljs-string">"29"</span>&gt;您将如何以及何时使用any（）和all（）？&lt;/a&gt;<br>#### 什么是`any()`?<br>`any（）`是一个函数，它接受一个可迭代的函数（例如列表，元组，集合等），并且如果任何元素的值为真，则返回`True`，但如果所有元素的值为`False`，则返回`False`。  <br>可以通过以下方式将`iterable`传递给`any（）``，以检查是否有任何元素为`True`：<br></code></pre></td></tr></table></figure>
 <p>one_truth = [True, False, False]<br>three_lies = [0, ‘’, None]<br>print(any(one_truth))<br>print(any(three_lies))</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">#### 什么是`all()`?<br>`all（）`是另一个Python函数，该函数具有一个可迭代的函数，如果所有元素的评估结果均为`True`，则返回`True`，否则返回`False`。  <br>与`any（）`类似，`all（）`接受列表，元组，集合或任何可迭代的对象，如下所示：<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">#### 什么是`all()`?<br>`all（）`是另一个Python函数，该函数具有一个可迭代的函数，如果所有元素的评估结果均为`True`，则返回`True`，否则返回`False`。  <br>与`any（）`类似，`all（）`接受列表，元组，集合或任何可迭代的对象，如下所示：<br></code></pre></td></tr></table></figure>
 <p>all_true = [True, 1, ‘a’, object()]<br>one_true = [True, False, False, 0]<br>all_false = [None, ‘’, False, 0]<br>print(all(all_true))<br>print(all(one_true))<br>print(all(all_false))</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">### 30. &lt;a name="30"&gt;什么是Python文档字符串？&lt;/a&gt;</span><br>Python文档字符串提供了一种将文档与以下内容相关联的合适方法：  <br><span class="hljs-bullet">- </span>Python模块<br><span class="hljs-bullet">- </span>Python函数<br><span class="hljs-bullet">- </span>Python类  <br>这是书面代码的指定文件。<br>与常规代码注释不同，篡改应描述函数的功能，而不是功能的作用。  <br>可以使用以下命令访问文档字符串  <br><span class="hljs-code">`__doc__`</span>对象的方法  <br><span class="hljs-code">`help`</span>函数<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">### 30. &lt;a name="30"&gt;什么是Python文档字符串？&lt;/a&gt;</span><br>Python文档字符串提供了一种将文档与以下内容相关联的合适方法：  <br><span class="hljs-bullet">- </span>Python模块<br><span class="hljs-bullet">- </span>Python函数<br><span class="hljs-bullet">- </span>Python类  <br>这是书面代码的指定文件。<br>与常规代码注释不同，篡改应描述函数的功能，而不是功能的作用。  <br>可以使用以下命令访问文档字符串  <br><span class="hljs-code">`__doc__`</span>对象的方法  <br><span class="hljs-code">`help`</span>函数<br></code></pre></td></tr></table></figure>
 <p>def Examplefunc(str): #function that outputs the str parameter<br>  print(“The value is”, str)<br>  #no return statement needed in this function</p>
 <p>def Multiply(x,y): #function that computes the product of x and y<br>  return x*y #returning the product of x and y</p>
 <p>#Calling the functions<br>Examplefunc(9) #9 passed as the parameter)<br>answer = Multiply(4,2) #4 and 2 passed as the parameters<br>print(“The product of x and y is:”,answer)</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs gherkin"><span class="hljs-comment">### 32. &lt;a name="32"&gt;解释Python中生成器和迭代器之间的区别。&lt;/a&gt;</span><br>Python中的迭代器充当对象的持有者，以便可以对其进行迭代；<br>生成器有助于创建自定义迭代器。  <br>![mark](http://imgs.yrzdm.com/imgs/20200619/kdc8sxg1Do1G.png?imageslim)<br>除了明显的语法差异外，还有一些值得注意的差异：<br>|<span class="hljs-string"> Generator    </span>|<span class="hljs-string"> Iterator    </span>|<br>|<span class="hljs-string"> --- </span>|<span class="hljs-string"> --- </span>|<br>|<span class="hljs-string"> 使用函数实现    </span>|<span class="hljs-string"> 使用类实现    </span>|<br>|<span class="hljs-string"> 使用`yield`关键字    </span>|<span class="hljs-string"> 不使用`yield`关键字    </span>|<br>|<span class="hljs-string"> 代码简洁    </span>|<span class="hljs-string"> 代码不简洁    </span>|<br>|<span class="hljs-string"> 存储yield语句之前的所有局部变量。    </span>|<span class="hljs-string"> 没有使用局部变量    </span>|<br><span class="hljs-comment">#### 迭代器的实现</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight gherkin hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs gherkin"><span class="hljs-comment">### 32. &lt;a name="32"&gt;解释Python中生成器和迭代器之间的区别。&lt;/a&gt;</span><br>Python中的迭代器充当对象的持有者，以便可以对其进行迭代；<br>生成器有助于创建自定义迭代器。  <br>![mark](http://imgs.yrzdm.com/imgs/20200619/kdc8sxg1Do1G.png?imageslim)<br>除了明显的语法差异外，还有一些值得注意的差异：<br>|<span class="hljs-string"> Generator    </span>|<span class="hljs-string"> Iterator    </span>|<br>|<span class="hljs-string"> --- </span>|<span class="hljs-string"> --- </span>|<br>|<span class="hljs-string"> 使用函数实现    </span>|<span class="hljs-string"> 使用类实现    </span>|<br>|<span class="hljs-string"> 使用`yield`关键字    </span>|<span class="hljs-string"> 不使用`yield`关键字    </span>|<br>|<span class="hljs-string"> 代码简洁    </span>|<span class="hljs-string"> 代码不简洁    </span>|<br>|<span class="hljs-string"> 存储yield语句之前的所有局部变量。    </span>|<span class="hljs-string"> 没有使用局部变量    </span>|<br><span class="hljs-comment">#### 迭代器的实现</span><br></code></pre></td></tr></table></figure>
 <h1 id="Function-to-generate-all-the-non-negative-numbers"><a href="#Function-to-generate-all-the-non-negative-numbers" class="headerlink" title="Function to generate all the non-negative numbers"></a>Function to generate all the non-negative numbers</h1><h1 id="up-to-the-given-non-negative-number"><a href="#up-to-the-given-non-negative-number" class="headerlink" title="up to the given non-negative number."></a>up to the given non-negative number.</h1><p>class UpTo:<br>    # giving the parameter a default value of 0<br>    def <strong>init</strong>(self, max = 0):<br>        self.max = max<br>    def <strong>iter</strong>(self):<br>        self.n = 0<br>        return self<br>    def <strong>next</strong>(self):<br>        # The next method will throw an<br>        # exception when the termination condition is reached.<br>        if self.n &gt; self.max:<br>            raise StopIteration<br>        else:<br>            result = self.n<br>            self.n += 1<br>            return result<br>for number in UpTo(5):<br>    print(number)</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">#### 生成器的实现<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">#### 生成器的实现<br></code></pre></td></tr></table></figure>
 <h1 id="Function-to-generate-all-the-non-negative-numbers-1"><a href="#Function-to-generate-all-the-non-negative-numbers-1" class="headerlink" title="Function to generate all the non-negative numbers"></a>Function to generate all the non-negative numbers</h1><h1 id="up-to-the-given-non-negative-number-1"><a href="#up-to-the-given-non-negative-number-1" class="headerlink" title="up to the given non-negative number"></a>up to the given non-negative number</h1><p>def upto(n):<br>  for i in range(n+1):<br>    # The yield statement is what makes a function<br>    # a generator<br>    yield i<br>for number in upto(5):<br>  print(number)</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">### <span class="hljs-number">33</span>. &lt;a name=<span class="hljs-string">"33"</span>&gt;Python中的defaultdict是什么？&lt;/a&gt;<br>Python字典dict包含单词和含义以及任何数据类型的键值对。<br>`defaultdict`是内置`dict`类的另一个细分。   <br>`defaultdict`可以通过给出其声明来创建，该声明可以具有三个值。<br>列出，设置或诠释。<br>根据指定的数据类型，将创建字典，并且当添加或访问`defaultdict`中不存在的任何键时，将为其分配默认值，而不是给出`KeyError`。  <br>举例：  <br>下面的第一个代码段显示了一个简单的字典，以及如何访问dict中不存在的键时如何产生错误。<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">### <span class="hljs-number">33</span>. &lt;a name=<span class="hljs-string">"33"</span>&gt;Python中的defaultdict是什么？&lt;/a&gt;<br>Python字典dict包含单词和含义以及任何数据类型的键值对。<br>`defaultdict`是内置`dict`类的另一个细分。   <br>`defaultdict`可以通过给出其声明来创建，该声明可以具有三个值。<br>列出，设置或诠释。<br>根据指定的数据类型，将创建字典，并且当添加或访问`defaultdict`中不存在的任何键时，将为其分配默认值，而不是给出`KeyError`。  <br>举例：  <br>下面的第一个代码段显示了一个简单的字典，以及如何访问dict中不存在的键时如何产生错误。<br></code></pre></td></tr></table></figure>
 <p>dict_demo = dict()<br>print(dict_demo[3])</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">现在，让我们介绍一个`defaultdict`，看看会发生什么。<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">现在，让我们介绍一个`defaultdict`，看看会发生什么。<br></code></pre></td></tr></table></figure>
 <p>from collections import defaultdict<br>defaultdict_demo = defaultdict(int)<br>print(defaultdict_demo[3])<br>Output: 0</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs clean">在这种情况下，我们将`int`作为数据类型传递给`defaultdict`。<br>因此，将为`defaultdict_demo`中不存在的任何键分配一个值<span class="hljs-number">0</span>，除非为其定义了值。<br>&gt;注意：您也可以将set或list作为参数<br><br>### <span class="hljs-number">34.</span> &lt;a name=<span class="hljs-string">"34"</span>&gt;什么是Python模块？&lt;/a&gt;<br>Python模块是一个Python文件，其中包含要在应用程序中使用的一组函数和变量。<br>变量可以是任何类型（数组，字典，对象等）  <br>模块可以是：  <br>- 内建<br>- 用户自定义<br>#### Python模块的好处<br>在Python中创建和使用模块有两个主要好处：  <br>##### 结构化代码<br>- 通过将代码分组到一个Python文件中，逻辑上将代码组织起来，这使开发更加容易且不易出错。<br>代码更易于理解和使用。  <br>##### 可重用性<br>- 单个模块中定义的功能可以被应用程序的其他部分轻松地重用。<br>这样就无需重新创建重复的代码。<br>### <span class="hljs-number">35.</span> &lt;a nama=<span class="hljs-string">"35"</span>&gt;如何将列表转换为数组&lt;/a&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs clean">在这种情况下，我们将`int`作为数据类型传递给`defaultdict`。<br>因此，将为`defaultdict_demo`中不存在的任何键分配一个值<span class="hljs-number">0</span>，除非为其定义了值。<br>&gt;注意：您也可以将set或list作为参数<br><br>### <span class="hljs-number">34.</span> &lt;a name=<span class="hljs-string">"34"</span>&gt;什么是Python模块？&lt;/a&gt;<br>Python模块是一个Python文件，其中包含要在应用程序中使用的一组函数和变量。<br>变量可以是任何类型（数组，字典，对象等）  <br>模块可以是：  <br>- 内建<br>- 用户自定义<br>#### Python模块的好处<br>在Python中创建和使用模块有两个主要好处：  <br>##### 结构化代码<br>- 通过将代码分组到一个Python文件中，逻辑上将代码组织起来，这使开发更加容易且不易出错。<br>代码更易于理解和使用。  <br>##### 可重用性<br>- 单个模块中定义的功能可以被应用程序的其他部分轻松地重用。<br>这样就无需重新创建重复的代码。<br>### <span class="hljs-number">35.</span> &lt;a nama=<span class="hljs-string">"35"</span>&gt;如何将列表转换为数组&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 <p>import numpy as np<br>my_list = [2,4,6,8,10]<br>my_array = np.array(my_list)<br>print(my_array)<br>print(type(my_array))<br>[2 4 6 8 10]</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">===<br><br>### <span class="hljs-number">36</span>. &lt;a name=<span class="hljs-string">"36"</span>&gt;反转Python中的字符串&lt;/a&gt;<br>`stringname[strlength::-<span class="hljs-number">1</span>]`  <br>`stringname[::-<span class="hljs-number">1</span>]`<br>### <span class="hljs-number">37</span>. &lt;a name=<span class="hljs-string">"37"</span>&gt;检查Python字符串是否包含另一个字符串&lt;/a&gt;<br>有两种检查方法。<br>对于本文，我们将研究`find`方法。  <br>`find`方法检查字符串是否包含子字符串。<br>如果是这样，则该方法返回字符串中子字符串的起始索引；否则，返回<span class="hljs-number">0</span>。<br>否则，返回-<span class="hljs-number">1</span>。<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">===<br><br>### <span class="hljs-number">36</span>. &lt;a name=<span class="hljs-string">"36"</span>&gt;反转Python中的字符串&lt;/a&gt;<br>`stringname[strlength::-<span class="hljs-number">1</span>]`  <br>`stringname[::-<span class="hljs-number">1</span>]`<br>### <span class="hljs-number">37</span>. &lt;a name=<span class="hljs-string">"37"</span>&gt;检查Python字符串是否包含另一个字符串&lt;/a&gt;<br>有两种检查方法。<br>对于本文，我们将研究`find`方法。  <br>`find`方法检查字符串是否包含子字符串。<br>如果是这样，则该方法返回字符串中子字符串的起始索引；否则，返回<span class="hljs-number">0</span>。<br>否则，返回-<span class="hljs-number">1</span>。<br></code></pre></td></tr></table></figure>
 <p>string.find(substring)<br>a_string=”Python Programming”<br>substring1=”Programming”<br>substring2=”Language”<br>print(“Check if “+a_string+” contains “+substring1+”:”)<br>print(a_string.find(substring1))<br>print(“Check if “+a_string+” contains “+substring2+”:”)<br>print(a_string.find(substring2))</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown">检查字符串是否包含另一个字符串的其他两种值得注意的方法是在操作符中使用<span class="hljs-code">`in`</span>或使用<span class="hljs-code">`count`</span>方法。<br><span class="hljs-section">### 38. &lt;a name="38"&gt;在Python中实施广度优先搜索（BFS）&lt;/a&gt;</span><br>考虑以下代码中实现的图：<br>![<span class="hljs-string">mark</span>](<span class="hljs-link">http://imgs.yrzdm.com/imgs/20200619/ep9Ftu1SirWW.png?imageslim</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown">检查字符串是否包含另一个字符串的其他两种值得注意的方法是在操作符中使用<span class="hljs-code">`in`</span>或使用<span class="hljs-code">`count`</span>方法。<br><span class="hljs-section">### 38. &lt;a name="38"&gt;在Python中实施广度优先搜索（BFS）&lt;/a&gt;</span><br>考虑以下代码中实现的图：<br>![<span class="hljs-string">mark</span>](<span class="hljs-link">http://imgs.yrzdm.com/imgs/20200619/ep9Ftu1SirWW.png?imageslim</span>)<br></code></pre></td></tr></table></figure>
 <p>graph = {<br>  ‘A’ : [‘B’,’C’],<br>  ‘B’ : [‘D’, ‘E’],<br>  ‘C’ : [‘F’],<br>  ‘D’ : [],<br>  ‘E’ : [‘F’],<br>  ‘F’ : []<br>}</p>
 <p>visited = [] # List to keep track of visited nodes.<br>queue = []     #Initialize a queue</p>
 <p>def bfs(visited, graph, node):<br>  visited.append(node)<br>  queue.append(node)</p>
@@ -473,14 +377,14 @@
   if neighbour not in visited:
     visited.append(neighbour)
     queue.append(neighbour)</code></pre><h1 id="Driver-Code"><a href="#Driver-Code" class="headerlink" title="Driver Code"></a>Driver Code</h1><p>bfs(visited, graph, ‘A’)<br>Output: A B C D E</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">- </span>第3-10行：图示的图表使用邻接表表示。  <br>在Python中执行此操作的一种简单方法是使用字典数据结构，其中每个顶点都有其相邻节点的存储列表。<br><span class="hljs-bullet">- </span>第12行：受访者是用于跟踪受访节点的列表。<br><span class="hljs-bullet">- </span>第13行：queue是一个列表，用于跟踪队列中当前的节点。<br><span class="hljs-bullet">- </span>第29行：bfs函数的参数是访问列表，字典形式的图形和起始节点A。<br><span class="hljs-bullet">- </span>第15-26行：bfs遵循上述算法：<br>它检查起始节点并将其附加到访问列表和队列中。<br>然后，当队列包含元素时，它将继续从队列中取出节点，如果未访问该节点的邻居，则将该节点的邻居添加到队列中，并将其标记为已访问。<br>这一直持续到队列为空。<br><span class="hljs-section">##### 时间复杂度</span><br>由于访问了所有的节点和顶点，因此图上BFS的时间复杂度为O（V + E）;<br>其中V是顶点数，E是边数。<br><span class="hljs-section">### 39. &lt;a name="39"&gt;在Python中实施深度优先搜索（DFS）&lt;/a&gt;</span><br>考虑下面的代码，该代码在以下代码中实现：<br>![<span class="hljs-string">mark</span>](<span class="hljs-link">http://imgs.yrzdm.com/imgs/20200619/ep9Ftu1SirWW.png?imageslim</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">- </span>第3-10行：图示的图表使用邻接表表示。  <br>在Python中执行此操作的一种简单方法是使用字典数据结构，其中每个顶点都有其相邻节点的存储列表。<br><span class="hljs-bullet">- </span>第12行：受访者是用于跟踪受访节点的列表。<br><span class="hljs-bullet">- </span>第13行：queue是一个列表，用于跟踪队列中当前的节点。<br><span class="hljs-bullet">- </span>第29行：bfs函数的参数是访问列表，字典形式的图形和起始节点A。<br><span class="hljs-bullet">- </span>第15-26行：bfs遵循上述算法：<br>它检查起始节点并将其附加到访问列表和队列中。<br>然后，当队列包含元素时，它将继续从队列中取出节点，如果未访问该节点的邻居，则将该节点的邻居添加到队列中，并将其标记为已访问。<br>这一直持续到队列为空。<br><span class="hljs-section">##### 时间复杂度</span><br>由于访问了所有的节点和顶点，因此图上BFS的时间复杂度为O（V + E）;<br>其中V是顶点数，E是边数。<br><span class="hljs-section">### 39. &lt;a name="39"&gt;在Python中实施深度优先搜索（DFS）&lt;/a&gt;</span><br>考虑下面的代码，该代码在以下代码中实现：<br>![<span class="hljs-string">mark</span>](<span class="hljs-link">http://imgs.yrzdm.com/imgs/20200619/ep9Ftu1SirWW.png?imageslim</span>)<br></code></pre></td></tr></table></figure>
 <h1 id="Using-a-Python-dictionary-to-act-as-an-adjacency-list"><a href="#Using-a-Python-dictionary-to-act-as-an-adjacency-list" class="headerlink" title="Using a Python dictionary to act as an adjacency list"></a>Using a Python dictionary to act as an adjacency list</h1><p>graph = {<br>    ‘A’ : [‘B’,’C’],<br>    ‘B’ : [‘D’, ‘E’],<br>    ‘C’ : [‘F’],<br>    ‘D’ : [],<br>    ‘E’ : [‘F’],<br>    ‘F’ : []<br>}<br>visited = set() # Set to keep track of visited nodes.<br>def dfs(visited, graph, node):<br>    if node not in visited:<br>        print (node)<br>        visited.add(node)<br>        for neighbour in graph[node]:<br>            dfs(visited, graph, neighbour)</p>
 <h1 id="Driver-Code-1"><a href="#Driver-Code-1" class="headerlink" title="Driver Code"></a>Driver Code</h1><p>dfs(visited, graph, ‘A’)<br>Output: A B D E F C</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">- </span>第2-9行：使用邻接表表示图示的图形-在Python中执行此操作的一种简单方法是使用字典数据结构。<br>每个顶点都有一个存储其相邻节点的列表。<br><span class="hljs-bullet">- </span>第11行：受访者集，用于跟踪受访节点。<br><span class="hljs-bullet">- </span>第21行：调用dfs函数并将其传递给被访问的集合，字典形式的图形以及作为起始节点的A。<br><span class="hljs-bullet">- </span>第13-18行：dfs遵循上述算法：<br><span class="hljs-bullet">1. </span>它首先检查当前节点是否未访问-如果是，则将其附加到已访问集合中。<br><span class="hljs-bullet">2. </span>然后，对于当前节点的每个邻居，再次调用dfs函数。<br><span class="hljs-bullet">3. </span>当访问所有节点时，将调用基本情况。<br>然后函数返回。<br><span class="hljs-section">##### 时间复杂度</span><br>由于访问了所有节点和顶点，因此图上DFS的平均时间复杂度为O（V + E），其中V是顶点数，E是边数。<br>对于树上的DFS，时间复杂度为O（V），其中V是节点数。<br><span class="hljs-section">### 40. &lt;a name="40"&gt;在Python中实现通配符&lt;/a&gt;</span><br>在Python中，您可以使用regex（正则表达式）库实现通配符。  <br>dot <span class="hljs-code">`.`</span>字符代替问号<span class="hljs-code">`?`</span>符号。<br>因此，要搜索与颜色模式匹配的所有单词，代码将如下所示。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">- </span>第2-9行：使用邻接表表示图示的图形-在Python中执行此操作的一种简单方法是使用字典数据结构。<br>每个顶点都有一个存储其相邻节点的列表。<br><span class="hljs-bullet">- </span>第11行：受访者集，用于跟踪受访节点。<br><span class="hljs-bullet">- </span>第21行：调用dfs函数并将其传递给被访问的集合，字典形式的图形以及作为起始节点的A。<br><span class="hljs-bullet">- </span>第13-18行：dfs遵循上述算法：<br><span class="hljs-bullet">1. </span>它首先检查当前节点是否未访问-如果是，则将其附加到已访问集合中。<br><span class="hljs-bullet">2. </span>然后，对于当前节点的每个邻居，再次调用dfs函数。<br><span class="hljs-bullet">3. </span>当访问所有节点时，将调用基本情况。<br>然后函数返回。<br><span class="hljs-section">##### 时间复杂度</span><br>由于访问了所有节点和顶点，因此图上DFS的平均时间复杂度为O（V + E），其中V是顶点数，E是边数。<br>对于树上的DFS，时间复杂度为O（V），其中V是节点数。<br><span class="hljs-section">### 40. &lt;a name="40"&gt;在Python中实现通配符&lt;/a&gt;</span><br>在Python中，您可以使用regex（正则表达式）库实现通配符。  <br>dot <span class="hljs-code">`.`</span>字符代替问号<span class="hljs-code">`?`</span>符号。<br>因此，要搜索与颜色模式匹配的所有单词，代码将如下所示。<br></code></pre></td></tr></table></figure>
 <h1 id="Regular-expression-library"><a href="#Regular-expression-library" class="headerlink" title="Regular expression library"></a>Regular expression library</h1><p>import re</p>
 <h1 id="Add-or-remove-the-words-in-this-list-to-vary-the-results"><a href="#Add-or-remove-the-words-in-this-list-to-vary-the-results" class="headerlink" title="Add or remove the words in this list to vary the results"></a>Add or remove the words in this list to vary the results</h1><p>wordlist = [“color”, “colour”, “work”, “working”,<br>            “fox”, “worker”, “working”]</p>
 <p>for word in wordlist:<br>        # The . symbol is used in place of ? symbol<br>        if re.search(‘col.r’, word) :<br>                print (word)<br>Output:color</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">### <span class="hljs-number">41.</span> &lt;a name=<span class="hljs-string">"41"</span>&gt;在Python中实施合并排序&lt;/a&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">### <span class="hljs-number">41.</span> &lt;a name=<span class="hljs-string">"41"</span>&gt;在Python中实施合并排序&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 <p>def mergeSort(myList):<br>    if len(myList) &gt; 1:<br>        mid = len(myList) // 2<br>        left = myList[:mid]<br>        right = myList[mid:]</p>
 <pre><code># Recursive call on each half
 mergeSort(left)
@@ -515,7 +419,7 @@ while j &lt; len(right):
     myList[k]=right[j]
     j += 1
     k += 1</code></pre><p>myList = [54,26,93,17,77,31,44,55,20]<br>mergeSort(myList)<br>print(myList)<br>Output: [17, 20, 26, 31, 44, 54, 55, 77, 93]</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs clean">##### 说明<br>这是用于实现合并排序的递归方法。<br>通过此方法获得排序数组所需的步骤可以在下面找到：<br><span class="hljs-number">1.</span> 在每个递归调用中，该列表分为左右两部分，直到获得两个相邻元素为止。<br><span class="hljs-number">2.</span> 现在开始排序过程。<br>i和j迭代器遍历每个调用中的两个部分。<br>k迭代器遍历整个列表并在此过程中进行更改。<br><span class="hljs-number">3.</span> 如果i处的值小于j处的值，则将left [i]分配给myList [k]插槽，并递增i。<br>如果不是，则选择right [j]。<br><span class="hljs-number">4.</span> 这样，通过k分配的值将全部排序。<br><span class="hljs-number">5.</span> 在此循环结束时，可能没有完全遍历一半。<br>它的值仅分配给列表中的其余插槽。<br>##### 时间复杂度<br>该算法在O（n.logn）中起作用。<br>这是因为列表在log（n）个调用中被拆分，并且合并过程在每个调用中花费线性时间。<br>### <span class="hljs-number">42.</span> &lt;a name=<span class="hljs-string">"42"</span>&gt;在Python中实现Dijkstra的算法&lt;/a&gt;<br>##### 基本算法<br><span class="hljs-number">1.</span> 从每个未访问的顶点中，选择距离最小的顶点并进行访问。<br><span class="hljs-number">2.</span> 更新已访问顶点的每个相邻顶点的距离，该顶点的当前距离大于其总和以及它们之间边缘的权重。<br><span class="hljs-number">3.</span> 重复步骤<span class="hljs-number">1</span>和<span class="hljs-number">2</span>，直到访问了所有顶点。<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs clean">##### 说明<br>这是用于实现合并排序的递归方法。<br>通过此方法获得排序数组所需的步骤可以在下面找到：<br><span class="hljs-number">1.</span> 在每个递归调用中，该列表分为左右两部分，直到获得两个相邻元素为止。<br><span class="hljs-number">2.</span> 现在开始排序过程。<br>i和j迭代器遍历每个调用中的两个部分。<br>k迭代器遍历整个列表并在此过程中进行更改。<br><span class="hljs-number">3.</span> 如果i处的值小于j处的值，则将left [i]分配给myList [k]插槽，并递增i。<br>如果不是，则选择right [j]。<br><span class="hljs-number">4.</span> 这样，通过k分配的值将全部排序。<br><span class="hljs-number">5.</span> 在此循环结束时，可能没有完全遍历一半。<br>它的值仅分配给列表中的其余插槽。<br>##### 时间复杂度<br>该算法在O（n.logn）中起作用。<br>这是因为列表在log（n）个调用中被拆分，并且合并过程在每个调用中花费线性时间。<br>### <span class="hljs-number">42.</span> &lt;a name=<span class="hljs-string">"42"</span>&gt;在Python中实现Dijkstra的算法&lt;/a&gt;<br>##### 基本算法<br><span class="hljs-number">1.</span> 从每个未访问的顶点中，选择距离最小的顶点并进行访问。<br><span class="hljs-number">2.</span> 更新已访问顶点的每个相邻顶点的距离，该顶点的当前距离大于其总和以及它们之间边缘的权重。<br><span class="hljs-number">3.</span> 重复步骤<span class="hljs-number">1</span>和<span class="hljs-number">2</span>，直到访问了所有顶点。<br></code></pre></td></tr></table></figure>
 <p>import sys</p>
 <h1 id="Function-to-find-out-which-of-the-unvisited-node"><a href="#Function-to-find-out-which-of-the-unvisited-node" class="headerlink" title="Function to find out which of the unvisited node"></a>Function to find out which of the unvisited node</h1><h1 id="needs-to-be-visited-next"><a href="#needs-to-be-visited-next" class="headerlink" title="needs to be visited next"></a>needs to be visited next</h1><p>def to_be_visited():<br>  global visited_and_distance<br>  v = -10</p>
 <h1 id="Choosing-the-vertex-with-the-minimum-distance"><a href="#Choosing-the-vertex-with-the-minimum-distance" class="headerlink" title="Choosing the vertex with the minimum distance"></a>Choosing the vertex with the minimum distance</h1><p>  for index in range(number_of_vertices):<br>    if visited_and_distance[index][0] == 0 <br>      and (v &lt; 0 or visited_and_distance[index][1] &lt;= <br>      visited_and_distance[v][1]):<br>        v = index<br>  return v</p>
@@ -527,7 +431,7 @@ while j &lt; len(right):
 <p>i = 0 </p>
 <h1 id="Printing-out-the-shortest-distance-from-the-source-to-each-vertex"><a href="#Printing-out-the-shortest-distance-from-the-source-to-each-vertex" class="headerlink" title="Printing out the shortest distance from the source to each vertex"></a>Printing out the shortest distance from the source to each vertex</h1><p>for distance in visited_and_distance:<br>  print(“The shortest distance of “,chr(ord(‘a’) + i),<br>  “ from the source vertex a is:”,distance[1])<br>  i = i + 1</p>
 <p>Output:<br>The shortest distance of a from the source vertex a is: 0<br>The shortest distance of b from the source vertex a is: 3<br>The shortest distance of c from the source vertex a is: 3.5<br>The shortest distance of d from the source vertex a is: 4.5</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">### <span class="hljs-number">43.</span> &lt;a name=<span class="hljs-string">"43"</span>&gt;合并两个排序列表&lt;/a&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">### <span class="hljs-number">43.</span> &lt;a name=<span class="hljs-string">"43"</span>&gt;合并两个排序列表&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 <h1 id="Merge-list1-and-list2-and-return-resulted-list"><a href="#Merge-list1-and-list2-and-return-resulted-list" class="headerlink" title="Merge list1 and list2 and return resulted list"></a>Merge list1 and list2 and return resulted list</h1><p>def merge_lists(lst1, lst2):<br>    index_arr1 = 0<br>    index_arr2 = 0<br>    index_result = 0<br>    result = []</p>
 <pre><code>for i in range(len(lst1)+len(lst2)):
     result.append(i)
@@ -553,13 +457,13 @@ while (index_arr2 &lt; len(lst2)):
     index_result += 1
     index_arr2 += 1
 return result</code></pre><p>print(merge_lists([4, 5, 6], [-2, -1, 0, 7]))<br>Output: [-2, -1, 0, 4, 5, 6, 7]</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs clean">上面的解决方案是解决此问题的更直观的方法。<br><span class="hljs-number">1.</span> 首先创建一个新的空列表。<br>该列表将按排序顺序填充两个列表的所有元素，然后返回。<br><span class="hljs-number">2.</span> 然后将三个变量初始化为零以存储每个列表的当前索引。<br><span class="hljs-number">3.</span> 然后在每个列表的当前索引处比较两个给定列表的元素，将较小的列表追加到新列表，然后将该列表的索引增加<span class="hljs-number">1</span>。<br><span class="hljs-number">4.</span> 重复直到到达其中一个列表的末尾，然后将另一个列表追加到合并列表中。<br>##### 时间复杂度<br>此算法的时间复杂度为O（n + m）O（n + m），其中nn和mm是列表的长度。<br>这是因为两个列表都至少迭代了一次。<br>请注意，也可以通过就地合并解决此问题。<br>### <span class="hljs-number">44.</span> &lt;a name=<span class="hljs-string">"44"</span>&gt;查找两个加起来为“ k”的数字&lt;/a&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs clean">上面的解决方案是解决此问题的更直观的方法。<br><span class="hljs-number">1.</span> 首先创建一个新的空列表。<br>该列表将按排序顺序填充两个列表的所有元素，然后返回。<br><span class="hljs-number">2.</span> 然后将三个变量初始化为零以存储每个列表的当前索引。<br><span class="hljs-number">3.</span> 然后在每个列表的当前索引处比较两个给定列表的元素，将较小的列表追加到新列表，然后将该列表的索引增加<span class="hljs-number">1</span>。<br><span class="hljs-number">4.</span> 重复直到到达其中一个列表的末尾，然后将另一个列表追加到合并列表中。<br>##### 时间复杂度<br>此算法的时间复杂度为O（n + m）O（n + m），其中nn和mm是列表的长度。<br>这是因为两个列表都至少迭代了一次。<br>请注意，也可以通过就地合并解决此问题。<br>### <span class="hljs-number">44.</span> &lt;a name=<span class="hljs-string">"44"</span>&gt;查找两个加起来为“ k”的数字&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 <p>def binarySearch(a, item, curr):<br>    first = 0<br>    last = len(a) - 1<br>    found = False<br>    index = -1<br>    while first &lt;= last and not found:<br>        mid = (first + last) // 2<br>        if a[mid] == item:<br>            index = mid<br>            found = True<br>        else:<br>            if item &lt; a[mid]:<br>                last = mid - 1<br>            else:<br>                first = mid + 1<br>    if found:<br>        return index<br>    else:<br>        return -1</p>
 <p>def findSum(lst, k):<br>    lst.sort()<br>    for j in range(len(lst)):<br>        # find the difference in list through binary search<br>        # return the only if we find an index<br>        index = binarySearch(lst, k -lst[j], j)<br>        if index is not -1 and index is not j:<br>            return [lst[j], k -lst[j]]</p>
 <p>print(findSum([1, 5, 3], 2))<br>print(findSum([1, 2, 3, 4], 5))<br>Output:<br>None<br>[1,4]</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">您可以通过首先对列表进行排序来解决此问题。<br>然后，对于列表中的每个元素，使用二进制搜索来查找该元素与预期总和之间的差异。<br>换句话说，如果预期总和为`k`，而排序列表的第一个元素为`a0`  <br>我们将进行二进制搜索`a0`  <br>重复搜索直到找到一个。<br>您可以根据需要以递归或迭代的方式实现`binarySearch（）`函数。<br>##### 时间复杂度<br>由于大多数基于比较的最佳排序函数均采用O（nlogn），因此我们假设Python .sort（）函数采用相同的排序方式。<br>此外，由于二进制搜索要花费O（logn）时间来查找单个元素，因此对所有n个元素进行二进制搜索都将花费O（nlogn）时间。<br><br><br>### <span class="hljs-number">45</span>. &lt;a name=<span class="hljs-string">"45"</span>&gt;查找列表中的第一个非重复整数&lt;/a&gt;<br>在这里，您可以使用Python字典来记录重复次数。<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">您可以通过首先对列表进行排序来解决此问题。<br>然后，对于列表中的每个元素，使用二进制搜索来查找该元素与预期总和之间的差异。<br>换句话说，如果预期总和为`k`，而排序列表的第一个元素为`a0`  <br>我们将进行二进制搜索`a0`  <br>重复搜索直到找到一个。<br>您可以根据需要以递归或迭代的方式实现`binarySearch（）`函数。<br>##### 时间复杂度<br>由于大多数基于比较的最佳排序函数均采用O（nlogn），因此我们假设Python .sort（）函数采用相同的排序方式。<br>此外，由于二进制搜索要花费O（logn）时间来查找单个元素，因此对所有n个元素进行二进制搜索都将花费O（nlogn）时间。<br><br><br>### <span class="hljs-number">45</span>. &lt;a name=<span class="hljs-string">"45"</span>&gt;查找列表中的第一个非重复整数&lt;/a&gt;<br>在这里，您可以使用Python字典来记录重复次数。<br></code></pre></td></tr></table></figure>
 <p>[9,2,3,2,6,6]<br>def findFirstUnique(lst):<br>    counts = {}  # Creating a dictionary<br>    # Initializing dictionary with pairs like (lst[i],(count,order))<br>    counts = counts.fromkeys(lst, (0,len(lst)))<br>    order = 0<br>    for ele in lst:<br>        # counts[ele][0] += 1  # Incrementing for every repitition<br>        # counts[ele][1] = order<br>        counts[ele] = (counts[ele][0]+1 , order)<br>        order += 1 # increment order<br>    answer = None<br>    answer_key = None<br>    # filter non-repeating with least order<br>    for ele in lst:<br>        if (counts[ele][0] is 1) and (answer is None):<br>            answer = counts[ele]<br>            answer_key = ele<br>        elif answer is None:<br>            continue<br>        elif (counts[ele][0] is 1) and (counts[ele][1] &lt; answer[1]):<br>            answer = counts[ele]<br>            answer_key = ele<br>    return answer_key<br>print(findFirstUnique([1, 1, 1, 2]))<br>Output: 2</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs clean">counts字典中的键是给定列表的元素，值是每个元素出现在列表中的次数。<br>我们返回在第<span class="hljs-number">23</span>行的列表中最多出现一次的元素。我们需要保持元组值中每个键的更新顺序。<br>##### 时间复杂度<br>由于该列表仅被迭代两次，并且使用线性时间复杂度来初始化计数字典，因此该解决方案的时间复杂度是线性的，即O（n）。<br><br>### <span class="hljs-number">46.</span> &lt;a name=<span class="hljs-string">"46"</span>&gt;查找链接列表的中间值&lt;/a&gt;<br>在这里，您可以使用两个可以同时工作的指针。<br>这样想：<br>- 快速指针一次移动两步，直到列表结尾<br>- 慢速指针一次移动一步<br>- 当快速指针到达末尾时，慢速指针将在中间<br>使用此算法，由于长度和遍历直到中间的遍历的计算是并行进行的，因此可以使过程更快。  <br>##### 时间复杂度<br>您以两倍的速度遍历链表，因此它肯定更快。<br>但是，瓶颈复杂度仍然是O（n）。<br>### <span class="hljs-number">47.</span> &lt;a name=<span class="hljs-string">"47"</span>&gt;反转队列的第一个“ k”元素&lt;/a&gt;<br>##### 说明<br>检查输入是否无效，即队列是否为空，`k`是否大于队列，以及在队列`k`是否为负  <br>如果输入有效，则从创建堆栈开始。  <br>可用的堆栈功能有：<br>- 构造函数：myStack（）<br>- 推送元素：push（int）将元素添加到堆栈中。<br>- 弹出元素：pop（）从堆栈中删除或弹出顶部元素。<br>- 检查是否为空：如果堆栈为空，则isEmpty（）返回true，否则返回false。<br>- 返回：back（）返回在末尾添加的元素，而不将其从堆栈中删除。<br>- 返回front：front（）返回顶部元素（已在开头添加），而不将其从堆栈中删除。  <br>我们的函数`reverseK（queue，k）`将queue作为输入参数。<br>`k`表示我们要反转的元素数。  <br>可用的队列功能是：<br>- 构造函数：myQueue（size）size应该是一个整数，指定队列的大小。<br>- 入队：enqueue（int）<br>- 出队：dequeue（）<br>- 检查是否为空：isEmpty（）<br>- 检查尺寸：size（）<br>现在，继续进行实际的逻辑，从队列的前面使前`k`个元素出队，并使用第<span class="hljs-number">8</span>行中的`stack.push（queue.dequeue（））`将它们推入我们先前创建的堆栈中。  <br>将所有`k`个值都压入堆栈后，开始弹出它们并将它们按顺序排入队列的后面。<br>我们将在第<span class="hljs-number">12</span>行中使用`queue.enqueue（stack.pop（））`进行此操作。在此步骤的最后，我们将得到一个空堆栈，并将`k`个反向元素添加到队列的后面。  <br>现在我们需要将这些反向元素移到队列的最前面。<br>为此，我们在第<span class="hljs-number">16</span>行中使用了`queue.enqueue（queue.dequeue（））`。每个元素都首先从背面出队。<br>### <span class="hljs-number">48.</span> &lt;a name=<span class="hljs-string">"48"</span>&gt;查找二叉搜索树（BST）的高度&lt;/a&gt;<br>在这里，您可以使用递归来找到左侧和右侧子树的高度。<br>##### 说明<br>在这里，如果给定节点为None，则返回<span class="hljs-number">-1</span>。<br>然后，我们在左右子树上调用findHeight（）函数，并返回具有更大值加<span class="hljs-number">1</span>的子树。如果给定节点为None，则不返回<span class="hljs-number">0</span>，因为叶节点的高度为<span class="hljs-number">0</span>。  <br>时间复杂度  <br>代码的时间复杂度为O（n）O（n），因为必须遍历整个树的所有节点。<br>### <span class="hljs-number">49.</span> &lt;a name=<span class="hljs-string">"49"</span>&gt;将最大堆转换为最小堆&lt;/a&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight clean hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs clean">counts字典中的键是给定列表的元素，值是每个元素出现在列表中的次数。<br>我们返回在第<span class="hljs-number">23</span>行的列表中最多出现一次的元素。我们需要保持元组值中每个键的更新顺序。<br>##### 时间复杂度<br>由于该列表仅被迭代两次，并且使用线性时间复杂度来初始化计数字典，因此该解决方案的时间复杂度是线性的，即O（n）。<br><br>### <span class="hljs-number">46.</span> &lt;a name=<span class="hljs-string">"46"</span>&gt;查找链接列表的中间值&lt;/a&gt;<br>在这里，您可以使用两个可以同时工作的指针。<br>这样想：<br>- 快速指针一次移动两步，直到列表结尾<br>- 慢速指针一次移动一步<br>- 当快速指针到达末尾时，慢速指针将在中间<br>使用此算法，由于长度和遍历直到中间的遍历的计算是并行进行的，因此可以使过程更快。  <br>##### 时间复杂度<br>您以两倍的速度遍历链表，因此它肯定更快。<br>但是，瓶颈复杂度仍然是O（n）。<br>### <span class="hljs-number">47.</span> &lt;a name=<span class="hljs-string">"47"</span>&gt;反转队列的第一个“ k”元素&lt;/a&gt;<br>##### 说明<br>检查输入是否无效，即队列是否为空，`k`是否大于队列，以及在队列`k`是否为负  <br>如果输入有效，则从创建堆栈开始。  <br>可用的堆栈功能有：<br>- 构造函数：myStack（）<br>- 推送元素：push（int）将元素添加到堆栈中。<br>- 弹出元素：pop（）从堆栈中删除或弹出顶部元素。<br>- 检查是否为空：如果堆栈为空，则isEmpty（）返回true，否则返回false。<br>- 返回：back（）返回在末尾添加的元素，而不将其从堆栈中删除。<br>- 返回front：front（）返回顶部元素（已在开头添加），而不将其从堆栈中删除。  <br>我们的函数`reverseK（queue，k）`将queue作为输入参数。<br>`k`表示我们要反转的元素数。  <br>可用的队列功能是：<br>- 构造函数：myQueue（size）size应该是一个整数，指定队列的大小。<br>- 入队：enqueue（int）<br>- 出队：dequeue（）<br>- 检查是否为空：isEmpty（）<br>- 检查尺寸：size（）<br>现在，继续进行实际的逻辑，从队列的前面使前`k`个元素出队，并使用第<span class="hljs-number">8</span>行中的`stack.push（queue.dequeue（））`将它们推入我们先前创建的堆栈中。  <br>将所有`k`个值都压入堆栈后，开始弹出它们并将它们按顺序排入队列的后面。<br>我们将在第<span class="hljs-number">12</span>行中使用`queue.enqueue（stack.pop（））`进行此操作。在此步骤的最后，我们将得到一个空堆栈，并将`k`个反向元素添加到队列的后面。  <br>现在我们需要将这些反向元素移到队列的最前面。<br>为此，我们在第<span class="hljs-number">16</span>行中使用了`queue.enqueue（queue.dequeue（））`。每个元素都首先从背面出队。<br>### <span class="hljs-number">48.</span> &lt;a name=<span class="hljs-string">"48"</span>&gt;查找二叉搜索树（BST）的高度&lt;/a&gt;<br>在这里，您可以使用递归来找到左侧和右侧子树的高度。<br>##### 说明<br>在这里，如果给定节点为None，则返回<span class="hljs-number">-1</span>。<br>然后，我们在左右子树上调用findHeight（）函数，并返回具有更大值加<span class="hljs-number">1</span>的子树。如果给定节点为None，则不返回<span class="hljs-number">0</span>，因为叶节点的高度为<span class="hljs-number">0</span>。  <br>时间复杂度  <br>代码的时间复杂度为O（n）O（n），因为必须遍历整个树的所有节点。<br>### <span class="hljs-number">49.</span> &lt;a name=<span class="hljs-string">"49"</span>&gt;将最大堆转换为最小堆&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 <p>def minHeapify(heap, index):<br>    left = index * 2 + 1<br>    right = (index * 2) + 2<br>    smallest = index<br>    # check if left child exists and is less than smallest<br>    if len(heap) &gt; left and heap[smallest] &gt; heap[left]:<br>        smallest = left<br>    # check if right child exists and is less than smallest<br>    if len(heap) &gt; right and heap[smallest] &gt; heap[right]:<br>        smallest = right<br>    # check if current index is not the smallest<br>    if smallest != index:<br>        # swap current index value with smallest<br>        tmp = heap[smallest]<br>        heap[smallest] = heap[index]<br>        heap[index] = tmp<br>        # minHeapify the new node<br>        minHeapify(heap, smallest)<br>    return heap</p>
 <p>def convertMax(maxHeap):<br>    # iterate from middle to first element<br>    # middle to first indices contain all parent nodes<br>    for i in range((len(maxHeap))//2, -1, -1):<br>        # call minHeapify on all parent nodes<br>        maxHeap = minHeapify(maxHeap, i)<br>    return maxHeap</p>
 <p>maxHeap = [9, 4, 7, 1, -2, 6, 5]<br>print(convertMax(maxHeap))<br>Output: [-2, 1, 5, 9, 4, 6, 7]</p>
@@ -568,285 +472,1475 @@ return result</code></pre><p>print(merge_lists([4, 5, 6], [-2, -1, 0, 7]))<br>Ou
 <h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>我们对列表进行一次迭代。<br>平均而言，集合中的查找需要O（1）时间。<br>因此，该算法的平均运行时间为O（n）。<br>但是，在最坏的情况下，查找可能会增加到O（n），这将导致算法在</p>
 
         </div>
-
         
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：50-python-interview-questions-and-answers</li>
-        <li>本文作者：Roy</li>
-        <li>创建时间：2020-06-16 13:31:34</li>
-        <li>
-            本文链接：https://www.yrzdm.com/2020/06/16/50-python-interview-questions-and-answers/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/" rel="tag">Python</a>
+                </div>
             </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/06/18/network-security-basic/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">web安全备忘录</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2020/05/16/lambda-function/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">lambda-function</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center" >
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    
-        
-    <div class="valine-container">
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <div id="vcomments"></div>
-        <script>
-            new Valine({
-                el: '#vcomments',
-                appId: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
-                appKey: 'mMo3ArkHk5Qi38gpBTXcvMWF',
-                meta: ''.split(','),
-                avatar: 'wavatar',
-                enableQQ: true,
-                placeholder: '',
-                lang: 'zh-CN'.toLowerCase()
-            });
-
-
-            // Valine 评论列表增加"博主"标识
-            const getValineDomTimer = setInterval(() => {
-                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                if (vcards.length > 0) {
-
-                    let author = 'Roy';
-                    if (author) {
-                        author = author.toLocaleLowerCase();
-                    }
-
-                    for (let vcard of vcards) {
-                        const vnick = vcard.querySelector('.vhead .vnick');
-                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
-                            vcard.classList.add('author');
-                        }
-                    }
-                    clearInterval(getValineDomTimer);
-                } else {
-                    clearInterval(getValineDomTimer);
-                }
-            }, 2000);
-        </script>
-    </div>
-
-
-    
-</div>
-
-            </div>
-        
-    </div>
-</div>
-
-
-                    
-                </main>
-
-            </div>
-
-            <div class="page-main-content-bottom">
-                <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-              <span>2016</span> -
-            
-            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Roy</a>
         </div>
         
-        <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/NdMY5zlYyAhF.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://imgs.yrzdm.com/imgs/20200417/JdKmzhUYwsDv.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/06/18/network-security-basic/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">web安全备忘录</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/05/16/lambda-function/">
+                <span class="level-item">lambda-function</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+        app_key: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/ava.png" alt="Roy-Chang">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Roy-Chang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Devloper
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>China,Jinan</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            40
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            44
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            24
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cx4" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/cx4">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/baidu/">
+            <span class="level-start">
+                <span class="level-item">baidu</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/baidu/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/docs/">
+            <span class="level-start">
+                <span class="level-item">docs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">33</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/docs/Android/">
+            <span class="level-start">
+                <span class="level-item">Android</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/Raspberry/">
+            <span class="level-start">
+                <span class="level-item">Raspberry</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/collections/">
+            <span class="level-start">
+                <span class="level-item">collections</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/javascript/">
+            <span class="level-start">
+                <span class="level-item">javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/micropython/">
+            <span class="level-start">
+                <span class="level-item">micropython</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/podcast/">
+            <span class="level-start">
+                <span class="level-item">podcast</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">21</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/raspberry/">
+            <span class="level-start">
+                <span class="level-item">raspberry</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/security/">
+            <span class="level-start">
+                <span class="level-item">security</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/docs/test/">
+            <span class="level-start">
+                <span class="level-item">test</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ebook/">
+            <span class="level-start">
+                <span class="level-item">ebook</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ebook/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/license/">
+            <span class="level-start">
+                <span class="level-item">license</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/license/windows/">
+            <span class="level-start">
+                <span class="level-item">windows</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/markdown/">
+            <span class="level-start">
+                <span class="level-item">markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/markdown/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/micropython/">
+            <span class="level-start">
+                <span class="level-item">micropython</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/micropython/index/">
+            <span class="level-start">
+                <span class="level-item">index</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ssr/">
+            <span class="level-start">
+                <span class="level-item">ssr</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ssr/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2021/12/21/geopandas/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="M1 Chip install geopandas">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-21T08:21:25.000Z">2021-12-21</time></div>
+                    <a href="/2021/12/21/geopandas/" class="title has-link-black-ter is-size-6 has-text-weight-normal">M1 Chip install geopandas</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/18/network-security-basic/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="web安全备忘录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-18T15:23:03.000Z">2020-06-18</time></div>
+                    <a href="/2020/06/18/network-security-basic/" class="title has-link-black-ter is-size-6 has-text-weight-normal">web安全备忘录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/security/">security</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/16/50-python-interview-questions-and-answers/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="50-python-interview-questions-and-answers">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-16T05:31:34.000Z">2020-06-16</time></div>
+                    <a href="/2020/06/16/50-python-interview-questions-and-answers/" class="title has-link-black-ter is-size-6 has-text-weight-normal">50-python-interview-questions-and-answers</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/16/lambda-function/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="lambda-function">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-16T02:40:18.000Z">2020-05-16</time></div>
+                    <a href="/2020/05/16/lambda-function/" class="title has-link-black-ter is-size-6 has-text-weight-normal">lambda-function</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/05/regular-expression/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="regular-expression">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-05T08:32:28.000Z">2020-05-05</time></div>
+                    <a href="/2020/05/05/regular-expression/" class="title has-link-black-ter is-size-6 has-text-weight-normal">regular-expression</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docs/">docs</a> / <a class="has-link-grey -link" href="/categories/docs/python/">python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://google.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Google</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">google.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://iconmonstr.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">iconmonstr</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">iconmonstr.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/BeautifulSoup/" style="font-size: 10px;">BeautifulSoup</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Jieba/" style="font-size: 10px;">Jieba</a> <a href="/tags/MatPlotlib/" style="font-size: 10px;">MatPlotlib</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Raspberry/" style="font-size: 10px;">Raspberry</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 15px;">ebook,kindle,collect</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BeautifulSoup/">
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DNS/">
+                        <span class="tag">DNS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Jieba/">
+                        <span class="tag">Jieba</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MatPlotlib/">
+                        <span class="tag">MatPlotlib</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Raspberry/">
+                        <span class="tag">Raspberry</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Shell/">
+                        <span class="tag">Shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Test/">
+                        <span class="tag">Test</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tools/">
+                        <span class="tag">Tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/baidu-data-collect/">
+                        <span class="tag">baidu,data,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/collect/">
+                        <span class="tag">collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ebook-kindle-collect/">
+                        <span class="tag">ebook,kindle,collect</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/install/">
+                        <span class="tag">install</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-study-collect/">
+                        <span class="tag">javascript,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/markdown-fontawesome-collect/">
+                        <span class="tag">markdown,fontawesome,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/micropython-esp8266-Oled-collect/">
+                        <span class="tag">micropython,esp8266,Oled,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/podcast-study-collect/">
+                        <span class="tag">podcast,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-raspberry-collect/">
+                        <span class="tag">python,raspberry,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-wechat-collect/">
+                        <span class="tag">python,wechat,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/security/">
+                        <span class="tag">security</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ssr-shadow-collect/">
+                        <span class="tag">ssr,shadow,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows-license-collect/">
+                        <span class="tag">windows,license,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/BeautifulSoup/" style="font-size: 10px;">BeautifulSoup</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Jieba/" style="font-size: 10px;">Jieba</a> <a href="/tags/MatPlotlib/" style="font-size: 10px;">MatPlotlib</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Raspberry/" style="font-size: 10px;">Raspberry</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/baidu-data-collect/" style="font-size: 10px;">baidu,data,collect</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/ebook-kindle-collect/" style="font-size: 15px;">ebook,kindle,collect</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript-study-collect/" style="font-size: 10px;">javascript,study,collect</a> <a href="/tags/markdown-fontawesome-collect/" style="font-size: 10px;">markdown,fontawesome,collect</a> <a href="/tags/micropython-esp8266-Oled-collect/" style="font-size: 10px;">micropython,esp8266,Oled,collect</a> <a href="/tags/podcast-study-collect/" style="font-size: 10px;">podcast,study,collect</a> <a href="/tags/python-raspberry-collect/" style="font-size: 10px;">python,raspberry,collect</a> <a href="/tags/python-wechat-collect/" style="font-size: 10px;">python,wechat,collect</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/ssr-shadow-collect/" style="font-size: 10px;">ssr,shadow,collect</a> <a href="/tags/windows-license-collect/" style="font-size: 10px;">windows,license,collect</a>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BeautifulSoup/">
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DNS/">
+                        <span class="tag">DNS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Jieba/">
+                        <span class="tag">Jieba</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MatPlotlib/">
+                        <span class="tag">MatPlotlib</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Raspberry/">
+                        <span class="tag">Raspberry</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Shell/">
+                        <span class="tag">Shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Test/">
+                        <span class="tag">Test</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tools/">
+                        <span class="tag">Tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/baidu-data-collect/">
+                        <span class="tag">baidu,data,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/collect/">
+                        <span class="tag">collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ebook-kindle-collect/">
+                        <span class="tag">ebook,kindle,collect</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/install/">
+                        <span class="tag">install</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-study-collect/">
+                        <span class="tag">javascript,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/markdown-fontawesome-collect/">
+                        <span class="tag">markdown,fontawesome,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/micropython-esp8266-Oled-collect/">
+                        <span class="tag">micropython,esp8266,Oled,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/podcast-study-collect/">
+                        <span class="tag">podcast,study,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-raspberry-collect/">
+                        <span class="tag">python,raspberry,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python-wechat-collect/">
+                        <span class="tag">python,wechat,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/security/">
+                        <span class="tag">security</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ssr-shadow-collect/">
+                        <span class="tag">ssr,shadow,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows-license-collect/">
+                        <span class="tag">windows,license,collect</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/log.png" alt="50-python-interview-questions-and-answers" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 Roy&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/cx4">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
         </div>
     </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
 
-            </div>
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
-    </main>
-
-    <div class="sidebar-tools">
-        <div class="tools-container">
-    <ul class="tools-list">
-        
-            <li class="search popup-trigger">
-                <i class="fas fa-search"></i>
-            </li>
-        
-
-        
-            <li class="go-comment">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-    </ul>
-</div>
-
-    </div>
-
-    <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        <li class="tools-item tool-scroll-to-top flex-center">
-            <i class="fas fa-arrow-up"></i>
-        </li>
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="tools-ul-1">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-
-    </ul>
-</div>
-
-    </div>
-
-    <!-- page aside -->
-    <aside class="page-aside">
-        
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础部分"><span class="nav-number">1.</span> <span class="nav-text">基础部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码部分"><span class="nav-number"></span> <span class="nav-text">代码部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-list和tuple的区别"><span class="nav-number">1.</span> <span class="nav-text">1. list和tuple的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-您如何将列表转换为元组？"><span class="nav-number">2.</span> <span class="nav-text">2. 您如何将列表转换为元组？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组和列表的区别是什么？"><span class="nav-number">3.</span> <span class="nav-text">3. 数组和列表的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何在Python中管理内存？"><span class="nav-number">4.</span> <span class="nav-text">4. 如何在Python中管理内存？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-如何在Python中实现多线程？"><span class="nav-number">5.</span> <span class="nav-text">5. 如何在Python中实现多线程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-什么是猴子修补？"><span class="nav-number">6.</span> <span class="nav-text">6. 什么是猴子修补？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-什么是lambda函数？举例说明什么时候有用，什么时候没用。"><span class="nav-number">7.</span> <span class="nav-text">7. 什么是lambda函数？举例说明什么时候有用，什么时候没用。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用lambda的目的："><span class="nav-number">7.1.</span> <span class="nav-text">使用lambda的目的：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-什么是pickling和unpickling"><span class="nav-number">8.</span> <span class="nav-text">8. 什么是pickling和unpickling?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-与（嵌套）Python列表相比，NumPy数组有什么优势？"><span class="nav-number">9.</span> <span class="nav-text">9. 与（嵌套）Python列表相比，NumPy数组有什么优势？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-举例说明Python中的继承"><span class="nav-number">10.</span> <span class="nav-text">10. 举例说明Python中的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Python中的多态是什么？"><span class="nav-number">11.</span> <span class="nav-text">11. Python中的多态是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-解释range（）和xrange（）之间的区别"><span class="nav-number">12.</span> <span class="nav-text">12. 解释range（）和xrange（）之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-解释Flask和Django之间的区别"><span class="nav-number">13.</span> <span class="nav-text">13. 解释Flask和Django之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-什么是PYTHONPATH？"><span class="nav-number">14.</span> <span class="nav-text">14. 什么是PYTHONPATH？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-什么是PEP8？"><span class="nav-number">15.</span> <span class="nav-text">15. 什么是PEP8？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-什么是Python装饰器？"><span class="nav-number">16.</span> <span class="nav-text">16. 什么是Python装饰器？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-什么是初始化init"><span class="nav-number">17.</span> <span class="nav-text">17. 什么是初始化init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-什么是三元运算符？"><span class="nav-number">18.</span> <span class="nav-text">18. 什么是三元运算符？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法："><span class="nav-number">18.1.</span> <span class="nav-text">语法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-Python中的全局变量和局部变量是什么？"><span class="nav-number">19.</span> <span class="nav-text">19. Python中的全局变量和局部变量是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量"><span class="nav-number">19.1.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部变量"><span class="nav-number">19.2.</span> <span class="nav-text">局部变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-Python中的-property是什么？"><span class="nav-number">20.</span> <span class="nav-text">20. Python中的@property是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-在Python中如何使用try-except？"><span class="nav-number">21.</span> <span class="nav-text">21. 在Python中如何使用try&#x2F;except？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-解释Python-2和Python-3之间的区别"><span class="nav-number">22.</span> <span class="nav-text">22. 解释Python 2和Python 3之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-python中的join方法是什么？"><span class="nav-number">23.</span> <span class="nav-text">23. python中的join方法是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#join是如何工作的？"><span class="nav-number">23.1.</span> <span class="nav-text">join是如何工作的？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-什么是字典？"><span class="nav-number">24.</span> <span class="nav-text">24. 什么是字典？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-您将如何在Python中进行深层复制？"><span class="nav-number">25.</span> <span class="nav-text">25. 您将如何在Python中进行深层复制？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">25.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">25.2.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-如何检查Python字典中是否存在键？"><span class="nav-number">26.</span> <span class="nav-text">26. 如何检查Python字典中是否存在键？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-您将如何在Python中实现记忆化？"><span class="nav-number">27.</span> <span class="nav-text">27. 您将如何在Python中实现记忆化？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对于计算量比较大的代码："><span class="nav-number">27.1.</span> <span class="nav-text">对于计算量比较大的代码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-您将如何在Python中对字典进行排序？"><span class="nav-number">28.</span> <span class="nav-text">28. 您将如何在Python中对字典进行排序？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sorted（）语法"><span class="nav-number">28.1.</span> <span class="nav-text">Sorted（）语法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sorted-by-key"><span class="nav-number"></span> <span class="nav-text">Sorted by key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function-to-generate-all-the-non-negative-numbers"><span class="nav-number"></span> <span class="nav-text">Function to generate all the non-negative numbers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#up-to-the-given-non-negative-number"><span class="nav-number"></span> <span class="nav-text">up to the given non-negative number.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function-to-generate-all-the-non-negative-numbers-1"><span class="nav-number"></span> <span class="nav-text">Function to generate all the non-negative numbers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#up-to-the-given-non-negative-number-1"><span class="nav-number"></span> <span class="nav-text">up to the given non-negative number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Driver-Code"><span class="nav-number"></span> <span class="nav-text">Driver Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Using-a-Python-dictionary-to-act-as-an-adjacency-list"><span class="nav-number"></span> <span class="nav-text">Using a Python dictionary to act as an adjacency list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Driver-Code-1"><span class="nav-number"></span> <span class="nav-text">Driver Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-expression-library"><span class="nav-number"></span> <span class="nav-text">Regular expression library</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-or-remove-the-words-in-this-list-to-vary-the-results"><span class="nav-number"></span> <span class="nav-text">Add or remove the words in this list to vary the results</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function-to-find-out-which-of-the-unvisited-node"><span class="nav-number"></span> <span class="nav-text">Function to find out which of the unvisited node</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#needs-to-be-visited-next"><span class="nav-number"></span> <span class="nav-text">needs to be visited next</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Choosing-the-vertex-with-the-minimum-distance"><span class="nav-number"></span> <span class="nav-text">Choosing the vertex with the minimum distance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Creating-the-graph-as-an-adjacency-matrix"><span class="nav-number"></span> <span class="nav-text">Creating the graph as an adjacency matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-first-element-of-the-lists-inside-visited-and-distance"><span class="nav-number"></span> <span class="nav-text">The first element of the lists inside visited_and_distance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#denotes-if-the-vertex-has-been-visited"><span class="nav-number"></span> <span class="nav-text">denotes if the vertex has been visited.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-second-element-of-the-lists-inside-the-visited-and-distance"><span class="nav-number"></span> <span class="nav-text">The second element of the lists inside the visited_and_distance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#denotes-the-distance-from-the-source"><span class="nav-number"></span> <span class="nav-text">denotes the distance from the source.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Finding-the-next-vertex-to-be-visited"><span class="nav-number"></span> <span class="nav-text">Finding the next vertex to be visited.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Printing-out-the-shortest-distance-from-the-source-to-each-vertex"><span class="nav-number"></span> <span class="nav-text">Printing out the shortest distance from the source to each vertex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Merge-list1-and-list2-and-return-resulted-list"><span class="nav-number"></span> <span class="nav-text">Merge list1 and list2 and return resulted list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#50-检测链表中的循环"><span class="nav-number">1.</span> <span class="nav-text">50. 检测链表中的循环</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.0.1.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li></ol></li></ol>
-    </div>
-</div>
-        
-    </aside>
-
-    <!-- image viewer -->
-    <div class="image-viewer-container">
-    <div class="img-box">
-        <img src="">
-    </div>
-</div>
-
-
-</div>
-
-
-
-    <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-icon">
-            <i class="fas fa-search"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="搜索..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
         </div>
     </div>
 </div>
-
-
-
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/dark-light-toggle.js"></script>
-
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/local-search.js"></script>
-
-
-
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/left-side-toggle.js"></script>
-
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
     
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/code-copy.js"></script>
-    
-
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/toc.js"></script>
-    
-
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
 </html>
