@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>
+        TCP/IP基础知识总结 |
+        
+        及时行乐
+    </title>
+    <link rel="shortcut icon" href="/images/favicons.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"cx4.github.io","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#CC6600","avatar":"/images/avatar.png","favicon":"/images/favicons.ico","img_position":"center","left_side_width":"260px","content_max_width":"900px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view."}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"version":"3.0.4"};
+    KEEP.language = {"search":"搜索...","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}};
+  </script>
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+
+<body>
+<div class="page-container">
+
+    
+
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
+
+    <main class="page-main">
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+
+    <div class="header-content">
+        <a class="logo-title" href="/">
+            及时行乐
+        </a>
+
+        <ul class="menu-list">
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/"
+                    >
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/archives"
+                    >
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/categories"
+                    >
+                        分类
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/tags"
+                    >
+                        标签
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/about"
+                    >
+                        关于
+                    </a>
+                </li>
+            
+        </ul>
+
+        <div class="menu-bar">
+            <div class="menu-bar-middle"></div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <main class="main-content normal-code-theme">
+
+                    
+                        <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">TCP/IP基础知识总结</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Roy</span>
+                        <span class="level">Lv7</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2020-11-05 09:41:18
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/docs/">docs</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/docs/python/">python</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/docs/python/index/">index</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/basic-protocol-network/">basic,protocol,network</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>2.6k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>8 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>我们接触计算机网络最多的协议，那就是TCP/IP协议了，TCP/IP协议同时也是互联网中最为著名的协议。</p>
+<a id="more"></a>
+
+<h3 id="TCP-IP的历史背景"><a href="#TCP-IP的历史背景" class="headerlink" title="TCP/IP的历史背景"></a>TCP/IP的历史背景</h3><p>最初还没有TCP/IP协议的时候，也就是再20世纪60年代，许多国家和地区认识到通信技术的重要性。美国国防部希望能够研究一种即时通信线路被破坏也能够通过其他路线进行通信的技术。为了实现这种技术，出现了<strong>分组</strong>网络。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201103/wFis57CA2YOm.png?imageslim" alt="分组网络"></p>
+<p>即使再两个节点通信的过程中，几个节点遭到破坏，却依然能够通过改变线路等方式使得两个节点之间进行通信。</p>
+<p>这种分组网络促使了<strong>ARPANET（advanced Research Projects Agency Network）</strong>的诞生。ARPANET是第一个具有分布式控制的广域包分t组交换网络，也是最早实现TCP/IP协议的前身。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/YPnHWGVAQHxa.png?imageslim" alt="TCP/IP协议包含的协议"></p>
+<p>以上协议汇总起来，就是TCP/IP协议蔟。</p>
+<h3 id="TCP-IP标准"><a href="#TCP-IP标准" class="headerlink" title="TCP/IP标准"></a>TCP/IP标准</h3><p>TCP/IP 相较于其他的协议标准，更注重<strong>开放性</strong>和<strong>实用性</strong>，即标准能否被实际应用。TCP/IP标准协议就是我们班所熟知的<strong>RFC文档</strong>，RFC不仅规范了协议标准还包含了协议的实现和使用信息。</p>
+<p><a class="link"   href="https://www.rfc-editor.org/rfc-index.html"  target="_blank" rel="noopener">More about RFC<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>OSI模型一共有七层，从下到上分别是物理层，数据链路层，网络层，传输层(运输层)，会话层，表示层和应用层。</p>
+<p>简化为：应用层，传输层，网络层，通信链路层。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/2R7lQxHvCCz2.png?imageslim" alt="简化协议簇"></p>
+<p>我们从通信链路层开始介绍一下这些系一层以及层之间的协议。</p>
+<h4 id="通信链路层"><a href="#通信链路层" class="headerlink" title="通信链路层"></a>通信链路层</h4><p>如果非要细分的话，通信链路层也可以分为物理层和数据链路层。</p>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>物理层是TCP/IP的最底层是负责传输的硬件，这种哦硬件就相当于是以太网或者电话线路等物理层的设备。</p>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>数据链路层位于物理层和网络层中间，数据链路层定义了在单个链路上如何传输数据。</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>网络层主要使用<strong>IP</strong>协议，IP协议基于IP地址转发分包数据。<br><img src="https://images.yrzdm.com/imgs/20201104/t3zhMe2TUgk2.png?imageslim" alt="网络层"></p>
+<p>IP协议的主要作用就是将分组数据包发送到目标主机。<br>TCP/IP 分层中的互联网层与传输层的功能通常由操作系统提供。<br>IP协议还隐含着数据链路层的功能，通过IP协议，相互通信的主机之间不论经过怎样的数据链路，都能够实现相互通信。<br>虽然IP也是一种分组交换协议，但是IP协议却不具备重发机制。及时数据没有到达另一端也不会进行重发，所以IP属于非可靠性协议。</p>
+<p>网络层还有一种协议就是<strong>ICMP</strong>，因为IP协议在数据包的发送过程中可能会出现异常，当IP数据包因为异常而无法到达目标地址时，需要给发送端发送一个异常通知，ICMP的主要功能就在于此，ICMP也可以被用来诊断网络状况。</p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>TCP协议是传输层协议的一种</p>
+<p>传输层就像高速公路一样，连接两个城市的道路。它的主要功能是让应用层的应用程序之间完成通信和数据交换。在计算机内部运行着很多应用程序，每个应用程序对应一个端口号，我们一般使用端口号来区分这些应用程序。<br><img src="https://images.yrzdm.com/imgs/20201104/H0MHWQCotSfW.png?imageslim" alt="传输层"></p>
+<p>传输层的协议主要分为面向有连接的协议TCP和面向无连接的协议UDP</p>
+<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>TCP是一种可靠的协议，它能够保证数据包的可靠性交付，TCP能够正确处理传输过程中的丢包、传输顺序错乱等异常情况。此外，TCP还提供拥塞控制用于缓解网络拥堵。</p>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p>UDP是一种不可靠协议，它无法保证数据的可靠交付，相比TCP，UDP不会检查数据包是否到达，网络是否阻塞等情况，但是UDP的效率比较高。</p>
+<p>UDP协议常用于分组数据较少或者广播，多播等视频通信和多媒体领域。</p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>在TCP/IP协议簇中，将OSI标准模型中的会话层，表示层都归为应用层。应用层的架构大多属于客户端/服务端模型。在这种架构中，服务端通常会提前部署到服务器上，等待客户端的连接，从而提供服务。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/IiElWxTMUlcV.png?imageslim" alt="应用层"></p>
+<h3 id="数据包的发送过程"><a href="#数据包的发送过程" class="headerlink" title="数据包的发送过程"></a>数据包的发送过程</h3><h4 id="数据包结构"><a href="#数据包结构" class="headerlink" title="数据包结构"></a>数据包结构</h4><p><img src="https://images.yrzdm.com/imgs/20201104/7gQO3mKkTNs9.png?imageslim" alt="数据包结构"></p>
+<p>在每一层中，都会对所发送的数据增加一个<strong>头</strong> ，这个头中包含了该层必要的信息。每一层都会对数据进行处理并在数据包中附上这一层的必要信息。</p>
+<h4 id="应用层的处理"><a href="#应用层的处理" class="headerlink" title="应用层的处理"></a>应用层的处理</h4><p>主机A打开某应用程序，或者打开聊天窗口输入<strong>Hello</strong>，点击发送，那么这个<strong>Hello</strong>就作为一个数据包遨游在网络中，首先应用层会对这个数据包进行处理，包括字符编码、格式化等等，这其实是OSI中表现层的工作，只不过在TCP/IP协议中都归为了应用层。<br>数据包在发送的那一刻建立TCP连接，这个连接相当于通道，在这之后其他数据包也会使用通道传输数据。</p>
+<h4 id="传输层的处理"><a href="#传输层的处理" class="headerlink" title="传输层的处理"></a>传输层的处理</h4><p>为了描述信息能够准确的到达另一方，我们使用TCP协议来进行描述。TCP会根据应用的指示，负责建立连接，发送数据和断开连接。</p>
+<p>TCP会在应用数据层的前端附加一个TCP的头部字段，TCP头部包含了<strong>源端口号</strong>和<strong>目标端口号</strong>，这两个端口号用于表明数据包是从哪里发出的，需要发送到哪个应用程序上；TCP头部还包含<strong>序号</strong>，用于表示该包中数据是发送端整个数据中的第几个字节的序列号；TCP头部还包含<strong>校验和</strong>，用于判断数据是否损坏，随后将TCP头部附加在数据包的头部发送给IP</p>
+<h4 id="网络层的处理"><a href="#网络层的处理" class="headerlink" title="网络层的处理"></a>网络层的处理</h4><p>网络层主要负责处理数据包的是IP协议，IP协议将TCP传过来的TCP头部和数据结合当作自己的数据，并在TCP头部的前端加上自己的IP头部。因此，IP数据包后面会紧跟着TCP数据包，后面才是数据本身。IP头部包含目标地址和源地址，紧随在IP头部的还有用来判断后面是TCP还是UDP的信息。</p>
+<p>IP包生成后，会由路由控制表判断应该发送到哪个主机，IP修饰后的数据继续向下发送给路由器或者网络接口的驱动程序，从而实现真正的数据传输。</p>
+<h4 id="通信链路层的处理"><a href="#通信链路层的处理" class="headerlink" title="通信链路层的处理"></a>通信链路层的处理</h4><p>经由IP传过来的数据包，以太网会给数据包附上以太网的头部信息并进行发送处理。以太网头部信息包含接收端的MAC地址、发送端的MAC地址以及以太网类型的以太网数据协议等。</p>
+<p>以下是完整的处理过程和解析过程。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201104/jNAT6FJbiQXq.png?imageslim" alt="传输解析"></p>
+<p>左侧是数据的发送处理过程，应用层数据经过层层处理后变为可以发送昂的数据包，经过物理介质发送到指定主机中。</p>
+<p>数据包的接收流程是发送流程的逆序过程，数据包的解析同样会经过下面这几步。</p>
+<h4 id="通信链路的解析"><a href="#通信链路的解析" class="headerlink" title="通信链路的解析"></a>通信链路的解析</h4><p>目标主机收到数据包后，首选会从以太网的头部找到MAC地址判断是否是发给自己的数据包，如果不是发给自己的数据包则会丢弃该数据包。</p>
+<p>如果收到的数据包是发送给自己的，就会查找以太网类型判断是那种协议，如果是IP协议就会扔给IP协议进行处理。如果是<strong>ARP</strong>协议就会给ARP协议进行处理。如果协议类型是一宗无法识别的协议，就会将该数据包直接丢弃。</p>
+<h4 id="网络层的解析"><a href="#网络层的解析" class="headerlink" title="网络层的解析"></a>网络层的解析</h4><p>经过以太网处理后的数据包扔给网络层进行处理，我们假设协议类型是IP协议，那么，在IP收到数据包后就会解析IP头部信息，判断IP头部信息中的IP地址是否和自己的IP地址匹配，如果匹配则接受数据并判断上一层协议是TCP还是UDP，如果不匹配则直接丢弃。</p>
+<blockquote>
+<p>在路由的转发过程中，有的时候IP地址并不是自己的，这个时候需要借助路由表协助处理。</p>
+</blockquote>
+<h4 id="传输层的处理-1"><a href="#传输层的处理-1" class="headerlink" title="传输层的处理"></a>传输层的处理</h4><p>在传输层中，我们默认使用TCP协议，在TCP处理过程中，首先会计算一下<strong>校验和</strong>，判断数据是否被损坏。然后检查是否按照序号接受数据，最后检查端口号，确定具体是哪个应用程序。</p>
+<p>数据被完整识别后，会传递给由端口号识别的应用程序进行处理。</p>
+<h4 id="应用程序的处理"><a href="#应用程序的处理" class="headerlink" title="应用程序的处理"></a>应用程序的处理</h4><p>接收端指定的应用程序会处理发送方传递过来的数据，通过解码等操作识别出数据的内容，然后把对应的数据存储在磁盘上，返回一个保存成功的消息给发送方，如果保存失败，则返回错误消息。</p>
+<p>数据包经过每层后，该层协议都会在数据包附上头部信息。</p>
+<p><img src="https://images.yrzdm.com/imgs/20201105/mhGyjVXW77LA.png?imageslim" alt="包解析处理"></p>
+<p>在数据包的发送过程中，各层以此对数据包添加了头部信息，每个头部都包含发送端和接收端地址以及上一层的协议类型。以太网会使用MAC地址，IP会用IP地址，TCP/UDP则会用端口号作为识别两端主机的地址。</p>
+<p>每个分层的包首部还包含一个识别位，它是用来标识上一层协议的种类信息。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：TCP/IP基础知识总结</li>
+        <li>本文作者：Roy</li>
+        <li>创建时间：2020-11-05 09:41:18</li>
+        <li>
+            本文链接：https://www.yrzdm.com/2020/11/05/tcpip/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/12/01/rederiction/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">获取url重定向后的链接的技巧</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/10/28/protect-python-sourcecode/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">关于保护python代码的思考</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div class="valine-container">
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+                appKey: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+                meta: ''.split(','),
+                avatar: 'wavatar',
+                enableQQ: true,
+                placeholder: '',
+                lang: 'zh-CN'.toLowerCase()
+            });
+
+
+            // Valine 评论列表增加"博主"标识
+            const getValineDomTimer = setInterval(() => {
+                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                if (vcards.length > 0) {
+
+                    let author = 'Roy';
+                    if (author) {
+                        author = author.toLocaleLowerCase();
+                    }
+
+                    for (let vcard of vcards) {
+                        const vnick = vcard.querySelector('.vhead .vnick');
+                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                            vcard.classList.add('author');
+                        }
+                    }
+                    clearInterval(getValineDomTimer);
+                } else {
+                    clearInterval(getValineDomTimer);
+                }
+            }, 2000);
+        </script>
+    </div>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                    
+                </main>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+                <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2016</span> -
+            
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Roy</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-tools">
+        <div class="tools-container">
+    <ul class="tools-list">
+        
+            <li class="search popup-trigger">
+                <i class="fas fa-search"></i>
+            </li>
+        
+
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+    </ul>
+</div>
+
+    </div>
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="tools-ul-1">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+    </ul>
+</div>
+
+    </div>
+
+    <!-- page aside -->
+    <aside class="page-aside">
+        
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP的历史背景"><span class="nav-number">1.</span> <span class="nav-text">TCP&#x2F;IP的历史背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP标准"><span class="nav-number">2.</span> <span class="nav-text">TCP&#x2F;IP标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP协议簇"><span class="nav-number">3.</span> <span class="nav-text">TCP&#x2F;IP协议簇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通信链路层"><span class="nav-number">3.1.</span> <span class="nav-text">通信链路层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#物理层"><span class="nav-number">3.2.</span> <span class="nav-text">物理层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层"><span class="nav-number">3.3.</span> <span class="nav-text">数据链路层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层"><span class="nav-number">3.4.</span> <span class="nav-text">网络层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层"><span class="nav-number">3.5.</span> <span class="nav-text">传输层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP"><span class="nav-number">3.6.</span> <span class="nav-text">TCP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP"><span class="nav-number">3.7.</span> <span class="nav-text">UDP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层"><span class="nav-number">4.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据包的发送过程"><span class="nav-number">5.</span> <span class="nav-text">数据包的发送过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据包结构"><span class="nav-number">5.1.</span> <span class="nav-text">数据包结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层的处理"><span class="nav-number">5.2.</span> <span class="nav-text">应用层的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层的处理"><span class="nav-number">5.3.</span> <span class="nav-text">传输层的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层的处理"><span class="nav-number">5.4.</span> <span class="nav-text">网络层的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通信链路层的处理"><span class="nav-number">5.5.</span> <span class="nav-text">通信链路层的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通信链路的解析"><span class="nav-number">5.6.</span> <span class="nav-text">通信链路的解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层的解析"><span class="nav-number">5.7.</span> <span class="nav-text">网络层的解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层的处理-1"><span class="nav-number">5.8.</span> <span class="nav-text">传输层的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用程序的处理"><span class="nav-number">5.9.</span> <span class="nav-text">应用程序的处理</span></a></li></ol></li></ol>
+    </div>
+</div>
+        
+    </aside>
+
+    <!-- image viewer -->
+    <div class="image-viewer-container">
+    <div class="img-box">
+        <img src="">
+    </div>
+</div>
+
+
+</div>
+
+
+
+    <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-icon">
+            <i class="fas fa-search"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/local-search.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/left-side-toggle.js"></script>
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/code-copy.js"></script>
+    
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/toc.js"></script>
+    
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
+</html>

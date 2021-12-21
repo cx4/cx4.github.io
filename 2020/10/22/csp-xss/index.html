@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>
+        XSS终结者Content-Security-Policy |
+        
+        及时行乐
+    </title>
+    <link rel="shortcut icon" href="/images/favicons.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"cx4.github.io","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#CC6600","avatar":"/images/avatar.png","favicon":"/images/favicons.ico","img_position":"center","left_side_width":"260px","content_max_width":"900px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view."}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"version":"3.0.4"};
+    KEEP.language = {"search":"搜索...","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}};
+  </script>
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+
+<body>
+<div class="page-container">
+
+    
+
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
+
+    <main class="page-main">
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+
+    <div class="header-content">
+        <a class="logo-title" href="/">
+            及时行乐
+        </a>
+
+        <ul class="menu-list">
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/"
+                    >
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/archives"
+                    >
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/categories"
+                    >
+                        分类
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/tags"
+                    >
+                        标签
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/about"
+                    >
+                        关于
+                    </a>
+                </li>
+            
+        </ul>
+
+        <div class="menu-bar">
+            <div class="menu-bar-middle"></div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <main class="main-content normal-code-theme">
+
+                    
+                        <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">XSS终结者Content-Security-Policy</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Roy</span>
+                        <span class="level">Lv7</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2020-10-22 09:31:57
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/docs/">docs</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/docs/python/">python</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/docs/python/index/">index</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Python/">Python</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>1.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>6 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>CSP全称为Content Security Policy,即内容安全策略。主要以白名单的形式配置可信任的内容来源，在网页中，能够使白名单中的内容正常执行（JS，CSS，image等），而非白名单的内容无法正常执行，从而<code>减少跨站脚本攻击（XSS）</code>，当然也能够<code>减少运营商劫持的内容注入攻击</code>。</p>
+<a id="more"></a>
+
+<p>example：</p>
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+
+<p>不支持CSP的浏览器将会自动忽略CSP的信息，不会有什么影响。</p>
+<p>浏览器兼容性查询<a class="link"   href="http://caniuse.com/#feat=contentsecuritypolicy"  target="_blank" rel="noopener">caniuse<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="CSP-语法组成"><a href="#CSP-语法组成" class="headerlink" title="CSP 语法组成"></a>CSP 语法组成</h3><h4 id="策略类型"><a href="#策略类型" class="headerlink" title="策略类型"></a>策略类型</h4><p>csp有两种策略类型：</p>
+<ul>
+<li><p>Conten-Security-Policy</p>
+</li>
+<li><p>Content-Security-Policy-Report-Only</p>
+<p>这两种策略类型的主要区别也i可以从命名上看出，第一种对不安全的资源会进行阻止，第二种只会进行数据上报，不会有实际的阻止。</p>
+<p>当定义多个策略的时候，浏览器会优先采用最先定义的。</p>
+</li>
+</ul>
+<h3 id="指令集合"><a href="#指令集合" class="headerlink" title="指令集合"></a>指令集合</h3><p>CSP的指令是指组成内容来源白名单的关键，上面两种策略类型含有以下</p>
+<h4 id="指令示例及说明"><a href="#指令示例及说明" class="headerlink" title="指令示例及说明"></a>指令示例及说明</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>取值示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default-src</td>
+<td>‘self’ cdn.example.com</td>
+<td>定义针对所有类型（js/image/css/web font/ajax/iframe/多媒体等）资源的默认加载策略，某类型资源如果没有单独定义策略，就使用默认。</td>
+</tr>
+<tr>
+<td>script-src</td>
+<td>‘self’ js.example.com</td>
+<td>定义针对JavaScript的加载策略</td>
+</tr>
+<tr>
+<td>object-src</td>
+<td>‘self’</td>
+<td>针对,, 等标签的加载策略</td>
+</tr>
+<tr>
+<td>style-src</td>
+<td>‘self’ css.example.com</td>
+<td>定义针对样式的加载策略</td>
+</tr>
+<tr>
+<td>img-src</td>
+<td>‘self’ image.example.com</td>
+<td>定义针对图片的加载策略</td>
+</tr>
+<tr>
+<td>media-src</td>
+<td>‘media.example.com’</td>
+<td>针对或者引入的html多媒体等标签的加载策略</td>
+</tr>
+<tr>
+<td>frame-src</td>
+<td>‘self’</td>
+<td>针对iframe的加载策略</td>
+</tr>
+<tr>
+<td>connect-src</td>
+<td>‘self’</td>
+<td>针对Ajax、WebSocket等请求的加载策略。不允许的情况下，浏览器会模拟一个状态为400的响应</td>
+</tr>
+<tr>
+<td>font-src</td>
+<td>font.qq.com</td>
+<td>针对Web Font的加载策略</td>
+</tr>
+<tr>
+<td>sandbox</td>
+<td>allow-forms allow-scripts</td>
+<td>对请求的资源启用sandbox</td>
+</tr>
+<tr>
+<td>report-uri</td>
+<td>/some-report-uri</td>
+<td>告诉浏览器如果请求的资源不被策略允许时，往哪个地址提交日志信息。不阻止任何内容，可以改用Content-Security-Policy-Report-Only头</td>
+</tr>
+<tr>
+<td>base-uri</td>
+<td>‘self’</td>
+<td>限制当前页面的url（CSP2）</td>
+</tr>
+<tr>
+<td>child-src</td>
+<td>‘self’</td>
+<td>限制子窗口的源(iframe、弹窗等),取代frame-src（CSP2）</td>
+</tr>
+<tr>
+<td>form-action</td>
+<td>‘self’</td>
+<td>限制表单能够提交到的源（CSP2）</td>
+</tr>
+<tr>
+<td>frame-ancestors</td>
+<td>‘none’</td>
+<td>限制了当前页面可以被哪些页面以iframe,frame,object等方式加载（CSP2）</td>
+</tr>
+<tr>
+<td>plugin-types</td>
+<td>application/pdf</td>
+<td>限制插件的类型（CSP2）</td>
+</tr>
+</tbody></table>
+<h4 id="指令值示例及说明"><a href="#指令值示例及说明" class="headerlink" title="指令值示例及说明"></a>指令值示例及说明</h4><table>
+<thead>
+<tr>
+<th>指令值</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>img-src *</td>
+<td>允许任何内容</td>
+</tr>
+<tr>
+<td>‘none’</td>
+<td>img-src ‘none’</td>
+<td>不允许任何内容</td>
+</tr>
+<tr>
+<td>‘self’</td>
+<td>img-src ‘self’</td>
+<td>允许同源内容</td>
+</tr>
+<tr>
+<td>data:</td>
+<td>img-src data:</td>
+<td>允许data:协议（如base64编码的图片）</td>
+</tr>
+<tr>
+<td><a class="link"   href="http://www.a.com"  target="_blank" rel="noopener">www.a.com<i class="fas fa-external-link-alt"></i></a></td>
+<td>img-src <a class="link"   href="http://www.a.com"  target="_blank" rel="noopener">www.a.com<i class="fas fa-external-link-alt"></i></a></td>
+<td>允许加载指定域名的资源</td>
+</tr>
+<tr>
+<td>*.a.com</td>
+<td>img-src *.a.com</td>
+<td>允许加载a.com任何子域的资源</td>
+</tr>
+<tr>
+<td><a class="link"   href="https://img.com"  target="_blank" rel="noopener">https://img.com<i class="fas fa-external-link-alt"></i></a></td>
+<td>img-src <a class="link"   href="https://img.com"  target="_blank" rel="noopener">https://img.com<i class="fas fa-external-link-alt"></i></a></td>
+<td>允许加载img.com的https资源</td>
+</tr>
+<tr>
+<td>https:</td>
+<td>img-src https:</td>
+<td>允许加载https资源</td>
+</tr>
+<tr>
+<td>‘unsafe-inline’</td>
+<td>script-src ‘unsafe-inline’</td>
+<td>允许加载inline资源（style属性，onclick，inline js和inline css等等）</td>
+</tr>
+<tr>
+<td>‘unsafe-eval’</td>
+<td>script-src ‘unsafe-eval’</td>
+<td>允许加载动态js代码，例如eval()</td>
+</tr>
+</tbody></table>
+<h2 id="CSP的使用方式"><a href="#CSP的使用方式" class="headerlink" title="CSP的使用方式"></a>CSP的使用方式</h2><h3 id="HTML-Meta标签"><a href="#HTML-Meta标签" class="headerlink" title="HTML Meta标签"></a>HTML Meta标签</h3><p>在这种形式中，Meta标签主要含有两部分的key-value:</p>
+<ul>
+<li>http-equiv</li>
+<li>content</li>
+</ul>
+<p>http-equiv的value为CSP的策略类型，而content则是声明指令集合，即白名单。如</p>
+<meta http-equiv-"Content-Security-Policy" content="script-src 'self'">
+
+<p>在HTML的head标签中添加上面的Meta标签，当浏览器支持CSP标准时，<code>Content-Security-Policy</code>实际阻止策略将会使得非同源的script(根据指令集合来定)不会被加载及执行。</p>
+<p>Meta标签的Content-Security-policy-Report-Only方式在当前（2020/10）多数移动端浏览器上表现正常，但是<strong>不推荐</strong>这样做，在Chrome 50 会产生如下的提示</p>
+<blockquote>
+<p>The report-only Content Security Policy xxxxxxx was delivered via a element,which is disallowed. The policy has been ignored.</p>
+</blockquote>
+<h4 id="HTTP-Header"><a href="#HTTP-Header" class="headerlink" title="HTTP Header"></a>HTTP Header</h4><p>通过Meta的方式很是简单，但当涉及到页面较多时，使用Meta标签的方式需要在每个页面都鸽子加上。如果通过服务端配置HTML返回的响应头HTTP Header带上CSP的指令的话，那将能够一劳永逸，同事支持多个页面。下面为响应头</p>
+<blockquote>
+<p>Response Header</p>
+<p>Connection: keep-alive</p>
+<p>Content-Security-Policy: script-src ‘self’ *.qq.com *.url.cn</p>
+</blockquote>
+<p>不仅如此，这种形式的Content-Security-Policy-Report-Only方式能够得到更好的兼容支持，也是推荐方式。</p>
+<h3 id="实践经验"><a href="#实践经验" class="headerlink" title="实践经验"></a>实践经验</h3><p>CSP的阻止加载及执行的方式相当强大，也因为它如此强大，所以在使用时更是要小心谨慎，毕竟，如果一个不小心制定了错误的指令集合方案，那将可能导致阻止了正常文件的加载，影响业务功能，这是相当危险的。</p>
+<h4 id="一步步制定你的CSP方案"><a href="#一步步制定你的CSP方案" class="headerlink" title="一步步制定你的CSP方案"></a>一步步制定你的CSP方案</h4><h5 id="1-通过HTML-Meta标签进行初步方案的制定（meta标签已不支持report-uri-2019-7）"><a href="#1-通过HTML-Meta标签进行初步方案的制定（meta标签已不支持report-uri-2019-7）" class="headerlink" title="1. 通过HTML Meta标签进行初步方案的制定（meta标签已不支持report-uri 2019.7）"></a>1. 通过HTML Meta标签进行初步方案的制定（meta标签已不支持report-uri 2019.7）</h5><p>这种方式实现成本低，只对当前的HTML有效，从而能够进行逐步灰度。当然存在上面提及的兼容性问题，但如果现在时移动端上，或者在可逾期的浏览器内核上跑的话，在兼容性满足的情况下，那还是可以用过这个方式进行Report-Only。结合自己业务的资源情况以及在Chrome上调试制定初步方案。</p>
+<h5 id="2-使用HTTP-Header的Content-Security-Policy-Report-Only方式进一步确定方案"><a href="#2-使用HTTP-Header的Content-Security-Policy-Report-Only方式进一步确定方案" class="headerlink" title="2. 使用HTTP Header的Content-Security-Policy-Report-Only方式进一步确定方案"></a>2. 使用HTTP Header的Content-Security-Policy-Report-Only方式进一步确定方案</h5><p>由于上面的Meta标签存在一定的兼容问题，所以当我们制定了初步方案后，就可以开始使用HTTP Header的形式，小心使得万年船，这里还是建议先使用Report-Only的方式，并制定上报的url来收集阻止的内容，通过上报的数据进行方案的优化，从而进一步确定具体方案。</p>
+<h5 id="3-HTTP-Header改用Content-Security-Policy策略进行实际拦截阻止"><a href="#3-HTTP-Header改用Content-Security-Policy策略进行实际拦截阻止" class="headerlink" title="3.HTTP Header改用Content-Security-Policy策略进行实际拦截阻止"></a>3.HTTP Header改用Content-Security-Policy策略进行实际拦截阻止</h5><p>具体的CSP方案经过上面两轮洗礼，在<strong>分析完上报的数据，确定白雾疏漏</strong>后，可将HTTP Header改用Content-Security-Policy策略，从而进行实际拦截阻止。</p>
+<h4 id="项目实践数据"><a href="#项目实践数据" class="headerlink" title="项目实践数据"></a>项目实践数据</h4><p>从过腾讯使用CSP后的上报拦截数据</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>CSP阻止量</th>
+<th>在线PV</th>
+<th>占比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2016.03.31</td>
+<td>23431</td>
+<td>545872</td>
+<td>4.31%</td>
+</tr>
+<tr>
+<td>2016.04.01</td>
+<td>24459</td>
+<td>619979</td>
+<td>3.95%</td>
+</tr>
+<tr>
+<td>2016.04.02</td>
+<td>20398</td>
+<td>525055</td>
+<td>3.88%</td>
+</tr>
+<tr>
+<td>2016.04.02</td>
+<td>19938</td>
+<td>475985</td>
+<td>4.19%</td>
+</tr>
+<tr>
+<td>2016.04.03</td>
+<td>23140</td>
+<td>507329</td>
+<td>4.56%</td>
+</tr>
+</tbody></table>
+<p>从上面的数据可以看出，每天被攻击的情况呈现出一种稳定持续的倾向，而且这类攻击一版不是针对某个业务的，具备了普遍性，这样的影响范围可想而知。</p>
+<h6 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h6><blockquote>
+<p><a class="link"   href="https://www.w3.org/TR/CSP/#changes-from-level-1"  target="_blank" rel="noopener">https://www.w3.org/TR/CSP/#changes-from-level-1<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="http://w3c.github.io/webappsec-csp/"  target="_blank" rel="noopener">http://w3c.github.io/webappsec-csp/<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="http://content-security-policy.com/"  target="_blank" rel="noopener">Content-Security-Policy Header ⟶ CSP Reference &amp; Examples<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.w3.org/TR/2012/CR-CSP-20121115/"  target="_blank" rel="noopener">Content Security Policy 1.0<i class="fas fa-external-link-alt"></i></a><a class="link"   href="https://www.w3.org/TR/CSP/#changes-from-level-1"  target="_blank" rel="noopener">Content Security Policy Level 3<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="http://w3c.github.io/webappsec-csp/"  target="_blank" rel="noopener">Content Security Policy Level 3<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="http://content-security-policy.com/"  target="_blank" rel="noopener">Content-Security-Policy Header ⟶ CSP Reference &amp; Examples<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.w3.org/TR/2012/CR-CSP-20121115/"  target="_blank" rel="noopener">Content Security Policy 1.0<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：XSS终结者Content-Security-Policy</li>
+        <li>本文作者：Roy</li>
+        <li>创建时间：2020-10-22 09:31:57</li>
+        <li>
+            本文链接：https://www.yrzdm.com/2020/10/22/csp-xss/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/10/26/csp-nonce/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">csp-nonce 守护inline Script</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/08/31/pyexe2py/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">反编译pyinstaller生成的exe程序</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div class="valine-container">
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'cO7jtWjCPwywVCl6aC0cfeWP-gzGzoHsz',
+                appKey: 'mMo3ArkHk5Qi38gpBTXcvMWF',
+                meta: ''.split(','),
+                avatar: 'wavatar',
+                enableQQ: true,
+                placeholder: '',
+                lang: 'zh-CN'.toLowerCase()
+            });
+
+
+            // Valine 评论列表增加"博主"标识
+            const getValineDomTimer = setInterval(() => {
+                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                if (vcards.length > 0) {
+
+                    let author = 'Roy';
+                    if (author) {
+                        author = author.toLocaleLowerCase();
+                    }
+
+                    for (let vcard of vcards) {
+                        const vnick = vcard.querySelector('.vhead .vnick');
+                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                            vcard.classList.add('author');
+                        }
+                    }
+                    clearInterval(getValineDomTimer);
+                } else {
+                    clearInterval(getValineDomTimer);
+                }
+            }, 2000);
+        </script>
+    </div>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                    
+                </main>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+                <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2016</span> -
+            
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Roy</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-tools">
+        <div class="tools-container">
+    <ul class="tools-list">
+        
+            <li class="search popup-trigger">
+                <i class="fas fa-search"></i>
+            </li>
+        
+
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+    </ul>
+</div>
+
+    </div>
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="tools-ul-1">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+    </ul>
+</div>
+
+    </div>
+
+    <!-- page aside -->
+    <aside class="page-aside">
+        
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSP-语法组成"><span class="nav-number">1.</span> <span class="nav-text">CSP 语法组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#策略类型"><span class="nav-number">1.1.</span> <span class="nav-text">策略类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令集合"><span class="nav-number">2.</span> <span class="nav-text">指令集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#指令示例及说明"><span class="nav-number">2.1.</span> <span class="nav-text">指令示例及说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令值示例及说明"><span class="nav-number">2.2.</span> <span class="nav-text">指令值示例及说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSP的使用方式"><span class="nav-number"></span> <span class="nav-text">CSP的使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-Meta标签"><span class="nav-number">1.</span> <span class="nav-text">HTML Meta标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-Header"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP Header</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实践经验"><span class="nav-number">2.</span> <span class="nav-text">实践经验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一步步制定你的CSP方案"><span class="nav-number">2.1.</span> <span class="nav-text">一步步制定你的CSP方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-通过HTML-Meta标签进行初步方案的制定（meta标签已不支持report-uri-2019-7）"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 通过HTML Meta标签进行初步方案的制定（meta标签已不支持report-uri 2019.7）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-使用HTTP-Header的Content-Security-Policy-Report-Only方式进一步确定方案"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 使用HTTP Header的Content-Security-Policy-Report-Only方式进一步确定方案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-HTTP-Header改用Content-Security-Policy策略进行实际拦截阻止"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.HTTP Header改用Content-Security-Policy策略进行实际拦截阻止</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目实践数据"><span class="nav-number">2.2.</span> <span class="nav-text">项目实践数据</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#参考"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        
+    </aside>
+
+    <!-- image viewer -->
+    <div class="image-viewer-container">
+    <div class="img-box">
+        <img src="">
+    </div>
+</div>
+
+
+</div>
+
+
+
+    <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-icon">
+            <i class="fas fa-search"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/local-search.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/left-side-toggle.js"></script>
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/code-copy.js"></script>
+    
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.4/source/js/toc.js"></script>
+    
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true}});</script></body>
+</html>
